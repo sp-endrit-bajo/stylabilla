@@ -1,8 +1,8 @@
 {
   "title": "Stylabilla",
   "source": ["./src"],
-  "css": ["../stylabilla.css"],
-  "js": [],
-  "destination":  "./build/styleguide/",
+  "css": [],
+  "js": ["./build/stylabilla.js"],
+  "destination": "./build/stylabilla/",
   "builder": "./stylabilla-builder"
 }

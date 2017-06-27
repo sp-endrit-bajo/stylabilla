@@ -10,10 +10,10 @@
   "description": "Usabilla's CSS styleguide.",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack",
-    "styleguide": "webpack; kss --config kss-config.json",
+    "build": "NODE_ENV=production webpack",
     "format": "prettier-eslint --write \"src/**/*.scss\"",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "dev": "webpack-dev-server"
   },
   "lint-staged": {
     "*.scss": [
@@ -45,10 +45,14 @@
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-standard": "^3.0.1",
+    "findup": "^0.1.5",
     "husky": "^0.14.1",
     "kss": "^3.0.0-beta.18",
+    "kss-loader": "^0.3.2",
     "lint-staged": "^4.0.0",
     "prettier-eslint-cli": "^4.1.1",
-    "webpack-cleanup-plugin": "^0.5.1"
+    "webpack-cleanup-plugin": "^0.5.1",
+    "webpack-dev-server": "^2.5.0",
+    "winston": "^2.3.1"
   }
 }
