@@ -12,10 +12,9 @@
   "scripts": {
     "build": "webpack",
     "styleguide": "webpack; kss --config kss-config.json",
-    "format": "prettier-eslint --write \"src/**/*.scss\"",
-    "precommit": "lint-staged"
+    "format": "prettier-eslint --write \"src/**/*.scss\""
   },
-  "lint-staged": {
+  "pre-commit": {
     "*.scss": [
       "yarn format",
       "git add"
@@ -45,7 +44,9 @@
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.1",
     "kss": "^3.0.0-beta.18",
+    "lint-staged": "^4.0.0",
     "prettier-eslint-cli": "^4.1.1",
     "webpack-cleanup-plugin": "^0.5.1"
   }
