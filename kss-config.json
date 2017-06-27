@@ -3,5 +3,6 @@
   "source": ["./src"],
   "css": ["../stylabilla.css"],
   "js": [],
-  "destination":  "./build/styleguide/"
+  "destination":  "./build/styleguide/",
+  "builder": "./stylabilla-builder"
 }
