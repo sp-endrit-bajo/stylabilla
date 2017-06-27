@@ -1,2 +1,2 @@
-import 'normalize.css'
-import 'styles/stylabilla'
+import 'normalize.css';
+import 'styles/index';

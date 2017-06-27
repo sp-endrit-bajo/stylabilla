@@ -1,0 +1,7 @@
+{
+  "title": "Stylabilla",
+  "source": ["./src"],
+  "css": ["../stylabilla.css"],
+  "js": [],
+  "destination":  "./build/styleguide/"
+}

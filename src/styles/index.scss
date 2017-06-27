@@ -1,0 +1,28 @@
+// Button
+//
+// Your standard button suitable for clicking.
+//
+// Markup:
+// <button class="btn {{modifier_class}}">Button</button>
+//
+// .green - Green button
+// .blue - Blue button
+//
+// Styleguide 1.
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  &.green {
+    background-color: #4CAF50;
+  }
+
+  &.blue {
+    background-color: #008CBA;
+  }
+}
