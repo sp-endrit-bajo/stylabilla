@@ -1,20 +1,25 @@
 {
   "private": true,
   "author": "@usabilla",
-  "engines": {
-    "node": ">=4.0.0 <=7.9.0"
-  },
   "name": "stylabilla",
   "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:usabilla/stylabilla.git"
   },
-  "description": "Usabilla CSS library that you can use to start any web project.",
+  "description": "Usabilla's CSS styleguide.",
   "main": "src/index.js",
   "scripts": {
-    "build": "rm -rf build; webpack",
-    "styleguide": "rm -rf build; webpack; kss --config kss-config.json"
+    "build": "webpack",
+    "styleguide": "webpack; kss --config kss-config.json",
+    "format": "prettier-eslint --write \"src/**/*.scss\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "yarn format",
+      "git add"
+    ]
   },
   "bugs": {
     "url": "https://github.com/usabilla/stylabilla/issues"
@@ -24,8 +29,10 @@
     "babel-core": "^6.9.0",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.1.4",
     "css-loader": "^0.28.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "node-sass": "^4.1.0",
     "normalize.css": "^7.0.0",
@@ -35,6 +42,11 @@
     "webpack": "^2.5.1"
   },
   "devDependencies": {
-    "kss": "^3.0.0-beta.18"
+    "eslint": "^4.1.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "kss": "^3.0.0-beta.18",
+    "prettier-eslint-cli": "^4.1.1",
+    "webpack-cleanup-plugin": "^0.5.1"
   }
 }

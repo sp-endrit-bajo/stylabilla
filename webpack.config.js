@@ -1,5 +1,6 @@
 const autoprefixer = require('autoprefixer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin')
 const path = require('path')
 
 const loaders = {
@@ -55,7 +56,10 @@ const config = {
     publicPath: '/build'
   },
 
-  plugins: [new ExtractTextPlugin('[name].css')],
+  plugins: [
+    new ExtractTextPlugin('[name].css'),
+    new WebpackCleanupPlugin()
+  ],
 
   resolve: {
     extensions: ['.js', '.scss'],
