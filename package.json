@@ -12,9 +12,10 @@
   "scripts": {
     "build": "webpack",
     "styleguide": "webpack; kss --config kss-config.json",
-    "format": "prettier-eslint --write \"src/**/*.scss\""
+    "format": "prettier-eslint --write \"src/**/*.scss\"",
+    "precommit": "lint-staged"
   },
-  "pre-commit": {
+  "lint-staged": {
     "*.scss": [
       "yarn format",
       "git add"
