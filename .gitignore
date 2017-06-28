@@ -1,4 +1,5 @@
 /node_modules/
+/stylabilla-builder/node_modules/
 /build/
 /.tmp/
 /.idea/
