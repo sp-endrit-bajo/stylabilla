@@ -1,0 +1,31 @@
+/**
+ * Stylabilla
+ * ===================
+ *
+ * These stylesheets are organized as per the ITCSS (Inverted Triangle CSS) methodology introduced here:
+ * http://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731
+ * http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+ *
+ * It organizes styles into files for various 'layers', with each layer becoming
+ * more and more specific in terms of selector rules.
+
+ * - Settings: global variables and settings (eg: base font size, colour palettes, config)
+ * - Tools: global mixins and functions (eg: gradient mixins, font-sizing mixins)
+ * - Generic: global reset (for Stylabilla, this is just sanitize.css)
+ * - Elements: bare, unclassed HTML elements (eg: what does an h1 look like without a class)
+ * - Objects: non-cosmetic design patterns (eg: a .wrapper element, layout systems)
+ * - Components: explicit, designed pieces of UI (eg: buttons, datepicker, typography classes)
+ * - Trumps: global overrides, utility and helper classes (eg: visually hidden)
+ **/
+
+// Namespace (all classes should be prefixed with sb, which stands for Stylabilla)
+$ns: "sb-" !default;
+
+//Settings
+@import "settings/colors";
+
+//Generic
+@import "~sanitize.css";
+
+//Components
+@import "components/buttons";
