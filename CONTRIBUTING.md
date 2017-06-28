@@ -6,6 +6,10 @@
 - [Making Contributions](#making-contributions)
 - [Breaking Changes](#breaking-changes)
 
+## Setup
+```nvm use```
+```yarn```
+```yarn dev```
 
 ## Component Definition of Done
 
