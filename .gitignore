@@ -1,6 +1,7 @@
 /node_modules/
-/stylabilla-builder/node_modules/
-/build/
+/docs-builder/node_modules/
+/docs/
+/dist/
 /.tmp/
 /.idea/
 /.sass-cache/

@@ -51,9 +51,9 @@ const config = {
   },
 
   output: {
-    filename: '[name].js',
-    path: path.join(__dirname, './build'),
-    publicPath: '/build'
+    filename: '[name].css',
+    path: path.join(__dirname, './dist'),
+    publicPath: '/dist'
   },
 
   plugins: [

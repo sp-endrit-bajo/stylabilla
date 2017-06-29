@@ -1,3 +1,4 @@
 node_modules/*
-build/*
-stylabilla-builder/*
+dist/*
+docs/*
+docs-builder/*

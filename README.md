@@ -1,6 +1,5 @@
 # STYLABILLA
 
-
 ## What is Stylabilla for?
 Stylabilla is the CSS-only styleguide for the Usabilla product (both public facing widgets and the customer application), that implements our [design styleguide](https://drive.google.com/a/usabilla.com/file/d/0B_Xb9pOPqDqzLXJYbzE2a3czbk0/view?usp=sharing).
 

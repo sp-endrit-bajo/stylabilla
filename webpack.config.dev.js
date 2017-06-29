@@ -40,7 +40,7 @@ const config = {
   },
 
   devServer: {
-    contentBase: './build/stylabilla',
+    contentBase: './docs',
     inline: true,
     hot: true,
     port: 8080
@@ -67,8 +67,8 @@ const config = {
 
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, './build'),
-    publicPath: '/build'
+    path: path.resolve(__dirname, 'docs'),
+    publicPath: '',
   },
 
   plugins: [
