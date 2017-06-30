@@ -1,6 +1,7 @@
 const autoprefixer = require('autoprefixer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
 const loaders = {
@@ -46,6 +47,10 @@ const config = {
           fallback: 'style-loader',
           use: [loaders.css, loaders.postcss, loaders.sass]
         })
+      },
+      {
+        test: /\.(gif|png|jpg|svg|ttf|eot|woff|woff2)$/,
+        loader: 'url-loader'
       }
     ]
   },
@@ -58,7 +63,13 @@ const config = {
 
   plugins: [
     new ExtractTextPlugin('[name].css'),
-    new WebpackCleanupPlugin()
+    new WebpackCleanupPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './src/assets'),
+        to: path.resolve(__dirname, './dist/assets')
+      }
+    ])
   ],
 
   resolve: {
