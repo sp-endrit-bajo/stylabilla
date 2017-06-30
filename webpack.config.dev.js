@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
 const loaders = {
@@ -61,6 +62,10 @@ const config = {
         test: /\.(css|scss)$/,
         exclude: /(node_modules|bower_components)/,
         use: [loaders.kss]
+      },
+      {
+        test: /\.(gif|png|jpg|svg|ttf|eot|woff|woff2)$/,
+        loader: 'url-loader'
       }
     ]
   },
@@ -73,7 +78,13 @@ const config = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new WebpackCleanupPlugin()
+    new WebpackCleanupPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './src/assets'),
+          to: path.resolve(__dirname, './docs/assets'),
+      }
+    ])
   ],
 
   resolve: {
