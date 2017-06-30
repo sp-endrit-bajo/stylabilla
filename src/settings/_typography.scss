@@ -1,0 +1,85 @@
+// Typography
+//
+// Typeface:
+// Our main font is Milo, and we also use system fonts for input controls, info text and tooltips.
+//
+// Markup:
+// <div class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</div>
+//
+// .font-milo--bold - Bold version
+// .font-milo--light - Light version
+//
+// Styleguide 2.
+
+$font-milo-map: (
+  regular:
+    (
+      woff: 'assets/fonts/MiloOT.woff',
+      woff2: 'assets/fonts/MiloOT.woff2',
+      weight: normal
+    ),
+  bold:
+    (
+      woff: 'assets/fonts/MiloOT-Medi.woff',
+      woff2: 'assets/fonts/MiloOT-Medi.woff2',
+      weight: bold
+    ),
+  light:
+    (
+      woff: 'assets/fonts/MiloOT-Light.woff',
+      woff2: 'assets/fonts/MiloOT-Light.woff2',
+      weight: 300
+    )
+);
+
+@each $font, $map in $font-milo-map {
+  $font-name: 'Milo';
+  $font-woff: map-get($map, woff2);
+  $font-woff2: map-get($map, woff);
+  $font-weight: map-get($map, weight);
+
+  @font-face {
+    font-family: $font-name;
+    src: url($font-woff2) format('woff2'), url($font-woff) format('woff');
+    font-weight: $font-weight;
+  }
+}
+
+$font-family-base: BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto,
+  Helvetica, Arial, sans-serif;
+$font-family-milo: 'Milo', $font-family-base;
+
+body {
+  font-family: $font-family-milo;
+  font-weight: normal;
+}
+
+.font-milo {
+  font-family: $font-family-milo;
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--light {
+    font-weight: 300;
+  }
+}
+
+.font-system {
+  font-family: $font-family-base;
+
+  &--bold {
+    font-weight: bold;
+  }
+}
+
+// Headings
+//
+// Markup:
+//
+// Styleguide 2.1.
+
+h1 {
+  font-size: 20px;
+}
