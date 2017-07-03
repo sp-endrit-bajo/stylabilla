@@ -2,7 +2,7 @@
 
 ## Contents
 - [Setup](#setup)
-- [File Structure](#repo-structure)
+- [File Structure](#file-structure)
 - [Component Definition of Done](#component-definition-of-done)
 - [Style Conventions](#style-conventions)
 - [Making Contributions](#making-contributions)
