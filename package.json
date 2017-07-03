@@ -12,14 +12,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "format": "prettier-eslint --write \"src/**/*.scss\"",
-    "precommit": "lint-staged",
     "dev": "webpack-dev-server"
-  },
-  "lint-staged": {
-    "*.scss": [
-      "yarn format",
-      "git add"
-    ]
   },
   "bugs": {
     "url": "https://github.com/usabilla/stylabilla/issues"
