@@ -21,12 +21,13 @@
 // Namespace (all classes should be prefixed with sb, which stands for Stylabilla)
 $ns: "sb-" !default;
 
-//Settings
-@import "settings/typography";
-@import "settings/colors";
-
-//Generic
+//Vendor
 @import "~sanitize.css";
+@import '~modularscale-sass';
+
+//Settings
+@import "settings/colors";
+@import "settings/typography";
 
 //Components
 @import "components/buttons";

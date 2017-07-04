@@ -1,6 +1,11 @@
 // Typography
 //
-// Typeface:
+// The typography is based around 
+//
+// Styleguide 2.
+
+// Typeface
+//
 // Our main font is Milo, and we also use system fonts for input controls, info text and tooltips.
 //
 // Markup:
@@ -9,7 +14,7 @@
 // .font-milo--bold - Bold version
 // .font-milo--light - Light version
 //
-// Styleguide 2.
+// Styleguide 2.1.
 
 $font-milo-map: (
   regular:
@@ -45,8 +50,7 @@ $font-milo-map: (
   }
 }
 
-$font-family-base: BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto,
-  Helvetica, Arial, sans-serif;
+$font-family-base: BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
 $font-family-milo: 'Milo', $font-family-base;
 
 body {
@@ -74,12 +78,146 @@ body {
   }
 }
 
-// Headings
+// Text elements
+//
+// The following classes can be used to style text elements.
 //
 // Markup:
+// <h2 class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</h2>
 //
-// Styleguide 2.1.
+// .display--large    - Used for single dates when visualizing data
+// .display--medium   - Used for big numbers when visualizing data
+// .header--large     - Used for page titles
+// .header--medium    - Used for main titles in different page sections
+// .header--small     - Used for secondary titles
+// .text--regular     - Used for buttons and empty state text
+// .text--small       - Used for all input controls
+//
+// Styleguide 2.2.
 
-h1 {
-  font-size: 20px;
+$modularscale: (
+  base: 16px,
+  ratio: 1.2
+);
+
+@mixin base-font-properties() {
+  font-family: $font-family-milo;
+  font-weight: 400;
+  color: $sb-color-dark-3;
+  letter-spacing: 0;
+}
+
+@mixin system-font-properties() {
+  font-family: $font-family-base;
+  font-weight: 400;
+  color: $sb-color-dark-3;
+  letter-spacing: 0;
+}
+
+.display--large {
+  @include base-font-properties();
+  font-size: ms(9);
+  line-height: ms(9);
+}
+
+.display--medium {
+  @include base-font-properties();
+  font-size: ms(6);
+  line-height: ms(6);
+}
+
+.header--large {
+  @include base-font-properties();
+  font-size: ms(6);
+  line-height: ms(6);
+}
+
+.header--medium {
+  @include base-font-properties();
+  font-size: ms(2);
+  line-height: ms(2);
+}
+
+.header--small {
+  @include base-font-properties();
+  font-size: ms(1);
+  line-height: ms(1);
+}
+
+.text--regular {
+  @include base-font-properties();
+  font-size: ms(0);
+  line-height: ms(2);
+}
+
+.text--small {
+  @include system-font-properties();
+  font-size: ms(-1);
+  line-height: ms(2);
+}
+
+// Anchors & Links
+//
+// The following styles apply to <a> elements. It is also possible to add a .text--link class to mimic the same behavior.
+//
+// Markup:
+// <a>Visit this page.</a><br>
+// <span class="text--link">Visit this page.</span>
+//
+// :hover               - hovered state
+// :focus               - focused state
+// :visited             - visited state
+// .text--link:hover    - hovered state
+// .text--link:focus    - focused state
+// .text--link:visited  - visited state
+//
+// Styleguide 2.3.
+
+%link {
+  color: $sb-color-blue-2;
+  text-decoration: underline;
+}
+
+%link-on-hover {
+  color: $sb-color-blue-1;
+}
+
+%link-on-focus {
+  box-shadow: 0 0 4px 2px rgba(0, 165, 201, 0.1);
+}
+
+%link-on-visited {
+  color: $sb-color-blue-1;
+}
+
+a {
+  @extend %link;
+}
+
+a:hover {
+  @extend %link-on-hover;
+}
+
+a:focus {
+  @extend %link-on-focus;
+}
+
+a:visited {
+  @extend %link-on-visited;
+}
+
+.text--link {
+  @extend %link;
+}
+
+.text--link:hover {
+  @extend %link-on-hover;
+}
+
+.text--link:focus {
+  @extend %link-on-focus;
+}
+
+.text--link:visited {
+  @extend %link-on-visited;
 }
