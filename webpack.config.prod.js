@@ -46,6 +46,10 @@ const config = {
           fallback: 'style-loader',
           use: [loaders.css, loaders.postcss, loaders.sass]
         })
+      },
+      {
+        test: /\.(gif|png|jpg|svg|ttf|eot|woff|woff2)$/,
+        loader: 'url-loader'
       }
     ]
   },

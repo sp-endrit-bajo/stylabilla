@@ -61,6 +61,10 @@ const config = {
         test: /\.(css|scss)$/,
         exclude: /(node_modules|bower_components)/,
         use: [loaders.kss]
+      },
+      {
+        test: /\.(gif|png|jpg|svg|ttf|eot|woff|woff2)$/,
+        loader: 'url-loader'
       }
     ]
   },
