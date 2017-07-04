@@ -1,0 +1,257 @@
+// Typography
+//
+// Styleguide 2.
+
+$font-stack: (
+  Milo: (
+    Light: (
+      woff: 'assets/fonts/MiloOT-Light.woff',
+      woff2: 'assets/fonts/MiloOT-Light.woff2',
+      weight: 300
+    ),
+    Regular: (
+      woff: 'assets/fonts/MiloOT.woff',
+      woff2: 'assets/fonts/MiloOT.woff2',
+      weight: 400
+    ),
+    Medium: (
+      woff: 'assets/fonts/MiloOT-Medi.woff',
+      woff2: 'assets/fonts/MiloOT-Medi.woff2',
+      weight: 500
+    )
+  )
+);
+
+// Create @font-face declarations
+@each $font-name, $font-types in $font-stack {
+  @each $font-type, $font-settings in $font-types {
+
+    $font-path-woff: map-get($font-settings, woff);
+    $font-path-woff2: map-get($font-settings, woff2);
+    $font-weight: map-get($font-settings, weight);
+
+    @font-face {
+      font-family: $font-name;
+      font-weight: $font-weight;
+      src: url($font-path-woff) format('woff'), 
+           url($font-path-woff2) format('woff2');
+    }
+  }
+}
+
+$font-family-base: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+$font-family-primary: 'Milo', $font-family-base;
+
+html {
+  font-family: $font-family-primary;
+}
+
+// Modular scale settings
+$modularscale: (
+  base: 16px,
+  ratio: 1.2
+);
+
+// Reset margins for text elements
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+// Headers
+//
+// Header elements `<h1> <h6>`. All header elements have their default margins set to 0.
+//
+// Markup:
+// <h1>The quick brown fox jumps over the lazy dog</h1>
+// <h2>The quick brown fox jumps over the lazy dog</h2>
+// <h3>The quick brown fox jumps over the lazy dog</h3>
+// <h4>The quick brown fox jumps over the lazy dog</h4>
+// <h5>The quick brown fox jumps over the lazy dog</h5>
+// <h6>The quick brown fox jumps over the lazy dog</h6>
+//
+// Styleguide 2.1.
+
+h1 {
+  font-size: ms(3);
+}
+
+h2 {
+  font-size: ms(2);
+}
+
+h3 {
+  font-size: ms(1);
+}
+
+h4 {
+  font-size: ms(0);
+}
+
+h5 {
+  font-size: ms(-1);
+}
+
+h6 {
+  font-size: ms(-2);
+}
+
+// Paragraphs
+//
+// Paragraph elements `<p>`. All paragraph elements have their default margins set to 0.
+//
+// Markup:
+// <p>The quick brown fox jumps over the lazy dog</p>
+//
+// Styleguide 2.2.
+
+p {
+  font-size: ms(0);
+}
+
+// Text Classes
+//
+// The text classes to format the text of any html element.
+//
+// Markup:
+// <h1 class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</h1>
+//
+// .sb-display--large    - Used for single dates when visualizing data
+// .sb-display--medium   - Used for big numbers when visualizing data
+// .sb-header--large     - Used for page titles
+// .sb-header--medium    - Used for main titles in different page sections
+// .sb-header--small     - Used for secondary titles
+// .sb-text--regular     - Used for buttons and empty state text
+// .sb-text--small       - Used for all input controls
+//
+// Styleguide 2.3.
+
+@mixin font-properties-primary() {
+  font-family: $font-family-primary;
+  font-weight: 400;
+  color: $sb-color-dark-3;
+  letter-spacing: 0;
+}
+
+@mixin font-properties-base() {
+  font-family: $font-family-base;
+  font-weight: 400;
+  color: $sb-color-dark-3;
+  letter-spacing: 0;
+}
+
+.sb-display--large {
+  @include font-properties-primary();
+  font-size: ms(9);
+  line-height: ms(9);
+}
+
+.sb-display--medium {
+  @include font-properties-primary();
+  font-size: ms(6);
+  line-height: ms(6);
+}
+
+.sb-header--large {
+  @include font-properties-primary();
+  font-size: ms(3);
+  line-height: ms(3);
+}
+
+.sb-header--medium {
+  @include font-properties-primary();
+  font-size: ms(2);
+  line-height: ms(2);
+}
+
+.sb-header--small {
+  @include font-properties-primary();
+  font-size: ms(1);
+  line-height: ms(1);
+}
+
+.sb-text--regular {
+  @include font-properties-primary();
+  font-size: ms(0);
+  line-height: ms(2);
+}
+
+.sb-text--small {
+  @include font-properties-base();
+  font-size: ms(-1);
+  line-height: ms(2);
+}
+
+// Links
+//
+// Anchor elements `<a>`
+//
+// Markup:
+// <a>Visit this page.</a>
+//
+// :hover               - hovered state
+// :focus               - focused state
+// :visited             - visited state
+//
+// Styleguide 2.4.
+
+%link {
+  color: $sb-color-blue-2;
+  text-decoration: underline;
+}
+
+%link-on-hover {
+  color: $sb-color-blue-1;
+}
+
+%link-on-focus {
+  box-shadow: 0 0 4px 2px rgba(0, 165, 201, 0.1);
+}
+
+%link-on-visited {
+  color: $sb-color-blue-1;
+}
+
+a {
+  @extend %link;
+}
+
+a:hover {
+  @extend %link-on-hover;
+}
+
+a:focus {
+  @extend %link-on-focus;
+}
+
+a:visited {
+  @extend %link-on-visited;
+}
+
+// Links (class)
+//
+// The .sb-text--link class can be used to mimic the behavior of an `<a>` tag.
+//
+// Markup:
+// <span class="sb-text--link">Visit this page.</span>
+//
+// .sb-text--link:hover    - hovered state
+// .sb-text--link:focus    - focused state
+// .sb-text--link:visited  - visited state
+//
+// Styleguide 2.5.
+
+.sb-text--link {
+  @extend %link;
+}
+
+.sb-text--link:hover {
+  @extend %link-on-hover;
+}
+
+.sb-text--link:focus {
+  @extend %link-on-focus;
+}
+
+.sb-text--link:visited {
+  @extend %link-on-visited;
+}
