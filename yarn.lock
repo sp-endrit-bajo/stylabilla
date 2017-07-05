@@ -3272,10 +3272,6 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
-modularscale-sass@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/modularscale-sass/-/modularscale-sass-3.0.3.tgz#f51bd7e4ed3bc42566dfd2c1c3c11f80fb5de958"
-
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"

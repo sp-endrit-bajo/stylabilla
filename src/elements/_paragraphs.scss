@@ -1,0 +1,12 @@
+// Paragraphs
+//
+// Paragraph elements `<p>`. All paragraph elements have their default margins set to 0.
+//
+// Markup:
+// <p>The quick brown fox jumps over the lazy dog</p>
+//
+// Styleguide 2.2.
+
+p {
+  font-size: sb-px2rems(13px);
+}
