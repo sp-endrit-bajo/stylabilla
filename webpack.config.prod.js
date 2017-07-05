@@ -48,8 +48,12 @@ const config = {
         })
       },
       {
-        test: /\.(gif|png|jpg|svg|ttf|eot|woff|woff2)$/,
-        loader: 'url-loader'
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: 'file-loader?name=assets/fonts/[name].[ext]&publicPath=/'
+      },
+      {
+        test: /\.(gif|png|jpg|svg|)$/,
+        use: 'file-loader?name=assets/images/[name].[ext]&publicPath=/'
       }
     ]
   },
