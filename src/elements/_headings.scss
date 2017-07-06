@@ -12,33 +12,26 @@
 //
 // Styleguide 2.1.
 
-$sb-font-size-h1: 28px !default;
-$sb-font-size-h2: 23px !default;
-$sb-font-size-h3: 19px !default;
-$sb-font-size-h4: 16px !default;
-$sb-font-size-h5: 13px !default;
-$sb-font-size-h6: 11px !default;
-
 h1 {
-  @include sb-px2rems($sb-font-size-h1);
+  font-size: sb-px2rems(28px);
 }
 
 h2 {
-  @include sb-px2rems($sb-font-size-h2);
+  font-size: sb-px2rems(23px);
 }
 
 h3 {
-  @include sb-px2rems($sb-font-size-h3);
+  font-size: sb-px2rems(19px);
 }
 
 h4 {
-  @include sb-px2rems($sb-font-size-h4);
+  font-size: sb-px2rems(16px);
 }
 
 h5 {
-  @include sb-px2rems($sb-font-size-h5);
+  font-size: sb-px2rems(13px);
 }
 
 h6 {
-  @include sb-px2rems($sb-font-size-h6);
+  font-size: sb-px2rems(11px);
 }

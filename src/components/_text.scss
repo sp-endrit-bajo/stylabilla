@@ -15,22 +15,6 @@
 //
 // Styleguide 2.3.
 
-$sb-font-size-display-l:    83px !default;
-$sb-font-size-display:      48px !default;
-$sb-font-size-header-l:     28px !default;
-$sb-font-size-header:       23px !default;
-$sb-font-size-header-s:     19px !default;
-$sb-font-size-text:         13px !default;
-$sb-font-size-text-s:       13px !default;
-
-$sb-line-height-display-l:  83px !default;
-$sb-line-height-display:    48px !default;
-$sb-line-height-header-l:   28px !default;
-$sb-line-height-header:     23px !default;
-$sb-line-height-header-s:   19px !default;
-$sb-line-height-text:       23px !default;
-$sb-line-height-text-s:     23px !default;
-
 @mixin sb-text-common-props {
   color: $sb-color-dark-3;
   font-weight: 400;
@@ -38,43 +22,50 @@ $sb-line-height-text-s:     23px !default;
 }
 
 .#{$ns}display--large {
-  @include sb-px2rems($sb-font-size-display-l, $sb-line-height-display-l);
   @include sb-text-common-props();
   font-family: $sb-primary-font-family;
+  font-size: sb-px2rems(83px);
+  line-height: sb-px2rems(83px);
 }
 
 .#{$ns}display {
-  @include sb-px2rems($sb-font-size-display, $sb-line-height-display);
   @include sb-text-common-props();
   font-family: $sb-primary-font-family;
+  font-size: sb-px2rems(48px);
+  line-height: sb-px2rems(48px);
 }
 
 .#{$ns}header--large {
-  @include sb-px2rems($sb-font-size-header-l, $sb-line-height-header-l);
   @include sb-text-common-props();
   font-family: $sb-primary-font-family;
+  font-size: sb-px2rems(28px);
+  line-height: sb-px2rems(28px);
 }
 
 .#{$ns}header {
-  @include sb-px2rems($sb-font-size-header, $sb-line-height-header);
   @include sb-text-common-props();
   font-family: $sb-primary-font-family;
+  font-size: sb-px2rems(23px);
+  line-height: sb-px2rems(23px);
 }
 
 .#{$ns}header--small {
-  @include sb-px2rems($sb-font-size-header-s, $sb-line-height-header-s);
   @include sb-text-common-props();
   font-family: $sb-primary-font-family;
+  font-size: sb-px2rems(19px);
+  line-height: sb-px2rems(19px);
 }
 
 .#{$ns}text {
-  @include sb-px2rems($sb-font-size-text, $sb-line-height-text);
   @include sb-text-common-props();
   font-family: $sb-primary-font-family;
+  font-size: sb-px2rems(16px);
+  line-height: sb-px2rems(23px);
 }
 
 .#{$ns}text--small {
-  @include sb-px2rems($sb-font-size-text-s, $sb-line-height-text-s);
   @include sb-text-common-props();
   font-family: $sb-base-font-family;
+  font-size: sb-px2rems(13px);
+  line-height: sb-px2rems(23px);
 }
