@@ -1,0 +1,29 @@
+// Anchors
+//
+// Anchor elements `<a>`
+//
+// Markup:
+// <a>Visit this page.</a>
+//
+// :hover     - hovered state
+// :focus     - focused state
+// :visited   - visited state
+//
+// Styleguide 2.4.
+
+a {
+  color: $sb-color-blue-2;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: $sb-color-blue-1;
+}
+
+a:focus {
+  box-shadow: 0 0 4px 2px transparentize($sb-color-blue-2, 0.9);
+}
+
+a:visited {
+  color: $sb-color-blue-1;
+}

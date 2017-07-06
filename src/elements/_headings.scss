@@ -1,0 +1,44 @@
+// Headings
+//
+// Heading elements `<h1> <h6>`. All heading elements have their default margins set to 0.
+//
+// Markup:
+// <h1>The quick brown fox jumps over the lazy dog</h1>
+// <h2>The quick brown fox jumps over the lazy dog</h2>
+// <h3>The quick brown fox jumps over the lazy dog</h3>
+// <h4>The quick brown fox jumps over the lazy dog</h4>
+// <h5>The quick brown fox jumps over the lazy dog</h5>
+// <h6>The quick brown fox jumps over the lazy dog</h6>
+//
+// Styleguide 2.1.
+
+$sb-font-size-h1: 28px !default;
+$sb-font-size-h2: 23px !default;
+$sb-font-size-h3: 19px !default;
+$sb-font-size-h4: 16px !default;
+$sb-font-size-h5: 13px !default;
+$sb-font-size-h6: 11px !default;
+
+h1 {
+  @include sb-px2rems($sb-font-size-h1);
+}
+
+h2 {
+  @include sb-px2rems($sb-font-size-h2);
+}
+
+h3 {
+  @include sb-px2rems($sb-font-size-h3);
+}
+
+h4 {
+  @include sb-px2rems($sb-font-size-h4);
+}
+
+h5 {
+  @include sb-px2rems($sb-font-size-h5);
+}
+
+h6 {
+  @include sb-px2rems($sb-font-size-h6);
+}

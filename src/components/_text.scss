@@ -1,0 +1,80 @@
+// Text Classes
+//
+// The text classes to format the text of any html element.
+//
+// Markup:
+// <h1 class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</h1>
+//
+// .sb-display--large     - Used for single dates when visualizing data
+// .sb-display            - Used for big numbers when visualizing data
+// .sb-header--large      - Used for page titles
+// .sb-header             - Used for main titles in different page sections
+// .sb-header--small      - Used for secondary titles
+// .sb-text               - Used for buttons and empty state text
+// .sb-text--small        - Used for all input controls
+//
+// Styleguide 2.3.
+
+$sb-font-size-display-l:    83px !default;
+$sb-font-size-display:      48px !default;
+$sb-font-size-header-l:     28px !default;
+$sb-font-size-header:       23px !default;
+$sb-font-size-header-s:     19px !default;
+$sb-font-size-text:         13px !default;
+$sb-font-size-text-s:       13px !default;
+
+$sb-line-height-display-l:  83px !default;
+$sb-line-height-display:    48px !default;
+$sb-line-height-header-l:   28px !default;
+$sb-line-height-header:     23px !default;
+$sb-line-height-header-s:   19px !default;
+$sb-line-height-text:       23px !default;
+$sb-line-height-text-s:     23px !default;
+
+@mixin sb-text-common-props {
+  color: $sb-color-dark-3;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.#{$ns}display--large {
+  @include sb-px2rems($sb-font-size-display-l, $sb-line-height-display-l);
+  @include sb-text-common-props();
+  font-family: $sb-primary-font-family;
+}
+
+.#{$ns}display {
+  @include sb-px2rems($sb-font-size-display, $sb-line-height-display);
+  @include sb-text-common-props();
+  font-family: $sb-primary-font-family;
+}
+
+.#{$ns}header--large {
+  @include sb-px2rems($sb-font-size-header-l, $sb-line-height-header-l);
+  @include sb-text-common-props();
+  font-family: $sb-primary-font-family;
+}
+
+.#{$ns}header {
+  @include sb-px2rems($sb-font-size-header, $sb-line-height-header);
+  @include sb-text-common-props();
+  font-family: $sb-primary-font-family;
+}
+
+.#{$ns}header--small {
+  @include sb-px2rems($sb-font-size-header-s, $sb-line-height-header-s);
+  @include sb-text-common-props();
+  font-family: $sb-primary-font-family;
+}
+
+.#{$ns}text {
+  @include sb-px2rems($sb-font-size-text, $sb-line-height-text);
+  @include sb-text-common-props();
+  font-family: $sb-primary-font-family;
+}
+
+.#{$ns}text--small {
+  @include sb-px2rems($sb-font-size-text-s, $sb-line-height-text-s);
+  @include sb-text-common-props();
+  font-family: $sb-base-font-family;
+}
