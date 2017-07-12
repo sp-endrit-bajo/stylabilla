@@ -26,6 +26,7 @@ $ns: "sb-" !default;
 @import "settings/fonts";
 @import "settings/box";
 @import "settings/responsive";
+@import "settings/animation";
 
 // Tools
 @import "tools/functions";
@@ -49,3 +50,6 @@ $ns: "sb-" !default;
 @import "components/text";
 @import "components/tile";
 @import "components/checkbox";
+
+// Trumps
+@import "trumps/utilities";

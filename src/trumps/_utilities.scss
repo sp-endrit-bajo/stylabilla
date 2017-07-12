@@ -1,0 +1,6 @@
+// Utility function that sets inline block to its direct children
+// Apply to wrapper element
+
+.#{$ns}u-wrap-inline > * {
+  display: inline-block;
+}

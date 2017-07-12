@@ -21,7 +21,7 @@ a:hover {
 }
 
 a:focus {
-  box-shadow: 0 0 4px 2px transparentize($sb-color-blue-2, 0.9);
+  box-shadow: $sb-box-shadow-3;
 }
 
 a:visited {
