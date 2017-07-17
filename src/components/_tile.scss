@@ -1,0 +1,7 @@
+// Tile
+.#{$ns}tile {
+  background-color: #fff;
+  border: 1px solid $sb-color-light-4;
+  border-radius: sb-px2rems(2px);
+  box-shadow: $sb-box-shadow-default;
+}

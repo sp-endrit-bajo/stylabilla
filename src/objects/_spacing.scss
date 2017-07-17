@@ -1,0 +1,129 @@
+// Spacing 
+//
+// To adjust the spacing between elements, use the provided `sb-margin` or `sb-padding` classes.
+//
+// Styleguide 6.
+
+// Margins
+// 
+// Classes that apply differently sized margins to your elements. 
+// The available directions are `top`, `bottom`, `left`, `right`, `vertical`, `horizontal`. 
+// The available sizes ranges from `xs` to `xl`.
+// The default class `sb-margin` adds the medium sized margin to all sides.
+// 
+// Markup:
+// <div class="sb-tile sb-margin-bottom-xs sb-padding">
+//   .sb-margin-bottom-xs
+// </div>
+// <div class="sb-tile sb-margin-bottom-s sb-padding">
+//   .sb-margin-bottom-s
+// </div>
+// <div class="sb-tile sb-margin-bottom sb-padding">
+//   .sb-margin-bottom
+// </div>
+// <div class="sb-tile sb-margin-bottom-l sb-padding">
+//   .sb-margin-bottom-l
+// </div>
+// <div class="sb-tile sb-margin-bottom-xl sb-padding">
+//   .sb-margin-bottom-xl
+// </div>
+//
+// Styleguide 6.1.
+
+$sb-spacing-map: (
+  "-xs": 7px,
+  "-s": 11px,
+  "": 16px,
+  "-l": 23px,
+  "-xl": 40px
+);
+
+@each $suffix, $spacing in $sb-spacing-map {
+  .#{$ns}margin-top#{$suffix} {
+    margin-top: sb-px2rems($spacing);
+  }
+
+  .#{$ns}margin-left#{$suffix} {
+    margin-left: sb-px2rems($spacing);
+  }
+
+  .#{$ns}margin-right#{$suffix} {
+    margin-right: sb-px2rems($spacing);
+  }
+
+  .#{$ns}margin-bottom#{$suffix} {
+    margin-bottom: sb-px2rems($spacing);
+  }
+
+  .#{$ns}margin-horizontal#{$suffix} {
+    margin-left: sb-px2rems($spacing);
+    margin-right: sb-px2rems($spacing);
+  }
+
+  .#{$ns}margin-vertical#{$suffix} {
+    margin-top: sb-px2rems($spacing);
+    margin-bottom: sb-px2rems($spacing);
+  }
+
+  .#{$ns}margin#{$suffix} {
+    margin: sb-px2rems($spacing);
+  }
+}
+
+// Paddings
+// 
+// Classes that apply differently sized paddings to your elements.
+// The available directions are `top`, `bottom`, `left`, `right`, `vertical`, `horizontal`. 
+// The available sizes ranges from `xs` to `xl`.
+// The default class `sb-padding` adds the medium sized padding to all sides.
+// 
+// Markup:
+// <div class="sb-tile  sb-padding-xs sb-margin-bottom">
+//   .sb-padding-xs
+// </div>
+// <div class="sb-tile  sb-padding-s sb-margin-bottom">
+//   .sb-padding-s
+// </div>
+// <div class="sb-tile sb-padding sb-margin-bottom">
+//   .sb-padding
+// </div>
+// <div class="sb-tile sb-padding-l sb-margin-bottom">
+//   .sb-padding-l
+// </div>
+// <div class="sb-tile sb-padding-xl sb-margin-bottom">
+//   .sb-padding-xl
+// </div>
+//
+// Styleguide 6.2.
+
+@each $suffix, $spacing in $sb-spacing-map {
+  .#{$ns}padding-top#{$suffix} {
+    padding-top: sb-px2rems($spacing);
+  }
+
+  .#{$ns}padding-left#{$suffix} {
+    padding-left: sb-px2rems($spacing);
+  }
+
+  .#{$ns}padding-right#{$suffix} {
+    padding-right: sb-px2rems($spacing);
+  }
+
+  .#{$ns}padding-bottom#{$suffix} {
+    padding-bottom: sb-px2rems($spacing);
+  }
+
+  .#{$ns}padding-horizontal#{$suffix} {
+    padding-left: sb-px2rems($spacing);
+    padding-right: sb-px2rems($spacing);
+  }
+
+  .#{$ns}padding-vertical#{$suffix} {
+    padding-top: sb-px2rems($spacing);
+    padding-bottom: sb-px2rems($spacing);
+  }
+
+  .#{$ns}padding#{$suffix} {
+    padding: sb-px2rems($spacing);
+  }
+}

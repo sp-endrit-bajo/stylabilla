@@ -24,9 +24,11 @@ $ns: "sb-" !default;
 // Settings
 @import "settings/colors";
 @import "settings/fonts";
+@import "settings/box";
+@import "settings/responsive";
 
 // Tools
-@import "tools/font-size";
+@import "tools/functions";
 
 // Generic
 @import "~sanitize.css";
@@ -38,6 +40,11 @@ $ns: "sb-" !default;
 @import "elements/paragraphs";
 @import "elements/anchors";
 
+// Objects
+@import "objects/grid";
+@import "objects/spacing";
+
 // Components
 @import "components/buttons";
 @import "components/text";
+@import "components/tile";
