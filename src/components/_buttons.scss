@@ -1,0 +1,253 @@
+// Buttons
+//
+// Buttons types.
+//
+// Markup:
+// <button class="sb-btn {{modifier_class}}">Button</button>
+// <button class="sb-btn {{modifier_class}}" aria-label="Star">
+//   <svg class="sb-btn__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 416 448">
+//     <path d="M284.25 251l76.5-74.25-105.5-15.5-47.25-95.5-47.25 95.5-105.5 15.5 76.5 74.25-18.25 105.25 94.5-49.75 94.25 49.75zM416 161.75c0 4.5-3.25 8.75-6.5 12l-90.75 88.5 21.5 125c0.25 1.75 0.25 3.25 0.25 5 0 6.75-3 12.5-10.25 12.5-3.5 0-7-1.25-10-3l-112.25-59-112.25 59c-3.25 1.75-6.5 3-10 3-7.25 0-10.5-6-10.5-12.5 0-1.75 0.25-3.25 0.5-5l21.5-125-91-88.5c-3-3.25-6.25-7.5-6.25-12 0-7.5 7.75-10.5 14-11.5l125.5-18.25 56.25-113.75c2.25-4.75 6.5-10.25 12.25-10.25s10 5.5 12.25 10.25l56.25 113.75 125.5 18.25c6 1 14 4 14 11.5z"></path>
+//   </svg>
+// </button>
+// <button class="sb-btn {{modifier_class}}">
+//   <svg class="sb-btn__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 352 448">
+//     <path d="M128 184v144c0 4.5-3.5 8-8 8h-16c-4.5 0-8-3.5-8-8v-144c0-4.5 3.5-8 8-8h16c4.5 0 8 3.5 8 8zM192 184v144c0 4.5-3.5 8-8 8h-16c-4.5 0-8-3.5-8-8v-144c0-4.5 3.5-8 8-8h16c4.5 0 8 3.5 8 8zM256 184v144c0 4.5-3.5 8-8 8h-16c-4.5 0-8-3.5-8-8v-144c0-4.5 3.5-8 8-8h16c4.5 0 8 3.5 8 8zM288 365v-237h-224v237c0 12 6.75 19 8 19h208c1.25 0 8-7 8-19zM120 96h112l-12-29.25c-0.75-1-3-2.5-4.25-2.75h-79.25c-1.5 0.25-3.5 1.75-4.25 2.75zM352 104v16c0 4.5-3.5 8-8 8h-24v237c0 27.5-18 51-40 51h-208c-22 0-40-22.5-40-50v-238h-24c-4.5 0-8-3.5-8-8v-16c0-4.5 3.5-8 8-8h77.25l17.5-41.75c5-12.25 20-22.25 33.25-22.25h80c13.25 0 28.25 10 33.25 22.25l17.5 41.75h77.25c4.5 0 8 3.5 8 8z"></path>
+//   </svg>
+//   Delete
+// </button>
+// <button class="sb-btn {{modifier_class}}" disabled>Disabled</button>
+//
+// .sb-btn--primary - Primary button
+// .sb-btn--secondary - Secondary button
+// .sb-btn--subtle - Subtle button
+//
+// Styleguide 7.
+
+$sb-btn-radius: sb-px2rems(2px);
+$sb-btn-padding-small: sb-px2rems(7px);
+$sb-btn-padding-medium: sb-px2rems(9px) sb-px2rems(16px);
+$sb-btn-padding-large: sb-px2rems(11px) sb-px2rems(23px);
+
+$sb-btn-shadow-opacity: 0.25;
+$sb-btn-shadow-opacity-dark: 0.5;
+
+$sb-btn-shadow: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity);
+$sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-dark);
+
+.#{$ns}btn {
+  background-color: $sb-color-white;
+  border: 1px solid $sb-color-dark-3;
+  border-radius: $sb-btn-radius;
+  color: $sb-color-dark-3;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $sb-primary-font-family;
+  font-variant: all-small-caps;
+  font-weight: 600;
+  line-height: 1;
+  padding: $sb-btn-padding-medium;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.1s, box-shadow 0.1s ease;
+  -webkit-font-smoothing: antialiased;
+
+  &::before {
+    border: 1px solid transparent;
+    border-radius: 1px;
+    content: '';
+    height: calc(100% - 2px);
+    left: 1px;
+    opacity: 0;
+    position: absolute;
+    top: 1px;
+    transform: scale(0.85);
+    transition: transform 0.05s linear;
+    width: calc(100% - 2px);
+  }
+
+  &:hover {
+    background-color: $sb-color-white;
+    border-color: $sb-color-dark-1;
+    box-shadow: $sb-btn-shadow;
+    color: $sb-color-dark-1;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $sb-color-dark-3;
+    outline: none;
+
+    &::before {
+      border-color: $sb-color-dark-3;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: $sb-color-white;
+    border-color: $sb-color-light-3;
+    box-shadow: none;
+    color: $sb-color-light-3;
+    cursor: inherit;
+  }
+
+  &__icon {
+    vertical-align: bottom;
+  }
+}
+
+.#{$ns}btn--primary {
+  background-color: $sb-color-blue-2;
+  border-color: $sb-color-blue-2;
+  color: $sb-color-white;
+
+  &:hover {
+    background-color: $sb-color-blue-1;
+    border-color: $sb-color-blue-1;
+    color: $sb-color-white;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $sb-color-blue-1;
+
+    &::before {
+      border-color: $sb-color-white;
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    background-color: $sb-color-light-3;
+    border-color: $sb-color-light-3;
+    color: $sb-color-white;
+  }
+}
+
+.#{$ns}btn--secondary {
+  background-color: $sb-color-white;
+  border-color: $sb-color-blue-2;
+  color: $sb-color-blue-2;
+
+  &:hover {
+    background-color: $sb-color-white;
+    border-color: $sb-color-blue-1;
+    color: $sb-color-blue-1;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $sb-color-blue-2;
+
+    &::before {
+      border-color: $sb-color-blue-2;
+    }
+  }
+}
+
+.#{$ns}btn--subtle {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: $sb-color-dark-3;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &[disabled],
+  &[disabled]:hover {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: $sb-btn-shadow;
+  }
+
+  &:active,
+  &:focus {
+    &::before {
+      border-color: $sb-color-light-4;
+    }
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    box-shadow: none;
+    color: $sb-color-light-3;
+  }
+}
+
+// Colors
+//
+// Buttons colors.
+//
+// Markup:
+// <button class="sb-btn sb-btn--primary {{modifier_class}}">Button</button>
+// <button class="sb-btn sb-btn--primary {{modifier_class}}" disabled>Disabled</button>
+//
+// .sb-btn--danger - Danger button
+// .sb-btn--warning - Warning button
+// .sb-btn--success - Success button
+//
+// Styleguide 7.1.
+
+@mixin btn-color($color, $color-dark, $color-darker) {
+  background-color: $color;
+  border-color: $color;
+  color: $sb-color-white;
+
+  &:hover {
+    background-color: $color-dark;
+    border-color: $color-dark;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $color-dark;
+  }
+}
+
+.#{$ns}btn--danger {
+  @include btn-color($sb-color-red-3, $sb-color-red-2, $sb-color-red-1);
+}
+
+.#{$ns}btn--warning {
+  @include btn-color($sb-color-yellow-3, $sb-color-yellow-2, $sb-color-yellow-1);
+}
+
+.#{$ns}btn--success {
+  @include btn-color($sb-color-green-3, $sb-color-green-2, $sb-color-green-1);
+}
+
+// Sizes
+//
+// Buttons sizes.
+//
+// Markup:
+// <button class="sb-btn {{modifier_class}}">Button</button>
+// <button class="sb-btn {{modifier_class}} sb-btn--secondary">Secondary</button>
+// <button class="sb-btn {{modifier_class}} sb-btn--primary">Primary</button>
+// <button class="sb-btn {{modifier_class}} sb-btn--subtle">Subtle</button>
+//
+// .sb-btn--large - Large button
+// .sb-btn--small - Small button
+//
+// Styleguide 7.2.
+
+.#{$ns}btn--small {
+  padding: $sb-btn-padding-small;
+}
+
+.#{$ns}btn--large {
+  padding: $sb-btn-padding-large;
+}
