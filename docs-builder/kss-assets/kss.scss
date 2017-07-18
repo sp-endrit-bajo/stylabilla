@@ -17,10 +17,11 @@ $kss-colors-background    : #eef3f7;
 
 $kss-nav-background       : #03566a;
 $kss-colors-heading       : #59636b;
+$kss-colors-quotes        : #666;
 
-$kss-colors-link          : #eef3f7;
-$kss-colors-link-visited  : #fff;
-$kss-colors-link-hover    : lighten($kss-colors-link, 20%);
+$kss-colors-link          : #00a5c9;
+$kss-colors-link-visited  : #00a5c9;
+$kss-colors-link-hover    : #008AAB;
 $kss-colors-link-active   : $kss-colors-link;
 
 $kss-font-size            : 16px;
@@ -38,7 +39,7 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
 
   a {
     color: $kss-colors-link;
-    text-decoration: none;
+    text-decoration: underline;
     transition-property: color;
     transition-duration: 0.5s;
 
@@ -54,12 +55,12 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   }
 
   p {
-    margin: $kss-vertical-rhythm 0 0 $kss-vertical-rhythm;
+    margin: $kss-vertical-rhythm 0 0 0;
     color: $kss-colors-heading;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin: $kss-vertical-rhythm 0 0 $kss-vertical-rhythm;
+    margin: $kss-vertical-rhythm 0 0 0;
     font-family: $kss-font-body;
     color: $kss-colors-heading;
     line-height: 1.15em;
@@ -155,7 +156,6 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
 
 #kss-node {
   margin: 0;
-  padding: 20px;
   background: #eef3f7;
 
   &.kss-fullscreen-mode {
@@ -167,8 +167,6 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   }
 
   @media screen and (min-width: 769px) {
-    padding: 0;
-
     .kss-main,
     .kss-sidebar {
       float: left;
@@ -180,10 +178,13 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   .kss-main {
     width: 100%;
     margin: 0 auto;
+    padding: 20px;
 
     @media screen and (min-width: 769px) {
+      padding: 0;
       width: 80%;
-      margin-left: 10%;
+      max-width: 1920px;
+      margin-left: 180px;
       padding: 0 20px 0 30px;
     }
   }
@@ -230,6 +231,12 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
     margin-bottom: ($kss-vertical-rhythm/2);
     padding: 0;
     list-style-type: none;
+
+    @media screen and (max-width: 769px) {
+      background: $kss-nav-background;
+      padding: 20px;
+      margin: 0;
+    }
   }
 
   .kss-nav__menu-item {
@@ -242,9 +249,16 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
     }
   }
 
+  .kss-nav__name {
+    color: #fff;
+    text-decoration: none;
+  }
+
   .kss-nav__menu-link {
     position: relative;
     display: inline-block;
+    color: #fff;
+    text-decoration: none;
 
     &:before {
       @media screen and (min-width: 769px) {
@@ -257,8 +271,12 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
       }
     }
 
+    &.is-in-viewport {
+
+    }
+
     &.is-in-viewport:before {
-      background-color: #000;
+      background-color: #00a5c9;
       width: 5px;
       transition: background-color .4s, width .6s;
     }
@@ -272,6 +290,7 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
       list-style-type: none;
       margin: 0;
       padding: 0;
+      text-indent: 10px;
 
       // @TODO: The ul is output even when there are no children. Fix this, so
       // we can put these :first-child and :last child styles back on the ul.
@@ -351,30 +370,28 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   }
   .kss-title__permalink {
     display: block;
-    color: #000;
     text-decoration: none;
-
+    color: $kss-colors-heading;
+    
     &:hover,
     &:focus,
     &:active {
-      color: $kss-colors-link;
-
       @media screen and (min-width: 607px) {
         .kss-title__permalink-hash {
           display: inline;
+          font-weight: 100;
+          color: $kss-colors-link;
         }
       }
     }
   }
   .kss-title__permalink-hash {
     display: none;
-    color: $kss-colors-heading;
   }
 
   .kss-toolbar {
-    margin: $kss-vertical-rhythm 0 0 $kss-vertical-rhythm;
+    margin: $kss-vertical-rhythm 0 0 0;
     display: inline-block;
-    box-shadow: 0 1px 0 0 #c8d2da, 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     background-color: #fff;
     border-right-color: #e0e0e0;
     border-bottom-color: #e0e0e0;
@@ -514,10 +531,9 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   }
 
   .kss-modifier__wrapper {
-    box-shadow: 0 1px 0 0 #c8d2da, 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     padding: 1rem;
     background: #fff;
-    margin: $kss-vertical-rhythm 0 0 $kss-vertical-rhythm;
+    margin: $kss-vertical-rhythm 0 0 0;
   }
   .is-fullscreen .kss-modifier__wrapper {
     // Un-do padding on .kss-section.
@@ -547,8 +563,10 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   }
   .kss-modifier__name {
     float: left;
-    padding-right: 10px;
-    font-weight: bold;
+    padding: 0px 5px;
+    font-family: monospace;
+    background: $kss-colors-background;
+    margin-right: 10px;
   }
   .is-fullscreen .kss-modifier__name {
     margin-left: 20px;
@@ -638,12 +656,11 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   }
 
   .kss-markup {
-    margin: $kss-vertical-rhythm 0 0 $kss-vertical-rhythm;
-    box-shadow: 0 1px 0 0 #c8d2da, 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    margin: $kss-vertical-rhythm 0 0 0;
     background: #fff;
 
     &[open] summary {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $kss-colors-background;
       margin-bottom: 3px;
     }
 
@@ -658,7 +675,8 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
 
   .kss-source {
     font-size: 80%;
-    margin: $kss-vertical-rhythm 0 0 $kss-vertical-rhythm;
+    margin: $kss-vertical-rhythm 0 0 0;
+    color: $kss-colors-heading;
   }
 
   .kss-github {
@@ -712,17 +730,22 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   /* Specify class=linenums on a pre to get line numbering */
   ol.linenums {
     margin: 0;
-    padding: 0 0 3px 0;
+    padding: 0;
     list-style-type: none;
 
     li {
       min-height: $kss-vertical-rhythm;
-      border-bottom: 1px solid #eee;
-      padding: 0 10px;
+      border-bottom: 1px solid $kss-colors-background;
+      padding: 0 15px;
       background: #fff;
+      font-size: 14px;
 
       &:first-child {
         padding-top: 3px;
+      }
+
+      &:last-child {
+        border: 0;
       }
     }
     /* Alternate shading for lines */

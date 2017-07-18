@@ -73,7 +73,7 @@
               {{referenceNumber}}
               <span class="kss-title__permalink-hash">
                 {{#if @root.hasNumericReferences}}
-                  #permalink
+                  #
                 {{else}}
                   #{{reference}}
                 {{/if}}
@@ -166,9 +166,6 @@
 
       {{#if example}}
         <div class="kss-modifier__wrapper">
-          <div class="kss-modifier__heading kss-style">
-            Example{{#if modifiers}}s{{/if}}
-          </div>
 
           {{#if modifiers}}
             <div class="kss-modifier__default-name kss-style">
@@ -211,7 +208,7 @@
 
       {{#if source.filename}}
         <div class="kss-source kss-style">
-          Source: <code>{{source.filename}}</code>, line {{source.line}}
+          Source: {{source.filename}}, line {{source.line}}
         </div>
       {{/if}}
 
