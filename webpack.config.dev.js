@@ -55,7 +55,7 @@ const config = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', loaders.css, loaders.sass]
+        use: ['style-loader', loaders.css, loaders.postcss, loaders.sass]
       },
       {
         test: /\.(css|scss)$/,

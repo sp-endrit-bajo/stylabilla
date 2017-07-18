@@ -7,7 +7,7 @@
 //   <input type="checkbox" id="checkbox-1" class="sb-checkbox__input">
 //   <label class="sb-checkbox__label" for="checkbox-1">
 //     <span class="sb-checkbox__faux">
-//       <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//       <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //         <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //       </svg>
 //     </span>
@@ -26,20 +26,22 @@
   &__faux {
     display: inline-block;
     position: relative;
-    vertical-align: text-bottom;
+    vertical-align: middle;
     width: sb-px2rems(16px);
     height: sb-px2rems(16px);
     border-radius: sb-px2rems(2px);
     border: 1px solid $sb-color-light-3;
-    background-color: #fff;
+    background-color: $sb-color-white;
     overflow: hidden;
   }
 
   &__checkmark {
-    fill: #fff;
+    fill: $sb-color-white;
     position: absolute;
     top: 50%;
     left: 50%;
+    width: sb-px2rems(8px);
+    height: sb-px2rems(7px);
     transform: translate(-50%, -300%);
     transition: transform 200ms $sb-transition-ease-spring;
   }
@@ -49,9 +51,8 @@
   }
 
   &__input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     position: absolute;
+    left: -999em;
   }
 
   &__input:focus + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
@@ -83,37 +84,37 @@
 
 // Checkbox Group
 //
-// A basic checkbox group.
+// A basic checkbox group. Apply a `.sb-checkbox-group` class to the checkbox wrapper.
 //
 // Markup:
-// <div>
+// <div class="sb-checkbox-group">
 //   <div class="sb-checkbox">
 //     <input type="checkbox" id="checkbox-2" class="sb-checkbox__input">
 //     <label class="sb-checkbox__label" for="checkbox-2">
 //       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //         </svg>
 //       </span>
 //       <span class="sb-margin-left-xs">Basic checkbox</span>
 //     </label>
 //   </div>
-//   <div class="sb-checkbox sb-margin-top-s">
+//   <div class="sb-checkbox">
 //     <input type="checkbox" id="checkbox-3" class="sb-checkbox__input">
 //     <label class="sb-checkbox__label" for="checkbox-3">
 //       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //         </svg>
 //       </span>
 //       <span class="sb-margin-left-xs">Basic checkbox</span>
 //     </label>
 //   </div>
-//   <div class="sb-checkbox sb-margin-top-s">
+//   <div class="sb-checkbox">
 //     <input type="checkbox" id="checkbox-4" class="sb-checkbox__input">
 //     <label class="sb-checkbox__label" for="checkbox-4">
 //       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //         </svg>
 //       </span>
@@ -124,39 +125,45 @@
 //
 // Styleguide 3.1.
 
+.#{$ns}checkbox-group {
+  .#{$ns}checkbox + .#{$ns}checkbox {
+    margin-top: sb-px2rems(11px);
+  }
+}
+
 // Checkbox Group - Inline
 //
-// A basic checkbox group aligned horizontally. Apply a `.sb-u-wrap-inline` class to the checkbox wrapper.
+// A basic checkbox group aligned horizontally. Apply a `.sb-checkbox-group--inline` class to the checkbox wrapper.
 //
 // Markup:
-// <div class="sb-u-wrap-inline">
-//   <div class="sb-checkbox sb-margin-right-s">
+// <div class="sb-checkbox-group--inline">
+//   <div class="sb-checkbox">
 //     <input type="checkbox" id="checkbox-5" class="sb-checkbox__input">
 //     <label class="sb-checkbox__label" for="checkbox-5">
 //       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //         </svg>
 //       </span>
 //       <span class="sb-margin-left-xs">Basic checkbox</span>
 //     </label>
 //   </div>
-//   <div class="sb-checkbox sb-margin-right-s">
+//   <div class="sb-checkbox">
 //     <input type="checkbox" id="checkbox-6" class="sb-checkbox__input">
 //     <label class="sb-checkbox__label" for="checkbox-6">
 //       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //         </svg>
 //       </span>
 //       <span class="sb-margin-left-xs">Basic checkbox</span>
 //     </label>
 //   </div>
-//   <div class="sb-checkbox sb-margin-right-s">
+//   <div class="sb-checkbox">
 //     <input type="checkbox" id="checkbox-7" class="sb-checkbox__input">
 //     <label class="sb-checkbox__label" for="checkbox-7">
 //       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" width="8" height="7" viewBox="0 0 8 7">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //         </svg>
 //       </span>
@@ -166,3 +173,13 @@
 // </div>
 //
 // Styleguide 3.2.
+
+.#{$ns}checkbox-group--inline {
+  .#{$ns}checkbox {
+    display: inline-block;
+  }
+
+  .#{$ns}checkbox + .#{$ns}checkbox {
+    margin-left: sb-px2rems(11px);
+  }
+}
