@@ -12,7 +12,8 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "format": "prettier-eslint --write \"src/**/*.scss\"",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build-docs": "yarn-run node-sass --output-style compressed docs-builder/kss-assets/kss.scss docs-builder/kss-assets/kss.css"
   },
   "bugs": {
     "url": "https://github.com/usabilla/stylabilla/issues"

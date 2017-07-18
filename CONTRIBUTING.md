@@ -34,6 +34,7 @@ For a component to be accepted into Stylabilla, it needs to meet the following r
     - Animations follow performance [best practices](https://developers.google.com/web/fundamentals/design-and-ui/animations/animations-and-performance)
     - Animations are minimal and scoped to just the properties that are changing
 - Browser support [requirements](https://usabilla.atlassian.net/wiki/display/DEV/Browser+Support+Strategy) are adhered to. This styleguide is used both in our application and in our customer facing widgets so needs to support the largest audience.
+- The compiled css has been checked and there is no unnecessary repetition, deeply nested classes etc.
 - Documentation is included, which:
     - Demonstrates examples of the component with different classes, children, or using different elements as parents
     - Includes ARIA attributes
