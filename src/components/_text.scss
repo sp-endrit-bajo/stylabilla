@@ -23,6 +23,7 @@
 
 .#{$ns}display--large {
   @include sb-text-common-props();
+
   font-family: $sb-primary-font-family;
   font-size: sb-px2rems(83px);
   line-height: sb-px2rems(83px);
@@ -30,6 +31,7 @@
 
 .#{$ns}display {
   @include sb-text-common-props();
+
   font-family: $sb-primary-font-family;
   font-size: sb-px2rems(48px);
   line-height: sb-px2rems(48px);
@@ -37,6 +39,7 @@
 
 .#{$ns}header--large {
   @include sb-text-common-props();
+
   font-family: $sb-primary-font-family;
   font-size: sb-px2rems(28px);
   line-height: sb-px2rems(28px);
@@ -44,6 +47,7 @@
 
 .#{$ns}header {
   @include sb-text-common-props();
+
   font-family: $sb-primary-font-family;
   font-size: sb-px2rems(23px);
   line-height: sb-px2rems(23px);
@@ -51,6 +55,7 @@
 
 .#{$ns}header--small {
   @include sb-text-common-props();
+
   font-family: $sb-primary-font-family;
   font-size: sb-px2rems(19px);
   line-height: sb-px2rems(19px);
@@ -58,6 +63,7 @@
 
 .#{$ns}text {
   @include sb-text-common-props();
+
   font-family: $sb-primary-font-family;
   font-size: sb-px2rems(16px);
   line-height: sb-px2rems(23px);
@@ -65,6 +71,7 @@
 
 .#{$ns}text--small {
   @include sb-text-common-props();
+
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(23px);

@@ -1,11 +1,12 @@
 // This function returns a rems value based on the given pixels.
 
-// Our approach has been that given our browser support requirements (IE9 and up), 
+// Our approach has been that given our browser support requirements (IE9 and up),
 // rems is the preferred option for sizing elements, and in particular typography.
 // This is because it is more accessible, supporting the browser font sizing options.
 // For more information: http://engageinteractive.co.uk/blog/em-vs-rem-vs-px
 
 @function sb-px2rems($px) {
   $base-font-size: 16px;
+
   @return ($px / $base-font-size) * 1rem;
 }

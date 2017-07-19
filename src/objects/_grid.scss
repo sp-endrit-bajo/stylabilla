@@ -1,3 +1,5 @@
+/* stylelint-disable declaration-no-important */
+
 // Grid
 //
 // A basic grid. Apply `sb-grid` to the wrapper element.
@@ -141,13 +143,13 @@ $gutter-width: sb-px2rems(20px);
 @for $i from 1 through $grid-columns {
   @media (max-width: $sb-breakpoint-s) {
     .#{$ns}col-s-#{$i} {
-       @include sb-grid-item(#{$i});
+      @include sb-grid-item(#{$i});
     }
   }
 
   @media (min-width: $sb-breakpoint-l) {
     .#{$ns}col-l-#{$i} {
-       @include sb-grid-item(#{$i});
+      @include sb-grid-item(#{$i});
     }
   }
 }
@@ -159,7 +161,7 @@ $gutter-width: sb-px2rems(20px);
 // Markup:
 // <div class="sb-grid">
 //   <div class="sb-tile sb-padding sb-col-5 sb-push-7">
-//     .sb-col-5 .sb-push-7 
+//     .sb-col-5 .sb-push-7
 //   </div>
 //   <div class="sb-tile sb-padding sb-col-8 sb-push-4">
 //     .sb-col-8 .sb-push-4

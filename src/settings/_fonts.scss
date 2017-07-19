@@ -1,16 +1,20 @@
 $sb-font-stack: (
-  Milo: (
-    Light: (
+  Milo:
+  (
+    Light:
+    (
       woff: 'assets/fonts/MiloOT-Light.woff',
       woff2: 'assets/fonts/MiloOT-Light.woff2',
       weight: 300
     ),
-    Regular: (
+    Regular:
+    (
       woff: 'assets/fonts/MiloOT.woff',
       woff2: 'assets/fonts/MiloOT.woff2',
       weight: 400
     ),
-    Medium: (
+    Medium:
+    (
       woff: 'assets/fonts/MiloOT-Medi.woff',
       woff2: 'assets/fonts/MiloOT-Medi.woff2',
       weight: 500
@@ -21,7 +25,6 @@ $sb-font-stack: (
 // Create @font-face declarations
 @each $font-name, $font-types in $sb-font-stack {
   @each $font-type, $font-settings in $font-types {
-
     $font-path-woff: map-get($font-settings, woff);
     $font-path-woff2: map-get($font-settings, woff2);
     $font-weight: map-get($font-settings, weight);
@@ -29,11 +32,13 @@ $sb-font-stack: (
     @font-face {
       font-family: $font-name;
       font-weight: $font-weight;
-      src: url($font-path-woff) format('woff'), 
-           url($font-path-woff2) format('woff2');
+      src:
+        url($font-path-woff) format('woff'),
+        url($font-path-woff2) format('woff2');
     }
   }
 }
 
-$sb-base-font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+$sb-base-font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+  Helvetica, Arial, sans-serif;
 $sb-primary-font-family: Milo, $sb-base-font-family;
