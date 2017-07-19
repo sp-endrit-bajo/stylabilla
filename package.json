@@ -10,11 +10,10 @@
   "description": "Usabilla's CSS styleguide.",
   "main": "src/index.scss",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
+    "dist": "NODE_ENV=production webpack",
     "lint": "stylelint \"src/**/*.scss\"",
     "lint:fix": "stylelint \"src/**/*.scss\" --fix",
-    "dev": "webpack-dev-server",
-    "build-docs": "yarn-run node-sass --output-style compressed docs-builder/kss-assets/kss.scss docs-builder/kss-assets/kss.css"
+    "dev": "webpack-dev-server"
   },
   "bugs": {
     "url": "https://github.com/usabilla/stylabilla/issues"
@@ -42,6 +41,7 @@
     "kss": "^3.0.0-beta.18",
     "kss-loader": "^0.3.2",
     "lint-staged": "^4.0.0",
+    "stylelint-webpack-plugin": "^0.8.0",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dev-server": "^2.5.0",
     "winston": "^2.3.1"

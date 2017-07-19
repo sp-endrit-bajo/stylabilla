@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin')
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 const path = require('path')
 
 const loaders = {
@@ -36,7 +37,8 @@ const loaders = {
 
 const config = {
   entry: {
-    stylabilla: './src/index'
+    stylabilla: './src/index',
+    docs: './docs-builder/kss-assets/kss.scss'
   },
 
   devServer: {
@@ -81,6 +83,7 @@ const config = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new StyleLintPlugin({configBasedir: path.resolve(__dirname, 'node_modules')}),
     new WebpackCleanupPlugin()
   ],
 

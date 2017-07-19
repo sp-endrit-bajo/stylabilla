@@ -2,7 +2,7 @@
   "title": "Stylabilla",
   "source": ["./src"],
   "css": [],
-  "js": ["./stylabilla.js"],
+  "js": ["./stylabilla.js", "./docs.js"],
   "destination": "./docs/",
   "builder": "./docs-builder",
   "homepage": "../README.md"
