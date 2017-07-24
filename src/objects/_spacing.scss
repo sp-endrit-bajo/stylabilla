@@ -2,7 +2,7 @@
 //
 // To adjust the spacing between elements, use the provided `sb-margin` or `sb-padding` classes.
 //
-// Styleguide 6.
+// Styleguide 4.
 
 // Margins
 //
@@ -28,7 +28,7 @@
 //   .sb-margin-bottom-xl
 // </div>
 //
-// Styleguide 6.1.
+// Styleguide 4.1.
 
 $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 
@@ -88,7 +88,7 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 //   .sb-padding-xl
 // </div>
 //
-// Styleguide 6.2.
+// Styleguide 4.2.
 
 @each $suffix, $spacing in $sb-spacing-map {
   .#{$ns}padding-top#{$suffix} {

@@ -2,11 +2,11 @@
 //
 // Input elements
 //
-// Styleguide 4.
+// Styleguide 7.
 
 .#{$ns}input {
   width: 100%;
-  border-radius: sb-px2rems(2px);
+  border-radius: sb-px2rems($sb-radius);
   border: 1px solid $sb-color-light-3;
   background-color: $sb-color-white;
   padding: sb-px2rems(11px);
@@ -17,12 +17,12 @@
   color: $sb-color-dark-3;
 
   &:hover {
-    box-shadow: $sb-box-shadow-1;
+    box-shadow: $sb-box-shadow;
   }
 
   &:focus {
     border-color: $sb-color-blue-2;
-    box-shadow: $sb-box-shadow-1;
+    box-shadow: $sb-box-shadow;
     outline: none;
   }
 
@@ -62,7 +62,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 4.1.
+// Styleguide 7.1.
 
 // Text input with validation
 //
@@ -84,7 +84,7 @@
 //   <p class="sb-form-control__validation">Error message here.</p>
 // </div>
 //
-// Styleguide 4.2.
+// Styleguide 7.2.
 
 // TODO - Move styles to separate form controls component
 // https://usabilla.atlassian.net/browse/STYLE-44
@@ -139,4 +139,4 @@
 //   </div>
 // </div>
 //
-// Styleguide 4.3.
+// Styleguide 7.3.

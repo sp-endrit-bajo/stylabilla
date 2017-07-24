@@ -1,7 +1,17 @@
 // Tile
+//
+// Tile element is used for example in a modal window.
+//
+// Markup:
+// <div class="sb-tile">
+//   <div class="sb-padding-xl">Tile component</div>
+// </div>
+//
+// Styleguide 11.
+
 .#{$ns}tile {
   background-color: $sb-color-white;
   border: 1px solid $sb-color-light-4;
-  border-radius: sb-px2rems(2px);
-  box-shadow: $sb-box-shadow-2;
+  border-radius: sb-px2rems($sb-radius);
+  box-shadow: $sb-box-shadow-l;
 }

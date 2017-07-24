@@ -5,13 +5,13 @@
 // Markup:
 // <h1 class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</h1>
 //
-// .sb-display--large     - Used for single dates when visualizing data
+// .sb-display--l     - Used for single dates when visualizing data
 // .sb-display            - Used for big numbers when visualizing data
-// .sb-header--large      - Used for page titles
+// .sb-header--l      - Used for page titles
 // .sb-header             - Used for main titles in different page sections
-// .sb-header--small      - Used for secondary titles
+// .sb-header--s      - Used for secondary titles
 // .sb-text               - Used for buttons and empty state text
-// .sb-text--small        - Used for all input controls
+// .sb-text--s        - Used for all input controls
 //
 // Styleguide 2.3.
 
@@ -21,7 +21,7 @@
   letter-spacing: 0;
 }
 
-.#{$ns}display--large {
+.#{$ns}display--l {
   @include sb-text-common-props();
 
   font-family: $sb-primary-font-family;
@@ -37,7 +37,7 @@
   line-height: sb-px2rems(48px);
 }
 
-.#{$ns}header--large {
+.#{$ns}header--l {
   @include sb-text-common-props();
 
   font-family: $sb-primary-font-family;
@@ -53,7 +53,7 @@
   line-height: sb-px2rems(23px);
 }
 
-.#{$ns}header--small {
+.#{$ns}header--s {
   @include sb-text-common-props();
 
   font-family: $sb-primary-font-family;
@@ -69,7 +69,7 @@
   line-height: sb-px2rems(23px);
 }
 
-.#{$ns}text--small {
+.#{$ns}text--s {
   @include sb-text-common-props();
 
   font-family: $sb-base-font-family;

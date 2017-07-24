@@ -9,7 +9,7 @@
 //   <button class="sb-btn sb-btn--active">Active</button>
 // </div>
 //
-// Styleguide 8.
+// Styleguide 10.
 
 .#{$ns}btn-group {
   display: inline-flex;
@@ -23,13 +23,13 @@
     margin-right: -1px;
 
     &:first-child {
-      border-bottom-left-radius: $sb-btn-radius;
-      border-top-left-radius: $sb-btn-radius;
+      border-bottom-left-radius: sb-px2rems($sb-radius);
+      border-top-left-radius: sb-px2rems($sb-radius);
     }
 
     &:last-child {
-      border-bottom-right-radius: $sb-btn-radius;
-      border-top-right-radius: $sb-btn-radius;
+      border-bottom-right-radius: sb-px2rems($sb-radius);
+      border-top-right-radius: sb-px2rems($sb-radius);
       margin-right: 0;
     }
 

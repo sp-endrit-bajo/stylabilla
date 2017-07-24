@@ -15,7 +15,7 @@
 //   </label>
 // </div>
 //
-// Styleguide 3.
+// Styleguide 6.
 
 .#{$ns}checkbox {
   &__label {
@@ -29,7 +29,7 @@
     vertical-align: middle;
     width: sb-px2rems(16px);
     height: sb-px2rems(16px);
-    border-radius: sb-px2rems(2px);
+    border-radius: sb-px2rems($sb-radius);
     border: 1px solid $sb-color-light-3;
     background-color: $sb-color-white;
     overflow: hidden;
@@ -43,11 +43,11 @@
     width: sb-px2rems(8px);
     height: sb-px2rems(7px);
     transform: translate(-50%, -300%);
-    transition: transform 200ms $sb-transition-ease-spring;
+    transition: transform $sb-transition;
   }
 
   &:hover .#{$ns}checkbox__faux {
-    box-shadow: $sb-box-shadow-1;
+    box-shadow: $sb-box-shadow;
   }
 
   &__input {
@@ -57,7 +57,7 @@
 
   &__input:focus + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
     border-color: $sb-color-blue-2;
-    box-shadow: $sb-box-shadow-1;
+    box-shadow: $sb-box-shadow;
   }
 
   &__input:checked + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
@@ -123,7 +123,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 3.1.
+// Styleguide 6.1.
 
 .#{$ns}checkbox-group {
   .#{$ns}checkbox + .#{$ns}checkbox {
@@ -172,7 +172,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 3.2.
+// Styleguide 6.2.
 
 .#{$ns}checkbox-group--inline {
   .#{$ns}checkbox {

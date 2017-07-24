@@ -21,23 +21,16 @@
 // .sb-btn--secondary - Secondary button
 // .sb-btn--subtle - Subtle button
 //
-// Styleguide 7.
+// Styleguide 9.
 
-$sb-btn-radius: sb-px2rems(2px);
-$sb-btn-padding-small: sb-px2rems(7px);
-$sb-btn-padding-medium: sb-px2rems(9px) sb-px2rems(16px);
-$sb-btn-padding-large: sb-px2rems(11px) sb-px2rems(23px);
-
-$sb-btn-shadow-opacity: 0.25;
-$sb-btn-shadow-opacity-dark: 0.5;
-
-$sb-btn-shadow: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity);
-$sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-dark);
+$sb-btn-padding: sb-px2rems(9px) sb-px2rems(16px);
+$sb-btn-padding-s: sb-px2rems(7px);
+$sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 
 .#{$ns}btn {
   background-color: $sb-color-white;
   border: 1px solid $sb-color-dark-3;
-  border-radius: $sb-btn-radius;
+  border-radius: sb-px2rems($sb-radius);
   color: $sb-color-dark-3;
   cursor: pointer;
   display: inline-block;
@@ -45,16 +38,16 @@ $sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-d
   font-variant: all-small-caps;
   font-weight: 600;
   line-height: 1;
-  padding: $sb-btn-padding-medium;
+  padding: $sb-btn-padding;
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  transition: color 0.1s, box-shadow 0.1s ease;
+  transition: color $sb-transition, box-shadow $sb-transition;
   -webkit-font-smoothing: antialiased;
 
   &::before {
     border: 1px solid transparent;
-    border-radius: 1px;
+    border-radius: sb-px2rems(1px);
     content: '';
     height: calc(100% - 2px);
     left: 1px;
@@ -62,14 +55,14 @@ $sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-d
     position: absolute;
     top: 1px;
     transform: scale(0.85);
-    transition: transform 0.05s linear;
+    transition: transform $sb-transition;
     width: calc(100% - 2px);
   }
 
   &:hover {
     background-color: $sb-color-white;
     border-color: $sb-color-dark-1;
-    box-shadow: $sb-btn-shadow;
+    box-shadow: $sb-box-shadow;
     color: $sb-color-dark-1;
   }
 
@@ -170,7 +163,7 @@ $sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-d
   &:hover,
   &:active,
   &:focus {
-    box-shadow: $sb-btn-shadow;
+    box-shadow: $sb-box-shadow;
   }
 
   &:active,
@@ -199,7 +192,7 @@ $sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-d
 // .sb-btn--warning - Warning button
 // .sb-btn--success - Success button
 //
-// Styleguide 7.1.
+// Styleguide 9.1.
 
 @mixin btn-color($color, $color-dark, $color-darker) {
   background-color: $color;
@@ -239,15 +232,15 @@ $sb-btn-shadow-dark: 0 1px 2px 0 rgba($sb-color-dark-3, $sb-btn-shadow-opacity-d
 // <button class="sb-btn {{modifier_class}} sb-btn--primary">Primary</button>
 // <button class="sb-btn {{modifier_class}} sb-btn--subtle">Subtle</button>
 //
-// .sb-btn--large - Large button
-// .sb-btn--small - Small button
+// .sb-btn--l - Large button
+// .sb-btn--s - Small button
 //
-// Styleguide 7.2.
+// Styleguide 9.2.
 
-.#{$ns}btn--small {
-  padding: $sb-btn-padding-small;
+.#{$ns}btn--s {
+  padding: $sb-btn-padding-s;
 }
 
-.#{$ns}btn--large {
-  padding: $sb-btn-padding-large;
+.#{$ns}btn--l {
+  padding: $sb-btn-padding-l;
 }
