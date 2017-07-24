@@ -12,13 +12,13 @@ module.exports = {
     "max-nesting-depth": 2,
     "selector-max-compound-selectors": 3,
     "selector-max-specificity": "0,3,0",
-    "declaration-no-important": true, //except in utils?
+    "declaration-no-important": true,
     "selector-no-qualifying-type": true,
     "no-duplicate-selectors": true,
 
     //Colors should only be used as variables
     "color-named": "never",
-    "color-no-hex": true, //except in the vars folder?
+    "color-no-hex": true,
 
     //Quotation consistency
     "font-family-name-quotes": "always-where-recommended",

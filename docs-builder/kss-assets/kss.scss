@@ -27,7 +27,7 @@ $kss-colors-link-hover    : #008AAB;
 $kss-colors-link-active   : $kss-colors-link;
 
 $kss-font-size            : 16px;
-$kss-vertical-rhythm      : $kss-font-size * 2;
+$kss-vertical-rhythm      : $kss-font-size * 1.5;
 
 // ------------------------------------------------------------------------------
 // Wrap all of this builder's base HTML styling inside a .kss-style selector.
@@ -78,6 +78,10 @@ $kss-vertical-rhythm      : $kss-font-size * 2;
   h4 { font-size: $kss-font-size * 2;     }
   h5 { font-size: $kss-font-size * 1.875; }
   h6 { font-size: $kss-font-size * 1.75;  }
+
+  li {
+    color: $kss-colors-heading;
+  }
 
   blockquote {
     color: $kss-colors-quotes;
