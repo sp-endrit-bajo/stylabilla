@@ -54,3 +54,7 @@ $ns: 'sb-' !default;
 @import 'components/upload';
 @import 'components/buttons';
 @import 'components/buttons-group';
+@import 'components/preview';
+
+// Trumps
+@import 'trumps/text';

@@ -1,0 +1,23 @@
+// Preview
+//
+// Preview area.
+//
+// Markup:
+// <div class="sb-preview {{modifier_class}}">
+//   <div class="sb-padding-xl sb-text--center">
+//     Preview
+//   </div>
+// </div>
+//
+// .sb-preview--active - Active preview
+//
+// Styleguide 13.
+
+.#{$ns}preview {
+  background-color: $sb-color-light-4;
+  color: $sb-color-light-1;
+
+  &--active {
+    background-color: $sb-color-blue-4;
+  }
+}
