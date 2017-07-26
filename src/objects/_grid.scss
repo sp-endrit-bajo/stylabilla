@@ -33,6 +33,29 @@
   flex-wrap: wrap;
 }
 
+// Containers
+//
+// Two container classes. All page containers should use `sb-container` which is set to a max-width of 1920px. You can also use `sb-container-fluid` for full width containers.
+//
+// Markup:
+// <div class="sb-container sb-tile sb-padding">
+//   .sb-container
+// </div>
+// <div class="sb-container-fluid sb-tile sb-padding">
+//   .sb-container-fluid
+// </div>
+//
+// Styleguide 3.1
+
+.#{$ns}container {
+  max-width: sb-px2rems($sb-container);
+  width: 100%;
+}
+
+.#{$ns}container-fluid {
+  width: 100%;
+}
+
 // Columns
 //
 // Column classes. Use `sb-col-#{i}` to set the desired column width.
@@ -74,7 +97,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 3.1.
+// Styleguide 3.2.
 
 $grid-columns: 12;
 $gutter-width: sb-px2rems(20px);
@@ -138,7 +161,7 @@ $gutter-width: sb-px2rems(20px);
 //   </div>
 // </div>
 //
-// Styleguide 3.2.
+// Styleguide 3.3.
 
 @for $i from 1 through $grid-columns {
   @media (max-width: $sb-breakpoint-s) {
@@ -174,7 +197,7 @@ $gutter-width: sb-px2rems(20px);
 //   </div>
 // </div>
 //
-// Styleguide 3.3.
+// Styleguide 3.4.
 
 @for $i from 1 through $grid-columns {
   .#{$ns}push-#{$i} {
@@ -202,7 +225,7 @@ $gutter-width: sb-px2rems(20px);
 //   </div>
 // </div>
 //
-// Styleguide 3.4.
+// Styleguide 3.5.
 
 @for $i from 1 through $grid-columns {
   .#{$ns}pull-#{$i} {
