@@ -41,6 +41,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
   padding: $sb-btn-padding;
   position: relative;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
   transition: color $sb-transition, box-shadow $sb-transition;
   -webkit-font-smoothing: antialiased;
@@ -76,6 +77,10 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
       opacity: 1;
       transform: none;
     }
+  }
+
+  &:visited {
+    color: $sb-color-dark-3;
   }
 
   &[disabled],
@@ -116,6 +121,10 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
     }
   }
 
+  &:visited {
+    color: $sb-color-white;
+  }
+
   &[disabled],
   &[disabled]:hover {
     background-color: $sb-color-light-3;
@@ -142,6 +151,10 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
     &::before {
       border-color: $sb-color-blue-2;
     }
+  }
+
+  &:visited {
+    color: $sb-color-blue-2;
   }
 }
 

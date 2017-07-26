@@ -37,7 +37,7 @@
   line-height: sb-px2rems(48px);
 }
 
-.#{$ns}header--l {
+.#{$ns}title--l {
   @include sb-text-common-props();
 
   font-family: $sb-primary-font-family;
@@ -45,7 +45,7 @@
   line-height: sb-px2rems(28px);
 }
 
-.#{$ns}header {
+.#{$ns}title {
   @include sb-text-common-props();
 
   font-family: $sb-primary-font-family;
@@ -53,7 +53,7 @@
   line-height: sb-px2rems(23px);
 }
 
-.#{$ns}header--s {
+.#{$ns}title--s {
   @include sb-text-common-props();
 
   font-family: $sb-primary-font-family;
