@@ -15,63 +15,37 @@
 //
 // Styleguide 2.3.
 
-@mixin sb-text-common-props {
-  color: $sb-color-dark-3;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
 .#{$ns}display--l {
-  @include sb-text-common-props();
-
-  font-family: $sb-primary-font-family;
   font-size: sb-px2rems(83px);
   line-height: sb-px2rems(83px);
 }
 
 .#{$ns}display {
-  @include sb-text-common-props();
-
-  font-family: $sb-primary-font-family;
   font-size: sb-px2rems(48px);
   line-height: sb-px2rems(48px);
 }
 
 .#{$ns}title--l {
-  @include sb-text-common-props();
-
-  font-family: $sb-primary-font-family;
   font-size: sb-px2rems(28px);
   line-height: sb-px2rems(28px);
 }
 
 .#{$ns}title {
-  @include sb-text-common-props();
-
-  font-family: $sb-primary-font-family;
   font-size: sb-px2rems(23px);
   line-height: sb-px2rems(23px);
 }
 
 .#{$ns}title--s {
-  @include sb-text-common-props();
-
-  font-family: $sb-primary-font-family;
   font-size: sb-px2rems(19px);
   line-height: sb-px2rems(19px);
 }
 
 .#{$ns}text {
-  @include sb-text-common-props();
-
-  font-family: $sb-primary-font-family;
   font-size: sb-px2rems(16px);
   line-height: sb-px2rems(23px);
 }
 
 .#{$ns}text--s {
-  @include sb-text-common-props();
-
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(23px);
