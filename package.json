@@ -14,8 +14,7 @@
     "lint": "stylelint \"src/**/*.scss\"",
     "lint:fix": "stylelint \"src/**/*.scss\" --fix",
     "dev": "webpack-dev-server",
-    "prepare": "npm run dist",
-    "prepublish": "npm run dist"
+    "postinstall": "npm run dist",
   },
   "bugs": {
     "url": "https://github.com/usabilla/stylabilla/issues"
