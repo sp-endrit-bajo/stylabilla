@@ -1,6 +1,14 @@
 // Input
 //
-// Input elements
+// A basic input component that should be used for email, number, password, tel, text and url inputs.
+//
+// Markup:
+// <div class="sb-form-control">
+//   <label class="sb-label sb-padding-bottom-xs" for="input-id-1">Input Label</label>
+//   <div class="sb-input-wrapper">
+//     <input id="input-id-1" class="sb-input" placeholder="Placeholder Text">
+//   </div>
+// </div>
 //
 // Styleguide 7.
 
@@ -36,36 +44,9 @@
   }
 }
 
-.#{$ns}input-wrapper {
-  position: relative;
-
-  .#{$ns}input-icon {
-    width: sb-px2rems(14px);
-    height: sb-px2rems(14px);
-    position: absolute;
-    top: 50%;
-    right: sb-px2rems(7px);
-    transform: translateY(-50%);
-  }
-}
-
-// Text input
+// Input with validation
 //
-// A basic text input
-//
-// Markup:
-// <div class="sb-form-control">
-//   <label class="sb-label sb-padding-bottom-xs" for="text-input-id-1">Input Label</label>
-//   <div class="sb-input-wrapper">
-//     <input type="text" id="text-input-id-1" class="sb-input" placeholder="Placeholder Text">
-//   </div>
-// </div>
-//
-// Styleguide 7.1.
-
-// Text input with validation
-//
-// A basic text input - with validation
+// A basic input with success and error validation
 //
 // .sb-form-control--invalid - invalid input
 // .sb-form-control--success - success input
@@ -75,15 +56,33 @@
 //   <label class="sb-label sb-padding-bottom-xs" for="text-input-id-1">Input Label</label>
 //   <div class="sb-input-wrapper">
 //     <input type="text" id="text-input-id-1" class="sb-input" placeholder="Placeholder Text">
-//     <svg class="sb-input-icon" width="14" height="14" viewBox="0 0 14 14">
-//       <path class="sb-input-icon--error" d="M6.17647059,7 L3.5,9.67647059 L4.32352941,10.5 L7,7.82352941 L9.67647059,10.5 L10.5,9.67647059 L7.82352941,7 L10.5,4.32352941 L9.67647059,3.5 L7,6.17647059 L4.32352941,3.5 L3.5,4.32352941 L6.17647059,7 Z M7,0 C10.8661875,0 14,3.1338125 14,7 C14,10.8661875 10.8661875,14 7,14 C3.1338125,14 0,10.8661875 0,7 C0,3.1338125 3.1338125,0 7,0 Z" fill="#F4606E"></path>
-//       <path class="sb-input-icon--success" d="M7,0 C3.1338125,0 0,3.1338125 0,7 C0,10.8661875 3.1338125,14 7,14 C10.8661875,14 14,10.8661875 14,7 C14,3.1338125 10.8661875,0 7,0 M5.57852066,10.5 L2.625,6.82666099 L3.93391119,5.5225724 L5.57896647,7.51873935 L10.733473,3.5 L11.375,4.11158433 L5.57852066,10.5"></path>
+//     <svg class="sb-icon sb-icon--error" id="sb-icon-error" viewBox="0 0 16 16">
+//       <path d="M6.17647059,7 L3.5,9.67647059 L4.32352941,10.5 L7,7.82352941 L9.67647059,10.5 L10.5,9.67647059 L7.82352941,7 L10.5,4.32352941 L9.67647059,3.5 L7,6.17647059 L4.32352941,3.5 L3.5,4.32352941 L6.17647059,7 Z M7,0 C10.8661875,0 14,3.1338125 14,7 C14,10.8661875 10.8661875,14 7,14 C3.1338125,14 0,10.8661875 0,7 C0,3.1338125 3.1338125,0 7,0 Z"></path>
+//     </svg>
+//     <svg class="sb-icon sb-icon--success" id="sb-icon-success" viewBox="0 0 16 16">
+//       <path d="M7,0 C3.1338125,0 0,3.1338125 0,7 C0,10.8661875 3.1338125,14 7,14 C10.8661875,14 14,10.8661875 14,7 C14,3.1338125 10.8661875,0 7,0 M5.57852066,10.5 L2.625,6.82666099 L3.93391119,5.5225724 L5.57896647,7.51873935 L10.733473,3.5 L11.375,4.11158433 L5.57852066,10.5"></path>
 //     </svg>
 //   </div>
 //   <p class="sb-form-control__validation">Error message here.</p>
 // </div>
 //
-// Styleguide 7.2.
+// Styleguide 7.1.
+
+.#{$ns}input-wrapper {
+  position: relative;
+
+  .#{$ns}input {
+    padding-right: sb-px2rems(23px);
+  }
+
+  .#{$ns}icon {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: sb-px2rems(7px);
+    transform: translateY(-50%);
+  }
+}
 
 // TODO - Move styles to separate form controls component
 // https://usabilla.atlassian.net/browse/STYLE-44
@@ -96,46 +95,15 @@
     color: $sb-color-red-1;
   }
 
-  .#{$ns}input {
-    padding-right: sb-px2rems(23px);
-  }
-
-  .#{$ns}input-icon--error,
-  .#{$ns}input-icon--success {
-    display: none;
-  }
-
-  .#{$ns}input-icon--error {
-    fill: $sb-color-red-1;
-  }
-
-  .#{$ns}input-icon--success {
-    fill: $sb-color-green-2;
-  }
-
-  &--invalid .#{$ns}input-icon--error {
-    display: block;
+  &--invalid .#{$ns}icon--error {
+    display: inline;
   }
 
   &--invalid &__validation {
     display: block;
   }
 
-  &--success .#{$ns}input-icon--success {
-    display: block;
+  &--success .#{$ns}icon--success {
+    display: inline;
   }
 }
-
-// Number input
-//
-// A basic number input
-//
-// Markup:
-// <div class="sb-form-control">
-//   <label class="sb-label sb-padding-bottom-xs" for="number-input-id-1">Input Label</label>
-//   <div class="sb-input-wrapper">
-//    <input type="number" id="number-input-id-1" class="sb-input">
-//   </div>
-// </div>
-//
-// Styleguide 7.3.
