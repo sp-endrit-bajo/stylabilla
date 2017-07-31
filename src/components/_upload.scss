@@ -29,6 +29,8 @@
 // Styleguide 8.
 
 .#{$ns}upload {
+  position: relative;
+
   .#{$ns}btn,
   &__input {
     display: none;
