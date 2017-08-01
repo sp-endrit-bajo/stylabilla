@@ -40,7 +40,7 @@ For a component to be accepted into Stylabilla, it needs to meet the following r
     - Includes ARIA attributes
     - Is readable and looks consistent with other components when compiled into the guide
     - Follows the [kss-node specifications](https://github.com/kss-node/kss/blob/spec/SPEC.md)
-    
+
 
 ## Style Conventions
 
@@ -60,23 +60,18 @@ For example:
 .site-search--full {} /* Modifier */
 ```
 
-Use class selectors wherever possible. Use attribute selectors only if absolutely required.
-Do not use ids or element/tag selectors.
+Use class selectors wherever possible. Use attribute selectors only if absolutely necessary and do not use ids or element/tag selectors.
 
-[Nesting selectors is bad](http://markdotto.com/2015/07/20/css-nesting/) - only allow 2 levels max.
+[Nesting selectors is bad](http://markdotto.com/2015/07/20/css-nesting/). We only allow 2 levels max.
 
-Layout styling should be separate to component styling. Individual components
-should not make assumptions about their layout (e.g. by setting margins, padding or position).
+Individual components should not make assumptions about their layout (e.g. by setting margins, padding or position).
 
-Avoid the anti-pattern of applying styles in a generic class and then undoing them in a
-more specific class.
+Avoid applying styles in a generic class and then undoing them in a more specific class.
 
 If you haven't read Harry Roberts' article about [code smells in css](https://csswizardry.com/2012/11/code-smells-in-css/), please read it before contributing :)
 
 
 ## Making Contributions
-
-Stylabilla is internal open-source, meaning anyone can contribute. 
 
 We use a simple [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow), where all changes are made in feature branches which are then pull requested into `master`. Each pull request must be assigned to the team, and reviewed by at least one person. If the changes are significant, then the reviewer should be someone who is experienced or knows the project well. Please include a screenshot of your change (if your change is visual) and/or a [gif](http://recordit.co/) (if your change is interactive) to aid the review process.
 
@@ -89,8 +84,6 @@ docs(contributing): add documentation for contribution standards
 Add documentation to help developers follow the same standards for making changes to this repository.
 ```
 
-Note that a precommit hook is included which runs [Prettier](https://github.com/prettier/prettier) on your code before you commit.
-
 Please be aware of what we consider to be
 [breaking changes](#breaking-changes) and avoid making them if possible. If it is a breaking change, add the `breaking change` label.
 
@@ -99,14 +92,12 @@ Please be aware of what we consider to be
 
 Stylabilla follows [semantic versioning](http://semver.org). Users should be able to update patch and minor versions without requiring any changes to their code. Determining what constitutes a breaking change and therefore require a major version update can be tricky in CSS.
 
-We want our product design to evolve for free over time which may include layout changes that are predictable and which should have low impact on apps provided they have not used fixed sizes on elements.
-
 The general rule is: **if it requires consumers to make changes to their code, then it's a breaking change**.
 
 This includes:
 
-- Removing or renaming existing classes. All our classes are public and should be considered Stylabilla's contractual "API"
-- Removing or renaming existing mixins, variables or anything else that would be available if Stylabilla's individual SCSS files were imported by a project
+- Removing or renaming existing classes
+- Removing or renaming existing mixins, variables or anything else that is able to be imported by a project
 - Modifying properties of existing classes in a way that could break standard web layouts implemented with those classes
 
 New CSS classes are not considered breaking changes. Changes to existing classes that do not impact
