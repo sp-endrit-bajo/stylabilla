@@ -8,7 +8,7 @@
     "url": "git@github.com:usabilla/stylabilla.git"
   },
   "description": "Usabilla's CSS styleguide.",
-  "main": "src/index.scss",
+  "main": "dist/stylabilla.css",
   "scripts": {
     "dist": "NODE_ENV=production webpack",
     "lint": "stylelint \"src/**/*.scss\"",
