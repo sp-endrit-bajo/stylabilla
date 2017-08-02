@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: $(cat $HOME/$CIRCLE_PROJECT_REPONAME/.nvmrc)
+
+notify:
+  webhooks:
+    - url: https://public.intranet.usabilla.nl/wall-e/incoming/circleci-build-webhook
+
+dependencies:
+  override:
+    - yarn install
+
+test:
+  override:
+    - yarn lint
