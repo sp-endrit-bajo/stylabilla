@@ -1,0 +1,90 @@
+// Loader
+//
+// Markup:
+// <div class="sb-loader {{modifier_class}}" role="alert" aria-busy="true">
+//   <svg viewBox="0 0 50 50" class="sb-spinner" aria-hidden="true">
+//     <defs>
+//       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z" id="path-track"></path>
+//       <mask id="mask-track" fill="white">
+//         <use xlink:href="#path-track"></use>
+//       </mask>
+//     </defs>
+//     <g id="loader" fill-rule="evenodd">
+//       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z"></path>
+//       <use class="sb-spinner__secondary" xlink:href="#path-track"></use>
+//       <rect class="sb-spinner__primary" mask="url(#mask-track)" width="25" height="25"></rect>
+//       <path class="sb-spinner__primary" d="M0,25 C0,26.3807119 1.11928813,27.5 2.5,27.5 L2.5,27.5 C3.88071187,27.5 5,26.3807119 5,25 L0,25 Z"></path>
+//       <path class="sb-spinner__primary" d="M23.75,1.25 C23.75,2.63071187 24.8692881,3.75 26.25,3.75 L26.25,3.75 C27.6307119,3.75 28.75,2.63071187 28.75,1.25 L23.75,1.25 Z" transform="translate(26.25, 2.5) rotate(-90) translate(-26.25, -2.5) "></path>
+//     </g>
+//   </svg>
+//   <span class="sb-loader__label">Loading page, please wait</span>
+// </div>
+//
+// .sb-loader--inline - Inline loader
+//
+// Styleguide 16.
+
+$sb-loader-spinner-size: sb-px2rems(50px);
+$sb-loader-spinner-size--inline: sb-px2rems(16px);
+$sb-loader-padding: sb-px2rems(16px);
+$sb-loader-padding--inline: sb-px2rems(11px);
+$sb-loader-animation-duration: 0.8s;
+
+.#{$ns}spinner {
+  display: inline-block;
+  width: $sb-loader-spinner-size;
+  height: $sb-loader-spinner-size;
+  animation-duration: $sb-loader-animation-duration;
+  animation-name: sb-rotate-loader;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &__primary {
+    fill: $sb-color-blue-2;
+  }
+
+  &__secondary {
+    fill: $sb-color-light-3;
+  }
+}
+
+.#{$ns}loader {
+  position: relative;
+  text-align: center;
+
+  &__label {
+    display: block;
+    padding: $sb-loader-padding 0;
+  }
+
+  &--inline {
+    background: $sb-color-white;
+    border: 1px solid $sb-color-light-3;
+    border-radius: $sb-radius;
+    padding: 0 $sb-loader-padding--inline;
+    text-align: left;
+
+    .#{$ns}loader__label {
+      padding: $sb-loader-padding--inline 0;
+    }
+
+    .#{$ns}spinner {
+      position: absolute;
+      width: $sb-loader-spinner-size--inline;
+      height: $sb-loader-spinner-size--inline;
+      top: 50%;
+      right: $sb-loader-padding--inline;
+      margin-top: -1 * $sb-loader-spinner-size--inline / 2;
+    }
+  }
+}
+
+@keyframes sb-rotate-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
