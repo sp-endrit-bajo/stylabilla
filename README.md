@@ -9,6 +9,3 @@ It is [inspired by Stripe's approach](http://www.youtube.com/watch?feature=playe
 Stylabilla is "internal open source", meaning that we welcome contributions from anyone working at Usabilla. See [CONTRIBUTING.md](https://github.com/usabilla/stylabilla/blob/master/CONTRIBUTING.md) for details on how to contribute.
 
 The project is under development and changing all the time and we don't recommend using it in your own projects if you don't work at Usabilla, but it may give you some ideas for your own living styleguide.
-
-## Using Stylabilla
-Coming soon!
