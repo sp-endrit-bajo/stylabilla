@@ -83,16 +83,20 @@ docs(contributing): add documentation for contribution standards
 
 Add documentation to help developers follow the same standards for making changes to this repository.
 ```
+**Note that commit messages can create a release so please read the following!**
 
-Please be aware of what we consider to be
-[breaking changes](#breaking-changes) and avoid making them if possible. If it is a breaking change, add the `breaking change` label.
+## Semantic Versioning and Releases
 
+Stylabilla follows [semantic versioning](http://semver.org). Applications using Stylabilla should be able to update patch and minor versions without requiring any changes to their code.
+We also use [semantic-release](https://github.com/semantic-release/semantic-release), meaning that when a pull request is merged, the following will occur:
 
-## Breaking Changes
+Commit Type | NPM Release
+--- | ---
+`fix` | patch
+`feat` | minor/feature
+`BREAKING CHANGE` (in commit body) | major/breaking
 
-Stylabilla follows [semantic versioning](http://semver.org). Users should be able to update patch and minor versions without requiring any changes to their code. Determining what constitutes a breaking change and therefore require a major version update can be tricky in CSS.
-
-The general rule is: **if it requires consumers to make changes to their code, then it's a breaking change**.
+Avoid making breaking changes if possible. The general rule is: **if it requires consumers to make changes to their code, then it's a breaking change**.
 
 This includes:
 
@@ -100,5 +104,4 @@ This includes:
 - Removing or renaming existing mixins, variables or anything else that is able to be imported by a project
 - Modifying properties of existing classes in a way that could break standard web layouts implemented with those classes
 
-New CSS classes are not considered breaking changes. Changes to existing classes that do not impact
-layout are also not considered breaking changes (e.g. font-weight, color, border-color, box-shadow, etc).
+New CSS classes are not considered breaking changes. Changes to existing classes that do not impact layout are also not considered breaking changes (e.g. font-weight, color, border-color, box-shadow, etc).
