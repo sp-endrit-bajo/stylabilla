@@ -11,7 +11,7 @@
 //   </button>
 //   <h1 class="sb-header__title sb-title">Header title</h1>
 //   <p class="sb-header__info sb-text">Info regarding this page</p>
-//   <a href="#" class="sb-header__btn sb-btn sb-btn--primary">Action button</a>
+//   <button href="#" class="sb-header__btn sb-btn sb-btn--primary">Action button</button>
 // </header>
 //
 // Styleguide 12.
@@ -19,6 +19,7 @@
 .#{$ns}header {
   box-shadow: $sb-box-shadow-subtle;
   overflow: auto;
+  background: $sb-color-white;
 
   &__title,
   &__info {
