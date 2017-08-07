@@ -70,6 +70,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
   &:active,
   &:focus {
     border-color: $sb-color-dark-3;
+    box-shadow: $sb-box-shadow;
     outline: none;
 
     &::before {

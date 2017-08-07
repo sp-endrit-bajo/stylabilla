@@ -4,9 +4,10 @@
 //
 // Markup:
 // <div class="sb-btn-group">
-//   <button class="sb-btn">Button</button>
-//   <button class="sb-btn" disabled>Disabled</button>
+//   <button class="sb-btn">Button one</button>
+//   <button class="sb-btn">Button two</button>
 //   <button class="sb-btn sb-btn--active">Active</button>
+//   <button class="sb-btn" disabled>Disabled</button>
 // </div>
 //
 // Styleguide 10.
@@ -41,8 +42,7 @@
     }
 
     &--active,
-    &:active,
-    &:focus {
+    &:active {
       border-color: $sb-color-blue-2;
       color: $sb-color-blue-2;
       z-index: 2;
@@ -52,8 +52,12 @@
       border-color: transparent;
     }
 
-    &:active::before,
     &:focus::before {
+      border-color: $sb-color-light-1;
+    }
+
+    &--active:focus::before,
+    &:active::before {
       border-color: $sb-color-blue-2;
     }
 
