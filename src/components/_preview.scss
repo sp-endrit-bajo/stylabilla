@@ -4,8 +4,8 @@
 //
 // Markup:
 // <div class="sb-preview {{modifier_class}}">
-//   <div class="sb-padding-xl sb-text--center">
-//     Preview
+//   <div class="sb-preview__frame">
+//     <p class="sb-preview__label">Preview</p>
 //   </div>
 // </div>
 //
@@ -16,8 +16,29 @@
 .#{$ns}preview {
   background-color: $sb-color-light-4;
   color: $sb-color-light-1;
+  position: relative;
+  overflow: hidden;
+  min-height: sb-px2rems(100px);
 
   &--active {
     background-color: $sb-color-blue-4;
+  }
+
+  &__label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__frame {
+    position: absolute;
+    top: sb-px2rems(20px);
+    left: sb-px2rems(20px);
+    bottom: sb-px2rems(20px);
+    right: sb-px2rems(20px);
+    border-radius: $sb-radius;
+    border: 2px solid currentColor;
+    overflow: hidden;
   }
 }
