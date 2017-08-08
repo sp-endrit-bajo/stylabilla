@@ -26,7 +26,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 3.
+// Styleguide grid
 
 .#{$ns}grid {
   display: flex;
@@ -45,7 +45,7 @@
 //   .sb-container-fluid
 // </div>
 //
-// Styleguide 3.1
+// Styleguide grid.containers
 
 .#{$ns}container {
   max-width: sb-px2rems($sb-container);
@@ -97,7 +97,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 3.2.
+// Styleguide grid.columns
 
 $grid-columns: 12;
 $gutter-width: sb-px2rems(20px);
@@ -161,7 +161,7 @@ $gutter-width: sb-px2rems(20px);
 //   </div>
 // </div>
 //
-// Styleguide 3.3.
+// Styleguide grid.responsive
 
 @for $i from 1 through $grid-columns {
   @media (max-width: $sb-breakpoint-s) {
@@ -197,7 +197,7 @@ $gutter-width: sb-px2rems(20px);
 //   </div>
 // </div>
 //
-// Styleguide 3.4.
+// Styleguide grid.push
 
 @for $i from 1 through $grid-columns {
   .#{$ns}push-#{$i} {
@@ -225,7 +225,7 @@ $gutter-width: sb-px2rems(20px);
 //   </div>
 // </div>
 //
-// Styleguide 3.5.
+// Styleguide grid.pull
 
 @for $i from 1 through $grid-columns {
   .#{$ns}pull-#{$i} {
