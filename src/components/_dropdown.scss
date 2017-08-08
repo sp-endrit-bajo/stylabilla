@@ -94,5 +94,31 @@
 //  </div>
 //
 // Styleguide dropdown.disabled
-//
 
+// Dropdown with validation
+//
+// Dropdown error validation
+//
+// .sb-form-control--invalid - invalid dropdown
+//
+// Markup:
+// <div class="sb-form-control {{modifier_class}}">
+//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <div class="sb-dropdown">
+//      <button class="sb-dropdown__button sb-input">
+//        Choice 1
+//        <span class="sb-select__arrow">
+//          <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        </span>
+//      </button>
+//      <ul class="sb-dropdown-menu" role="menu">
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 1</li>
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 2</li>
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 3</li>
+//      </ul>
+//    </div>
+//    <p class="sb-form-control__validation">Error message here.</p>
+//  </div>
+//
+// Styleguide dropdown.validation
+//
