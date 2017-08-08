@@ -1,0 +1,98 @@
+// Dropdown
+//
+// Basic dropdown
+//
+// .sb-dropdown--open - open dropdown
+//
+// Markup:
+//  <div class="sb-form-control">
+//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <div class="{{modifier_class}}">
+//      <button class="sb-dropdown__button sb-input">
+//        Choice 1
+//        <span class="sb-select__arrow">
+//          <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        </span>
+//      </button>
+//      <ul class="sb-dropdown-menu" role="menu">
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 1</li>
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 2</li>
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 3</li>
+//      </ul>
+//    </div>
+//  </div>
+//
+// Styleguide dropdown
+
+.#{$ns}dropdown {
+  &__button {
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &-menu {
+    display: none;
+    font-family: $sb-base-font-family;
+    font-weight: 400;
+    font-size: sb-px2rems(13px);
+    border: 1px solid $sb-color-light-3;
+    border-radius: 0 0 sb-px2rems($sb-radius) sb-px2rems($sb-radius);
+    background-color: $sb-color-white;
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    margin: -1px 0 0 0;
+  }
+
+  &-menu__item {
+    padding: sb-px2rems(11px);
+
+    &:hover {
+      background-color: $sb-color-light-4;
+    }
+
+    &:focus {
+      background-color: $sb-color-blue-4;
+      outline: none;
+    }
+
+    &:active {
+      background-color: $sb-color-blue-4;
+    }
+  }
+
+  &--open &-menu {
+    display: block;
+  }
+}
+
+// Dropdown disabled
+//
+// Markup:
+//  <div class="sb-form-control">
+//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <div class="sb-dropdown {{modifier_class}}">
+//      <button class="sb-dropdown__button sb-input" disabled>
+//        Choice 1
+//        <span class="sb-select__arrow">
+//          <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        </span>
+//      </button>
+//      <ul class="sb-dropdown-menu" role="menu">
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 1</li>
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 2</li>
+//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 3</li>
+//      </ul>
+//    </div>
+//  </div>
+//
+// Styleguide dropdown.disabled
+//
+
