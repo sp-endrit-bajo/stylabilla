@@ -51,3 +51,27 @@
   new KssStateGenerator;
 
 }).call(this);
+
+
+// colors.
+(function(){
+  var parameters = document.querySelectorAll('.kss-parameters');
+
+  if (parameters) {
+    document.querySelectorAll('.kss-parameters__item').forEach(function (el) {
+      var description = el.querySelector('.kss-parameters__description').textContent.trim().replace(/; +/g, ';');
+      var colorVar = el.querySelector('.kss-parameters__name').textContent.trim();
+      var colorCode = description.split(';')[0];
+      var isHexadecimal  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(colorCode);
+      var colorContent = '<span class="kss-color__var">' + colorVar + '</span>' +
+                          '<span class="kss-color__code">' + colorCode + '</span>';
+
+      if (isHexadecimal) {
+        el.parentElement.classList.add('kss-colors-container');
+        el.classList.add('kss-color');
+        el.style.background = colorCode;
+        el.querySelector('.kss-parameters__description').innerHTML = (colorContent);
+      }
+    });
+  }
+})();

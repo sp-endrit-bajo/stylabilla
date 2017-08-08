@@ -378,7 +378,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     display: block;
     text-decoration: none;
     color: $kss-colors-heading;
-    
+
     &:hover,
     &:focus,
     &:active {
@@ -764,3 +764,42 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     }
   }
 }
+
+// Custom styles
+.kss-colors-container {
+  margin: 0;
+  padding-left: 0;
+  display: flex !important;
+  flex-wrap: wrap;
+}
+
+.kss-color {
+  background: #fff;
+  border-radius: 2px;
+  flex: 1;
+  margin-right: .5rem;
+  &--dark {
+    color: #eee !important;
+  }
+}
+
+.kss-color  > div {
+  display: block !important;
+}
+
+.kss-color .kss-parameters__description {
+  background: #fff;
+  padding: .5rem;
+}
+
+.kss-color__name {
+
+}
+
+.kss-color__var,
+.kss-color__code {
+  display: block;
+}
+
+.kss-color .kss-parameters__name { padding: .5rem; }
+.kss-color .kss-parameters__name code { visibility: hidden; }
