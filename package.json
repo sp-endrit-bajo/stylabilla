@@ -10,11 +10,11 @@
   "description": "Usabilla's CSS styleguide.",
   "main": "dist/stylabilla.css",
   "scripts": {
-    "dist": "NODE_ENV=production webpack",
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack",
     "lint": "stylelint \"src/**/*.scss\"",
     "lint:fix": "stylelint \"src/**/*.scss\" --fix",
-    "dev": "webpack-dev-server",
-    "prepare": "yarn dist",
+    "prepare": "yarn build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "bugs": {
