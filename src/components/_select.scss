@@ -5,15 +5,13 @@
 // Markup:
 //  <div class="sb-form-control">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="sb-select__wrapper">
+//    <div class="sb-input-wrapper">
 //      <select class="sb-select sb-input">
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
 //      </select>
-//      <span class="sb-icon sb-icon--input">
-//        <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
-//      </span>
+//        <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
 //    </div>
 //  </div>
 //
@@ -21,18 +19,8 @@
 
 .#{$ns}select {
   appearance: none;
-
-  &__wrapper {
-    position: relative;
-  }
-
-  &--arrow {
-    position: absolute;
-    right: sb-px2rems(9px);
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
+
 // Select with validation
 //
 // Select error validation
@@ -42,15 +30,13 @@
 // Markup:
 //  <div class="sb-form-control {{modifier_class}}">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="sb-select__wrapper">
+//    <div class="sb-input-wrapper">
 //      <select class="sb-select sb-input">
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
 //      </select>
-//      <span class="sb-icon sb-icon--input">
-//        <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
-//      </span>
+//        <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
 //    </div>
 //    <p class="sb-form-control__validation">Error message here.</p>
 //  </div>

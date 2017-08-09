@@ -10,7 +10,7 @@
 //   </div>
 // </div>
 //
-// Styleguide input
+// Styleguide 7.
 
 .#{$ns}input {
   width: 100%;
@@ -22,10 +22,6 @@
   font-weight: 400;
   font-size: sb-px2rems(13px);
   color: $sb-color-dark-3;
-
-  &::placeholder {
-    color: $sb-color-light-1;
-  }
 
   &:hover {
     box-shadow: $sb-box-shadow;
@@ -60,17 +56,17 @@
 //   <label class="sb-label sb-padding-bottom-xs" for="text-input-id-1">Input Label</label>
 //   <div class="sb-input-wrapper">
 //     <input type="text" id="text-input-id-1" class="sb-input" placeholder="Placeholder Text">
-//     <svg class="sb-icon sb-icon--input sb-icon--error" id="sb-icon-error" viewBox="0 0 16 16">
+//     <svg class="sb-icon sb-icon--error" id="sb-icon-error" viewBox="0 0 16 16">
 //       <path d="M6.17647059,7 L3.5,9.67647059 L4.32352941,10.5 L7,7.82352941 L9.67647059,10.5 L10.5,9.67647059 L7.82352941,7 L10.5,4.32352941 L9.67647059,3.5 L7,6.17647059 L4.32352941,3.5 L3.5,4.32352941 L6.17647059,7 Z M7,0 C10.8661875,0 14,3.1338125 14,7 C14,10.8661875 10.8661875,14 7,14 C3.1338125,14 0,10.8661875 0,7 C0,3.1338125 3.1338125,0 7,0 Z"></path>
 //     </svg>
-//     <svg class="sb-icon sb-icon--input sb-icon--success" id="sb-icon-success" viewBox="0 0 16 16">
+//     <svg class="sb-icon sb-icon--success" id="sb-icon-success" viewBox="0 0 16 16">
 //       <path d="M7,0 C3.1338125,0 0,3.1338125 0,7 C0,10.8661875 3.1338125,14 7,14 C10.8661875,14 14,10.8661875 14,7 C14,3.1338125 10.8661875,0 7,0 M5.57852066,10.5 L2.625,6.82666099 L3.93391119,5.5225724 L5.57896647,7.51873935 L10.733473,3.5 L11.375,4.11158433 L5.57852066,10.5"></path>
 //     </svg>
 //   </div>
 //   <p class="sb-form-control__validation">Error message here.</p>
 // </div>
 //
-// Styleguide input.validation
+// Styleguide 7.1.
 
 .#{$ns}input-wrapper {
   position: relative;
@@ -79,8 +75,12 @@
     padding-right: sb-px2rems(23px);
   }
 
-  .#{$ns}icon--input {
+  .#{$ns}icon {
     display: none;
+    position: absolute;
+    top: 50%;
+    right: sb-px2rems(7px);
+    transform: translateY(-50%);
   }
 }
 

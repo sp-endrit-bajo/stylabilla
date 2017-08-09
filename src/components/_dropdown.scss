@@ -7,17 +7,17 @@
 // Markup:
 //  <div class="sb-form-control">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="{{modifier_class}}">
-//      <button class="sb-dropdown__button sb-input">
-//        Choice 1
-//        <span class="sb-icon sb-icon--input">
-//          <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
-//        </span>
-//      </button>
-//      <ul class="sb-dropdown-menu" role="menu">
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 1</li>
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 2</li>
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 3</li>
+//    <div class="sb-dropdown {{modifier_class}}">
+//      <div class="sb-input-wrapper">
+//        <button class="sb-dropdown__button sb-input">
+//          Choice 1
+//        </button>
+//          <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//      </div>
+//      <ul class="sb-dropdown__menu" role="listbox">
+//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 1</li>
+//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 2</li>
+//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 3</li>
 //      </ul>
 //    </div>
 //  </div>
@@ -37,12 +37,11 @@
     }
   }
 
-  &-menu {
+  &__menu {
     display: none;
     position: absolute;
     width: 100%;
     font-family: $sb-base-font-family;
-    font-weight: 400;
     font-size: sb-px2rems(13px);
     border: 1px solid $sb-color-light-3;
     border-radius: 0 0 sb-px2rems($sb-radius) sb-px2rems($sb-radius);
@@ -53,7 +52,7 @@
     margin: -1px 0 0 0;
   }
 
-  &-menu__item {
+  &__menu-item {
     padding: sb-px2rems(11px);
 
     &:hover {
@@ -70,8 +69,17 @@
     }
   }
 
-  &--open &-menu {
+  &--open &__menu {
     display: block;
+  }
+}
+
+.#{$ns}input-wrapper .#{$ns}icon {
+  display: inline;
+  z-index: 2;
+
+  &--disabled {
+    fill: $sb-color-light-3;
   }
 }
 
@@ -81,16 +89,16 @@
 //  <div class="sb-form-control">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
 //    <div class="sb-dropdown {{modifier_class}}">
-//      <button class="sb-dropdown__button sb-input" disabled>
-//        Choice 1
-//        <span class="sb-icon sb-icon--input">
-//          <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
-//        </span>
-//      </button>
-//      <ul class="sb-dropdown-menu" role="menu">
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 1</li>
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 2</li>
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 3</li>
+//      <div class="sb-input-wrapper">
+//       <button class="sb-dropdown__button sb-input" disabled>
+//         Choice 1
+//       </button>
+//        <svg class="sb-icon sb-icon--disabled" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//      </div>
+//      <ul class="sb-dropdown__menu" role="listbox">
+//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 1</li>
+//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 2</li>
+//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 3</li>
 //      </ul>
 //    </div>
 //  </div>
@@ -107,19 +115,19 @@
 // <div class="sb-form-control {{modifier_class}}">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
 //    <div class="sb-dropdown">
-//      <button class="sb-dropdown__button sb-input">
-//        Choice 1
-//        <span class="sb-icon sb-icon--input">
-//          <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
-//        </span>
-//      </button>
-//      <ul class="sb-dropdown-menu" role="menu">
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 1</li>
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 2</li>
-//        <li class="sb-dropdown-menu__item" tabindex="0" role="menuitem">Choice 3</li>
+//      <div class="sb-input-wrapper">
+//        <button class="sb-dropdown__button sb-input">
+//          Choice 1
+//        </button>
+//          <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//      </div>
+//      <ul class="sb-dropdown__menu" role="listbox">
+//        <li class="sb-dropdown-menu-item" tabindex="0" role="option">Choice 1</li>
+//        <li class="sb-dropdown-menu-item" tabindex="0" role="option">Choice 2</li>
+//        <li class="sb-dropdown-menu-item" tabindex="0" role="option">Choice 3</li>
 //      </ul>
 //    </div>
-//    <p class="sb-form-control__validation">Error message here.</p>
+//    <p role="alert" class="sb-form-control__validation">Error message here.</p>
 //  </div>
 //
 // Styleguide dropdown.validation
