@@ -5,20 +5,26 @@
 // Markup:
 //  <div class="sb-form-control">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="sb-input-wrapper">
-//      <select class="sb-select sb-input">
+//    <div class="sb-select sb-input-wrapper">
+//      <select class="sb-input">
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
 //      </select>
-//        <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//      <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //    </div>
 //  </div>
 //
 // Styleguide select
 
 .#{$ns}select {
-  appearance: none;
+  .#{$ns}input {
+    appearance: none;
+  }
+
+  .#{$ns}icon {
+    display: inline;
+  }
 }
 
 // Select with validation
@@ -30,13 +36,13 @@
 // Markup:
 //  <div class="sb-form-control {{modifier_class}}">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="sb-input-wrapper">
-//      <select class="sb-select sb-input">
+//    <div class="sb-select sb-input-wrapper">
+//      <select class="sb-input">
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
 //      </select>
-//        <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //    </div>
 //    <p class="sb-form-control__validation">Error message here.</p>
 //  </div>

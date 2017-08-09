@@ -10,7 +10,7 @@
 //   </div>
 // </div>
 //
-// Styleguide 7.
+// Styleguide input
 
 .#{$ns}input {
   width: 100%;
@@ -22,6 +22,10 @@
   font-weight: 400;
   font-size: sb-px2rems(13px);
   color: $sb-color-dark-3;
+
+  &::placeholder {
+    color: $sb-color-light-1;
+  }
 
   &:hover {
     box-shadow: $sb-box-shadow;
@@ -66,7 +70,7 @@
 //   <p class="sb-form-control__validation">Error message here.</p>
 // </div>
 //
-// Styleguide 7.1.
+// Styleguide input.validation
 
 .#{$ns}input-wrapper {
   position: relative;
@@ -81,6 +85,10 @@
     top: 50%;
     right: sb-px2rems(7px);
     transform: translateY(-50%);
+  }
+
+  .#{$ns}input:disabled ~ .#{$ns}icon {
+    fill: $sb-color-light-3;
   }
 }
 

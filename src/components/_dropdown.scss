@@ -8,11 +8,11 @@
 //  <div class="sb-form-control">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
 //    <div class="sb-dropdown {{modifier_class}}">
-//      <div class="sb-input-wrapper">
-//        <button class="sb-dropdown__button sb-input">
+//      <div class="sb-dropdown__button sb-input-wrapper">
+//        <button class="sb-input">
 //          Choice 1
 //        </button>
-//          <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </div>
 //      <ul class="sb-dropdown__menu" role="listbox">
 //        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 1</li>
@@ -25,15 +25,20 @@
 // Styleguide dropdown
 
 .#{$ns}dropdown {
+  font-family: $sb-base-font-family;
+  font-size: sb-px2rems(13px);
+
   &__button {
-    cursor: pointer;
-    position: relative;
-    text-align: left;
     z-index: 1;
 
-    &:hover,
-    &:focus {
-      box-shadow: none;
+    .#{$ns}input {
+      cursor: pointer;
+      position: relative;
+      text-align: left;
+    }
+
+    .#{$ns}icon {
+      display: inline;
     }
   }
 
@@ -41,11 +46,9 @@
     display: none;
     position: absolute;
     width: 100%;
-    font-family: $sb-base-font-family;
-    font-size: sb-px2rems(13px);
+    background-color: $sb-color-white;
     border: 1px solid $sb-color-light-3;
     border-radius: 0 0 sb-px2rems($sb-radius) sb-px2rems($sb-radius);
-    background-color: $sb-color-white;
     cursor: pointer;
     list-style: none;
     padding: 0;
@@ -69,17 +72,15 @@
     }
   }
 
-  &--open &__menu {
-    display: block;
-  }
-}
+  &--open {
+    .#{$ns}dropdown__button .#{$ns}input:hover,
+    .#{$ns}dropdown__button .#{$ns}input:focus {
+      box-shadow: none;
+    }
 
-.#{$ns}input-wrapper .#{$ns}icon {
-  display: inline;
-  z-index: 2;
-
-  &--disabled {
-    fill: $sb-color-light-3;
+    .#{$ns}dropdown__menu {
+      display: block;
+    }
   }
 }
 
@@ -89,11 +90,11 @@
 //  <div class="sb-form-control">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
 //    <div class="sb-dropdown {{modifier_class}}">
-//      <div class="sb-input-wrapper">
-//       <button class="sb-dropdown__button sb-input" disabled>
+//      <div class="sb-dropdown__button sb-input-wrapper">
+//       <button class="sb-input" disabled>
 //         Choice 1
 //       </button>
-//        <svg class="sb-icon sb-icon--disabled" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </div>
 //      <ul class="sb-dropdown__menu" role="listbox">
 //        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 1</li>
@@ -115,11 +116,11 @@
 // <div class="sb-form-control {{modifier_class}}">
 //    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
 //    <div class="sb-dropdown">
-//      <div class="sb-input-wrapper">
-//        <button class="sb-dropdown__button sb-input">
+//      <div class="sb-dropdown__button sb-input-wrapper">
+//        <button class="sb-input">
 //          Choice 1
 //        </button>
-//          <svg class="sb-icon" width="16" height="8" viewBox="0 0 16 8"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </div>
 //      <ul class="sb-dropdown__menu" role="listbox">
 //        <li class="sb-dropdown-menu-item" tabindex="0" role="option">Choice 1</li>
