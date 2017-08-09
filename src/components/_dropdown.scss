@@ -39,6 +39,8 @@
 
   &-menu {
     display: none;
+    position: absolute;
+    width: 100%;
     font-family: $sb-base-font-family;
     font-weight: 400;
     font-size: sb-px2rems(13px);
