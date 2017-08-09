@@ -11,7 +11,7 @@
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
 //      </select>
-//      <span class="sb-select__arrow">
+//      <span class="sb-icon sb-icon--input">
 //        <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </span>
 //    </div>
@@ -26,7 +26,7 @@
     position: relative;
   }
 
-  &__arrow {
+  &--arrow {
     position: absolute;
     right: sb-px2rems(9px);
     top: 50%;
@@ -48,7 +48,7 @@
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
 //      </select>
-//      <span class="sb-select__arrow">
+//      <span class="sb-icon sb-icon--input">
 //        <svg width="8" height="4" viewBox="0 0 8 4"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </span>
 //    </div>

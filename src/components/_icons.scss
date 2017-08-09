@@ -34,3 +34,10 @@
 .#{$ns}icon--error {
   fill: $sb-color-red-2;
 }
+
+.#{$ns}icon--input {
+  position: absolute;
+  top: 50%;
+  right: sb-px2rems(7px);
+  transform: translateY(-50%);
+}
