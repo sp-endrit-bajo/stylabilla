@@ -15,3 +15,15 @@ test:
     - yarn lint
   post:
     - DEBUG=condition yarn semantic-release || true
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - yarn build
+      - yarn deploy $BUCKET_STAGING
+  production:
+    tag: /v[0-9]+(\.[0-9]+)*/
+    commands:
+      - yarn build
+      - yarn deploy $BUCKET_PRODUCTION/$CIRCLE_TAG
