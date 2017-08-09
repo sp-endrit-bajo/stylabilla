@@ -33,6 +33,7 @@
     "git-hooks": "^1.1.8",
     "node-sass": "^4.1.0",
     "postcss-loader": "^2.0.3",
+    "s3-deploy": "^0.7.5",
     "sanitize.css": "^5.0.0",
     "sass-loader": "^6.0.3",
     "semantic-release": "^6.3.6",
