@@ -25,6 +25,7 @@
 // Styleguide dropdown
 
 .#{$ns}dropdown {
+  position: relative;
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
 
