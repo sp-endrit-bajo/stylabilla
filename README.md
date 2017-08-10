@@ -15,20 +15,41 @@ The project is under development and changing all the time and we don't recommen
 ### Via CDN
 Useful for ULab or internal projects or anywhere you want to quickly include Stylabilla.
 
-Include the following `link` in your page (remember to update the VERSION number to the latest release):
+Include the following `link` in your page (remember to update the VERSION number to the latest release, eg: `v1.5.0`):
 
-```
+```HTML
 <link rel="stylesheet" href="https://static.usabilla.com/stylabilla/<VERSION>/stylabilla.css"/>
 ```
 
-### Via Yarn/NPM
+### Via Yarn/NPM and Webpack
 Larger frontend projects at Usabilla will want to install Stylabilla as a package so that it can be compiled and minified with any other project specific CSS.
 
 ```
 yarn add @usabilla/stylabilla
 ```
 
-If you are using Webpack, you can then include the css in your application with:
+Make sure webpack correctly packages Stylabilla by editing your `scss/css` and `woff/woff2`  webpack configuration rules to have the `exclude` property and the `url-loader` as follows:
+
+```JSON
+{
+  test: /\.(css|scss)$/,
+  exclude: {
+    test: /node_modules/,
+    exclude: /stylabilla/
+  },
+  use: ['style-loader', 'css-loader'],
+},
+{
+  test: /\.(woff|woff2)$/,
+  exclude: {
+    test: /node_modules/,
+    exclude: /stylabilla/
+  },
+  loader: 'url-loader?name=assets/fonts/[name].[ext]',
+}
+```
+
+You can then include the css and fonts in your application with:
 ```
 import '@usabilla/stylabilla';
 ```
