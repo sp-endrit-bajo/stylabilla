@@ -62,13 +62,13 @@
       background-color: $sb-color-light-4;
     }
 
+    &:active,
     &:focus {
       background-color: $sb-color-blue-4;
-      outline: none;
     }
 
-    &:active {
-      background-color: $sb-color-blue-4;
+    &:focus {
+      outline: none;
     }
   }
 
