@@ -28,6 +28,7 @@
   position: relative;
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
+  color: $sb-color-dark-3;
 
   &__button {
     z-index: 1;
