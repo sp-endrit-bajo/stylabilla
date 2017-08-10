@@ -25,14 +25,24 @@ const loaders = {
     options: {
       includePaths: [path.resolve(__dirname, './src')]
     }
+  },
+  kss: {
+    loader: 'kss-loader',
+    options: {
+      config: 'kss-config.json'
+    }
+  },
+  file: {
+    loader: 'file-loader',
+    options: {
+      name: '[name].[ext]'
+    }
   }
 }
 
-const config = {
-  entry: {
-    stylabilla: ['./src/index']
-  },
 
+//Webpack configuration for creating production-ready Stylabilla css and assets in the 'dist' folder
+const stylabillaConfig = {
   module: {
     rules: [
       {
@@ -48,20 +58,24 @@ const config = {
         })
       },
       {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: 'file-loader?name=assets/fonts/[name].[ext]&publicPath=/'
+        test: /\.(gif|png|jpg|svg|)$/,
+        use: [loaders.file]
       },
       {
-        test: /\.(gif|png|jpg|svg|)$/,
-        use: 'file-loader?name=assets/images/[name].[ext]&publicPath=/'
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'assets/fonts/[name].[ext]'
+          }
+        }]
       }
     ]
   },
 
-  output: {
-    filename: '[name].css',
-    path: path.join(__dirname, './dist'),
-    publicPath: '/dist'
+  resolve: {
+    extensions: ['.js', '.scss'],
+    modules: [path.join(__dirname, './src'), 'node_modules']
   },
 
   plugins: [
@@ -69,10 +83,74 @@ const config = {
     new WebpackCleanupPlugin()
   ],
 
+  entry: {
+    stylabilla: './src/index'
+  },
+
+  output: {
+    filename: '[name].css',
+    path: path.join(__dirname, './dist'),
+    publicPath: ''
+  }
+};
+
+
+//Webpack configuration for creating production-ready Stylabilla documentation in the 'docs' folder
+const docsConfig = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [loaders.css, loaders.postcss, loaders.sass, loaders.kss]
+        }),
+      },
+      {
+        test: /\.(gif|png|jpg|svg|)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]'
+          }
+        }]
+      }
+    ]
+  },
+
   resolve: {
     extensions: ['.js', '.scss'],
     modules: [path.join(__dirname, './src'), 'node_modules']
-  }
+  },
+
+  plugins: [
+    new WebpackCleanupPlugin(),
+    new ExtractTextPlugin('[name].css')
+  ],
+
+  entry: {
+    kss: './docs-builder/kss-assets/kss.js'
+  },
+
+  output: {
+    filename: '[name].js',
+    path: path.join(__dirname, 'docs/kss-assets'),
+    publicPath: ''
+  },
 }
 
-module.exports = config
+module.exports = [stylabillaConfig, docsConfig]

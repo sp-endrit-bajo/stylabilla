@@ -1,8 +1,6 @@
 {
   "title": "Stylabilla",
-  "source": ["./src"],
-  "css": [],
-  "js": ["./stylabilla.js", "./docs.js"],
+  "source": "./src",
   "destination": "./docs/",
   "builder": "./docs-builder",
   "homepage": "../README.md"

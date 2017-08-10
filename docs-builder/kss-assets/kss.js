@@ -1,3 +1,12 @@
+var kss = require('./kss.scss');
+var stylabilla = require('../../src/index.scss');
+var scrollspy = require('./scrollspy.js');
+var prettify = require('./prettify.js');
+var fullscreen = require('./kss-fullscreen.js');
+var guides = require('./kss-guides.js');
+var markup = require('./kss-markup.js');
+var logo = require('./logo.svg');
+
 (function() {
   var KssStateGenerator;
 

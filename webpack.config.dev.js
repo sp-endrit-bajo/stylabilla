@@ -37,8 +37,7 @@ const loaders = {
 
 const config = {
   entry: {
-    stylabilla: './src/index',
-    docs: './docs-builder/kss-assets/kss.scss'
+    kss: './docs-builder/kss-assets/kss'
   },
 
   devServer: {
@@ -57,20 +56,12 @@ const config = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', loaders.css, loaders.postcss, loaders.sass]
-      },
-      {
-        test: /\.(css|scss)$/,
         exclude: /(node_modules|bower_components)/,
-        use: [loaders.kss]
+        use: ['style-loader', loaders.css, loaders.postcss, loaders.sass, loaders.kss]
       },
       {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: 'file-loader?name=assets/fonts/[name].[ext]&publicPath=/'
-      },
-      {
-        test: /\.(gif|png|jpg|svg|)$/,
-        use: 'file-loader?name=assets/images/[name].[ext]&publicPath=/'
+        test: /\.(ttf|eot|woff|woff2|gif|png|jpg|svg)$/,
+        use: 'file-loader'
       }
     ]
   },
@@ -78,12 +69,12 @@ const config = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'docs'),
-    publicPath: '',
+    publicPath: 'kss-assets',
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new StyleLintPlugin({configBasedir: path.resolve(__dirname, 'node_modules')}),
+    new StyleLintPlugin({ configBasedir: path.resolve(__dirname, 'node_modules') }),
     new WebpackCleanupPlugin()
   ],
 

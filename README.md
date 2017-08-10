@@ -1,7 +1,7 @@
 # Stylabilla
 
 ## What is Stylabilla for?
-Stylabilla is the CSS-only styleguide for the [Usabilla](http://www.usabilla.com) product (both public facing widgets and the customer application), that implements our design styleguide ([sketch file](https://drive.google.com/a/usabilla.com/file/d/0B_Xb9pOPqDqzLXJYbzE2a3czbk0/view?usp=sharing), [invision file](https://invis.io/Y2C9FUS6Z)).
+Stylabilla is the CSS-only styleguide for the [Usabilla](http://www.usabilla.com) product (both public facing widgets and the customer application), that implements our design styleguide ([sketch file](https://drive.google.com/drive/folders/0B6skUBevTtRIZ1l0eTlmMzVOWmM?usp=sharing), [invision file](https://invis.io/Y2C9FUS6Z)).
 
 It is [inspired by Stripe's approach](http://www.youtube.com/watch?feature=player_embedded&v=NHpSmJrEvRQ).
 
