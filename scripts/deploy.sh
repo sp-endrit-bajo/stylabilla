@@ -12,3 +12,12 @@ s3-deploy \
     --gzip \
     --cache 120 \
     --etag
+
+s3-deploy \
+    './docs/**' \
+    --cwd './docs/' \
+    --region eu-west-1 \
+    --bucket $bucket/docs \
+    --gzip \
+    --cache 120 \
+    --etag
