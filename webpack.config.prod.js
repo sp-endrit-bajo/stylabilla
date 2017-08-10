@@ -58,7 +58,7 @@ const stylabillaConfig = {
         })
       },
       {
-        test: /\.(gif|png|jpg|svg|)$/,
+        test: /\.(gif|png|jpg|svg)$/,
         use: [loaders.file]
       },
       {
@@ -112,7 +112,7 @@ const docsConfig = {
         }),
       },
       {
-        test: /\.(gif|png|jpg|svg|)$/,
+        test: /\.(gif|png|jpg|svg)$/,
         use: {
           loader: 'file-loader',
           options: {
