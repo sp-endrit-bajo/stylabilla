@@ -1,7 +1,7 @@
 # Stylabilla
 
 ## What is Stylabilla for?
-Stylabilla is the CSS-only styleguide for the [Usabilla](http://www.usabilla.com) product (both public facing widgets and the customer application), that implements our design styleguide ([sketch file](https://drive.google.com/drive/folders/0B6skUBevTtRIZ1l0eTlmMzVOWmM?usp=sharing), [invision file](https://invis.io/Y2C9FUS6Z)).
+Stylabilla is the CSS-only living styleguide for the [Usabilla](http://www.usabilla.com) product (both public facing widgets and the customer application), that implements our design styleguide ([sketch file](https://drive.google.com/drive/folders/0B6skUBevTtRIZ1l0eTlmMzVOWmM?usp=sharing), [invision file](https://invis.io/Y2C9FUS6Z)).
 
 It is [inspired by Stripe's approach](http://www.youtube.com/watch?feature=player_embedded&v=NHpSmJrEvRQ).
 
@@ -15,10 +15,12 @@ The project is under development and changing all the time and we don't recommen
 ### Via CDN
 Useful for ULab or internal projects or anywhere you want to quickly include Stylabilla.
 
-Include the following `link` in your page (remember to update the VERSION number to the latest release, eg: `v1.5.0`):
+Include the following `link` in your page. Remember to update the version number to the latest release, which is:
+
+<a href="https://badge.fury.io/js/%40usabilla%2Fstylabilla"><img src="https://badge.fury.io/js/%40usabilla%2Fstylabilla.svg" alt="npm version" height="18"></a>
 
 ```HTML
-<link rel="stylesheet" href="https://static.usabilla.com/stylabilla/<VERSION>/stylabilla.css"/>
+<link rel="stylesheet" href="https://static.usabilla.com/stylabilla/v1.5.0/stylabilla.css"/>
 ```
 
 ### Via Yarn/NPM and Webpack
