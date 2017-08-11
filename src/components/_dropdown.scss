@@ -36,6 +36,9 @@
     .#{$ns}input {
       cursor: pointer;
       text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .#{$ns}icon {
@@ -59,12 +62,12 @@
   &__menu-item {
     padding: sb-px2rems(11px);
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $sb-color-light-4;
     }
 
-    &:active,
-    &:focus {
+    &:active {
       background-color: $sb-color-blue-4;
     }
 
