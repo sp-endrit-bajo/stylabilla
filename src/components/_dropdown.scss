@@ -53,14 +53,16 @@
     background-color: $sb-color-white;
     border: 1px solid $sb-color-light-3;
     border-radius: 0 0 sb-px2rems($sb-radius) sb-px2rems($sb-radius);
-    cursor: pointer;
     list-style: none;
     padding: 0;
     margin: -1px 0 0 0;
+    max-height: 300px;
+    overflow-y: scroll;
   }
 
   &__menu-item {
     padding: sb-px2rems(11px);
+    cursor: pointer;
 
     &:hover,
     &:focus {
