@@ -32,9 +32,7 @@
   }
 
   &:focus {
-    border-color: $sb-color-blue-2;
-    box-shadow: $sb-box-shadow;
-    outline: none;
+    @include sb-focus();
   }
 
   &:active {

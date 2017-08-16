@@ -812,14 +812,20 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 .kss-color .kss-parameters__name { padding: .5rem; }
 .kss-color .kss-parameters__name code { visibility: hidden; }
 
-.\.sb-dropdown--open {
-  height: 185px;
-}
-
 .kss-overview code,
 .kss-overview pre, {
   font-size: 0.85rem;
   padding: 0.2rem;
   border-radius: 3px;
   background: #d9e3ea;
+}
+
+//Styles to override stylabilla for documentation
+
+.\.sb-dropdown--open {
+  height: 185px;
+}
+
+.kss-modifier__example .sb-toast {
+  position: relative;
 }

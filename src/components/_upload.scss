@@ -47,12 +47,6 @@
     &:hover {
       cursor: pointer;
     }
-
-    &:focus {
-      border-color: $sb-color-blue-2;
-      box-shadow: $sb-box-shadow;
-      outline: none;
-    }
   }
 
   &__faux:hover .#{$ns}upload__link {
@@ -76,10 +70,9 @@
   }
 
   &:focus {
-    border-color: $sb-color-blue-2;
+    @include sb-focus();
+
     border-radius: sb-px2rems($sb-radius);
-    box-shadow: $sb-box-shadow;
-    outline: none;
   }
 }
 
