@@ -3,7 +3,7 @@
 // The text classes to format the text of any html element.
 //
 // Markup:
-// <h1 class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</h1>
+// <p class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</p>
 //
 // .sb-display--l     - Used for single dates when visualizing data
 // .sb-display        - Used for big numbers when visualizing data
@@ -12,6 +12,7 @@
 // .sb-title--s       - Used for smaller titles
 // .sb-text           - Used for buttons and empty state text
 // .sb-text--s        - Used for all input controls
+// .sb-text--emphasis - Used for emphasizing text
 //
 // Styleguide typography.text
 
@@ -49,4 +50,8 @@
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(23px);
+}
+
+.#{$ns}text--emphasis {
+  font-weight: 600;
 }
