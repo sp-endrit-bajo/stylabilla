@@ -41,9 +41,9 @@
   align-items: stretch;
   background: $sb-color-white;
   position: fixed;
-  max-width: 40%;
-  top: sb-px2rems(10px);
-  right: sb-px2rems(10px);
+  margin-left: sb-px2rems(11px);
+  top: sb-px2rems(11px);
+  right: sb-px2rems(11px);
   border: 1px solid $sb-color-light-3;
   box-shadow: $sb-box-shadow;
   opacity: 1;
@@ -97,5 +97,11 @@
 
   &:focus {
     @include sb-focus();
+  }
+}
+
+@include breakpoint-l {
+  .#{$ns}toast {
+    max-width: 40%;
   }
 }

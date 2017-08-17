@@ -1,3 +1,16 @@
 $sb-container: 1920px;
 $sb-breakpoint-s: 480px;
 $sb-breakpoint-l: 960px;
+
+//Mobile first responsive mixins
+@mixin breakpoint-s() {
+  @media (min-width: $sb-breakpoint-s) {
+    @content;
+  }
+}
+
+@mixin breakpoint-l() {
+  @media (min-width: $sb-breakpoint-l) {
+    @content;
+  }
+}
