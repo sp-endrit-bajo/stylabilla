@@ -12,7 +12,7 @@
 //        <button class="sb-input">
 //          Choice 1
 //        </button>
-//        <svg class="sb-icon sb-icon--up" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
+//        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </div>
 //      <ul class="sb-dropdown__menu" role="listbox">
 //        <li class="sb-dropdown__menu-item sb-dropdown__menu-item--disabled" tabindex="0" role="option">No items to select</li>
@@ -94,9 +94,8 @@
       display: block;
     }
 
-    .#{$ns}icon--up {
-      transform: rotate(180deg);
-      top: 30%;
+    .#{$ns}icon--flip {
+      transform: translateY(-50%) rotate(180deg);
     }
   }
 }
