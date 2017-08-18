@@ -46,6 +46,10 @@
       display: inline;
       pointer-events: none;
     }
+
+    .#{$ns}input--empty-state {
+      padding: sb-px2rems(19px);
+    }
   }
 
   &__menu {
@@ -63,7 +67,6 @@
   }
 
   &__menu-item {
-    padding: sb-px2rems(11px);
     cursor: pointer;
 
     &:hover,
