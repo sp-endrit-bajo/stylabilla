@@ -15,7 +15,6 @@
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //      </div>
 //      <ul class="sb-dropdown__menu" role="listbox">
-//        <li class="sb-dropdown__menu-item sb-dropdown__menu-item--disabled" tabindex="0" role="option">No items to select</li>
 //        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 1</li>
 //        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 2</li>
 //        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 3</li>
@@ -45,10 +44,6 @@
     .#{$ns}icon {
       display: inline;
       pointer-events: none;
-    }
-
-    .#{$ns}input--empty-state {
-      padding: sb-px2rems(19px);
     }
   }
 
@@ -84,6 +79,13 @@
 
     &--disabled {
       color: $sb-color-light-3;
+    }
+
+    &--disabled:hover,
+    &--disabled:focus,
+    &--disabled:active {
+      background-color: $sb-color-white;
+      cursor: default;
     }
   }
 
@@ -151,4 +153,23 @@
 //  </div>
 //
 // Styleguide dropdown.validation
+
+// No options dropdown
 //
+// .sb-dropdown--open - open dropdown
+//
+// Markup:
+//  <div class="sb-form-control">
+//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <div class="sb-dropdown {{modifier_class}}">
+//      <div class="sb-dropdown__button sb-input-wrapper">
+//        <button class="sb-input">&nbsp;</button>
+//        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
+//      </div>
+//      <ul class="sb-dropdown__menu" role="listbox">
+//        <li class="sb-dropdown__menu-item sb-dropdown__menu-item--disabled" tabindex="-1" role="option">No items to select</li>
+//      </ul>
+//    </div>
+//  </div>
+//
+// Styleguide dropdown.noOptions
