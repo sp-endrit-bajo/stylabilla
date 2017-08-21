@@ -59,9 +59,11 @@
     margin: -1px 0 0 0;
     max-height: 300px;
     overflow-y: scroll;
+    z-index: 100;
   }
 
   &__menu-item {
+    padding: sb-px2rems(11px);
     cursor: pointer;
 
     &:hover,
