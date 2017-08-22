@@ -1,4 +1,4 @@
-// Buttons
+// Button
 //
 // Button types.
 //
@@ -21,7 +21,7 @@
 // .sb-btn--secondary - Secondary button
 // .sb-btn--subtle - Subtle button
 //
-// Styleguide buttons
+// Styleguide button
 
 $sb-btn-padding: sb-px2rems(11px) sb-px2rems(16px);
 $sb-btn-padding-s: sb-px2rems(7px);
@@ -192,7 +192,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 
 // Colors
 //
-// Buttons colors.
+// Button colors.
 //
 // Markup:
 // <button class="sb-btn sb-btn--primary {{modifier_class}}">Button</button>
@@ -202,7 +202,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 // .sb-btn--warning - Warning button
 // .sb-btn--success - Success button
 //
-// Styleguide buttons.colors
+// Styleguide button.colors
 
 @mixin btn-color($color, $color-dark, $color-darker) {
   background-color: $color;
@@ -234,7 +234,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 
 // Sizes
 //
-// Buttons sizes.
+// Button sizes.
 //
 // Markup:
 // <button class="sb-btn {{modifier_class}}">Button</button>
@@ -245,7 +245,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 // .sb-btn--l - Large button
 // .sb-btn--s - Small button
 //
-// Styleguide buttons.sizes
+// Styleguide button.sizes
 
 .#{$ns}btn--s {
   padding: $sb-btn-padding-s;

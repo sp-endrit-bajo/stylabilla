@@ -1,4 +1,4 @@
-// Buttons Group
+// Button Group
 //
 // Group a series of buttons together on a single line.
 //
@@ -10,10 +10,11 @@
 //   <button class="sb-btn" disabled>Disabled</button>
 // </div>
 //
-// Styleguide buttons-group
+// Styleguide button-group
 
 .#{$ns}btn-group {
   display: inline-flex;
+  width: 100%;
 
   .#{$ns}btn {
     border-color: $sb-color-light-1;
@@ -69,3 +70,23 @@
     }
   }
 }
+
+// Validation
+//
+// How to use a button group as a form element.
+//
+// Markup:
+// <div class="sb-form-control {{modifier_class}}">
+//   <label class="sb-label">Button Group label</label>
+//   <div class="sb-btn-group">
+//     <button class="sb-btn">Button one</button>
+//     <button class="sb-btn">Button two</button>
+//     <button class="sb-btn sb-btn--active">Active</button>
+//     <button class="sb-btn" disabled>Disabled</button>
+//   </div>
+//   <p class="sb-form-control__validation">Error message here.</p>
+// </div>
+//
+// .sb-form-control--invalid - invalid input
+//
+// Styleguide button-group.validation
