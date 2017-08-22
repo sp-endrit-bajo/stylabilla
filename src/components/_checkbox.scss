@@ -47,7 +47,7 @@
   }
 
   &:hover .#{$ns}checkbox__faux {
-    box-shadow: $sb-box-shadow;
+    @include sb-focus-no-border();
   }
 
   &__input {
@@ -56,8 +56,7 @@
   }
 
   &__input:focus + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    border-color: $sb-color-blue-2;
-    box-shadow: $sb-box-shadow;
+    @include sb-focus-no-border();
   }
 
   &__input:checked + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
