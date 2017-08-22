@@ -34,6 +34,7 @@
     z-index: 1;
 
     .#{$ns}input {
+      padding-right: sb-px2rems(30px);
       cursor: pointer;
       text-align: left;
       overflow: hidden;

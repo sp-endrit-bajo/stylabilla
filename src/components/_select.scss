@@ -20,6 +20,7 @@
 .#{$ns}select {
   .#{$ns}input {
     appearance: none;
+    padding-right: sb-px2rems(30px);
   }
 
   .#{$ns}icon {
