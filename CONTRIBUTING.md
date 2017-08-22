@@ -4,6 +4,7 @@
 - [Setup](#setup)
 - [File Structure](#file-structure)
 - [Component Definition of Done](#component-definition-of-done)
+- [Accessibility testing](#accessibility-testing)
 - [Style Conventions](#style-conventions)
 - [Making Contributions](#making-contributions)
 - [Breaking Changes](#breaking-changes)
@@ -29,6 +30,7 @@ For a component to be accepted into Stylabilla, it needs to meet the following r
     - Components are navigable by keyboard only
     - Appropriate alt and [ARIA attributes](https://w3c.github.io/using-aria/) are included
     - Semantic HTML is used
+    - Acessibility [tests](#accessibility-testing) are passing
 - Performance has been considered
     - Minimal markup is used
     - Animations follow performance [best practices](https://developers.google.com/web/fundamentals/design-and-ui/animations/animations-and-performance)
@@ -42,6 +44,46 @@ For a component to be accepted into Stylabilla, it needs to meet the following r
     - Is readable and looks consistent with other components when compiled into the guide
     - Follows the [kss-node specifications](https://github.com/kss-node/kss/blob/spec/SPEC.md)
 
+## Accessibility testing
+
+For a component to be accepted into Stylabilla it needs to pass the accessibility tests.
+In order to run the accessibility tests of a certain section you need to run the following commands:
+
+```bash
+# Need to have the server running
+yarn start
+# Run the tests on the sub-section 'Colors' of the section 'Buttons'
+yarn test:accessibility buttons.colors
+```
+
+If we want to test the accessibility of all the sections we just need to run:
+
+```bash
+# Need to have the server running
+yarn start
+# Run the tests on all the sections
+yarn test:accessibility
+```
+
+If there are any accessibility errors or warnings you'll see an output similar to the following:
+
+```bash
+  ####### http://localhost:8080/item-buttons-colors.html #######
+
+  • Error: <button class="sb-btn sb-btn--primary ">Button</button>
+     This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.37:1. Recommendation: change background to #00728b.
+
+  • Error: <button class="sb-btn sb-btn--primary sb-btn--danger">Button</button>
+     This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.06:1. Recommendation: change background to #686868.
+```
+
+If the tests are successful the output will be:
+
+```bash
+  ####### http://localhost:8080/item-buttons-colors.html #######
+
+  Test passed!
+```
 
 ## Style Conventions
 
