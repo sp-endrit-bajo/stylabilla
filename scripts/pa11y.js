@@ -4,14 +4,22 @@ const async = require('async')
 const glob = require('glob')
 const chalk = require('chalk')
 const pa11y = require('pa11y')
-const parseArgs = require('minimist')
+const program = require('commander')
 
-const args = parseArgs(process.argv.slice(2))
-const url = args.host || 'http://localhost:8080/'
-const dir = args.dir || './docs'
-const concurrency = args.concurrency || 1
-const ignore = String(args.ignore || '')
-const section = String(args._[0] || '*')
+program
+  .version('0.1.0')
+  .usage('[options] <section to test (ex. "buttons.colors")>')
+  .option('-u, --url [url]', 'Url to test', 'http://localhost:8080/')
+  .option('-d, --dir [path]', 'Path of the stylabilla docs directory', './docs')
+  .option('-c, --concurrency [number]', 'Number of cuncurrent tests. Default is one test at a time. (Ex. --concurrency 1', 1)
+  .option('-i, --ignore [string]', 'Pa11y messages to ignore. One of: notice, warning, error. (Ex. --ignore "notice,warning")', '')
+  .parse(process.argv);
+
+const url = program.url
+const dir = program.dir
+const concurrency = program.concurrency
+const ignore = program.ignore
+const section = program.args[0] || '*'
 
 const test = pa11y({
   allowedStandards: ['WCAG2AA'],
@@ -59,7 +67,7 @@ const logResults = (url, results) => {
     .forEach(logNotice)
 }
 
-const sectionPath = section.split('.').join('-')
+const sectionPath = section.toLowerCase().split('.').join('-')
 
 glob(`item-${sectionPath}*.html`, { cwd: dir }, function (er, files) {
   const urls = files.map(file => url + file)
