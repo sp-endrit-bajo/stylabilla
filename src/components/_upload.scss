@@ -10,7 +10,7 @@
 //
 // Markup:
 // <div class="sb-upload {{modifier_class}}">
-//   <button class="sb-upload__btn sb-btn sb-btn--primary">Upload File</button>
+//   <button class="sb-upload__btn sb-btn sb-btn--secondary">Upload File</button>
 //   <input class="sb-upload__input" type="file" id="upload-1" name="upload-1" accept="image/*">
 //   <label class="sb-upload__label" for="upload-1">
 //     <div class="sb-upload__faux sb-input" role="button" tabindex="0">
@@ -36,13 +36,17 @@
     display: none;
   }
 
+  &__filename {
+    font-size: sb-px2rems(13px);
+  }
+
   &__link {
     float: right;
   }
 
   &__faux {
-    width: initial;
     margin-right: sb-px2rems(32px);
+    width: initial;
 
     &:hover {
       cursor: pointer;
@@ -55,11 +59,11 @@
 }
 
 .#{$ns}upload__delete {
-  position: absolute;
-  right: sb-px2rems(-11px);
-  top: 0;
-  padding: sb-px2rems(11px);
   border: 1px solid transparent;
+  padding: sb-px2rems(9px) sb-px2rems(11px) sb-px2rems(10px);
+  position: absolute;
+  right: sb-px2rems(-7px);
+  top: 0;
 
   &:hover {
     cursor: pointer;
@@ -70,7 +74,7 @@
   }
 
   &:focus {
-    @include sb-focus();
+    @include sb-focus-no-border();
 
     border-radius: sb-px2rems($sb-radius);
   }
