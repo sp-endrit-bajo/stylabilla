@@ -61,7 +61,7 @@ $sb-loader-animation-duration: 0.8s;
     background: $sb-color-white;
     border: 1px solid $sb-color-light-3;
     border-radius: $sb-radius;
-    padding: 0 $sb-loader-padding--inline;
+    padding: 0 $sb-loader-padding--inline * 2 + $sb-loader-spinner-size--inline 0 $sb-loader-padding--inline;
     text-align: left;
 
     .#{$ns}loader__label {

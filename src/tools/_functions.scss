@@ -10,3 +10,11 @@
 
   @return ($px / $base-font-size) * 1rem;
 }
+
+@mixin sb-clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

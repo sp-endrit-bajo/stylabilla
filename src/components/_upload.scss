@@ -42,11 +42,15 @@
 
   &__link {
     float: right;
+    margin-left: sb-px2rems(11px);
   }
 
   &__faux {
-    margin-right: sb-px2rems(32px);
+    @include sb-clearfix();
+
     width: initial;
+    word-wrap: break-word;
+    margin-right: sb-px2rems(32px);
 
     &:hover {
       cursor: pointer;

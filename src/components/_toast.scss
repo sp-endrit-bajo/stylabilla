@@ -57,14 +57,14 @@
   }
 
   &__icon {
-    padding: sb-px2rems(23px);
+    padding: sb-px2rems(16px);
     display: flex;
     align-items: center;
   }
 
   &__message {
     flex: 1;
-    padding: sb-px2rems(23px) sb-px2rems(16px) sb-px2rems(23px) 0;
+    padding: sb-px2rems(16px) sb-px2rems(11px) sb-px2rems(16px) 0;
   }
 
   &--hidden {
@@ -79,7 +79,7 @@
     align-items: center;
     border: 0;
     border-left: 1px solid $sb-color-light-3;
-    padding: sb-px2rems(23px) sb-px2rems(16px);
+    padding: sb-px2rems(16px) sb-px2rems(11px);
     font-variant: all-small-caps;
     text-transform: uppercase;
 
@@ -104,5 +104,17 @@
 @include breakpoint-l {
   .#{$ns}toast {
     max-width: 40%;
+
+    &__icon {
+      padding: sb-px2rems(23px);
+    }
+
+    &__message {
+      padding: sb-px2rems(23px) sb-px2rems(16px) sb-px2rems(23px) 0;
+    }
+
+    &__button {
+      padding: sb-px2rems(23px) sb-px2rems(16px);
+    }
   }
 }
