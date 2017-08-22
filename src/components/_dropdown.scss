@@ -6,9 +6,9 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <label class="sb-label">Choose an option</label>
 //    <div class="sb-dropdown {{modifier_class}}">
-//      <div class="sb-dropdown__button sb-input-wrapper">
+//      <div class="sb-dropdown__button sb-form-control__input">
 //        <button class="sb-input">
 //          Choice 1
 //        </button>
@@ -100,9 +100,9 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <label class="sb-label">Choose an option</label>
 //    <div class="sb-dropdown {{modifier_class}}">
-//      <div class="sb-dropdown__button sb-input-wrapper">
+//      <div class="sb-dropdown__button sb-form-control__input">
 //       <button class="sb-input" disabled>
 //         Choice 1
 //       </button>
@@ -126,9 +126,9 @@
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
-//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
+//    <label class="sb-label">Choose an option</label>
 //    <div class="sb-dropdown">
-//      <div class="sb-dropdown__button sb-input-wrapper">
+//      <div class="sb-dropdown__button sb-form-control__input">
 //        <button class="sb-input">
 //          Choice 1
 //        </button>

@@ -4,8 +4,8 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="sb-select sb-input-wrapper">
+//    <label class="sb-label">Choose an option</label>
+//    <div class="sb-select sb-form-control__input">
 //      <select class="sb-input">
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
@@ -35,8 +35,8 @@
 //
 // Markup:
 //  <div class="sb-form-control {{modifier_class}}">
-//    <label class="sb-label sb-padding-bottom-xs">Choose an option</label>
-//    <div class="sb-select sb-input-wrapper">
+//    <label class="sb-label">Choose an option</label>
+//    <div class="sb-select sb-form-control__input">
 //      <select class="sb-input">
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
