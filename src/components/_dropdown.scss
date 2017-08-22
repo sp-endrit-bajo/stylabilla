@@ -31,7 +31,7 @@
   color: $sb-color-dark-3;
 
   &__button {
-    z-index: 1;
+    z-index: $sb-z-btn;
 
     .#{$ns}input {
       padding-right: sb-px2rems(30px);
@@ -59,7 +59,7 @@
     margin: 0;
     max-height: 300px;
     overflow-y: scroll;
-    z-index: 9;
+    z-index: $sb-z-dropdown;
     border: 1px solid $sb-color-light-3;
     border-top: none;
   }

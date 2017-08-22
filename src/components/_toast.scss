@@ -48,7 +48,7 @@
   border: 1px solid $sb-color-light-3;
   box-shadow: $sb-box-shadow;
   opacity: 1;
-  z-index: 10;
+  z-index: $sb-z-toast;
   transform: translateX(0);
   transition: opacity $sb-transition, transform $sb-transition;
 

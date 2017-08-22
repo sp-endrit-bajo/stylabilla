@@ -25,7 +25,7 @@
   overflow: auto;
   background: $sb-color-white;
   display: flex;
-  z-index: 1;
+  z-index: $sb-z-header;
   min-height: sb-px2rems($sb-header-height);
 
   &__title,
