@@ -149,7 +149,7 @@
 
         {{#if parameters}}
           <div class="kss-parameters__title">Parameters:</div>
-          <ul class="kss-parameters">
+          <ul class="kss-parameters accessibility-root">
           {{#each parameters}}
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>{{name}}</code></div>
@@ -168,7 +168,7 @@
       </div>
 
       {{#if example}}
-        <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__wrapper accessibility-root">
 
           {{#if modifiers}}
             <div class="kss-modifier__default-name kss-style">
@@ -207,6 +207,8 @@
             <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
           </details>
         {{/if}}
+      {{else}}
+        <div class="accessibility-root"></div>
       {{/if}}
 
       {{#if source.filename}}

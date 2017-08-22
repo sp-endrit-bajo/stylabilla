@@ -9,8 +9,8 @@ const program = require('commander')
 program
   .version('0.1.0')
   .usage('[options] <section to test (ex. "buttons.colors")>')
-  .option('-u, --url [url]', 'Url to test', 'http://localhost:8080/')
-  .option('-d, --dir [path]', 'Path of the stylabilla docs directory', './docs')
+  .option('-u, --url <url>', 'Url to test', 'http://localhost:8080/')
+  .option('-d, --dir <path>', 'Path of the stylabilla docs directory', './docs')
   .option('-c, --concurrency [number]', 'Number of cuncurrent tests. Default is one test at a time. (Ex. --concurrency 1', 1)
   .option('-i, --ignore [string]', 'Pa11y messages to ignore. One of: notice, warning, error. (Ex. --ignore "notice,warning")', '')
   .parse(process.argv);
@@ -23,36 +23,35 @@ const section = program.args[0] || '*'
 
 const test = pa11y({
   allowedStandards: ['WCAG2AA'],
-  ignore: ignore.split(',')
+  ignore: ignore.split(','),
+  rootElement: '.accessibility-root'
 })
 
-const log = console.log
+const log = (message) => console.log(`  ${message || ''}`)
 
 const logUrl = (url) => {
-  log(chalk.dim('  ####### ') + chalk.greenBright.bold(url) + chalk.dim(' #######'))
+  log(chalk.dim('####### ') + chalk.greenBright.bold(url) + chalk.dim(' #######'))
   log()
 }
 
-const logError = (result) => {
-  log(chalk.red(' • Error: ') + chalk.dim(result.context))
+const logMessage = (customChalk, text) => (result) => {
+  log(customChalk(`• ${text}: `) + chalk.dim(result.context))
   log('   ' + result.message)
   log()
 }
 
-const logWarning = (result) => {
-  log(chalk.yellow(' • Warning: ') + chalk.dim(result.context))
-  log('   ' + result.message)
-  log()
-}
-
-const logNotice = (result) => {
-  log(chalk.cyan(' • Notice: ') + chalk.dim(result.context))
-  log('   ' + result.message)
-  log()
-}
+const logError = logMessage(chalk.red, 'Error')
+const logWarning = logMessage(chalk.yellow, 'Warning')
+const logNotice = logMessage(chalk.cyan, 'Notice')
 
 const logResults = (url, results) => {
   logUrl(url)
+
+  if (!results.length) {
+    log(chalk.greenBright('Test passed!'))
+    log()
+    return;
+  }
 
   results
     .filter(result => result.type === 'error')
