@@ -6,9 +6,9 @@
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
-//   <label class="sb-label" for="text-input-id-1">Input Label</label>
+//   <label class="sb-label" for="text-form-input-id-{{modifier_class}}">Input Label</label>
 //   <div class="sb-form-control__input">
-//     <input class="sb-input" type="text" id="text-input-id-1" placeholder="Placeholder Text">
+//     <input class="sb-input" type="text" id="text-form-input-id-{{modifier_class}}" placeholder="Placeholder Text">
 //     <svg class="sb-icon sb-icon--error" viewBox="0 0 16 16">
 //       <path d="M6.17647059,7 L3.5,9.67647059 L4.32352941,10.5 L7,7.82352941 L9.67647059,10.5 L10.5,9.67647059 L7.82352941,7 L10.5,4.32352941 L9.67647059,3.5 L7,6.17647059 L4.32352941,3.5 L3.5,4.32352941 L6.17647059,7 Z M7,0 C10.8661875,0 14,3.1338125 14,7 C14,10.8661875 10.8661875,14 7,14 C3.1338125,14 0,10.8661875 0,7 C0,3.1338125 3.1338125,0 7,0 Z"></path>
 //     </svg>

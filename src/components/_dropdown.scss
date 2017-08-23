@@ -6,10 +6,10 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label">Choose an option</label>
+//    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input">
+//        <button class="sb-input" title="Choose an option">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -101,10 +101,10 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label">Choose an option</label>
+//    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" disabled>
+//       <button class="sb-input" title="Choose an option" disabled>
 //         Choice 1
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -127,10 +127,10 @@
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
-//    <label class="sb-label">Choose an option</label>
+//    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input">
+//        <button class="sb-input" title="Choose an option">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>

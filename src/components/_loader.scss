@@ -4,15 +4,15 @@
 // <div class="sb-loader {{modifier_class}}" role="alert" aria-busy="true">
 //   <svg viewBox="0 0 50 50" class="sb-spinner" aria-hidden="true">
 //     <defs>
-//       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z" id="path-track"></path>
-//       <mask id="mask-track" fill="white">
-//         <use xlink:href="#path-track"></use>
+//       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z" id="path-track-id-{{modifier_class}}"></path>
+//       <mask id="mask-track-id-{{modifier_class}}" fill="white">
+//         <use xlink:href="#path-track-id-{{modifier_class}}"></use>
 //       </mask>
 //     </defs>
 //     <g id="loader" fill-rule="evenodd">
 //       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z"></path>
-//       <use class="sb-spinner__secondary" xlink:href="#path-track"></use>
-//       <rect class="sb-spinner__primary" mask="url(#mask-track)" width="25" height="25"></rect>
+//       <use class="sb-spinner__secondary" xlink:href="#path-track-id-{{modifier_class}}"></use>
+//       <rect class="sb-spinner__primary" mask="url(#mask-track-id-{{modifier_class}})" width="25" height="25"></rect>
 //       <path class="sb-spinner__primary" d="M0,25 C0,26.3807119 1.11928813,27.5 2.5,27.5 L2.5,27.5 C3.88071187,27.5 5,26.3807119 5,25 L0,25 Z"></path>
 //       <path class="sb-spinner__primary" d="M23.75,1.25 C23.75,2.63071187 24.8692881,3.75 26.25,3.75 L26.25,3.75 C27.6307119,3.75 28.75,2.63071187 28.75,1.25 L23.75,1.25 Z" transform="translate(26.25, 2.5) rotate(-90) translate(-26.25, -2.5) "></path>
 //     </g>

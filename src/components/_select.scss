@@ -4,9 +4,10 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label">Choose an option</label>
+//    <label class="sb-label" for="select-id-1">Choose an option</label>
 //    <div class="sb-select sb-form-control__input">
-//      <select class="sb-input">
+//      <select class="sb-input" id="select-id-1">
+//        <option selected>Select</option>
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
@@ -36,9 +37,10 @@
 //
 // Markup:
 //  <div class="sb-form-control {{modifier_class}}">
-//    <label class="sb-label">Choose an option</label>
+//    <label class="sb-label" for="select-id-{{modifier_class}}">Choose an option</label>
 //    <div class="sb-select sb-form-control__input">
-//      <select class="sb-input">
+//      <select class="sb-input" id="select-id-{{modifier_class}}">
+//        <option selected>Select</option>
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
 //        <option>Choice 3</option>
