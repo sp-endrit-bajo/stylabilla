@@ -16,6 +16,6 @@ $sb-box-shadow-heavy: 0 1px 0 0 $sb-color-light-3, 0 2px 4px transparentize($sb-
 }
 
 @mixin sb-focus-no-border() {
-  box-shadow: 0 0 4px 2px transparentize($sb-color-blue-2, 0.75);
+  box-shadow: 0 0 4px 2px rgba(0, 165, 201, 0.25);
   outline: none;
 }
