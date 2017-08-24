@@ -47,7 +47,7 @@
   }
 
   &:hover .#{$ns}checkbox__faux {
-    @include sb-focus-no-border();
+    box-shadow: $sb-box-shadow;
   }
 
   &__input {
