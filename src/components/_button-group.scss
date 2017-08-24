@@ -74,11 +74,12 @@
 // Validation
 //
 // How to use a button group as a form element.
+// Obs: The buttons can have different roles, like radio buttons or checkbox.
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
 //   <p class="sb-label">Button Group label</p>
-//   <div class="sb-btn-group">
+//   <div class="sb-btn-group" aria-roledescription="button group">
 //     <button class="sb-btn">Button one</button>
 //     <button class="sb-btn">Button two</button>
 //     <button class="sb-btn sb-btn--active">Active</button>

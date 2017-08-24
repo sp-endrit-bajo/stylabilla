@@ -9,7 +9,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input" title="Choose an option">
+//        <button class="sb-input" title="Choose an option" aria-label="Choose an option">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -104,7 +104,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Choose an option" disabled>
+//       <button class="sb-input" title="Choose an option" aria-label="Choose an option" disabled>
 //         Choice 1
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
