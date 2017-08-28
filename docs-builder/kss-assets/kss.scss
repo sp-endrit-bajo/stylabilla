@@ -249,6 +249,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     margin-bottom: ($kss-vertical-rhythm/2);
     padding: 0;
     list-style-type: none;
+    font-variant: all-small-caps;
 
     @media screen and (max-width: 769px) {
       background: $kss-nav-background;
@@ -265,9 +266,21 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
       display: list-item;
       padding-right: 0;
     }
+
+    .kss-section--depth-2,
+    .kss-section--depth-3 {
+      text-transform: capitalize !important;
+      font-variant: contextual !important;
+      font-weight: 500 !important;
+    }
+
+    .kss-section--depth-3 {
+      padding-left: 20px !important;
+    }
   }
 
   .kss-nav__name {
+    font-size: 1rem;
     color: #fff;
     text-decoration: none;
   }
@@ -275,7 +288,6 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   .kss-nav__menu-link {
     position: relative;
     display: inline-block;
-    color: #fff;
     text-decoration: none;
 
     &:before {

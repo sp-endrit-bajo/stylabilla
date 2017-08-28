@@ -15,7 +15,7 @@
 //   </label>
 // </div>
 //
-// Styleguide checkbox
+// Styleguide Components.form.checkbox
 
 .#{$ns}checkbox {
   &__label {
@@ -123,7 +123,7 @@
 //   </div>
 // </div>
 //
-// Styleguide checkbox.group
+// Styleguide Components.form.checkbox.group
 
 .#{$ns}checkbox-group {
   .#{$ns}checkbox + .#{$ns}checkbox {
@@ -172,7 +172,7 @@
 //   </div>
 // </div>
 //
-// Styleguide checkbox.group-inline
+// Styleguide Components.form.checkbox.group-inline
 
 .#{$ns}checkbox-group--inline {
   .#{$ns}checkbox {
