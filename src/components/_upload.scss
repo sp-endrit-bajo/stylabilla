@@ -29,7 +29,7 @@
 //
 // .sb-upload--inactive - Add and remove this class with js to switch between active and inactive states
 //
-// Styleguide upload
+// Styleguide components.upload
 
 .#{$ns}upload {
   position: relative;
@@ -132,7 +132,7 @@
 //   <p role="alert" class="sb-form-control__validation">Error message here.</p>
 // </div>
 //
-// Styleguide upload.validation
+// Styleguide components.upload.validation
 
 .#{$ns}form-control--invalid .#{$ns}input.#{$ns}upload__faux {
   padding-right: sb-px2rems(11px);

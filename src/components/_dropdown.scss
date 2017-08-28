@@ -24,7 +24,7 @@
 //
 // .sb-dropdown--open - open dropdown
 //
-// Styleguide dropdown
+// Styleguide components.dropdown
 
 .#{$ns}dropdown {
   position: relative;
@@ -120,7 +120,7 @@
   }
 }
 
-// Dropdown with multiple item selection
+// Multiselect
 //
 //JavaScript is required for:
 // - Checking/Unchecking the checkbox on row click
@@ -183,9 +183,9 @@
 //   </div>
 // </div>
 //
-// Styleguide dropdown.multiselect
+// Styleguide components.dropdown.multiselect
 
-// Dropdown with multiple item selection and search input
+// Search
 //
 // JavaScript is required for:
 // - Checking/Unchecking the checkbox on row click
@@ -238,9 +238,9 @@
 //   </div>
 // </div>
 //
-// Styleguide dropdown.multiselect.search
+// Styleguide components.dropdown.search
 
-// Dropdown with no search results
+// No search results
 //
 // Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
 //
@@ -265,9 +265,9 @@
 //   </div>
 // </div>
 //
-// Styleguide dropdown.multiselect.search-empty
+// Styleguide components.dropdown.no-search-results
 
-// Dropdown disabled
+// Disabled
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
@@ -289,9 +289,9 @@
 //    </div>
 //  </div>
 //
-// Styleguide dropdown.disabled
+// Styleguide components.dropdown.disabled
 
-// Dropdown with validation
+// Validation
 //
 // Dropdown error validation
 //
@@ -318,4 +318,5 @@
 //
 // .sb-form-control--invalid - invalid dropdown
 //
-// Styleguide dropdown.validation
+
+// Styleguide components.dropdown.validation

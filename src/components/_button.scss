@@ -23,7 +23,7 @@
 // .sb-btn--secondary - Secondary button
 // .sb-btn--subtle - Subtle button
 //
-// Styleguide button
+// Styleguide components.button
 
 $sb-btn-padding: sb-px2rems(11px) sb-px2rems(16px);
 $sb-btn-padding-s: sb-px2rems(7px);
@@ -206,7 +206,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 // .sb-btn--warning - Warning button
 // .sb-btn--success - Success button
 //
-// Styleguide button.colors
+// Styleguide components.button.colors
 
 @mixin btn-color($color, $color-dark, $color-darker) {
   background-color: $color;
@@ -251,7 +251,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 // .sb-btn--l - Large button
 // .sb-btn--s - Small button
 //
-// Styleguide button.sizes
+// Styleguide components.button.sizes
 
 .#{$ns}btn--s {
   padding: $sb-btn-padding-s;
@@ -261,7 +261,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
   padding: $sb-btn-padding-l;
 }
 
-// Button with loader
+// Loader
 //
 // JavaScript is required for:
 // - Adding/removing loader markup inside button
@@ -296,7 +296,7 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 // .sb-btn--secondary - Secondary button
 // .sb-btn--subtle - Subtle button
 //
-// Styleguide button.loader
+// Styleguide components.button.loader
 
 .#{$ns}btn--loader {
   cursor: progress;

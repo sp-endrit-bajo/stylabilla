@@ -134,7 +134,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.columns
+// Styleguide layout.grid.columns
 
 [class*='#{$ns}col-'] {
   max-width: 100%;
@@ -228,7 +228,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // .sb-grid--gutter-0   - No gutter
 // .sb-grid--gutter-s   - Small gutter
 //
-// Styleguide layout.gutter
+// Styleguide layout.grid.gutter
 
 @each $suffix, $gutter in $sb-gutter-map {
   .#{$ns}grid--gutter#{$suffix} {
@@ -314,7 +314,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.offset
+// Styleguide layout.grid.offset
 
 @for $i from 1 through $sb-grid-columns {
   .#{$ns}offset-#{$i} {
@@ -362,4 +362,4 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.nesting
+// Styleguide layout.grid.nesting

@@ -23,35 +23,37 @@
 // Namespace (all classes should be prefixed with sb, which stands for Stylabilla)
 $ns: 'sb-' !default;
 
+// Settings
+@import 'settings/z-index';
+
+// Behaviours
+@import 'behaviours/animation';
+@import 'behaviours/hovers';
+
 // Tools
 @import 'tools/functions';
-
-// Settings
-@import 'settings/colors';
-@import 'settings/fonts';
-@import 'settings/box';
-@import 'settings/responsive';
-@import 'settings/animation';
-@import 'settings/z-index';
 
 // Generic
 @import '~sanitize.css';
 @import 'generic/reset';
 
-// Elements
-@import 'elements/page';
-@import 'elements/headings';
-@import 'elements/paragraphs';
-@import 'elements/anchors';
+// Style
+@import 'style/colors';
+@import 'style/fonts';
+@import 'style/box';
+@import 'style/page';
+@import 'style/headings';
+@import 'style/paragraphs';
+@import 'style/anchors';
 
-// Objects
-@import 'objects/layout';
-@import 'objects/spacing';
-@import 'objects/hovers';
-@import 'objects/flex';
+// Layout
+@import 'layout/responsive';
+@import 'layout/layout';
+@import 'layout/spacing';
+@import 'layout/flex';
+@import 'layout/text';
 
 // Components
-@import 'components/text';
 @import 'components/tile';
 @import 'components/checkbox';
 @import 'components/input';

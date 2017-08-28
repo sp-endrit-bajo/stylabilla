@@ -17,7 +17,7 @@
 //   </label>
 // </div>
 //
-// Styleguide checkbox
+// Styleguide components.checkbox
 
 .#{$ns}checkbox {
   &__label {
@@ -85,7 +85,7 @@
   }
 }
 
-// Checkbox Group
+// Group
 //
 // A basic checkbox group. Apply a `.sb-checkbox-group` class to the checkbox wrapper.
 //
@@ -128,7 +128,7 @@
 //   </div>
 // </div>
 //
-// Styleguide checkbox.group
+// Styleguide components.checkbox.group
 
 .#{$ns}checkbox-group {
   .#{$ns}checkbox + .#{$ns}checkbox {
@@ -136,7 +136,7 @@
   }
 }
 
-// Checkbox Group - Inline
+// Group Inline
 //
 // A basic checkbox group aligned horizontally. Apply a `.sb-checkbox-group--inline` class to the checkbox wrapper.
 //
@@ -179,7 +179,7 @@
 //   </div>
 // </div>
 //
-// Styleguide checkbox.group-inline
+// Styleguide components.checkbox.group-inline
 
 .#{$ns}checkbox-group--inline {
   .#{$ns}checkbox {

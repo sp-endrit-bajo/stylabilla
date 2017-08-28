@@ -4,7 +4,7 @@
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
-// Styleguide spacing
+// Styleguide layout.spacing
 
 // Margins
 //
@@ -30,7 +30,7 @@
 //   .sb-margin-bottom-xl
 // </div>
 //
-// Styleguide spacing.margins
+// Styleguide layout.spacing.margins
 
 $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 
@@ -92,7 +92,7 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 //   .sb-padding-xl
 // </div>
 //
-// Styleguide spacing.paddings
+// Styleguide layout.spacing.paddings
 
 @each $suffix, $spacing in $sb-spacing-map {
   .#{$ns}padding-top#{$suffix} {
