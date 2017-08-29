@@ -80,6 +80,14 @@
     &:focus {
       outline: none;
     }
+
+    &--selected {
+      background-color: $sb-color-light-4;
+    }
+
+    .#{$ns}checkbox {
+      pointer-events: none;
+    }
   }
 
   &--open {
@@ -97,6 +105,67 @@
     }
   }
 }
+
+// Dropdown with multiple item selection
+//
+//JavaScript is required for:
+// - Checking/Unchecking the checkbox element on click handler of the row
+//
+// Markup:
+// <div class="sb-form-control">
+//   <p class="sb-label">Select options</p>
+//   <div class="sb-dropdown sb-dropdown--open">
+//     <div class="sb-dropdown__button sb-form-control__input">
+//       <button class="sb-input" title="Select options" aria-label="Select options">
+//         Select options
+//       </button>
+//       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
+//     </div>
+//     <ul class="sb-dropdown__menu" role="listbox">
+//       <li class="sb-dropdown__menu-item" tabindex="0" role="option">
+//         <div class="sb-checkbox">
+//           <input type="checkbox" id="checkbox-dropdown-1" class="sb-checkbox__input" tabindex="-1">
+//           <label class="sb-checkbox__label" for="checkbox-dropdown-1">
+//             <span class="sb-checkbox__faux">
+//               <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//                 <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//               </svg>
+//             </span>
+//             <span class="sb-margin-left-xs">Choice 1</span>
+//           </label>
+//         </div>
+//       </li>
+//       <li class="sb-dropdown__menu-item sb-dropdown__menu-item--selected" tabindex="0" role="option">
+//         <div class="sb-checkbox">
+//           <input type="checkbox" id="checkbox-dropdown-2" class="sb-checkbox__input" tabindex="-1" checked>
+//           <label class="sb-checkbox__label" for="checkbox-dropdown-2">
+//             <span class="sb-checkbox__faux">
+//               <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//                 <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//               </svg>
+//             </span>
+//             <span class="sb-margin-left-xs">Choice 2</span>
+//           </label>
+//         </div>
+//       </li>
+//       <li class="sb-dropdown__menu-item" tabindex="0" role="option">
+//         <div class="sb-checkbox">
+//           <input type="checkbox" id="checkbox-dropdown-3" class="sb-checkbox__input" tabindex="-1">
+//           <label class="sb-checkbox__label" for="checkbox-dropdown-3">
+//             <span class="sb-checkbox__faux">
+//               <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//                 <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//               </svg>
+//             </span>
+//             <span class="sb-margin-left-xs">Choice 3</span>
+//           </label>
+//         </div>
+//       </li>
+//     </ul>
+//   </div>
+// </div>
+//
+// Styleguide dropdown.multiselect
 
 // Dropdown disabled
 //
@@ -146,62 +215,3 @@
 //  </div>
 //
 // Styleguide dropdown.validation
-
-// Dropdown with multi select options
-//
-//
-// Markup:
-// <div class="sb-form-control">
-//   <p class="sb-label">Select options</p>
-//   <div class="sb-dropdown sb-dropdown--open">
-//     <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Select options">
-//         Select options
-//       </button>
-//       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
-//     </div>
-//     <ul class="sb-dropdown__menu" role="listbox">
-//       <li class="sb-dropdown__menu-item" tabindex="-1" role="option">
-//          <div class="sb-checkbox">
-//            <input type="checkbox" id="checkbox-dropdown-1" class="sb-checkbox__input">
-//            <label class="sb-checkbox__label" for="checkbox-dropdown-1">
-//              <span class="sb-checkbox__faux">
-//                <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//                  <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//                </svg>
-//              </span>
-//              <span class="sb-margin-left-xs">Choice 1</span>
-//            </label>
-//          </div>
-//       </li>
-//       <li class="sb-dropdown__menu-item" tabindex="-1" role="option">
-//          <div class="sb-checkbox">
-//            <input type="checkbox" id="checkbox-dropdown-2" class="sb-checkbox__input">
-//            <label class="sb-checkbox__label" for="checkbox-dropdown-2">
-//              <span class="sb-checkbox__faux">
-//                <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//                  <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//                </svg>
-//              </span>
-//              <span class="sb-margin-left-xs">Choice 2</span>
-//            </label>
-//          </div>
-//       </li>
-//       <li class="sb-dropdown__menu-item" tabindex="-1" role="option">
-//          <div class="sb-checkbox">
-//            <input type="checkbox" id="checkbox-dropdown-3" class="sb-checkbox__input">
-//            <label class="sb-checkbox__label" for="checkbox-dropdown-3">
-//              <span class="sb-checkbox__faux">
-//                <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//                  <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//                </svg>
-//              </span>
-//              <span class="sb-margin-left-xs">Choice 3</span>
-//            </label>
-//          </div>
-//       </li>
-//     </ul>
-//   </div>
-// </div>
-//
-// Styleguide dropdown.multiselect
