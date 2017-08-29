@@ -19,3 +19,9 @@ $sb-box-shadow-heavy: 0 1px 0 0 $sb-color-light-3, 0 2px 4px transparentize($sb-
   box-shadow: 0 0 4px 2px transparentize($sb-color-blue-2, 0.75);
   outline: none;
 }
+
+@mixin sb-no-focus-style() {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}

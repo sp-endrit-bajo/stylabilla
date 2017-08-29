@@ -48,3 +48,38 @@
   display: inline-block;
   margin-bottom: sb-px2rems(7px);
 }
+
+// Input with info
+//
+// Markup:
+// <label class="sb-label" for="input-id-1">Input Label</label>
+// <div class="sb-input sb-input-with-info" tabindex="-1">
+//  <span class="sb-info">20 items</span>
+//  <input type="text" aria-autocomplete="list" class="sb-input-info" id="input-id-1" placeholder="Placeholder Text">
+// </div>
+//
+// Styleguide input.info
+
+.#{$ns}input-with-info {
+  display: flex;
+
+  .#{$ns}info {
+    color: $sb-color-blue-1;
+    padding-right: sb-px2rems(11px);
+    font-weight: 400;
+    font-size: sb-px2rems(13px);
+  }
+
+  .#{$ns}input-info {
+    flex: 1;
+    border: none;
+
+    &::placeholder {
+      color: $sb-color-light-1;
+    }
+
+    &:focus {
+      @include sb-no-focus-style();
+    }
+  }
+}
