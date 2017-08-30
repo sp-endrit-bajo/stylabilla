@@ -10,15 +10,16 @@
 //
 // Styleguide input
 
+$padding-input-element: sb-px2rems(11px);
+
 .#{$ns}input {
+  @include sb-font-text-small();
+
   width: 100%;
   border-radius: sb-px2rems($sb-radius);
   border: 1px solid $sb-color-light-3;
   background-color: $sb-color-white;
-  padding: sb-px2rems(11px);
-  font-family: $sb-base-font-family;
-  font-weight: 400;
-  font-size: sb-px2rems(13px);
+  padding: $padding-input-element;
   color: $sb-color-dark-3;
 
   &::placeholder {
@@ -51,35 +52,42 @@
 
 // Input with info
 //
+// .sb-input__wrapper--hide-info - hide info element
+//
 // Markup:
-// <label class="sb-label" for="input-id-1">Input Label</label>
-// <div class="sb-input sb-input-with-info" tabindex="-1">
-//  <span class="sb-info">20 items</span>
-//  <input type="text" aria-autocomplete="list" class="sb-input-info" id="input-id-1" placeholder="Placeholder Text">
+// <label class="sb-label" for="input-id-2">Input Label</label>
+// <div class="sb-input__wrapper {{modifier_class}}">
+//  <span class="sb-input__info">20 items</span>
+//  <input type="text" class="sb-input" id="input-id-2" placeholder="Placeholder Text">
 // </div>
 //
 // Styleguide input.info
 
-.#{$ns}input-with-info {
-  display: flex;
+.#{$ns}input__wrapper {
+  position: relative;
 
-  .#{$ns}info {
+  .#{$ns}input__info {
+    @include sb-font-text-small();
+
     color: $sb-color-blue-1;
-    padding-right: sb-px2rems(11px);
-    font-weight: 400;
-    font-size: sb-px2rems(13px);
+    position: absolute;
+    bottom: $padding-input-element;
+    left: $padding-input-element;
+    line-height: 1.4;
   }
 
-  .#{$ns}input-info {
-    flex: 1;
-    border: none;
+  .#{$ns}input {
+    padding-left: sb-px2rems(53.19px) + (2 * $padding-input-element);
+  }
 
-    &::placeholder {
-      color: $sb-color-light-1;
+  &--hide-info {
+    .#{$ns}input__info {
+      display: none;
     }
 
-    &:focus {
-      @include sb-no-focus-style();
+    .#{$ns}input {
+      padding-left: $padding-input-element;
     }
   }
 }
+
