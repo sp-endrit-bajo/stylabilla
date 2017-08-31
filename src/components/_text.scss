@@ -19,37 +19,44 @@
 .#{$ns}display--l {
   font-size: sb-px2rems(83px);
   line-height: sb-px2rems(83px);
+  font-weight: 400;
 }
 
 .#{$ns}display {
   font-size: sb-px2rems(48px);
   line-height: sb-px2rems(48px);
+  font-weight: 400;
 }
 
 .#{$ns}title--l {
   font-size: sb-px2rems(28px);
   line-height: sb-px2rems(28px);
+  font-weight: 400;
 }
 
 .#{$ns}title {
   font-size: sb-px2rems(23px);
   line-height: sb-px2rems(23px);
+  font-weight: 400;
 }
 
 .#{$ns}title--s {
   font-size: sb-px2rems(19px);
   line-height: sb-px2rems(19px);
+  font-weight: 400;
 }
 
 .#{$ns}text {
   font-size: sb-px2rems(16px);
   line-height: sb-px2rems(23px);
+  font-weight: 400;
 }
 
 .#{$ns}text--s {
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(23px);
+  font-weight: 400;
 }
 
 .#{$ns}text--emphasis {
