@@ -9,7 +9,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input" title="Choose an option" aria-label="Choose an option">
+//        <button class="sb-input" title="Choose an option" aria-label="Choose an option" aria-expanded="false">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -110,13 +110,14 @@
 //
 //JavaScript is required for:
 // - Checking/Unchecking the checkbox element on click handler of the row
+// - Updating aria-expanded value
 //
 // Markup:
 // <div class="sb-form-control">
 //   <p class="sb-label">Select options</p>
 //   <div class="sb-dropdown sb-dropdown--open">
 //     <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Select options" aria-label="Select options">
+//       <button class="sb-input" title="Select options" aria-label="Select options" aria-expanded="true">
 //         Select options
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -174,7 +175,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Choose an option" aria-label="Choose an option" disabled>
+//       <button class="sb-input" title="Choose an option" aria-label="Choose an option" disabled aria-expanded="false">
 //         Choice 1
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -200,7 +201,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input" title="Choose an option">
+//        <button class="sb-input" title="Choose an option" aria-expanded="false">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
