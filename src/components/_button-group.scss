@@ -3,11 +3,11 @@
 // Group a series of buttons together on a single line.
 //
 // Markup:
-// <div class="sb-btn-group">
-//   <button class="sb-btn">Button one</button>
-//   <button class="sb-btn">Button two</button>
-//   <button class="sb-btn sb-btn--active">Active</button>
-//   <button class="sb-btn" disabled>Disabled</button>
+// <div class="sb-btn-group" role="radiogroup">
+//   <button class="sb-btn" role="radio" aria-checked="false">Button one</button>
+//   <button class="sb-btn" role="radio" aria-checked="false">Button two</button>
+//   <button class="sb-btn sb-btn--active" role="radio" aria-checked="true">Active</button>
+//   <button class="sb-btn" disabled role="radio" aria-checked="false">Disabled</button>
 // </div>
 //
 // Styleguide button-group
@@ -74,16 +74,16 @@
 // Validation
 //
 // How to use a button group as a form element.
-// Obs: The buttons can have different roles, like radio buttons or checkbox.
+// Obs: The button group can have toggle/multiple options, behaving like checkboxes instead of radio buttons.
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
-//   <p class="sb-label">Button Group label</p>
-//   <div class="sb-btn-group" aria-roledescription="button group">
-//     <button class="sb-btn">Button one</button>
-//     <button class="sb-btn">Button two</button>
-//     <button class="sb-btn sb-btn--active">Active</button>
-//     <button class="sb-btn" disabled>Disabled</button>
+//   <p class="sb-label" id="label-btn-group">Button Group label</p>
+//   <div class="sb-btn-group" role="group" aria-labelledby="label-btn-group">
+//     <button class="sb-btn" role="checkbox" aria-checked="false">Button one</button>
+//     <button class="sb-btn" role="checkbox" aria-checked="false">Button two</button>
+//     <button class="sb-btn sb-btn--active" role="checkbox" aria-checked="true">Active</button>
+//     <button class="sb-btn" disabled role="checkbox" aria-checked="false">Disabled</button>
 //   </div>
 //   <p role="alert" class="sb-form-control__validation">Error message here.</p>
 // </div>
