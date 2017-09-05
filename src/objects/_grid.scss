@@ -1,234 +1,96 @@
-/* stylelint-disable declaration-no-important */
-
-// Grid
+// Grid system
 //
-// A basic grid. Apply `sb-grid` to the wrapper element.
+// Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases. It includes predefined classes for easy layout options, as well as powerful mixins for generating more semantic layouts.
 //
-// Markup:
-// <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-// </div>
+// Introduction
+// Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:
+//
+// Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) for proper alignment and padding.
+// Use rows to create horizontal groups of columns.
+// Content should be placed within columns, and only columns may be immediate children of rows.
+// Predefined grid classes like .row and .col-xs-4 are available for quickly making grid layouts. Less mixins can also be used for more semantic layouts.
+// Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on .rows.
+// The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.
+// Grid columns are created by specifying the number of twelve available columns you wish to span. For example, three equal columns would use three .col-xs-4.
+// If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+// Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices.
+// Therefore, e.g. applying any .col-md- class to an element will not only affect its styling on medium devices but also on large devices if a .col-lg- class is not present.
+// Look to the examples for applying these principles to your code.
 //
 // Styleguide grid
 
-.#{$ns}grid {
-  display: flex;
-  flex-wrap: wrap;
-}
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
 
-// Containers
+// Example: Stacked-to-horizontal
 //
-// Two container classes. All page containers should use `sb-container` which is set to a max-width of 1920px. You can also use `sb-container-fluid` for full width containers.
+// Using a single set of .col-md-* grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any .row.
 //
 // Markup:
-// <div class="sb-container sb-tile sb-padding">
-//   .sb-container
+// <div class="row">
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
+// <div class="col-md-1">.col-md-1</div>
 // </div>
-// <div class="sb-container-fluid sb-tile sb-padding">
-//   .sb-container-fluid
+// <div class="row">
+// <div class="col-md-8">.col-md-8</div>
+// <div class="col-md-4">.col-md-4</div>
+// </div>
+// <div class="row">
+// <div class="col-md-4">.col-md-4</div>
+// <div class="col-md-4">.col-md-4</div>
+// <div class="col-md-4">.col-md-4</div>
+// </div>
+// <div class="row">
+// <div class="col-md-6">.col-md-6</div>
+// <div class="col-md-6">.col-md-6</div>
 // </div>
 //
-// Styleguide grid.containers
+// Styleguide grid.example
 
-.#{$ns}container {
-  max-width: sb-px2rems($sb-container);
-  width: 100%;
-}
-
-.#{$ns}container-fluid {
-  width: 100%;
-}
-
-// Columns
+// Example: Fluid container
 //
-// Column classes. Use `sb-col-#{i}` to set the desired column width.
+// Turn any fixed-width grid layout into a full-width layout by changing your outermost .container to .container-fluid.
 //
 // Markup:
-// <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-12">
-//     .sb-col-12
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-10">
-//     .sb-col-10
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-2">
-//     .sb-col-2
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-9">
-//     .sb-col-9
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-3">
-//     .sb-col-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-8">
-//     .sb-col-8
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-7">
-//     .sb-col-7
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-5">
-//     .sb-col-5
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-6">
-//     .sb-col-6
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-6">
-//     .sb-col-6
-//   </div>
+// <div class="container-fluid">
+// <div class="row">
+//    .container-fluid .row
+// </div>
 // </div>
 //
-// Styleguide grid.columns
+// Styleguide grid.fluid
 
-$grid-columns: 12;
-$gutter-width: sb-px2rems(20px);
-
-@mixin sb-grid-item($grid-item-number) {
-  flex-shrink: 0;
-  flex-grow: 1;
-  flex-basis: calc(((100% / #{$grid-columns}) * #{$grid-item-number}) - #{$gutter-width});
-  margin: calc(#{$gutter-width} / 2);
-}
-
-@for $i from 1 through $grid-columns {
-  .#{$ns}col-#{$i} {
-    @include sb-grid-item(#{$i});
-  }
-}
-
-// Responsive Grid
+// Example: Mobile and desktop
 //
-// To create a responsive grid you can add different column classes for different viewports. <br/>
-// Add a `sb-col-s-#{i}` to set the desired column width for smaller viewports. <br/>
-// Add a `sb-col-l-#{i}` to set the desired column width for larger viewports.
+// Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding .col-xs-* .col-md-* to your columns. See the example below for a better idea of how it all works.
 //
 // Markup:
-// <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
-//     .sb-col-s-12 .sb-col-4 .sb-col-l-3
-//   </div>
+// <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+// <div class="row">
+//  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+//  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+// </div>
+// <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+// <div class="row">
+//  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+//  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+//  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+// </div>
+// <!-- Columns are always 50% wide, on mobile and desktop -->
+// <div class="row">
+//  <div class="col-xs-6">.col-xs-6</div>
+//  <div class="col-xs-6">.col-xs-6</div>
 // </div>
 //
-// Styleguide grid.responsive
-
-@for $i from 1 through $grid-columns {
-  @media (max-width: $sb-breakpoint-s) {
-    .#{$ns}col-s-#{$i} {
-      @include sb-grid-item(#{$i});
-    }
-  }
-
-  @media (min-width: $sb-breakpoint-l) {
-    .#{$ns}col-l-#{$i} {
-      @include sb-grid-item(#{$i});
-    }
-  }
-}
-
-// Push
-//
-// The `sb-push-{i}` classes can be used to push a column to the right.
-//
-// Markup:
-// <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-5 sb-push-7">
-//     .sb-col-5 .sb-push-7
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-8 sb-push-4">
-//     .sb-col-8 .sb-push-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-4 sb-push-2">
-//     .sb-col-4 .sb-push-2
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-3 sb-push-3">
-//     .sb-col-3 .sb-push-3
-//   </div>
-// </div>
-//
-// Styleguide grid.push
-
-@for $i from 1 through $grid-columns {
-  .#{$ns}push-#{$i} {
-    margin-left: calc((100% / #{$grid-columns}) * #{$i} + (#{$gutter-width} / 2)) !important;
-  }
-}
-
-// Pull
-//
-// The `sb-pull-{i}` classes can be used to pull a column to the left.
-//
-// Markup:
-// <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-4">
-//     .sb-col-4
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-10 sb-pull-2">
-//     .sb-col-10 .sb-pull-2
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-6">
-//     .sb-col-6
-//   </div>
-//   <div class="sb-tile sb-padding sb-col-6 sb-pull-4">
-//     .sb-col-6 .sb-pull-4
-//   </div>
-// </div>
-//
-// Styleguide grid.pull
-
-@for $i from 1 through $grid-columns {
-  .#{$ns}pull-#{$i} {
-    margin-left: calc((100% / #{$grid-columns}) * #{-$i} + (#{$gutter-width} / 2)) !important;
-  }
-}
+// Styleguide grid.mobile

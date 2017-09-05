@@ -23,6 +23,7 @@
     "url": "https://github.com/usabilla/stylabilla/issues"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "sanitize.css": "^5.0.0"
   },
   "devDependencies": {
