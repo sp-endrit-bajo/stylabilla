@@ -35,6 +35,7 @@
     align-items: flex-start;
     flex-direction: column;
     padding: sb-px2rems(11px);
+    justify-content: space-between;
   }
 }
 
@@ -61,7 +62,7 @@
 @include breakpoint-l {
   .#{$ns}header__content {
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     flex: 1;
   }
 

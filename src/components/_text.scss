@@ -49,14 +49,12 @@
 .#{$ns}text {
   font-size: sb-px2rems(16px);
   line-height: sb-px2rems(23px);
-  font-weight: 400;
 }
 
 .#{$ns}text--s {
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(23px);
-  font-weight: 400;
 }
 
 .#{$ns}text--emphasis {
