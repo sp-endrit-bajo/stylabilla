@@ -813,7 +813,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 .kss-color .kss-parameters__name code { visibility: hidden; }
 
 .kss-overview code,
-.kss-overview pre, {
+.kss-overview pre {
   font-size: 0.85rem;
   padding: 0.2rem;
   border-radius: 3px;
@@ -832,6 +832,10 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
 #kssref-dropdown .kss-modifier__wrapper {
   height: 380px;
+}
+
+#kssref-dropdown-multiselect-search-empty .kss-modifier__wrapper {
+  height: 180px;
 }
 
 .kss-modifier__example .sb-toast {

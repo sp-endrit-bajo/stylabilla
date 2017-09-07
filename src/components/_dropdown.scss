@@ -97,6 +97,11 @@
     border-bottom: 1px solid $sb-color-light-3;
   }
 
+  &__message {
+    padding: sb-px2rems(11px);
+    color: $sb-color-light-1;
+  }
+
   &--open {
     .#{$ns}dropdown__button .#{$ns}input:hover,
     .#{$ns}dropdown__button .#{$ns}input:focus {
@@ -228,6 +233,31 @@
 // </div>
 //
 // Styleguide dropdown.multiselect.search
+
+// Dropdown with no search results
+//
+// Markup:
+// <div class="sb-form-control">
+//   <p class="sb-label">Select options</p>
+//   <div class="sb-dropdown sb-dropdown--open">
+//     <div class="sb-dropdown__button sb-form-control__input">
+//       <button class="sb-input" title="Select options" aria-label="Select options">
+//        Select options
+//       </button>
+//       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
+//     </div>
+//     <ul class="sb-dropdown__menu" role="listbox">
+//       <li class="sb-dropdown__search" role="search">
+//         <input class="sb-input" id="input-id-1" placeholder="Search here ...">
+//       </li>
+//       <li class="sb-dropdown__message" tabindex="0" aria-label="No results">
+//         No results
+//       </li>
+//     </ul>
+//   </div>
+// </div>
+//
+// Styleguide dropdown.multiselect.search-empty
 
 // Dropdown disabled
 //
