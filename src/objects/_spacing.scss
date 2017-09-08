@@ -10,6 +10,7 @@
 // The available directions are `top`, `bottom`, `left`, `right`, `vertical`, `horizontal`.
 // The available sizes ranges from `xs` to `xl`.
 // The default class `sb-margin` adds the medium sized margin to all sides.
+// The `zero` suffix removes the margin by setting them to 0
 //
 // Markup:
 // <div class="sb-tile sb-margin-bottom-xs sb-padding">
@@ -30,9 +31,13 @@
 //
 // Styleguide spacing.margins
 
-$sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
+$sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px, '-zero': 0);
 
 @each $suffix, $spacing in $sb-spacing-map {
+  .#{$ns}margin#{$suffix} {
+    margin: sb-px2rems($spacing);
+  }
+
   .#{$ns}margin-top#{$suffix} {
     margin-top: sb-px2rems($spacing);
   }
@@ -58,10 +63,6 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
     margin-top: sb-px2rems($spacing);
     margin-bottom: sb-px2rems($spacing);
   }
-
-  .#{$ns}margin#{$suffix} {
-    margin: sb-px2rems($spacing);
-  }
 }
 
 // Paddings
@@ -70,6 +71,7 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 // The available directions are `top`, `bottom`, `left`, `right`, `vertical`, `horizontal`.
 // The available sizes ranges from `xs` to `xl`.
 // The default class `sb-padding` adds the medium sized padding to all sides.
+// The `zero` suffix removes the padding by setting them to 0
 //
 // Markup:
 // <div class="sb-tile  sb-padding-xs sb-margin-bottom">
@@ -91,6 +93,10 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 // Styleguide spacing.paddings
 
 @each $suffix, $spacing in $sb-spacing-map {
+  .#{$ns}padding#{$suffix} {
+    padding: sb-px2rems($spacing);
+  }
+
   .#{$ns}padding-top#{$suffix} {
     padding-top: sb-px2rems($spacing);
   }
@@ -115,9 +121,5 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
   .#{$ns}padding-vertical#{$suffix} {
     padding-top: sb-px2rems($spacing);
     padding-bottom: sb-px2rems($spacing);
-  }
-
-  .#{$ns}padding#{$suffix} {
-    padding: sb-px2rems($spacing);
   }
 }
