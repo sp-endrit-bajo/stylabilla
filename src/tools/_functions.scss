@@ -18,3 +18,217 @@
     clear: both;
   }
 }
+
+// Grid functions from Bootstrap Sass https://github.com/twbs/bootstrap-sass
+
+// Centered container element
+@mixin container-fixed($gutter: $grid-gutter-width) {
+  @include sb-clearfix;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: floor(($gutter / 2));
+  padding-right: ceil(($gutter / 2));
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  @include sb-clearfix;
+
+  margin-left: ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+}
+
+// Generate the extra small columns
+@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  float: left;
+  width: percentage(($columns / $grid-columns));
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin make-xs-column-offset($columns) {
+  margin-left: percentage(($columns / $grid-columns));
+}
+
+@mixin make-xs-column-push($columns) {
+  left: percentage(($columns / $grid-columns));
+}
+
+@mixin make-xs-column-pull($columns) {
+  right: percentage(($columns / $grid-columns));
+}
+
+// Generate the small columns
+@mixin make-s-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+
+  @media (min-width: $sb-breakpoint-s) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-s-column-offset($columns) {
+  @media (min-width: $sb-breakpoint-s) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-s-column-push($columns) {
+  @media (min-width: $sb-breakpoint-s) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-s-column-pull($columns) {
+  @media (min-width: $sb-breakpoint-s) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the medium columns
+@mixin make-m-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+
+  @media (min-width: $sb-breakpoint-m) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-m-column-offset($columns) {
+  @media (min-width: $sb-breakpoint-m) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-m-column-push($columns) {
+  @media (min-width: $sb-breakpoint-m) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-m-column-pull($columns) {
+  @media (min-width: $sb-breakpoint-m) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Generate the large columns
+@mixin make-l-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+
+  @media (min-width: $sb-breakpoint-l) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-l-column-offset($columns) {
+  @media (min-width: $sb-breakpoint-l) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-l-column-push($columns) {
+  @media (min-width: $sb-breakpoint-l) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-l-column-pull($columns) {
+  @media (min-width: $sb-breakpoint-l) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Other grid functions
+@mixin float-grid-columns($class, $i: 1, $list: '.sb-col-#{$class}-#{$i}') {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: '#{$list}, .sb-col-#{$class}-#{$i}';
+  }
+
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .sb-col-#{$class}-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+
+  @if ($type == push) and ($index > 0) {
+    .sb-col-#{$class}-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+
+  @if ($type == push) and ($index == 0) {
+    .sb-col-#{$class}-push-0 {
+      left: auto;
+    }
+  }
+
+  @if ($type == pull) and ($index > 0) {
+    .sb-col-#{$class}-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+
+  @if ($type == pull) and ($index == 0) {
+    .sb-col-#{$class}-pull-0 {
+      right: auto;
+    }
+  }
+
+  @if ($type == offset) {
+    .sb-col-#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+@mixin make-grid-columns($i: 1, $list: '.sb-col-xs-#{$i}, .sb-col-s-#{$i}, .sb-col-m-#{$i}, .sb-col-l-#{$i}') {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: '#{$list}, .sb-col-xs-#{$i}, .sb-col-s-#{$i}, .sb-col-m-#{$i}, .sb-col-l-#{$i}';
+  }
+
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left: ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+  }
+}
+
+// Create grid for specific class
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}

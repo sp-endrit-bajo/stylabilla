@@ -1,10 +1,18 @@
-$sb-container: 1920px;
-$sb-breakpoint-s: 480px;
-$sb-breakpoint-l: 960px;
+// Media queries breakpoints
+$sb-breakpoint-xs: 320px !default;
+$sb-breakpoint-s: 480px !default;
+$sb-breakpoint-m: 960px !default;
+$sb-breakpoint-l: 1200px !default;
 
 //Mobile first responsive mixins
 @mixin breakpoint-s() {
   @media (min-width: $sb-breakpoint-s) {
+    @content;
+  }
+}
+
+@mixin breakpoint-m() {
+  @media (min-width: $sb-breakpoint-m) {
     @content;
   }
 }

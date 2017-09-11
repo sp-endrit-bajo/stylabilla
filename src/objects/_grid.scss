@@ -6,175 +6,193 @@
 //
 // Markup:
 // <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
 // </div>
 //
 // Styleguide grid
 
+$grid-columns: 12 !default;
+$grid-gutter-width: 23px !default;
+
 .#{$ns}grid {
-  display: flex;
-  flex-wrap: wrap;
+  @include make-row;
 }
 
 // Containers
 //
-// Two container classes. All page containers should use `sb-container` which is set to a max-width of 1920px. You can also use `sb-container-fluid` for full width containers.
+// Two container classes. All page containers should use `sb-container` will have a max-width based on viewport. <br />
+// You can also use `sb-container-fluid` for full width containers.
 //
 // Markup:
-// <div class="sb-container sb-tile sb-padding">
+// <div class="sb-container sb-tile">
 //   .sb-container
 // </div>
-// <div class="sb-container-fluid sb-tile sb-padding">
+// <div class="sb-container-fluid sb-tile">
 //   .sb-container-fluid
 // </div>
 //
 // Styleguide grid.containers
 
+$sb-container-s: (720px + $grid-gutter-width) !default;
+$sb-container-m: (920px + $grid-gutter-width) !default;
+$sb-container-l: (1900px + $grid-gutter-width) !default; // previous $sb-container (1920px)
+
 .#{$ns}container {
-  max-width: sb-px2rems($sb-container);
-  width: 100%;
+  @include container-fixed;
+
+  @media (min-width: $sb-breakpoint-s) {
+    max-width: $sb-container-s;
+  }
+
+  @media (min-width: $sb-breakpoint-m) {
+    max-width: $sb-container-m;
+  }
+
+  @media (min-width: $sb-breakpoint-l) {
+    max-width: $sb-container-l;
+  }
 }
 
 .#{$ns}container-fluid {
-  width: 100%;
+  @include container-fixed;
 }
 
 // Columns
 //
 // Column classes. Use `sb-col-#{i}` to set the desired column width.
+// The columns will use the medium viewport as a breakpoint.
 //
 // Markup:
 // <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-12">
+//   <div class="sb-tile sb-col-12">
 //     .sb-col-12
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-10">
+//   <div class="sb-tile sb-col-10">
 //     .sb-col-10
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-2">
+//   <div class="sb-tile sb-col-2">
 //     .sb-col-2
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-9">
+//   <div class="sb-tile sb-col-9">
 //     .sb-col-9
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-3">
+//   <div class="sb-tile sb-col-3">
 //     .sb-col-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-8">
+//   <div class="sb-tile sb-col-8">
 //     .sb-col-8
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-7">
+//   <div class="sb-tile sb-col-7">
 //     .sb-col-7
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-5">
+//   <div class="sb-tile sb-col-5">
 //     .sb-col-5
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-6">
+//   <div class="sb-tile sb-col-6">
 //     .sb-col-6
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-6">
+//   <div class="sb-tile sb-col-6">
 //     .sb-col-6
 //   </div>
 // </div>
 //
 // Styleguide grid.columns
 
-$grid-columns: 12;
-$gutter-width: sb-px2rems(20px);
-
-@mixin sb-grid-item($grid-item-number) {
-  flex-shrink: 0;
-  flex-grow: 1;
-  flex-basis: calc(((100% / #{$grid-columns}) * #{$grid-item-number}) - #{$gutter-width});
-  margin: calc(#{$gutter-width} / 2);
-}
-
-@for $i from 1 through $grid-columns {
-  .#{$ns}col-#{$i} {
-    @include sb-grid-item(#{$i});
-  }
-}
+@include make-grid-columns;
 
 // Responsive Grid
 //
 // To create a responsive grid you can add different column classes for different viewports. <br/>
 // Add a `sb-col-s-#{i}` to set the desired column width for smaller viewports. <br/>
+// Add a `sb-col-m-#{i}` to set the desired column width for medium viewports. <br/>
 // Add a `sb-col-l-#{i}` to set the desired column width for larger viewports.
+// Note: Using `sb-col-#{i}` will behave the same as using `sb-col-m-#{i}`. <br/>
 //
 // Markup:
 // <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-col-s-12 sb-col-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
 // </div>
 //
 // Styleguide grid.responsive
 
-@for $i from 1 through $grid-columns {
-  @media (max-width: $sb-breakpoint-s) {
-    .#{$ns}col-s-#{$i} {
-      @include sb-grid-item(#{$i});
-    }
-  }
+// Extra small grid
+@include make-grid(xs);
 
-  @media (min-width: $sb-breakpoint-l) {
-    .#{$ns}col-l-#{$i} {
-      @include sb-grid-item(#{$i});
-    }
+// Small grid
+@media (min-width: $sb-breakpoint-s) {
+  @include make-grid(s);
+}
+
+// Makes `sb-col-#{i}` will behave like `sb-col-m-#{i}` for backwards compatibility
+@for $i from 1 through $grid-columns {
+  .#{$ns}col-#{$i} {
+    @include make-m-column($i);
   }
+}
+
+// Medium grid
+@media (min-width: $sb-breakpoint-m) {
+  @include make-grid(m);
+}
+
+// Large grid
+@media (min-width: $sb-breakpoint-l) {
+  @include make-grid(l);
 }
 
 // Push
@@ -183,25 +201,26 @@ $gutter-width: sb-px2rems(20px);
 //
 // Markup:
 // <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-5 sb-push-7">
-//     .sb-col-5 .sb-push-7
+//   <div class="sb-tile sb-col-4">
+//     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-8 sb-push-4">
-//     .sb-col-8 .sb-push-4
+//   <div class="sb-tile sb-col-3 sb-push-5">
+//     .sb-col-3 .sb-push-5
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-4 sb-push-2">
-//     .sb-col-4 .sb-push-2
+//   <div class="sb-tile sb-col-6">
+//     .sb-col-6
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-3 sb-push-3">
-//     .sb-col-3 .sb-push-3
+//   <div class="sb-tile sb-col-2 sb-push-2">
+//     .sb-col-2 .sb-push-2
 //   </div>
 // </div>
 //
 // Styleguide grid.push
 
+// Makes `sb-push-#{i}` will behave like `sb-col-m-push#{i}` for backwards compatibility
 @for $i from 1 through $grid-columns {
   .#{$ns}push-#{$i} {
-    margin-left: calc((100% / #{$grid-columns}) * #{$i} + (#{$gutter-width} / 2)) !important;
+    @include make-m-column-push($i);
   }
 }
 
@@ -211,24 +230,59 @@ $gutter-width: sb-px2rems(20px);
 //
 // Markup:
 // <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-4">
+//   <div class="sb-tile sb-col-4">
 //     .sb-col-4
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-10 sb-pull-2">
+//   <div class="sb-tile sb-col-8 sb-pull-1">
 //     .sb-col-10 .sb-pull-2
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-6">
+//   <div class="sb-tile sb-col-6">
 //     .sb-col-6
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-6 sb-pull-4">
+//   <div class="sb-tile sb-col-6 sb-pull-4">
 //     .sb-col-6 .sb-pull-4
 //   </div>
 // </div>
 //
 // Styleguide grid.pull
 
+// Makes `sb-pull-#{i}` will behave like `sb-col-m-pull-#{i}` for backwards compatibility
 @for $i from 1 through $grid-columns {
   .#{$ns}pull-#{$i} {
-    margin-left: calc((100% / #{$grid-columns}) * #{-$i} + (#{$gutter-width} / 2)) !important;
+    @include make-m-column-pull($i);
   }
 }
+
+// Push / Pull
+//
+// The `sb-col-{size}-push-{i}` and `sb-col-{size}-pull-{i}` classes can be used to push or pull a column.
+// It can be used to change the order of our built-in grid columns, as shown in example.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-col-m-9 sb-col-m-push-3">.sb-col-m-9 .sb-col-m-push-3</div>
+//   <div class="sb-tile sb-col-m-3 sb-col-m-pull-9">.sb-col-m-3 .sb-col-m-pull-9</div>
+// </div>
+//
+// Styleguide grid.pushpull
+
+// Nesting
+//
+// To nest your content with the default grid, add a new `.sb-grid` and set of `.col-m-*` columns within an existing `.col-m-* column.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-col-m-9">
+//     Level 1: .sb-col-m-9
+//     <div class="sb-grid">
+//       <div class="sb-tile sb-col-s-8 sb-col-m-6">
+//         Level 2: .sb-col-s-8 .sb-col-m-6
+//       </div>
+//       <div class="sb-tile sb-col-s-4 sb-col-m-6">
+//         Level 2: .sb-col-s-4 .sb-col-m-6
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide grid.nesting

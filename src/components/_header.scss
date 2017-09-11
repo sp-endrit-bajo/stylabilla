@@ -59,7 +59,7 @@
   }
 }
 
-@include breakpoint-l {
+@include breakpoint-m {
   .#{$ns}header__content {
     flex-direction: row;
     align-items: baseline;

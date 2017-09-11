@@ -101,7 +101,7 @@
   }
 }
 
-@include breakpoint-l {
+@include breakpoint-m {
   .#{$ns}toast {
     max-width: 40%;
 
