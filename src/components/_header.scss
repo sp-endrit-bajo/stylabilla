@@ -23,6 +23,8 @@
   overflow: auto;
   background: $sb-color-white;
   display: flex;
+  position: relative;
+  z-index: 1;
 
   &__title,
   &__info {
