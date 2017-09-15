@@ -1,4 +1,5 @@
 /* stylelint-disable declaration-no-important */
+/* stylelint-disable max-nesting-depth */
 
 // Grid
 //
@@ -28,9 +29,12 @@
 //
 // Styleguide grid
 
+$gutter-width: sb-px2rems(23px);
+
 .#{$ns}grid {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -calc(#{$gutter-width} / 2);
 }
 
 // Containers
@@ -100,13 +104,18 @@
 // Styleguide grid.columns
 
 $grid-columns: 12;
-$gutter-width: sb-px2rems(20px);
 
-@mixin sb-grid-item($grid-item-number) {
+[class*='#{$ns}col-'],
+[class*='#{$ns}col_'],
+[class~='#{$ns}col'] {
   flex-shrink: 0;
   flex-grow: 1;
-  flex-basis: calc(((100% / #{$grid-columns}) * #{$grid-item-number}) - #{$gutter-width});
-  margin: calc(#{$gutter-width} / 2);
+  max-width: 100%;
+}
+
+@mixin sb-grid-item($grid-item-number, $gutter-value: $gutter-width) {
+  flex-basis: calc(((100% / #{$grid-columns}) * #{$grid-item-number}) - #{$gutter-value});
+  margin: 0 calc(#{$gutter-value} / 2) $gutter-value;
 }
 
 @for $i from 1 through $grid-columns {
@@ -119,44 +128,45 @@ $gutter-width: sb-px2rems(20px);
 //
 // To create a responsive grid you can add different column classes for different viewports. <br/>
 // Add a `sb-col-s-#{i}` to set the desired column width for smaller viewports. <br/>
+// Add a `sb-col-m-#{i}` to set the desired column width for medium viewports. <br/>
 // Add a `sb-col-l-#{i}` to set the desired column width for larger viewports.
 //
 // Markup:
 // <div class="sb-grid">
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
-//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-4 sb-col-l-3">
+//   <div class="sb-tile sb-padding sb-col-s-12 sb-col-m-4 sb-col-l-3">
 //     .sb-col-s-12 .sb-col-4 .sb-col-l-3
 //   </div>
 // </div>
@@ -170,9 +180,77 @@ $gutter-width: sb-px2rems(20px);
     }
   }
 
+  @media (min-width: $sb-breakpoint-s) and (max-width: $sb-breakpoint-l) {
+    .#{$ns}col-m-#{$i} {
+      @include sb-grid-item(#{$i});
+    }
+  }
+
   @media (min-width: $sb-breakpoint-l) {
     .#{$ns}col-l-#{$i} {
       @include sb-grid-item(#{$i});
+    }
+  }
+}
+
+// Gutter
+//
+// Gutter modifier classes. Use `sb-grid--gutter-#{gutter}` to set the desired space between columns.
+//
+// Markup:
+// <div class="sb-grid {{modifier_class}}">
+//   <div class="sb-tile sb-padding sb-col-6">
+//     .sb-col-6
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-6">
+//     .sb-col-6
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-3">
+//     .sb-col-3
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-3">
+//     .sb-col-3
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-3">
+//     .sb-col-3
+//   </div>
+// </div>
+//
+// .sb-grid--gutter-0   - No gutter
+// .sb-grid--gutter-xs  - Extra Small gutter
+// .sb-grid--gutter-s   - Small gutter
+// .sb-grid--gutter-m   - Medium gutter
+//
+// Styleguide grid.gutter
+
+$sb-gutter-map: ('-0': 0, '-xs': 7px, '-s': 11px, '-m': 16px);
+
+@each $suffix, $spacing in $sb-gutter-map {
+  .#{$ns}grid--gutter#{$suffix} {
+    margin: 0 -calc(#{$spacing} / 2);
+
+    @for $i from 1 through $grid-columns {
+      .#{$ns}col-#{$i} {
+        @include sb-grid-item(#{$i}, $spacing);
+      }
+
+      @media (max-width: $sb-breakpoint-s) {
+        .#{$ns}col-s-#{$i} {
+          @include sb-grid-item(#{$i}, $spacing);
+        }
+      }
+
+      @media (min-width: $sb-breakpoint-s) and (max-width: $sb-breakpoint-l) {
+        .#{$ns}col-m-#{$i} {
+          @include sb-grid-item(#{$i}, $spacing);
+        }
+      }
+
+      @media (min-width: $sb-breakpoint-l) {
+        .#{$ns}col-l-#{$i} {
+          @include sb-grid-item(#{$i}, $spacing);
+        }
+      }
     }
   }
 }
@@ -232,3 +310,24 @@ $gutter-width: sb-px2rems(20px);
     margin-left: calc((100% / #{$grid-columns}) * #{-$i} + (#{$gutter-width} / 2)) !important;
   }
 }
+
+// Nesting
+//
+// To nest your content with the default grid, add a new `sb-grid` and set of `sb-col-*` columns within an existing `sb-col-*` column.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-padding sb-col-m-11">
+//     Level 1: .sb-col-m-11
+//     <div class="sb-grid">
+//       <div class="sb-tile sb-padding sb-col-s-8 sb-col-m-7 sb-col-l-6">
+//         Level 2: .sb-col-s-8 .sb-col-m-7 .sb-col-l-6
+//       </div>
+//       <div class="sb-tile sb-padding sb-col-s-4 sb-col-m-5 sb-col-l-6">
+//         Level 2: .sb-col-s-4 .sb-col-m-5 .sb-col-l-6
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide grid.nesting
