@@ -1,0 +1,27 @@
+// Table List
+//
+// Markup:
+//  <ul class="sb-table-list">
+//    <li class="sb-table-list__item"> Element 1 </li>
+//    <li class="sb-table-list__item"> Element 2 </li>
+//    <li class="sb-table-list__item"> Element 3 </li>
+//    <li class="sb-table-list__item"> Element 4 </li>
+//  </ul>
+//
+// Styleguide table-list
+
+.#{$ns}table-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    border-bottom: 1px solid $sb-color-light-4;
+    background-color: $sb-color-white;
+
+    &:hover,
+    &:focus {
+      background-color: $sb-color-light-4;
+    }
+  }
+}
