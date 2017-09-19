@@ -1,20 +1,22 @@
 // Loader
 //
+// Simple loader, witn inline option.
+// For a loader inside a button, check the <a href="section-button.html#kssref-button-loader">Button with loader</a> section.
+//
 // Markup:
 // <div class="sb-loader {{modifier_class}}" role="alert" aria-busy="true">
 //   <svg viewBox="0 0 50 50" class="sb-spinner" aria-hidden="true">
 //     <defs>
-//       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z" id="path-track-id-{{modifier_class}}"></path>
-//       <mask id="mask-track-id-{{modifier_class}}" fill="white">
-//         <use xlink:href="#path-track-id-{{modifier_class}}"></use>
-//       </mask>
+//       <path id="path-loader-{{modifier_class}}" d="M25 50C11.2 50 0 38.8 0 25S11.2 0 25 0s25 11.2 25 25-11.2 25-25 25zm0-6.5c10.2 0 18.5-8.3 18.5-18.5S35.2 6.5 25 6.5 6.5 14.8 6.5 25 14.8 43.5 25 43.5z"/>
 //     </defs>
-//     <g id="loader-{{modifier_class}}" fill-rule="evenodd">
-//       <path d="M25,50 C11.1928813,50 0,38.8071187 0,25 C0,11.1928813 11.1928813,0 25,0 C38.8071187,0 50,11.1928813 50,25 C50,38.8071187 38.8071187,50 25,50 Z M25,45 C36.045695,45 45,36.045695 45,25 C45,13.954305 36.045695,5 25,5 C13.954305,5 5,13.954305 5,25 C5,36.045695 13.954305,45 25,45 Z"></path>
-//       <use class="sb-spinner__secondary" xlink:href="#path-track-id-{{modifier_class}}"></use>
-//       <rect class="sb-spinner__primary" mask="url(#mask-track-id-{{modifier_class}})" width="25" height="25"></rect>
-//       <path class="sb-spinner__primary" d="M0,25 C0,26.3807119 1.11928813,27.5 2.5,27.5 L2.5,27.5 C3.88071187,27.5 5,26.3807119 5,25 L0,25 Z"></path>
-//       <path class="sb-spinner__primary" d="M23.75,1.25 C23.75,2.63071187 24.8692881,3.75 26.25,3.75 L26.25,3.75 C27.6307119,3.75 28.75,2.63071187 28.75,1.25 L23.75,1.25 Z" transform="translate(26.25, 2.5) rotate(-90) translate(-26.25, -2.5) "></path>
+//     <g fill="none" fill-rule="evenodd">
+//       <mask id="mask-loader-{{modifier_class}}" fill="#fff">
+//         <use xlink:href="#path-loader-{{modifier_class}}"/>
+//       </mask>
+//       <use class="sb-spinner__secondary" transform="matrix(-1 0 0 1 50 0)" xlink:href="#path-loader-{{modifier_class}}"/>
+//       <path class="sb-spinner__primary" d="M0 0h26v26H0z" mask="url(#mask-loader-{{modifier_class}})"/>
+//       <path class="sb-spinner__primary" d="M6.5 26c0 2-1.4 3.3-3.2 3.3C1.5 29.3 0 28 0 26h6.5z" mask="url(#mask-loader-{{modifier_class}})" transform="matrix(-1 0 0 1 6.522 0)"/>
+//       <path class="sb-spinner__primary" d="M29.3 0C27.5 0 26 1.5 26 3.3c0 1.8 1.5 3.2 3.3 3.2V0z" mask="url(#mask-loader-{{modifier_class}})" transform="matrix(-1 0 0 1 55.435 0)"/>
 //     </g>
 //   </svg>
 //   <span class="sb-loader__label">Loading page, please wait</span>
@@ -41,6 +43,10 @@ $sb-loader-animation-duration: 0.8s;
 
   &__primary {
     fill: $sb-color-blue-2;
+
+    .sb-btn--primary & {
+      fill: $sb-color-white;
+    }
   }
 
   &__secondary {
@@ -57,6 +63,14 @@ $sb-loader-animation-duration: 0.8s;
     padding: $sb-loader-padding 0;
   }
 
+  &--button,
+  &--inline {
+    .#{$ns}spinner {
+      height: $sb-loader-spinner-size--inline;
+      width: $sb-loader-spinner-size--inline;
+    }
+  }
+
   &--inline {
     background: $sb-color-white;
     border: 1px solid $sb-color-light-3;
@@ -70,12 +84,21 @@ $sb-loader-animation-duration: 0.8s;
 
     .#{$ns}spinner {
       position: absolute;
-      width: $sb-loader-spinner-size--inline;
-      height: $sb-loader-spinner-size--inline;
       top: 50%;
       right: $sb-loader-padding--inline;
       margin-top: -1 * $sb-loader-spinner-size--inline / 2;
     }
+  }
+
+  &--button {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 
