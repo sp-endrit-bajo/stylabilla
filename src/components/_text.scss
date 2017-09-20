@@ -5,14 +5,15 @@
 // Markup:
 // <p class="{{modifier_class}}">The quick brown fox jumps over the lazy dog</p>
 //
-// .sb-display--l     - Used for single dates when visualizing data
-// .sb-display        - Used for big numbers when visualizing data
-// .sb-title--l       - Used for page titles
-// .sb-title          - Used for main titles in different page sections
-// .sb-title--s       - Used for smaller titles
-// .sb-text           - Used for buttons and empty state text
-// .sb-text--s        - Used for all input controls
-// .sb-text--emphasis - Used for emphasizing text
+// .sb-display--l      - Used for single dates when visualizing data
+// .sb-display         - Used for big numbers when visualizing data
+// .sb-title--l        - Used for page titles
+// .sb-title           - Used for main titles in different page sections
+// .sb-title--s        - Used for smaller titles
+// .sb-text            - Used for buttons and empty state text
+// .sb-text--s         - Used for all input controls
+// .sb-text--emphasis  - Used for emphasizing text
+// .sb-text--subtle    - Used for not distinct text
 //
 // Styleguide typography.text
 
@@ -65,4 +66,8 @@
 
 .#{$ns}text--emphasis {
   font-weight: 600;
+}
+
+.#{$ns}text--subtle {
+  color: $sb-color-light-1;
 }
