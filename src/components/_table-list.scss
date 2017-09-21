@@ -16,12 +16,15 @@
   padding: 0;
 
   &__item {
-    border-bottom: 1px solid $sb-color-light-4;
     background-color: $sb-color-white;
 
     &:hover,
     &:focus {
       background-color: $sb-color-light-4;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $sb-color-light-4;
     }
   }
 }
