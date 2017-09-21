@@ -32,7 +32,7 @@ yarn add @usabilla/stylabilla
 
 Make sure webpack correctly packages Stylabilla by editing your `scss/css` and `woff/woff2`  webpack configuration rules to have the `exclude` property and the `url-loader` as follows:
 
-```JSON
+```JavaScript
 {
   test: /\.(css|scss)$/,
   exclude: {
