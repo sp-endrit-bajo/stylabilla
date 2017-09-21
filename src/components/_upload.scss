@@ -14,7 +14,8 @@
 //   <input class="sb-upload__input" type="file" id="upload-id-{{modifier_class}}" name="upload-1" accept="image/*">
 //   <label class="sb-upload__label" for="upload-id-{{modifier_class}}">
 //     <div class="sb-upload__faux sb-input" role="button" tabindex="0" title="Upload file">
-//       <p class="sb-upload__filename">filename.jpg<a class="sb-upload__link" id="upload-link-{{modifier_class}}">change</a></p>
+//       <input class="sb-upload__filename" readonly value="a-very-very-very-very-very-very-very-very-very-very-very-very-long-filename.jpg"/>
+//       <a class="sb-upload__link" id="upload-link-{{modifier_class}}">change</a>
 //     </div>
 //   </label>
 //   <button class="sb-upload__delete" title="Remove">
@@ -38,6 +39,9 @@
 
   &__filename {
     font-size: sb-px2rems(13px);
+    border: 0;
+    padding: 0;
+    flex-grow: 2;
   }
 
   &__link {
@@ -48,8 +52,8 @@
   &__faux {
     @include sb-clearfix();
 
+    display: flex;
     width: initial;
-    word-wrap: break-word;
     margin-right: sb-px2rems(32px);
 
     &:hover {
