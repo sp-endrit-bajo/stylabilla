@@ -10,8 +10,10 @@
 //     </svg>
 //   </button>
 //   <div class="sb-header__content">
-//     <h1 class="sb-header__title sb-title">Header title</h1>
-//     <p class="sb-header__info sb-text">Info regarding this page.</p>
+//     <div class="sb-header__text">
+//       <h1 class="sb-header__title sb-title">Header title</h1>
+//       <p class="sb-header__info sb-text">Info regarding this page.</p>
+//     </div>
 //     <button href="#" class="sb-header__btn sb-btn sb-btn--primary">Action button</button>
 //   </div>
 // </header>
@@ -23,21 +25,30 @@
   overflow: auto;
   background: $sb-color-white;
   display: flex;
-  position: relative;
   z-index: 1;
+  min-height: sb-px2rems(62px); //40px button height plus 11px top and bottom margin
 
   &__title,
   &__info {
-    margin-bottom: sb-px2rems(11px);
     margin-right: sb-px2rems(11px);
+  }
+
+  &__btn {
+    margin-top: sb-px2rems(11px);
+  }
+
+  &__text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   &__content {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    justify-content: center;
     padding: sb-px2rems(11px);
-    justify-content: space-between;
   }
 }
 
@@ -45,6 +56,7 @@
   border: 0;
   border-right: 1px solid $sb-color-light-4;
   padding: sb-px2rems(16px);
+  line-height: 0;
 
   &:active,
   &:focus {
@@ -61,19 +73,20 @@
   }
 }
 
-@include breakpoint-l {
+@include breakpoint-s {
   .#{$ns}header__content {
     flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .#{$ns}header__text {
+    flex-direction: row;
     align-items: baseline;
-    flex: 1;
   }
 
-  .#{$ns}header__title {
-    margin-bottom: 0;
-  }
-
-  .#{$ns}header__info {
-    flex: 1;
-    margin-bottom: 0;
+  .#{$ns}header__btn {
+    margin-top: 0;
   }
 }
