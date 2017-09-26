@@ -259,12 +259,12 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 //
 // JavaScript is required for:
 // - Adding/removing loader markup inside button
-// - Adding/removing loader class
+// - Adding/removing loader class and disabled attribute
 //
 // Obs: do not remove button text when applying the loader, so the button can keep the same size.
 //
 // Markup:
-// <button class="sb-btn {{modifier_class}} sb-btn--loader">
+// <button class="sb-btn {{modifier_class}} sb-btn--loader" disabled>
 //   <div class="sb-loader sb-loader--button" role="alert" aria-busy="true">
 //     <svg viewBox="0 0 50 50" class="sb-spinner">
 //       <defs>
@@ -305,9 +305,25 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
     background-color: $sb-color-white;
   }
 
-  &.#{$ns}btn--primary:hover,
-  &.#{$ns}btn--primary:active,
-  &.#{$ns}btn--primary:focus,
+  &[disabled],
+  &[disabled]:hover {
+    border-color: $sb-color-dark-3;
+  }
+
+  &.#{$ns}btn--primary[disabled],
+  &.#{$ns}btn--primary[disabled]:hover,
+  &.#{$ns}btn--secondary[disabled],
+  &.#{$ns}btn--secondary[disabled]:hover {
+    border-color: $sb-color-blue-2;
+  }
+
+  &.#{$ns}btn--subtle[disabled],
+  &.#{$ns}btn--subtle[disabled]:hover {
+    border-color: transparent;
+  }
+
+  &.#{$ns}btn--primary[disabled],
+  &.#{$ns}btn--primary[disabled]:hover,
   &.#{$ns}btn--primary .#{$ns}loader--button {
     background-color: $sb-color-blue-2;
   }
