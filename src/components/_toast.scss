@@ -42,6 +42,7 @@
   background: $sb-color-white;
   position: fixed;
   margin-left: sb-px2rems(11px);
+  min-width: sb-px2rems(250px);
   top: sb-px2rems(11px);
   right: sb-px2rems(11px);
   border: 1px solid $sb-color-light-3;
@@ -103,6 +104,7 @@
 
 @include breakpoint-l {
   .#{$ns}toast {
+    min-width: sb-px2rems(415px);
     max-width: 40%;
 
     &__icon {
