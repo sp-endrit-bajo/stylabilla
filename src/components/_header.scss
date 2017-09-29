@@ -26,7 +26,7 @@
   background: $sb-color-white;
   display: flex;
   z-index: 1;
-  min-height: sb-px2rems(62px); //40px button height plus 11px top and bottom margin
+  min-height: sb-px2rems($sb-header-height);
 
   &__title,
   &__info {

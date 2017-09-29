@@ -2,6 +2,7 @@ $sb-container: 1920px;
 $sb-breakpoint-s: 480px;
 $sb-breakpoint-m: 768px;
 $sb-breakpoint-l: 960px;
+$sb-breakpoint-xl: 1350px;
 
 //Mobile first responsive mixins
 @mixin breakpoint-s() {
@@ -10,8 +11,20 @@ $sb-breakpoint-l: 960px;
   }
 }
 
+@mixin breakpoint-m() {
+  @media (min-width: $sb-breakpoint-m) {
+    @content;
+  }
+}
+
 @mixin breakpoint-l() {
   @media (min-width: $sb-breakpoint-l) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xl() {
+  @media (min-width: $sb-breakpoint-xl) {
     @content;
   }
 }

@@ -1,0 +1,327 @@
+/* stylelint-disable max-nesting-depth */
+/* stylelint-disable length-zero-no-unit */
+
+// Layout
+//
+// The following classes are provided to create consistent page layouts across Usabilla.
+//
+// Styleguide layout
+
+$sb-grid-columns: 12;
+$sb-default-gutter: 23px;
+$sb-gutter-map: ('-0': 0px, '-s': 11px);
+
+// Containers
+//
+// We have three container classes. All Usabilla application page containers should use `sb-container` which is set to a max-width of 1920px.</br>
+// If you want a Usabilla page to be the full window height (minus the header), you can use `sb-container--page-height`.</br>
+// You can also use `sb-container-fluid` for full width containers.
+//
+// Markup:
+// <div class="sb-container sb-tile sb-padding">
+//   .sb-container
+// </div>
+// <div class="sb-container-fluid sb-tile sb-padding">
+//   .sb-container-fluid
+// </div>
+//
+// Weight: -20
+//
+// Styleguide layout.containers
+
+.#{$ns}container {
+  max-width: sb-px2rems($sb-container);
+  width: 100%;
+}
+
+.#{$ns}container-fluid {
+  width: 100%;
+}
+
+.#{$ns}container--page-height {
+  height: calc(100vh - #{$sb-header-height});
+}
+
+// Grid
+//
+// A basic 12 column flexbox grid. Apply `sb-grid` to the wrapper element. If you also want a vertical gutter, include `sb-grid--gutter-vertical`.</br>
+// Note that this grid is only properly <a href="https://caniuse.com/#feat=flexbox">supported</a> in IE11 and higher.
+//
+// Markup:
+// <div class="sb-grid {{modifier_class}}">
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+// </div>
+//
+// Weight: -10
+//
+// .sb-grid--gutter-vertical - Vertical gutter
+//
+// Styleguide layout.grid
+
+.#{$ns}grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$sb-default-gutter / 2;
+  margin-left: -$sb-default-gutter / 2;
+}
+
+.#{$ns}grid--gutter-vertical [class*='#{$ns}col-'] {
+  margin-bottom: $sb-default-gutter;
+}
+
+// Columns
+//
+// Column classes. Use `sb-col-#{i}` to set the desired column width.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-padding sb-col-12">
+//     .sb-col-12
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-10">
+//     .sb-col-10
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-2">
+//     .sb-col-2
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-9">
+//     .sb-col-9
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-3">
+//     .sb-col-3
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-8">
+//     .sb-col-8
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-7">
+//     .sb-col-7
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-5">
+//     .sb-col-5
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-6">
+//     .sb-col-6
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-6">
+//     .sb-col-6
+//   </div>
+// </div>
+//
+// Styleguide layout.columns
+
+[class*='#{$ns}col-'] {
+  max-width: 100%;
+  margin-left: calc(#{$sb-default-gutter} / 2);
+  margin-right: calc(#{$sb-default-gutter} / 2);
+}
+
+@for $i from 1 through $sb-grid-columns {
+  .#{$ns}col-#{$i} {
+    width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$sb-default-gutter});
+  }
+}
+
+// Responsive
+//
+// To create a mobile-first responsive grid you can add different column classes for different viewports.
+// Add `sb-col-#{i}`, `sb-col-s-#{i}`, `sb-col-m-#{i}`, `sb-col-l-#{i}`, `sb-col-xl-#{i}` to set the desired column width for extra small (default), small, medium, large and extra large viewports.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-padding sb-col-12 sb-col-s-6 sb-col-m-4 sb-col-l-3 sb-col-xl-2">
+//     .sb-col-12 .sb-col-s-6 .sb-col-m-4 .sb-col-l-3 .sb-col-xl-2
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-12 sb-col-s-6 sb-col-m-4 sb-col-l-3 sb-col-xl-2">
+//     .sb-col-12 .sb-col-s-6 .sb-col-m-4 .sb-col-l-3 .sb-col-xl-2
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-12 sb-col-s-6 sb-col-m-4 sb-col-l-3 sb-col-xl-2">
+//     .sb-col-12 .sb-col-s-6 .sb-col-m-4 .sb-col-l-3 .sb-col-xl-2
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-12 sb-col-s-6 sb-col-m-12 sb-col-l-3 sb-col-xl-2">
+//     .sb-col-12 .sb-col-s-6 .sb-col-m-12 .sb-col-l-3 .sb-col-xl-2
+//   </div>
+// </div>
+//
+// Styleguide layout.responsive
+
+@include breakpoint-s {
+  @for $i from 1 through $sb-grid-columns {
+    .#{$ns}col-s-#{$i} {
+      width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$sb-default-gutter});
+    }
+  }
+}
+
+@include breakpoint-m {
+  @for $i from 1 through $sb-grid-columns {
+    .#{$ns}col-m-#{$i} {
+      width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$sb-default-gutter});
+    }
+  }
+}
+
+@include breakpoint-l {
+  @for $i from 1 through $sb-grid-columns {
+    .#{$ns}col-l-#{$i} {
+      width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$sb-default-gutter});
+    }
+  }
+}
+
+@include breakpoint-xl {
+  @for $i from 1 through $sb-grid-columns {
+    .#{$ns}col-xl-#{$i} {
+      width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$sb-default-gutter});
+    }
+  }
+}
+
+// Gutter
+//
+// Gutter modifier classes. Use `sb-grid--gutter-#{gutter}` to set the desired space between columns. </br>
+// If you would also like a vertical gutter, include `sb-grid--gutter-vertical`, it will match your horizontal gutter in size.
+//
+// Markup:
+// <div class="sb-grid {{modifier_class}}">
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     .sb-col-4
+//   </div>
+// </div>
+//
+// .sb-grid--gutter-0   - No gutter
+// .sb-grid--gutter-s   - Small gutter
+//
+// Styleguide layout.gutter
+
+@each $suffix, $gutter in $sb-gutter-map {
+  .#{$ns}grid--gutter#{$suffix} {
+    margin-left: -$gutter / 2;
+    margin-right: -$gutter / 2;
+
+    > [class*='sb-col-'] {
+      margin-left: calc(#{$gutter} / 2);
+      margin-right: calc(#{$gutter} / 2);
+    }
+
+    @for $i from 1 through $sb-grid-columns {
+      > .#{$ns}col-#{$i} {
+        width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$gutter});
+      }
+
+      > .#{$ns}offset-#{$i} {
+        margin-left: calc((100% / #{$sb-grid-columns}) * #{$i} + (#{$gutter} / 2));
+      }
+    }
+
+    @include breakpoint-s {
+      @for $i from 1 through $sb-grid-columns {
+        > .#{$ns}col-s-#{$i} {
+          width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$gutter});
+        }
+      }
+    }
+
+    @include breakpoint-m {
+      @for $i from 1 through $sb-grid-columns {
+        > .#{$ns}col-m-#{$i} {
+          width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$gutter});
+        }
+      }
+    }
+
+    @include breakpoint-l {
+      @for $i from 1 through $sb-grid-columns {
+        > .#{$ns}col-l-#{$i} {
+          width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$gutter});
+        }
+      }
+    }
+
+    @include breakpoint-xl {
+      @for $i from 1 through $sb-grid-columns {
+        > .#{$ns}col-xl-#{$i} {
+          width: calc(((100% / #{$sb-grid-columns}) * #{$i}) - #{$gutter});
+        }
+      }
+    }
+
+    &.#{$ns}grid--gutter-vertical > [class*='#{$ns}col-'] {
+      margin-bottom: $gutter;
+    }
+  }
+}
+
+// Offset
+//
+// The `sb-offset-{i}` classes can be used to move a column to the right.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-padding sb-col-8 sb-offset-4">
+//     .sb-col-8 .sb-offset-4
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4 sb-offset-2">
+//     .sb-col-4 .sb-offset-2
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-3 sb-offset-3">
+//     .sb-col-3 .sb-offset-3
+//   </div>
+// </div>
+//
+// Styleguide layout.offset
+
+@for $i from 1 through $sb-grid-columns {
+  .#{$ns}offset-#{$i} {
+    margin-left: calc((100% / #{$sb-grid-columns}) * #{$i} + (#{$sb-default-gutter} / 2));
+  }
+}
+
+// Nesting
+//
+// To nest your content with the default grid, add a new `sb-grid` and set of `sb-col-*` columns within an existing `sb-col-*` column.
+//
+// Markup:
+// <div class="sb-grid">
+//   <div class="sb-tile sb-padding sb-col-8">
+//     <p class="sb-margin-bottom">Level 1: .sb-col-8</p>
+//     <div class="sb-grid">
+//       <div class="sb-tile sb-padding sb-col-s-8 sb-col-m-7 sb-col-l-6">
+//         Level 2: .sb-col-s-8 .sb-col-m-7 .sb-col-l-6
+//       </div>
+//       <div class="sb-tile sb-padding sb-col-s-4 sb-col-m-5 sb-col-l-6">
+//         Level 2: .sb-col-s-4 .sb-col-m-5 .sb-col-l-6
+//       </div>
+//     </div>
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-4">
+//     Level 1: .sb-col-4
+//   </div>
+// </div>
+//
+// Styleguide layout.nesting
