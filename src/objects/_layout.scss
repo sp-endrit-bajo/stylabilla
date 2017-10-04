@@ -14,15 +14,15 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // Containers
 //
 // We have three container classes. All Usabilla application page containers should use `sb-container` which is set to a max-width of 1920px.</br>
-// If you want a Usabilla page to be the full window height (minus the header), you can use `sb-container--page-height`.</br>
-// You can also use `sb-container-fluid` for full width containers.
+// If you want a Usabilla page to be the full window height (minus the header), you can use `sb-container--full-height`.</br>
+// You can also use `sb-container--full-width` for full width containers.
 //
 // Markup:
 // <div class="sb-container sb-tile sb-padding">
 //   .sb-container
 // </div>
-// <div class="sb-container-fluid sb-tile sb-padding">
-//   .sb-container-fluid
+// <div class="sb-container--full-width sb-tile sb-padding">
+//   .sb-container--full-width
 // </div>
 //
 // Weight: -20
@@ -34,11 +34,11 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
   width: 100%;
 }
 
-.#{$ns}container-fluid {
+.#{$ns}container--full-width {
   width: 100%;
 }
 
-.#{$ns}container--page-height {
+.#{$ns}container--full-height {
   height: calc(100vh - #{$sb-header-height});
 }
 
