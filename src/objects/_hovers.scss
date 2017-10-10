@@ -1,0 +1,32 @@
+// Hovers
+//
+// Styleguide hovers
+
+// Hide child
+//
+// Put the hide-child class on a parent element and any nested element with the
+// child class will be hidden and displayed on hover or focus.
+// 
+// Markup:
+//   <div class="sb-hide-child">
+//     <div class="sb-child"> Hidden until hover or focus </div>
+//     <div class="sb-child"> Hidden until hover or focus </div>
+//     <div class="sb-child"> Hidden until hover or focus </div>
+//     <div class="sb-child"> Hidden until hover or focus </div>
+//   </div>
+//
+// Styleguide hovers.hide-child
+
+.#{$ns}hide-child {
+  .#{$ns}child {
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .#{$ns}child {
+      opacity: 1;
+    }
+  }
+}

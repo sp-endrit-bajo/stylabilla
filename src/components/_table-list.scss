@@ -29,3 +29,36 @@
     }
   }
 }
+
+// Table List Hover
+//
+// Markup:
+//  <ul class="sb-table-list">
+//    <li class="sb-table-list__item sb-hide-child">
+//        Element 1
+//        <svg class="sb-icon sb-child" viewBox="0 0 13 16">
+//          <path d="M7.21582935 3.881V0L13 6l-5.78417065 6V8.0345C.4864288 7.8705.77515533 12.7805 2.48823387 16-1.73999488 11.259-.8424844 3.663 7.21582935 3.881"/>
+//        </svg>
+//    </li>
+//    <li class="sb-table-list__item sb-hide-child">
+//        Element 2
+//        <svg class="sb-icon sb-child" viewBox="0 0 13 16">
+//          <path d="M7.21582935 3.881V0L13 6l-5.78417065 6V8.0345C.4864288 7.8705.77515533 12.7805 2.48823387 16-1.73999488 11.259-.8424844 3.663 7.21582935 3.881"/>
+//        </svg>
+//    </li>
+//    <li class="sb-table-list__item sb-hide-child">
+//        Element 3
+//        <svg class="sb-icon sb-child" viewBox="0 0 13 16">
+//          <path d="M7.21582935 3.881V0L13 6l-5.78417065 6V8.0345C.4864288 7.8705.77515533 12.7805 2.48823387 16-1.73999488 11.259-.8424844 3.663 7.21582935 3.881"/>
+//        </svg>
+//    </li>
+//    <li class="sb-table-list__item sb-hide-child">
+//        Element 4
+//        <svg class="sb-icon sb-child" viewBox="0 0 13 16">
+//          <path d="M7.21582935 3.881V0L13 6l-5.78417065 6V8.0345C.4864288 7.8705.77515533 12.7805 2.48823387 16-1.73999488 11.259-.8424844 3.663 7.21582935 3.881"/>
+//        </svg>
+//    </li>
+//  </ul>
+//
+// Styleguide table-list.hover
+
