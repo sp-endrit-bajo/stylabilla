@@ -1,0 +1,130 @@
+// Flex
+//
+// Styleguide flex
+
+// Display
+//
+// Display utility to create a flexbox container and transform
+// direct children elements into flex items.
+//
+// Markup:
+// <div class="{{modifier_class}} sb-tile sb-padding">
+//   I'm a flexbox container.
+// </div>
+//
+// .sb-flex - Flexbox container
+// .sb-flex-inline - Inline flexbox container
+//
+// Weight: -40
+//
+// Styleguide flex.display
+
+.#{$ns}flex { display: flex; }
+.#{$ns}flex-inline { display: inline-flex; }
+
+// Direction
+//
+// Set the direction of flex items in a flex container with direction utilities.
+// 
+// Markup:
+// <div class="sb-flex {{modifier_class}} sb-tile">
+//   <div class="sb-padding">Flex item 1</div>
+//   <div class="sb-padding">Flex item 2</div>
+//   <div class="sb-padding">Flex item 3</div>
+// </div>
+//
+// .sb-flex-row - Set the flex items to a horizontal direction
+// .sb-flex-row-reverse - Set the flex items to a horizontal direction from the opposite side 
+// .sb-flex-column - Set the flex items to a vertical direction
+// .sb-flex-column-reverse - Set the flex items to a vertical direction
+//
+// Weight: -30
+//
+// Styleguide flex.direction-row
+
+.#{$ns}flex-row { flex-direction: row; }
+.#{$ns}flex-row-reverse { flex-direction: row-reverse; }
+.#{$ns}flex-column { flex-direction: column; }
+.#{$ns}flex-column-reverse { flex-direction: column-reverse; }
+
+// Justify content
+//
+// Use justify-content utilities on flexbox containers to change the alignment of flex items
+// on the main axis (by default the x-axis, y-axis if `flex-direction: column`).
+//
+// Markup:
+// <div class="sb-flex {{modifier_class}} sb-tile">
+//   <div class="sb-padding sb-tile">Flex item 1</div>
+//   <div class="sb-padding sb-tile">Flex item 2</div>
+//   <div class="sb-padding sb-tile">Flex item 3</div>
+// </div>
+//
+// .sb-justify-content-start - Items are packed toward the start line
+// .sb-justify-content-end - Items are packed toward the end line
+// .sb-justify-content-center - Items are centered along the line
+// .sb-justify-content-between - Items are evenly distributed in the line
+// .sb-justify-content-around - Items are evenly distributed in the line with equal space around them
+//
+// Weight: -20
+//
+// Styleguide flex.justify-content
+
+.#{$ns}justify-content-start { justify-content: flex-start; }
+.#{$ns}justify-content-end { justify-content: flex-end; }
+.#{$ns}justify-content-center { justify-content: center; }
+.#{$ns}justify-content-between { justify-content: space-between; }
+.#{$ns}justify-content-around { justify-content: space-around; }
+
+// Align items
+//
+// Use align-items utilities on flexbox containers to change the alignment of flex items
+// on the cross axis (by default the y-axis, x-axis if `flex-direction: column`).
+//
+// Markup:
+// <div class="sb-flex {{modifier_class}} sb-tile" style="height: 100px">
+//   <div class="sb-padding sb-tile">Flex item 1</div>
+//   <div class="sb-padding sb-tile">Flex item 2</div>
+//   <div class="sb-padding sb-tile">Flex item 3</div>
+// </div>
+//
+// .sb-align-items-start - Items are packed toward the start line of the cross axis
+// .sb-align-items-end - Items are packed toward the end line of the cross axis
+// .sb-align-items-center - Items are centered along the line of the cross axis
+// .sb-align-items-baseline - Items are aligned such as their baselines align
+// .sb-align-items-stretch - Items are stretched to fill the container
+//
+// Weight: -10
+//
+// Styleguide flex.align-items
+
+.#{$ns}align-items-start { align-items: flex-start; }
+.#{$ns}align-items-end { align-items: flex-end; }
+.#{$ns}align-items-center { align-items: center; }
+.#{$ns}align-items-baseline { align-items: baseline; }
+.#{$ns}align-items-stretch { align-items: stretch; }
+
+// Wrap
+//
+// Change how flex items wrap in a flex container.
+//
+// Markup:
+// <div class="sb-flex {{modifier_class}} sb-tile" style="width: 700px">
+//   <div class="sb-padding">Flex item 1</div>
+//   <div class="sb-padding">Flex item 2</div>
+//   <div class="sb-padding">Flex item 3</div>
+//   <div class="sb-padding">Flex item 4</div>
+//   <div class="sb-padding">Flex item 5</div>
+//   <div class="sb-padding">Flex item 6</div>
+//   <div class="sb-padding">Flex item 7</div>
+//   <div class="sb-padding">Flex item 8</div>
+//   <div class="sb-padding">Flex item 9</div>
+//   <div class="sb-padding">Flex item 10</div>
+// </div>
+// 
+// .sb-flex-nowrap - No wrapping of the items
+// .sb-flex-wrap - Wrap the items in a new line. The direction is defined by `flex-direction`.
+//
+// Styleguide flex.wrap
+
+.#{$ns}flex-wrap { flex-wrap: wrap; }
+.#{$ns}flex-nowrap { flex-wrap: nowrap; }
