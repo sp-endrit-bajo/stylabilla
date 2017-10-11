@@ -1,5 +1,7 @@
 // Flex
 //
+// **NOTE**: for grid-like layouts use the `sb-grid`.
+//
 // Styleguide flex
 
 // Display
@@ -25,7 +27,7 @@
 // Direction
 //
 // Set the direction of flex items in a flex container with direction utilities.
-// 
+//
 // Markup:
 // <div class="sb-flex {{modifier_class}} sb-tile">
 //   <div class="sb-padding">Flex item 1</div>
@@ -34,13 +36,13 @@
 // </div>
 //
 // .sb-flex-row - Set the flex items to a horizontal direction
-// .sb-flex-row-reverse - Set the flex items to a horizontal direction from the opposite side 
+// .sb-flex-row-reverse - Set the flex items to a horizontal direction from the opposite side
 // .sb-flex-column - Set the flex items to a vertical direction
 // .sb-flex-column-reverse - Set the flex items to a vertical direction
 //
 // Weight: -30
 //
-// Styleguide flex.direction-row
+// Styleguide flex.direction
 
 .#{$ns}flex-row { flex-direction: row; }
 .#{$ns}flex-row-reverse { flex-direction: row-reverse; }
@@ -120,7 +122,7 @@
 //   <div class="sb-padding">Flex item 9</div>
 //   <div class="sb-padding">Flex item 10</div>
 // </div>
-// 
+//
 // .sb-flex-nowrap - No wrapping of the items
 // .sb-flex-wrap - Wrap the items in a new line. The direction is defined by `flex-direction`.
 //
