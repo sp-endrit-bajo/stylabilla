@@ -45,7 +45,7 @@
     "kss-loader": "^0.3.2",
     "lint-staged": "^4.0.0",
     "node-sass": "^4.1.0",
-    "pa11y": "^4.11.0",
+    "pa11y": "^4.13.1",
     "postcss-loader": "^2.0.3",
     "s3-deploy": "^0.7.5",
     "sass-loader": "^6.0.3",

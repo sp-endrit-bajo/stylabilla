@@ -78,8 +78,8 @@
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
-//   <p class="sb-label" id="label-btn-group">Button Group label</p>
-//   <div class="sb-btn-group" role="group" aria-labelledby="label-btn-group">
+//   <p class="sb-label" id="label-btn-group-{{modifier_class}}">Button Group label</p>
+//   <div class="sb-btn-group" role="group" aria-labelledby="label-btn-group-{{modifier_class}}">
 //     <button class="sb-btn" role="checkbox" aria-checked="false">Button one</button>
 //     <button class="sb-btn" role="checkbox" aria-checked="false">Button two</button>
 //     <button class="sb-btn sb-btn--active" role="checkbox" aria-checked="true">Active</button>

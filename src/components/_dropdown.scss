@@ -9,7 +9,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input" title="Choose an option" aria-label="Choose an option" aria-expanded="false">
+//        <button class="sb-input" aria-label="Choose an option" aria-expanded="false">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -130,7 +130,7 @@
 //   <p class="sb-label">Select options</p>
 //   <div class="sb-dropdown sb-dropdown--open">
 //     <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Select options" aria-label="Select options" aria-expanded="true">
+//       <button class="sb-input" aria-label="Select options" aria-expanded="true">
 //         Select options
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -193,14 +193,14 @@
 //   <p class="sb-label">Select options</p>
 //   <div class="sb-dropdown sb-dropdown--open">
 //     <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Select options" aria-label="One item selected">
+//       <button class="sb-input" aria-label="One item selected">
 //        One item selected
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //     </div>
 //     <ul class="sb-dropdown__menu" role="listbox">
 //       <li class="sb-dropdown__search" role="search">
-//         <input class="sb-input" id="input-id-1" placeholder="Search here ...">
+//         <input class="sb-input" id="input-id-1" placeholder="Search here ..." aria-label="Search">
 //       </li>
 //       <li class="sb-dropdown__menu-item sb-dropdown__menu-item--selected" tabindex="0" role="option">
 //         <div class="sb-checkbox">
@@ -241,14 +241,14 @@
 //   <p class="sb-label">Select options</p>
 //   <div class="sb-dropdown sb-dropdown--open">
 //     <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Select options" aria-label="Select options">
+//       <button class="sb-input" aria-label="Select options">
 //        Select options
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //     </div>
 //     <ul class="sb-dropdown__menu" role="listbox">
 //       <li class="sb-dropdown__search" role="search">
-//         <input class="sb-input" id="input-id-1" placeholder="Search here ...">
+//         <input class="sb-input" id="input-id-2" placeholder="Search here ..." aria-label="Search">
 //       </li>
 //       <li class="sb-dropdown__message" tabindex="0" aria-label="No results">
 //         No results
@@ -266,7 +266,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown {{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//       <button class="sb-input" title="Choose an option" aria-label="Choose an option" disabled aria-expanded="false">
+//       <button class="sb-input" aria-label="Choose an option" disabled aria-expanded="false">
 //         Choice 1
 //       </button>
 //       <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
@@ -292,7 +292,7 @@
 //    <p class="sb-label">Choose an option</p>
 //    <div class="sb-dropdown">
 //      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input" title="Choose an option" aria-expanded="false">
+//        <button class="sb-input" aria-label="Choose an option" aria-expanded="false">
 //          Choice 1
 //        </button>
 //        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
