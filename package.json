@@ -16,7 +16,7 @@
     "lint:fix": "stylelint \"src/**/*.scss\" --fix",
     "deploy": "./scripts/deploy.sh",
     "prepare": "yarn build",
-    "test:accessibility": "node ./scripts/pa11y.js --ignore 'notice'",
+    "test:accessibility": "node ./scripts/pa11y.js --ignore 'notice,warning' --concurrency 8",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "bugs": {

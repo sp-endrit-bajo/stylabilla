@@ -17,12 +17,14 @@ $sb-color-dark-3: #59636b;
 
 // Light
 //
+// $sb-color-light-1 - #72777b;
 // $sb-color-light-1 - #9cacba;
 // $sb-color-light-2 - #bac8d3;
 // $sb-color-light-3 - #c8d2da;
 // $sb-color-light-4 - #eef3f7;
 //
 // Styleguide colors.light
+$sb-color-light-0: #72777b;
 $sb-color-light-1: #9cacba;
 $sb-color-light-2: #bac8d3;
 $sb-color-light-3: #c8d2da;
@@ -57,6 +59,17 @@ $sb-color-green-2: #00c97e;
 $sb-color-green-3: #52d7a5;
 $sb-color-green-4: #a9ebd2;
 
+// Dark green
+//
+// $sb-color-darkgreen-1 - #005333;
+// $sb-color-darkgreen-2 - #00623d;
+// $sb-color-darkgreen-2 - #007448;
+//
+// Styleguide colors.charts.darkgreen
+$sb-color-darkgreen-1: #005333;
+$sb-color-darkgreen-2: #00623d;
+$sb-color-darkgreen-3: #007448;
+
 // Yellow
 //
 // $sb-color-yellow-1 - #dea64b;
@@ -69,6 +82,19 @@ $sb-color-yellow-1: #dea64b;
 $sb-color-yellow-2: #ffb867;
 $sb-color-yellow-3: #ffd99c;
 $sb-color-yellow-4: #ffe1be;
+
+// Dark Yellow
+//
+// $sb-color-darkyellow-1 - #725526;
+// $sb-color-darkyellow-2 - #87652d;
+// $sb-color-darkyellow-3 - #9f7735;
+// $sb-color-darkyellow-4 - #bc8d3f;
+//
+// Styleguide colors.charts.darkyellow
+$sb-color-darkyellow-1: #725526;
+$sb-color-darkyellow-2: #87652d;
+$sb-color-darkyellow-3: #9f7735;
+$sb-color-darkyellow-4: #bc8d3f;
 
 // Purple
 //
@@ -91,7 +117,7 @@ $sb-color-purple-4: #f7cff3;
 // $sb-color-blue-4 - #cdf2ff;
 //
 // Styleguide colors.charts.blue
-$sb-color-blue-1: #008aab;
+$sb-color-blue-1: #0081a0;
 $sb-color-blue-2: #00a5c9;
 $sb-color-blue-3: #43caea;
 $sb-color-blue-4: #cdf2ff;
