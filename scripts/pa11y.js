@@ -36,6 +36,7 @@ const logUrl = (url) => {
 
 const logMessage = (customChalk, text) => (result) => {
   log(customChalk(`• ${text}: `) + chalk.dim(result.context))
+  log('   ' + result.code)
   log('   ' + result.message)
   log()
 }
@@ -68,7 +69,7 @@ const logResults = (url, results) => {
 
 const sectionPath = section.toLowerCase().split('.').join('-')
 
-glob(`item-${sectionPath}*.html`, { cwd: dir }, function (er, files) {
+glob(`section-${sectionPath}*.html`, { cwd: dir }, function (er, files) {
   const urls = files.map(file => url + file)
 
   const queue = async.queue((url, done) => {

@@ -12,12 +12,12 @@
 // Styleguide typography.anchors
 
 a {
-  color: $sb-color-blue-1;
+  color: $sb-color-blue-2;
   text-decoration: underline;
 }
 
 a:hover {
-  color: $sb-color-darkblue-2;
+  color: $sb-color-blue-1;
 }
 
 a:focus {
@@ -25,5 +25,5 @@ a:focus {
 }
 
 a:visited {
-  color: $sb-color-darkblue-2;
+  color: $sb-color-blue-1;
 }

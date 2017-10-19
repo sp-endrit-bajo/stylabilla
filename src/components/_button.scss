@@ -95,19 +95,19 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 }
 
 .#{$ns}btn--primary {
-  background-color: $sb-color-blue-1;
-  border-color: $sb-color-blue-1;
+  background-color: $sb-color-blue-2;
+  border-color: $sb-color-blue-2;
   color: $sb-color-white;
 
   &:hover {
-    background-color: $sb-color-darkblue-2;
-    border-color: $sb-color-darkblue-2;
+    background-color: $sb-color-blue-1;
+    border-color: $sb-color-blue-1;
     color: $sb-color-white;
   }
 
   &:active,
   &:focus {
-    border-color: $sb-color-darkblue-2;
+    border-color: $sb-color-blue-1;
 
     &::before {
       border-color: $sb-color-white;
@@ -132,26 +132,26 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 
 .#{$ns}btn--secondary {
   background-color: $sb-color-white;
-  border-color: $sb-color-blue-1;
-  color: $sb-color-blue-1;
+  border-color: $sb-color-blue-2;
+  color: $sb-color-blue-2;
 
   &:hover {
     background-color: $sb-color-white;
-    border-color: $sb-color-darkblue-2;
-    color: $sb-color-darkblue-2;
+    border-color: $sb-color-blue-1;
+    color: $sb-color-blue-1;
   }
 
   &:active,
   &:focus {
-    border-color: $sb-color-blue-1;
+    border-color: $sb-color-blue-2;
 
     &::before {
-      border-color: $sb-color-blue-1;
+      border-color: $sb-color-blue-2;
     }
   }
 
   &:visited {
-    color: $sb-color-blue-1;
+    color: $sb-color-blue-2;
   }
 }
 
@@ -221,21 +221,15 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 }
 
 .#{$ns}btn--danger {
-  @include btn-color($sb-color-red-1, $sb-color-darkred-3, $sb-color-darkred-2);
+  @include btn-color($sb-color-red-3, $sb-color-red-2, $sb-color-red-1);
 }
 
 .#{$ns}btn--warning {
-  @include btn-color($sb-color-yellow-2, $sb-color-yellow-1, $sb-color-darkyellow-4);
-
-  color: $sb-color-black;
-
-  &:hover {
-    color: $sb-color-black;
-  }
+  @include btn-color($sb-color-yellow-3, $sb-color-yellow-2, $sb-color-yellow-1);
 }
 
 .#{$ns}btn--success {
-  @include btn-color($sb-color-darkgreen-3, $sb-color-darkgreen-2, $sb-color-darkgreen-1);
+  @include btn-color($sb-color-green-3, $sb-color-green-2, $sb-color-green-1);
 }
 
 // Sizes
@@ -259,4 +253,78 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 
 .#{$ns}btn--l {
   padding: $sb-btn-padding-l;
+}
+
+// Button with loader
+//
+// JavaScript is required for:
+// - Adding/removing loader markup inside button
+// - Adding/removing loader class and disabled attribute
+//
+// Obs: do not remove button text when applying the loader, so the button can keep the same size.
+//
+// Markup:
+// <button class="sb-btn {{modifier_class}} sb-btn--loader" disabled>
+//   <div class="sb-loader sb-loader--button" role="alert" aria-busy="true">
+//     <svg viewBox="0 0 50 50" class="sb-spinner">
+//       <defs>
+//         <path id="path-loader-{{modifier_class}}" d="M25 50C11.2 50 0 38.8 0 25S11.2 0 25 0s25 11.2 25 25-11.2 25-25 25zm0-6.5c10.2 0 18.5-8.3 18.5-18.5S35.2 6.5 25 6.5 6.5 14.8 6.5 25 14.8 43.5 25 43.5z"/>
+//       </defs>
+//       <g fill="none" fill-rule="evenodd">
+//         <mask id="mask-loader-{{modifier_class}}" fill="#fff">
+//           <use xlink:href="#path-loader-{{modifier_class}}"/>
+//         </mask>
+//         <use class="sb-spinner__secondary" transform="matrix(-1 0 0 1 50 0)" xlink:href="#path-loader-{{modifier_class}}"/>
+//         <path class="sb-spinner__primary" d="M0 0h26v26H0z" mask="url(#mask-loader-{{modifier_class}})"/>
+//         <path class="sb-spinner__primary" d="M6.5 26c0 2-1.4 3.3-3.2 3.3C1.5 29.3 0 28 0 26h6.5z" mask="url(#mask-loader-{{modifier_class}})" transform="matrix(-1 0 0 1 6.522 0)"/>
+//         <path class="sb-spinner__primary" d="M29.3 0C27.5 0 26 1.5 26 3.3c0 1.8 1.5 3.2 3.3 3.2V0z" mask="url(#mask-loader-{{modifier_class}})" transform="matrix(-1 0 0 1 55.435 0)"/>
+//       </g>
+//     </svg>
+//   </div>
+//   Button
+// </button>
+//
+// .sb-btn--primary - Primary button
+// .sb-btn--secondary - Secondary button
+// .sb-btn--subtle - Subtle button
+//
+// Styleguide button.loader
+
+.#{$ns}btn--loader {
+  cursor: progress;
+  position: relative;
+
+  &::before {
+    display: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  .#{$ns}loader--button {
+    background-color: $sb-color-white;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    border-color: $sb-color-dark-3;
+  }
+
+  &.#{$ns}btn--primary[disabled],
+  &.#{$ns}btn--primary[disabled]:hover,
+  &.#{$ns}btn--secondary[disabled],
+  &.#{$ns}btn--secondary[disabled]:hover {
+    border-color: $sb-color-blue-2;
+  }
+
+  &.#{$ns}btn--subtle[disabled],
+  &.#{$ns}btn--subtle[disabled]:hover {
+    border-color: transparent;
+  }
+
+  &.#{$ns}btn--primary[disabled],
+  &.#{$ns}btn--primary[disabled]:hover,
+  &.#{$ns}btn--primary .#{$ns}loader--button {
+    background-color: $sb-color-blue-2;
+  }
 }
