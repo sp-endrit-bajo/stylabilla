@@ -2,6 +2,8 @@
 //
 // Button types.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <button class="sb-btn {{modifier_class}}">Button</button>
 // <button class="sb-btn {{modifier_class}}" aria-label="Star">
@@ -194,6 +196,8 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 //
 // Button colors.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <button class="sb-btn sb-btn--primary {{modifier_class}}">Button</button>
 // <button class="sb-btn sb-btn--primary {{modifier_class}}" disabled>Disabled</button>
@@ -236,6 +240,8 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 //
 // Button sizes.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <button class="sb-btn {{modifier_class}}">Button</button>
 // <button class="sb-btn {{modifier_class}} sb-btn--secondary">Secondary</button>
@@ -262,6 +268,8 @@ $sb-btn-padding-l: sb-px2rems(11px) sb-px2rems(23px);
 // - Adding/removing loader class and disabled attribute
 //
 // Obs: do not remove button text when applying the loader, so the button can keep the same size.
+//
+// Browser support: IE10+, Safari6+, Firefox31+, Chrome30+
 //
 // Markup:
 // <button class="sb-btn {{modifier_class}} sb-btn--loader" disabled>

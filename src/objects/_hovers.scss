@@ -6,7 +6,9 @@
 //
 // Put the hide-child class on a parent element and any nested element with the
 // child class will be hidden and displayed on hover or focus.
-// 
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 //   <div class="sb-hide-child">
 //     <div class="sb-child"> Hidden until hover or focus </div>

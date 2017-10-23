@@ -2,6 +2,8 @@
 //
 // A basic checkbox component
 //
+// Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-checkbox">
 //   <input type="checkbox" id="checkbox-1" class="sb-checkbox__input">
@@ -85,6 +87,8 @@
 //
 // A basic checkbox group. Apply a `.sb-checkbox-group` class to the checkbox wrapper.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-checkbox-group">
 //   <div class="sb-checkbox">
@@ -133,6 +137,8 @@
 // Checkbox Group - Inline
 //
 // A basic checkbox group aligned horizontally. Apply a `.sb-checkbox-group--inline` class to the checkbox wrapper.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-checkbox-group--inline">

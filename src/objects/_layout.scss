@@ -17,6 +17,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // If you want a Usabilla page to be the full window height (minus the header), you can use `sb-container--full-height`.</br>
 // You can also use `sb-container--full-width` for full width containers.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-container sb-tile sb-padding">
 //   .sb-container
@@ -46,6 +48,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //
 // A basic 12 column flexbox grid. Apply `sb-grid` to the wrapper element. If you also want a vertical gutter, include `sb-grid--gutter-vertical`.</br>
 // Note that this grid is only properly <a href="https://caniuse.com/#feat=flexbox">supported</a> in IE11 and higher.
+//
+// Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-grid {{modifier_class}}">
@@ -89,6 +93,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // Columns
 //
 // Column classes. Use `sb-col-#{i}` to set the desired column width.
+//
+// Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-grid">
@@ -146,6 +152,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // To create a mobile-first responsive grid you can add different column classes for different viewports.
 // Add `sb-col-#{i}`, `sb-col-s-#{i}`, `sb-col-m-#{i}`, `sb-col-l-#{i}`, `sb-col-xl-#{i}` to set the desired column width for extra small (default), small, medium, large and extra large viewports.
 //
+// Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-grid">
 //   <div class="sb-tile sb-padding sb-col-12 sb-col-s-6 sb-col-m-4 sb-col-l-3 sb-col-xl-2">
@@ -200,6 +208,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //
 // Gutter modifier classes. Use `sb-grid--gutter-#{gutter}` to set the desired space between columns. </br>
 // If you would also like a vertical gutter, include `sb-grid--gutter-vertical`, it will match your horizontal gutter in size.
+//
+// Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-grid {{modifier_class}}">
@@ -281,6 +291,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //
 // The `sb-offset-{i}` classes can be used to move a column to the right.
 //
+// Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-grid">
 //   <div class="sb-tile sb-padding sb-col-8 sb-offset-4">
@@ -305,6 +317,8 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // Nesting
 //
 // To nest your content with the default grid, add a new `sb-grid` and set of `sb-col-*` columns within an existing `sb-col-*` column.
+//
+// Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-grid">

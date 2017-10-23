@@ -9,6 +9,8 @@
 // Display utility to create a flexbox container and transform
 // direct children elements into flex items.
 //
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="{{modifier_class}} sb-tile sb-padding">
 //   I'm a flexbox container.
@@ -28,6 +30,8 @@
 //
 // Set the direction of flex items in a flex container with direction utilities.
 //
+// Browser support: IE10+, Safari6+*, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-flex {{modifier_class}} sb-tile">
 //   <div class="sb-padding">Flex item 1</div>
@@ -36,7 +40,7 @@
 // </div>
 //
 // .sb-flex-row - Set the flex items to a horizontal direction
-// .sb-flex-row-reverse - Set the flex items to a horizontal direction from the opposite side
+// .sb-flex-row-reverse - Set the flex items to a horizontal direction from the opposite side *Safari9+
 // .sb-flex-column - Set the flex items to a vertical direction
 // .sb-flex-column-reverse - Set the flex items to a vertical direction
 //
@@ -54,6 +58,8 @@
 // Use justify-content utilities on flexbox containers to change the alignment of flex items
 // on the main axis (by default the x-axis, y-axis if `flex-direction: column`).
 //
+// Browser support: IE10+, Safari6+*, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-flex {{modifier_class}} sb-tile">
 //   <div class="sb-padding sb-tile">Flex item 1</div>
@@ -65,7 +71,7 @@
 // .sb-justify-content-end - Items are packed toward the end line
 // .sb-justify-content-center - Items are centered along the line
 // .sb-justify-content-between - Items are evenly distributed in the line
-// .sb-justify-content-around - Items are evenly distributed in the line with equal space around them
+// .sb-justify-content-around - Items are evenly distributed in the line with equal space around them *Safari9+
 //
 // Weight: -20
 //
@@ -81,6 +87,8 @@
 //
 // Use align-items utilities on flexbox containers to change the alignment of flex items
 // on the cross axis (by default the y-axis, x-axis if `flex-direction: column`).
+//
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-flex {{modifier_class}} sb-tile" style="height: 100px">
@@ -108,6 +116,8 @@
 // Wrap
 //
 // Change how flex items wrap in a flex container.
+//
+// Browser support: IE11+, Safari9+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-flex {{modifier_class}} sb-tile" style="width: 700px">

@@ -3,6 +3,8 @@
 // Simple loader, witn inline option.
 // For a loader inside a button, check the <a href="section-button.html#kssref-button-loader">Button with loader</a> section.
 //
+// Browser support: IE10+, Safari6.2+, Firefox31+, Chrome30+
+//
 // Markup:
 // <div class="sb-loader {{modifier_class}}" role="alert" aria-busy="true">
 //   <svg viewBox="0 0 50 50" class="sb-spinner" aria-hidden="true">

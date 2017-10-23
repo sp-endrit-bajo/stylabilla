@@ -2,6 +2,8 @@
 //
 // Group a series of buttons together on a single line.
 //
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-btn-group" role="radiogroup">
 //   <button class="sb-btn" role="radio" aria-checked="false">Button one</button>
@@ -75,6 +77,8 @@
 //
 // How to use a button group as a form element.
 // Obs: The button group can have toggle/multiple options, behaving like checkboxes instead of radio buttons.
+//
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">

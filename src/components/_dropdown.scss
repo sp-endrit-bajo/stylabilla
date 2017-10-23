@@ -2,7 +2,7 @@
 //
 // Basic dropdown
 //
-// .sb-dropdown--open - open dropdown
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 //  <div class="sb-form-control">
@@ -21,6 +21,8 @@
 //      </ul>
 //    </div>
 //  </div>
+//
+// .sb-dropdown--open - open dropdown
 //
 // Styleguide dropdown
 
@@ -125,6 +127,8 @@
 // - Updating aria-expanded value
 // - Updating the button text with the number of selected items
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-form-control">
 //   <p class="sb-label">Select options</p>
@@ -188,6 +192,8 @@
 // - Filtering the menu items based on the search input
 // - Updating the button text with the number of selected items
 //
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-form-control">
 //   <p class="sb-label">Select options</p>
@@ -236,6 +242,8 @@
 
 // Dropdown with no search results
 //
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <div class="sb-form-control">
 //   <p class="sb-label">Select options</p>
@@ -261,6 +269,8 @@
 
 // Dropdown disabled
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 //  <div class="sb-form-control">
 //    <p class="sb-label">Choose an option</p>
@@ -285,7 +295,7 @@
 //
 // Dropdown error validation
 //
-// .sb-form-control--invalid - invalid dropdown
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
@@ -305,5 +315,7 @@
 //    </div>
 //    <p role="alert" class="sb-form-control__validation">Error message here.</p>
 //  </div>
+//
+// .sb-form-control--invalid - invalid dropdown
 //
 // Styleguide dropdown.validation

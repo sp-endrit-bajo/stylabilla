@@ -2,6 +2,8 @@
 //
 // To adjust the spacing between elements, use the provided `sb-margin` or `sb-padding` classes.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Styleguide spacing
 
 // Margins
@@ -70,6 +72,8 @@ $sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
 // The available directions are `top`, `bottom`, `left`, `right`, `vertical`, `horizontal`.
 // The available sizes ranges from `xs` to `xl`.
 // The default class `sb-padding` adds the medium sized padding to all sides.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 // <div class="sb-tile  sb-padding-xs sb-margin-bottom">

@@ -2,6 +2,8 @@
 //
 // Select element
 //
+// Browser support: IE9+, Safari6+, Firefox35+, Chrome30+
+//
 // Markup:
 //  <div class="sb-form-control">
 //    <label class="sb-label" for="select-id-1">Choose an option</label>
@@ -33,7 +35,7 @@
 //
 // Select error validation
 //
-// .sb-form-control--invalid - invalid select
+// Browser support: IE9+, Safari6+, Firefox35+, Chrome30+
 //
 // Markup:
 //  <div class="sb-form-control {{modifier_class}}">
@@ -49,6 +51,8 @@
 //    </div>
 //    <p role="alert" class="sb-form-control__validation">Error message here.</p>
 //  </div>
+//
+// .sb-form-control--invalid - invalid select
 //
 // Styleguide select.validation
 //
