@@ -63,6 +63,11 @@ var logo = require('./logo.svg');
 
 
 // colors.
+(function () {
+  if ( typeof NodeList.prototype.forEach === "function" ) return false;
+  NodeList.prototype.forEach = Array.prototype.forEach;
+})();
+
 (function(){
   var parameters = document.querySelectorAll('.kss-parameters');
 

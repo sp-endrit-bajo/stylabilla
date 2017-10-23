@@ -143,7 +143,7 @@ const docsConfig = {
   ],
 
   entry: {
-    kss: './docs-builder/kss-assets/kss.js'
+    kss: ['babel-polyfill', 'classlist-polyfill', './docs-builder/kss-assets/kss.js']
   },
 
   output: {

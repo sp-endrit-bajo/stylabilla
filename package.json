@@ -23,6 +23,8 @@
     "url": "https://github.com/usabilla/stylabilla/issues"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "classlist-polyfill": "^1.2.0",
     "sanitize.css": "^5.0.0"
   },
   "devDependencies": {

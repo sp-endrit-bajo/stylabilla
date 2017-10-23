@@ -534,7 +534,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     font-weight: bold;
   }
   .kss-parameters__item {
-    display: table-row;
+    display: table-cell;
   }
   .kss-parameters__name {
     display: table-cell;

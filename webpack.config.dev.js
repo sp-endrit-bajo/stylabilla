@@ -37,7 +37,7 @@ const loaders = {
 
 const config = {
   entry: {
-    kss: './docs-builder/kss-assets/kss'
+    kss: ['babel-polyfill', 'classlist-polyfill', './docs-builder/kss-assets/kss.js']
   },
 
   devServer: {
