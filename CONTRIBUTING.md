@@ -39,6 +39,7 @@ For a component to be accepted into Stylabilla, it needs to meet the following r
 - The compiled css has been checked and there is no unnecessary repetition, deeply nested classes etc.
 - The component works across all device widths, and is built mobile first.
 - Documentation is included, which:
+    - Browsers support information is added to each component.
     - Demonstrates examples of the component with different classes, children, or using different elements as parents
     - Includes ARIA attributes
     - Is readable and looks consistent with other components when compiled into the guide
