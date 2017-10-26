@@ -11,6 +11,16 @@
   @return ($px / $base-font-size) * 1rem;
 }
 
+// This mixin creates color classes out of the given color map
+
+@mixin sb-colors-from-color-map($color-array) {
+  @each $color, $color-value in $color-array {
+    .#{$ns}color-#{$color} {
+      color: $color-value;
+    }
+  }
+}
+
 @mixin sb-clearfix() {
   &::after {
     content: '';

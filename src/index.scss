@@ -21,6 +21,9 @@
 // Namespace (all classes should be prefixed with sb, which stands for Stylabilla)
 $ns: 'sb-' !default;
 
+// Tools
+@import 'tools/functions';
+
 // Settings
 @import 'settings/colors';
 @import 'settings/fonts';
@@ -28,9 +31,6 @@ $ns: 'sb-' !default;
 @import 'settings/responsive';
 @import 'settings/animation';
 @import 'settings/z-index';
-
-// Tools
-@import 'tools/functions';
 
 // Generic
 @import '~sanitize.css';
