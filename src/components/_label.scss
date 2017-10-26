@@ -1,0 +1,29 @@
+// Label
+//
+// Basic label that can be used in combination with input component.
+//
+// Markup:
+// <label class="sb-label" for="input-id-1">Input Label</label>
+// <input class="sb-input" id="input-id-1" placeholder="Placeholder Text">
+//
+// Styleguide label
+
+.#{$ns}label {
+  display: inline-block;
+  margin-bottom: sb-px2rems(7px);
+}
+
+// Label in small caps
+//
+// Labels in all small caps can be used as small titles. Usually used when structure or difference is needed,
+// such as in filter components, sorting list, or as small section titles.
+//
+// Markup:
+// <label class="sb-label sb-label--small-caps" for="input-id-1">Section Info</label>
+// <section>This is a section with info about something</section>
+//
+// Styleguide label.small-caps
+
+.#{$ns}label--small-caps {
+  font-variant: all-small-caps;
+}

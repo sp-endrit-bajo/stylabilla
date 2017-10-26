@@ -1,11 +1,10 @@
-// Input and Label
+// Input
 //
-// Basic input and label components that should be used for email, number, password, tel, text and url inputs.
-// They are also used to apply standard form styling to other components such as upload and dropdown.
+// Basic input component that should be used for email, number, password, tel, text and url inputs.
+// It is also used to apply standard form styling to other components such as upload and dropdown.
 // If you would like to apply validation styles and messages, check out the form control component.
 //
 // Markup:
-// <label class="sb-label" for="input-id-1">Input Label</label>
 // <input class="sb-input" id="input-id-1" placeholder="Placeholder Text">
 //
 // Styleguide input
@@ -42,9 +41,4 @@
     border-color: $sb-color-light-4;
     color: $sb-color-light-3;
   }
-}
-
-.#{$ns}label {
-  display: inline-block;
-  margin-bottom: sb-px2rems(7px);
 }
