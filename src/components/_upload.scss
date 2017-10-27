@@ -17,7 +17,7 @@
 //   <label class="sb-upload__label" for="upload-id-{{modifier_class}}">
 //     <div class="sb-upload__faux sb-input" role="button" tabindex="0">
 //       <input class="sb-upload__filename" aria-labelledby="upload-button-{{modifier_class}}" readonly value="a-very-very-very-very-very-very-very-very-very-very-very-very-long-filename.jpg"/>
-//       <a class="sb-upload__link" id="upload-link-{{modifier_class}}">change</a>
+//       <p class="sb-upload__link" id="upload-link-{{modifier_class}}">change</p>
 //     </div>
 //   </label>
 //   <button class="sb-upload__delete" aria-label="Delete">
@@ -48,8 +48,11 @@
   }
 
   &__link {
+    font-size: sb-px2rems(13px);
     float: right;
     margin-left: sb-px2rems(11px);
+    color: $sb-color-blue-2;
+    text-decoration: underline;
   }
 
   &__faux {
@@ -117,7 +120,7 @@
 //     <label class="sb-upload__label" for="upload-id-validation">
 //       <div class="sb-upload__faux sb-input" role="button" tabindex="0">
 //         <input class="sb-upload__filename" aria-labelledby="upload-button-{{modifier_class}}" readonly value="a-very-very-very-very-very-very-very-very-very-very-very-very-long-filename.jpg"/>
-//         <a class="sb-upload__link" id="upload-link-validation">change</a>
+//         <p class="sb-upload__link" id="upload-link-validation">change</p>
 //       </div>
 //     </label>
 //     <button class="sb-upload__delete" aria-label="Delete">
