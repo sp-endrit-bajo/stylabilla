@@ -56,7 +56,10 @@ const logResults = (url, results) => {
 
   results
     .filter(result => result.type === 'error')
-    .forEach(logError)
+    .forEach((res) => {
+      logError(res);
+      process.exit(1);
+    })
 
   results
     .filter(result => result.type === 'warning')
