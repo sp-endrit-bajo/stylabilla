@@ -19,15 +19,11 @@
 
   &__item {
     background-color: $sb-color-white;
+    border-bottom: 1px solid $sb-color-light-4;
 
     &:hover,
     &:focus {
       background-color: $sb-color-light-4;
-    }
-
-    &:not(:last-child),
-    &:only-child {
-      border-bottom: 1px solid $sb-color-light-4;
     }
   }
 }
