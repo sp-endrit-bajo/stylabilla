@@ -1,0 +1,28 @@
+// Cursors
+//
+// Cursor util classes.
+//
+// Browser support: IE6+, Safari5+, Firefox4+, Chrome5+
+//
+// Markup:
+//   <div class="{{modifier_class}}">
+//    Hover me
+//   </div>
+//
+// .sb-cursor - Default cursor
+// .sb-cursor-pointer - Pointer cursor
+// .sb-cursor-not-allowed - Action not allowed cursor
+//
+// Styleguide cursors
+
+.#{$ns}cursor {
+  cursor: default;
+
+  &-pointer {
+    cursor: pointer;
+  }
+
+  &-not-allowed {
+    cursor: not-allowed;
+  }
+}
