@@ -14,8 +14,8 @@ s3-deploy \
     --etag
 
 s3-deploy \
-    './docs/**' \
-    --cwd './docs/' \
+    './dist-docs/**' \
+    --cwd './dist-docs/' \
     --region eu-west-1 \
     --bucket $bucket/docs \
     --gzip \

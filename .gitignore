@@ -2,6 +2,7 @@
 /docs-builder/node_modules/
 /docs/
 /dist/
+/dist-docs/
 /.tmp/
 /.idea/
 /.sass-cache/

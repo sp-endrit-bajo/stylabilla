@@ -27,10 +27,15 @@ const loaders = {
       includePaths: [path.resolve(__dirname, './src')]
     }
   },
+  // based on https://github.com/design4pro/kss-loader/releases/tag/v0.3.2
   kss: {
-    loader: 'kss-loader',
+    loader: 'custom-kss-loader',
     options: {
-      config: 'kss-config.json'
+      title: "Stylabilla",
+      source: "./src",
+      destination: "./docs/",
+      builder: "./docs-builder",
+      homepage: "../README.md"
     }
   }
 }
@@ -81,6 +86,12 @@ const config = {
   resolve: {
     extensions: ['.js', '.scss'],
     modules: [path.join(__dirname, './src'), 'node_modules']
+  },
+
+  resolveLoader: {
+    alias: {
+      'custom-kss-loader' : path.join(__dirname, './scripts', 'custom-kss-loader')
+    }
   }
 }
 

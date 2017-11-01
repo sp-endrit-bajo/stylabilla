@@ -26,10 +26,15 @@ const loaders = {
       includePaths: [path.resolve(__dirname, './src')]
     }
   },
+  // based on https://github.com/design4pro/kss-loader/releases/tag/v0.3.2
   kss: {
-    loader: 'kss-loader',
+    loader: 'custom-kss-loader',
     options: {
-      config: 'kss-config.json'
+      title: "Stylabilla",
+      source: "./src",
+      destination: "./dist-docs/",
+      builder: "./docs-builder",
+      homepage: "../README.md"
     }
   },
   file: {
@@ -39,7 +44,6 @@ const loaders = {
     }
   }
 }
-
 
 //Webpack configuration for creating production-ready Stylabilla css and assets in the 'dist' folder
 const stylabillaConfig = {
@@ -79,8 +83,8 @@ const stylabillaConfig = {
   },
 
   plugins: [
+    new WebpackCleanupPlugin(),
     new ExtractTextPlugin('[name].css'),
-    new WebpackCleanupPlugin()
   ],
 
   entry: {
@@ -94,8 +98,7 @@ const stylabillaConfig = {
   }
 };
 
-
-//Webpack configuration for creating production-ready Stylabilla documentation in the 'docs' folder
+//Webpack configuration for creating production-ready Stylabilla documentation in the 'dist-docs' folder
 const docsConfig = {
   module: {
     rules: [
@@ -137,6 +140,12 @@ const docsConfig = {
     modules: [path.join(__dirname, './src'), 'node_modules']
   },
 
+  resolveLoader: {
+    alias: {
+      'custom-kss-loader' : path.join(__dirname, './scripts', 'custom-kss-loader')
+    }
+  },
+
   plugins: [
     new WebpackCleanupPlugin(),
     new ExtractTextPlugin('[name].css')
@@ -148,7 +157,7 @@ const docsConfig = {
 
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'docs/kss-assets'),
+    path: path.join(__dirname, 'dist-docs/kss-assets'),
     publicPath: ''
   },
 }

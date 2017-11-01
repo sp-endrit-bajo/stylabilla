@@ -226,6 +226,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   }
 
   .kss-logo {
+    width: 90%;
     max-width: 200px;
 
     @media screen and (max-width: 769px) {
