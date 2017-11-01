@@ -13,7 +13,7 @@
 //         <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
 //       </svg>
 //     </span>
-//     <span class="sb-margin-left-xs">Basic checkbox</span>
+//     <span class="sb-margin-left-xs">Basic checkbox. If these lines aren't straight, your water's going to run right out of your painting and get your floor wet. We don't make mistakes we just have happy little accidents. We'll paint one happy little tree right here. You have to make those little noises or it won't work. If I paint something, I don't want to have to explain what it is. See there how easy that is.</span>
 //   </label>
 // </div>
 //
@@ -22,15 +22,17 @@
 .#{$ns}checkbox {
   &__label {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   &__faux {
     display: inline-block;
+    flex-shrink: 0;
     position: relative;
     vertical-align: middle;
     width: sb-px2rems(16px);
     height: sb-px2rems(16px);
+    margin-top: sb-px2rems(2px);
     border-radius: sb-px2rems($sb-radius);
     border: 1px solid $sb-color-light-3;
     background-color: $sb-color-white;
@@ -182,9 +184,10 @@
 .#{$ns}checkbox-group--inline {
   .#{$ns}checkbox {
     display: inline-block;
+    margin-right: sb-px2rems(11px);
   }
 
-  .#{$ns}checkbox + .#{$ns}checkbox {
-    margin-left: sb-px2rems(11px);
+  .#{$ns}checkbox:last-child {
+    margin-right: 0;
   }
 }
