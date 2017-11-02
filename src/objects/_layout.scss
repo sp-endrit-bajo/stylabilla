@@ -4,6 +4,8 @@
 // Layout
 //
 // The following classes are provided to create consistent page layouts across Usabilla.
+// Browser support is focused on the application's requirements rather than the user facing widgets, and therefore is IE10+ in most cases.
+// Markup is outlined below.
 //
 // Styleguide layout
 
@@ -46,8 +48,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 
 // Grid
 //
-// A basic 12 column flexbox grid. Apply `sb-grid` to the wrapper element. If you also want a vertical gutter, include `sb-grid--gutter-vertical`.</br>
-// Note that this grid is only properly <a href="https://caniuse.com/#feat=flexbox">supported</a> in IE11 and higher.
+// A basic 12 column flexbox grid. Apply `sb-grid` to the wrapper element. If you also want a vertical gutter, include `sb-grid--gutter-vertical`.
 //
 // Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
 //

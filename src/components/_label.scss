@@ -2,6 +2,8 @@
 //
 // Basic label that can be used in combination with the input component.
 //
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
 // Markup:
 // <label class="sb-label" for="input-id-1">Input Label</label>
 // <input class="sb-input" id="input-id-1" placeholder="Placeholder Text">
@@ -16,7 +18,9 @@
 // Label in small caps
 //
 // Labels in all small caps can be used as small titles. Usually used when structure or difference is needed,
-// such as in filter components, sorting list, or as small section titles.
+// such as in filter components, sorting list, or as small section titles. Note however browser support is non-existent in IE or Edge.
+//
+// Browser support: Safari9.1+, Firefox34+, Chrome30+
 //
 // Markup:
 // <label class="sb-label sb-label--small-caps" for="input-id-1">Section Info</label>

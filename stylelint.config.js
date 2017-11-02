@@ -1,6 +1,11 @@
 module.exports = {
   "extends": "stylelint-config-standard",
+  "plugins": [
+    "./lint-docs-required.js"
+  ],
   "rules": {
+    "plugin/docs-required": true,
+
     //Autoprefixer takes care of these for us
     "at-rule-no-vendor-prefix": true,
     "media-feature-name-no-vendor-prefix": true,
