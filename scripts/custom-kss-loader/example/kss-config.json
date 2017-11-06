@@ -1,8 +1,0 @@
- {
-  "title": "KSS Example",
-  "mask": "*.scss|*.css",
-  "placeholder": "[modifier class]",
-  "source": "./scss/",
-  "destination": "./docs/",
-  "homepage": "./../README.md"
-}

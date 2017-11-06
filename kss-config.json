@@ -1,7 +1,0 @@
-{
-  "title": "Stylabilla",
-  "source": "./src",
-  "destination": "./docs/",
-  "builder": "./docs-builder",
-  "homepage": "../README.md"
-}

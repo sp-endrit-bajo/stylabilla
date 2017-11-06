@@ -26,7 +26,6 @@ const loaders = {
       includePaths: [path.resolve(__dirname, './src')]
     }
   },
-  // based on https://github.com/design4pro/kss-loader/releases/tag/v0.3.2
   kss: {
     loader: 'custom-kss-loader',
     options: {
