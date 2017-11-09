@@ -291,6 +291,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // Offset
 //
 // The `sb-offset-{i}` classes can be used to move a column to the right.
+// The `sb-offset-{size}-{i}` classes can be used for responsive layouts respectively.
 //
 // Browser support: IE10+, Safari9+, Firefox30+, Chrome30+
 //
@@ -305,14 +306,30 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   <div class="sb-tile sb-padding sb-col-3 sb-offset-3">
 //     .sb-col-3 .sb-offset-3
 //   </div>
+//   <div class="sb-tile sb-padding sb-col-m-6 sb-offset-m-6 sb-col-s-12">
+//      .sb-col-m-6 .sb-offset-m-6 .sb-col-s-12
+//   </div>
+//   <div class="sb-tile sb-padding sb-col-l-2 sb-offset-l-10 sb-col-s-9 sb-col-offset-3">
+//     .sb-col-l-2 .sb-offset-l-10 .sb-col-s-9 sb-col-offset-3
+//   </div>
 // </div>
 //
 // Styleguide layout.offset
 
-@for $i from 1 through $sb-grid-columns {
-  .#{$ns}offset-#{$i} {
-    margin-left: calc((100% / #{$sb-grid-columns}) * #{$i} + (#{$sb-default-gutter} / 2));
-  }
+@include breakpoint-s {
+  @include sb-offset-size($sb-grid-columns, $sb-default-gutter, 's');
+}
+
+@include breakpoint-m {
+  @include sb-offset-size($sb-grid-columns, $sb-default-gutter, 'm');
+}
+
+@include breakpoint-l {
+  @include sb-offset-size($sb-grid-columns, $sb-default-gutter, 'l');
+}
+
+@include breakpoint-xl {
+  @include sb-offset-size($sb-grid-columns, $sb-default-gutter, 'xl');
 }
 
 // Nesting
