@@ -1,0 +1,203 @@
+// Text colors
+//
+// Utility classes that can be used to give a color to some text.
+//
+// Styleguide Style.typography.text-colors
+
+// Black and white classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-white - white
+// .sb-color-black - black
+//
+// Styleguide Style.typography.text-colors.black-white
+
+@include sb-colors-from-color-map((
+  white: $sb-color-white,
+  black: $sb-color-black
+));
+
+// Dark classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-dark-1 - dark 1
+// .sb-color-dark-2 - dark 2
+// .sb-color-dark-3 - dark 3
+//
+// Styleguide Style.typography.text-colors.dark
+
+@include sb-colors-from-color-map((
+  dark-1: $sb-color-dark-1,
+  dark-2: $sb-color-dark-2,
+  dark-3: $sb-color-dark-3
+));
+
+// Light classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-light-1 - light 1
+// .sb-color-light-2 - light 2
+// .sb-color-light-3 - light 3
+// .sb-color-light-4 - light 4
+//
+// Styleguide Style.typography.text-colors.light
+
+@include sb-colors-from-color-map((
+  light-1: $sb-color-light-1,
+  light-2: $sb-color-light-2,
+  light-3: $sb-color-light-3,
+  light-4: $sb-color-light-4
+));
+
+// Green classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-green-1 - green 1
+// .sb-color-green-2 - green 2
+// .sb-color-green-3 - green 3
+// .sb-color-green-4 - green 4
+//
+// Styleguide Style.typography.text-colors.green
+
+@include sb-colors-from-color-map((
+  green-1: $sb-color-green-1,
+  green-2: $sb-color-green-2,
+  green-3: $sb-color-green-3,
+  green-4: $sb-color-green-4
+));
+
+// Yellow classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-yellow-1 - yellow 1
+// .sb-color-yellow-2 - yellow 2
+// .sb-color-yellow-3 - yellow 3
+// .sb-color-yellow-4 - yellow 4
+//
+// Styleguide Style.typography.text-colors.yellow
+
+@include sb-colors-from-color-map((
+  yellow-1: $sb-color-yellow-1,
+  yellow-2: $sb-color-yellow-2,
+  yellow-3: $sb-color-yellow-3,
+  yellow-4: $sb-color-yellow-4
+));
+
+// Purple classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-purple-1 - purple 1
+// .sb-color-purple-2 - purple 2
+// .sb-color-purple-3 - purple 3
+// .sb-color-purple-4 - purple 4
+//
+// Styleguide Style.typography.text-colors.purple
+
+@include sb-colors-from-color-map((
+  purple-1: $sb-color-purple-1,
+  purple-2: $sb-color-purple-2,
+  purple-3: $sb-color-purple-3,
+  purple-4: $sb-color-purple-4
+));
+
+// Blue classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-blue-1 - blue 1
+// .sb-color-blue-2 - blue 2
+// .sb-color-blue-3 - blue 3
+// .sb-color-blue-4 - blue 4
+//
+// Styleguide Style.typography.text-colors.blue
+
+@include sb-colors-from-color-map((
+  blue-1: $sb-color-blue-1,
+  blue-2: $sb-color-blue-2,
+  blue-3: $sb-color-blue-3,
+  blue-4: $sb-color-blue-4
+));
+
+// Dark blue classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-darkblue-1 - darkblue 1
+// .sb-color-darkblue-2 - darkblue 2
+//
+// Styleguide Style.typography.text-colors.dark-blue
+
+@include sb-colors-from-color-map((
+  darkblue-1: $sb-color-darkblue-1,
+  darkblue-2: $sb-color-darkblue-2
+));
+
+// Red classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-red-1 - red 1
+// .sb-color-red-2 - red 2
+// .sb-color-red-3 - red 3
+// .sb-color-red-4 - red 4
+//
+// Styleguide Style.typography.text-colors.red
+
+@include sb-colors-from-color-map((
+  red-1: $sb-color-red-1,
+  red-2: $sb-color-red-2,
+  red-3: $sb-color-red-3,
+  red-4: $sb-color-red-4
+));
+
+// Dark red classes
+//
+// Browser support: IE3+, Safari1+, Firefox1+, Chrome10+
+//
+// Markup:
+// <span class="{{modifier_class}}">Text</span>
+//
+// .sb-color-darkred-1 - darkred 1
+// .sb-color-darkred-2 - darkred 2
+// .sb-color-darkred-3 - darkred 3
+//
+// Styleguide Style.typography.text-colors.dark-red
+
+@include sb-colors-from-color-map((
+  darkred-1: $sb-color-darkred-1,
+  darkred-2: $sb-color-darkred-2,
+  darkred-3: $sb-color-darkred-3
+));

@@ -33,7 +33,8 @@ const loaders = {
       source: "./src",
       destination: "./dist-docs/",
       builder: "./docs-builder",
-      homepage: "../README.md"
+      homepage: "../README.md",
+      extend: "./docs-builder/custom"
     }
   },
   file: {

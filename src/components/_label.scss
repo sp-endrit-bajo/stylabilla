@@ -8,7 +8,7 @@
 // <label class="sb-label" for="input-id-1">Input Label</label>
 // <input class="sb-input" id="input-id-1" placeholder="Placeholder Text">
 //
-// Styleguide label
+// Styleguide Components.label
 
 .#{$ns}label {
   display: inline-block;
@@ -26,7 +26,7 @@
 // <label class="sb-label sb-label--small-caps" for="input-id-1">Section Info</label>
 // <section>This is a section with info about something</section>
 //
-// Styleguide label.small-caps
+// Styleguide Components.label.small-caps
 
 .#{$ns}label--small-caps {
   font-variant: all-small-caps;

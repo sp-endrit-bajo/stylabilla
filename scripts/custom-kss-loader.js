@@ -29,6 +29,10 @@ var runKss = function (inputSource, options, callback) {
     args.push(`--homepage="${options.homepage}"`);
   }
 
+  if (options.extend) {
+    args.push(`--extend="${options.extend}"`);
+  }
+
   args.push(';');
 
   exec(args.join(' '), {

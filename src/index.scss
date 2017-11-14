@@ -15,7 +15,7 @@
  * - Tools: global mixins and functions (eg: gradient mixins, font-sizing mixins)
  * - Generic: global reset (for Stylabilla, this is just sanitize.css)
  * - Elements: bare, unclassed HTML elements (eg: what does an h1 look like without a class)
- * - Objects: non-cosmetic design patterns (eg: a .wrapper element, layout systems)
+ * - Layout: non-cosmetic design patterns (eg: spacing classes, grid systems)
  * - Components: explicit, designed pieces of UI (eg: buttons, datepicker, typography classes)
  * - Trumps: global overrides, utility and helper classes (eg: visually hidden)
  **/
@@ -24,11 +24,12 @@
 $ns: 'sb-' !default;
 
 // Settings
+@import 'settings/colors';
+@import 'settings/fonts';
+@import 'settings/box';
+@import 'settings/responsive';
+@import 'settings/animation';
 @import 'settings/z-index';
-
-// Behaviours
-@import 'behaviours/animation';
-@import 'behaviours/hovers';
 
 // Tools
 @import 'tools/functions';
@@ -37,21 +38,16 @@ $ns: 'sb-' !default;
 @import '~sanitize.css';
 @import 'generic/reset';
 
-// Style
-@import 'style/colors';
-@import 'style/fonts';
-@import 'style/box';
-@import 'style/page';
-@import 'style/headings';
-@import 'style/paragraphs';
-@import 'style/anchors';
+// Elements
+@import 'elements/page';
+@import 'elements/headings';
+@import 'elements/paragraphs';
+@import 'elements/anchors';
 
 // Layout
-@import 'layout/responsive';
 @import 'layout/layout';
 @import 'layout/spacing';
 @import 'layout/flex';
-@import 'layout/text';
 
 // Components
 @import 'components/tile';
@@ -72,5 +68,8 @@ $ns: 'sb-' !default;
 @import 'components/label';
 
 // Trumps
-@import 'trumps/cursor';
 @import 'trumps/text';
+@import 'trumps/text-colors';
+@import 'trumps/text-align';
+@import 'trumps/hovers';
+@import 'trumps/cursor';

@@ -62,60 +62,6 @@ var logo = require('./logo.svg');
 }).call(this);
 
 
-(function() {
-  var hash = window.location.hash;
-
-    if (!hash) {
-      document.getElementById('kss-node').classList.add('kss-parent');
-    } else {
-      document.getElementById('kss-node').classList.remove('kss-parent');
-
-        var sections = Array.from(document.getElementsByClassName('kss-section'));
-
-        sections.forEach(function(section) {
-            var sectionId = '#' + section.id;
-
-            console.log('sectionnn', sectionId, hash, hash.includes(sectionId));
-
-            if (!sectionId.includes(hash)) {
-                console.log('bex', section.id)
-
-                document.getElementById(section.id).style.display = "none";
-            }
-        });
-
-    }
-
-
-    window.onhashchange = function() {
-
-        if (!window.location.hash) {
-            document.getElementById('kss-node').classList.add('kss-parent');
-        } else {
-            document.getElementById('kss-node').classList.remove('kss-parent');
-
-            var sections = Array.from(document.getElementsByClassName('kss-section'));
-
-            sections.forEach(function(section) {
-                var sectionId = '#' + section.id;
-
-                console.log('sectionnn', sectionId, window.location.hash, window.location.hash.includes(sectionId));
-
-                if (!sectionId.includes(window.location.hash)) {
-                    console.log('bex', section.id)
-
-                    document.getElementById(section.id).style.display = "none";
-                } else {
-                    document.getElementById(section.id).style.display = "block";
-                }
-            });
-        }
-
-    }
-
-})()
-
-
 // colors.
 (function () {
   if ( typeof NodeList.prototype.forEach === "function" ) return false;

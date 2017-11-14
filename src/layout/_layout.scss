@@ -7,7 +7,7 @@
 // Browser support is focused on the application's requirements rather than the user facing widgets, and therefore is IE10+ in most cases.
 // Markup is outlined below.
 //
-// Styleguide layout
+// Styleguide Layout
 
 $sb-grid-columns: 12;
 $sb-default-gutter: 16px;
@@ -31,7 +31,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //
 // Weight: -20
 //
-// Styleguide layout.containers
+// Styleguide Layout.containers
 
 .#{$ns}container {
   max-width: sb-px2rems($sb-container);
@@ -78,7 +78,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //
 // .sb-grid--gutter-vertical - Vertical gutter
 //
-// Styleguide layout.grid
+// Styleguide Layout.grid
 
 .#{$ns}grid {
   display: flex;
@@ -134,7 +134,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.grid.columns
+// Styleguide Layout.grid.columns
 
 [class*='#{$ns}col-'] {
   max-width: 100%;
@@ -171,7 +171,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.responsive
+// Styleguide Layout.responsive
 
 @include breakpoint-s {
   @for $i from 1 through $sb-grid-columns {
@@ -228,7 +228,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 // .sb-grid--gutter-0   - No gutter
 // .sb-grid--gutter-s   - Small gutter
 //
-// Styleguide layout.grid.gutter
+// Styleguide Layout.grid.gutter
 
 @each $suffix, $gutter in $sb-gutter-map {
   .#{$ns}grid--gutter#{$suffix} {
@@ -314,7 +314,7 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.grid.offset
+// Styleguide Layout.grid.offset
 
 @for $i from 1 through $sb-grid-columns {
   .#{$ns}offset-#{$i} {
@@ -362,4 +362,4 @@ $sb-gutter-map: ('-0': 0px, '-s': 11px);
 //   </div>
 // </div>
 //
-// Styleguide layout.grid.nesting
+// Styleguide Layout.grid.nesting

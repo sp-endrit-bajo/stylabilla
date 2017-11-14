@@ -61,10 +61,7 @@
     The "root" element comes first in this loop, and can be detected using
     the "#if @first" block as seen below.
   }}
-
-
   {{#each sections}}
-
       <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
 
       <div class="kss-style">
@@ -83,6 +80,18 @@
             {{header}}
           </a>
         </h{{depth}}>
+
+        {{#ifEquals depth 2}}
+          <ul class="kss-tabs">
+            <li class="kss-tabs__item">
+              {{#eachSubsection @root.sections referenceNumber}}
+                <a href="#kssref-{{referenceURI}}">
+                    <span class="">{{header}}</span>
+                </a>
+              {{/eachSubsection}}
+            </li>
+          </ul>
+        {{/ifEquals}}
 
         {{#if example}}
           <p class="kss-toolbar">
@@ -216,22 +225,6 @@
       {{/if}}
 
     </{{#if @first}}div{{else}}section{{/if}}>
-
-      {{#ifEquals depth 2}}
-          {{#each @root.sections}}
-              {{#ifEquals depth 3}}
-              <ul class="kss-tabs">
-                  <li class="kss-tabs__item">
-                      <a href="#kssref-{{referenceURI}}">
-                          <span class="">{{header}}</span>
-                      </a>
-                  </li>
-              </ul>
-                  {{/ifEquals}}
-          {{/each}}
-      {{/ifEquals}}
-
-
   {{/each}}
 {{/if}}
 </article>

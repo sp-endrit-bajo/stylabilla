@@ -2,7 +2,7 @@
 //
 // **NOTE**: for grid-like layouts use the `sb-grid`.
 //
-// Styleguide layout.flex
+// Styleguide Layout.flex
 
 // Display
 //
@@ -21,7 +21,7 @@
 //
 // Weight: -40
 //
-// Styleguide layout.flex.display
+// Styleguide Layout.flex.display
 
 .#{$ns}flex { display: flex; }
 .#{$ns}flex-inline { display: inline-flex; }
@@ -46,7 +46,7 @@
 //
 // Weight: -30
 //
-// Styleguide layout.flex.direction
+// Styleguide Layout.flex.direction
 
 .#{$ns}flex-row { flex-direction: row; }
 .#{$ns}flex-row-reverse { flex-direction: row-reverse; }
@@ -75,7 +75,7 @@
 //
 // Weight: -20
 //
-// Styleguide layout.flex.justify-content
+// Styleguide Layout.flex.justify-content
 
 .#{$ns}justify-content-start { justify-content: flex-start; }
 .#{$ns}justify-content-end { justify-content: flex-end; }
@@ -105,7 +105,7 @@
 //
 // Weight: -10
 //
-// Styleguide layout.flex.align-items
+// Styleguide Layout.flex.align-items
 
 .#{$ns}align-items-start { align-items: flex-start; }
 .#{$ns}align-items-end { align-items: flex-end; }
@@ -136,7 +136,7 @@
 // .sb-flex-nowrap - No wrapping of the items
 // .sb-flex-wrap - Wrap the items in a new line. The direction is defined by `flex-direction`.
 //
-// Styleguide layout.flex.wrap
+// Styleguide Layout.flex.wrap
 
 .#{$ns}flex-wrap { flex-wrap: wrap; }
 .#{$ns}flex-nowrap { flex-wrap: nowrap; }
