@@ -3,6 +3,7 @@
 // The Stylabilla icon system is used by placing svg icons inline with the class `sb-icon`. Our approach is based on [these](https://css-tricks.com/pretty-good-svg-icon-system/) [articles](https://css-tricks.com/creating-svg-icon-system-react/).</br>
 // If the icon is for decoration only, please add `aria-hidden="true"` to the icon. Otherwise please add a label - for instance `aria-label="Delete"`.</br>
 // Colors can be applied with `sb-icon--success`, `sb-icon--warning`, `sb-icon--error`.</br>
+// Link styling can be applied with `sb-icon--link`.</br>
 // Larger sizes can be applied with `sb-icon--m` and `sb-icon--l`. The default size is 1rem which should be the smallest.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
@@ -26,7 +27,7 @@
 // <svg class="sb-icon" viewBox="-5 -5 16 16">
 //   <path d="M0 0l3.5 4L7 0H0">
 // </svg>
-// <svg class="sb-icon" viewBox="0 0 13 16">
+// <svg class="sb-icon sb-icon--link" viewBox="0 0 13 16">
 //   <path d="M7.21582935 3.881V0L13 6l-5.78417065 6V8.0345C.4864288 7.8705.77515533 12.7805 2.48823387 16-1.73999488 11.259-.8424844 3.663 7.21582935 3.881"/>
 // </svg>
 // <svg class="sb-icon" viewBox="0 0 16 16">
@@ -56,6 +57,15 @@
 
 .#{$ns}icon--warning {
   fill: $sb-color-yellow-2;
+}
+
+.#{$ns}icon--link {
+  &:focus,
+  &:active,
+  &:hover {
+    cursor: pointer;
+    fill: $sb-color-blue-1;
+  }
 }
 
 $sb-icon-size-map: ('--m': 28px, '--l': 40px);
