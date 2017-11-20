@@ -68,6 +68,22 @@ var logo = require('./logo.svg');
   NodeList.prototype.forEach = Array.prototype.forEach;
 })();
 
+(function () {
+  function addSectionSeparator(elements) {
+    var nextSibling;
+    for (var i = 0; i < elements.length; i++) {
+      nextSibling = elements[i].nextSibling.nextSibling;
+      if (nextSibling && nextSibling.classList.contains('kss-section--depth-2')) {
+        elements[i].className += 'kss-section-separator';
+      }
+    }
+  }
+  const sectionsDepth3 = document.querySelectorAll('.kss-section--depth-3');
+  const sectionsDepth2 = document.querySelectorAll('.kss-section--depth-2');
+  addSectionSeparator(sectionsDepth3);
+  addSectionSeparator(sectionsDepth2);
+})();
+
 (function(){
   var parameters = document.querySelectorAll('.kss-parameters');
 

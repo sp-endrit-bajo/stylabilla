@@ -282,6 +282,12 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     }
   }
 
+  .kss-section-separator {
+    margin-bottom: 200px;
+    border-bottom: 3px solid #b9c7d1;
+    padding-bottom: 20px;
+  }
+
   .kss-nav__name {
     font-size: 1rem;
     color: #fff;
