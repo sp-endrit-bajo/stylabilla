@@ -32,16 +32,13 @@ $sb-loader-spinner-size: sb-px2rems(50px);
 $sb-loader-spinner-size--inline: sb-px2rems(16px);
 $sb-loader-padding: sb-px2rems(16px);
 $sb-loader-padding--inline: sb-px2rems(11px);
-$sb-loader-animation-duration: 0.8s;
 
 .#{$ns}spinner {
+  @extend .#{$ns}animation--spin;
+
   display: inline-block;
   width: $sb-loader-spinner-size;
   height: $sb-loader-spinner-size;
-  animation-duration: $sb-loader-animation-duration;
-  animation-name: sb-rotate-loader;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 
   &__primary {
     fill: $sb-color-blue-2;
@@ -101,15 +98,5 @@ $sb-loader-animation-duration: 0.8s;
     position: absolute;
     top: 0;
     width: 100%;
-  }
-}
-
-@keyframes sb-rotate-loader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }
