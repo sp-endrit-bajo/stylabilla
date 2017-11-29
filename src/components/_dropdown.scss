@@ -6,8 +6,8 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <p class="sb-label">Choose an option</p>
-//    <div class="sb-dropdown {{modifier_class}}">
+//    <label class="sb-label" for="dropdown-id-{{modifier_class}}">Choose an option</label>
+//    <div class="sb-dropdown {{modifier_class}}" id="dropdown-id-{{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
 //        <button class="sb-input" aria-label="Choose an option" aria-expanded="false">
 //          Choice 1
@@ -131,8 +131,8 @@
 //
 // Markup:
 // <div class="sb-form-control">
-//   <p class="sb-label">Select options</p>
-//   <div class="sb-dropdown sb-dropdown--open">
+//   <label class="sb-label" for="dropdown-id-multiselect">Select options</label>
+//   <div class="sb-dropdown sb-dropdown--open" id="dropdown-id-multiselect">
 //     <div class="sb-dropdown__button sb-form-control__input">
 //       <button class="sb-input" aria-label="Select options" aria-expanded="true">
 //         Select options
@@ -196,8 +196,8 @@
 //
 // Markup:
 // <div class="sb-form-control">
-//   <p class="sb-label">Select options</p>
-//   <div class="sb-dropdown sb-dropdown--open">
+//   <label class="sb-label" for="dropdown-id-search">Select options</label>
+//   <div class="sb-dropdown sb-dropdown--open" id="dropdown-id-search">
 //     <div class="sb-dropdown__button sb-form-control__input">
 //       <button class="sb-input" aria-label="One item selected">
 //        One item selected
@@ -246,8 +246,8 @@
 //
 // Markup:
 // <div class="sb-form-control">
-//   <p class="sb-label">Select options</p>
-//   <div class="sb-dropdown sb-dropdown--open">
+//   <label class="sb-label" for="dropdown-id-search-no-results">Select options</label>
+//   <div class="sb-dropdown sb-dropdown--open" id="dropdown-id-search-no-results">
 //     <div class="sb-dropdown__button sb-form-control__input">
 //       <button class="sb-input" aria-label="Select options">
 //        Select options
@@ -273,8 +273,8 @@
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <p class="sb-label">Choose an option</p>
-//    <div class="sb-dropdown {{modifier_class}}">
+//    <label class="sb-label" for="dropdown-id-disabled">Choose an option</label>
+//    <div class="sb-dropdown {{modifier_class}}" id="dropdown-id-disabled">
 //      <div class="sb-dropdown__button sb-form-control__input">
 //       <button class="sb-input" aria-label="Choose an option" disabled aria-expanded="false">
 //         Choice 1
@@ -299,8 +299,8 @@
 //
 // Markup:
 // <div class="sb-form-control {{modifier_class}}">
-//    <p class="sb-label">Choose an option</p>
-//    <div class="sb-dropdown">
+//    <label class="sb-label" for="dropdown-id-{{modifier_class}}">Choose an option</label>
+//    <div class="sb-dropdown" id="dropdown-id-{{modifier_class}}">
 //      <div class="sb-dropdown__button sb-form-control__input">
 //        <button class="sb-input" aria-label="Choose an option" aria-expanded="false">
 //          Choice 1
