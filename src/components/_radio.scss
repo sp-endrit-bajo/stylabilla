@@ -1,0 +1,199 @@
+// Radio
+//
+// A basic radio component
+//
+// Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
+//
+// Obs: please do not reuse `extends` on this file for other components (apart from checkbox)
+//
+// Markup:
+// <div>
+//   <div class="sb-radio">
+//     <input type="radio" id="radio-1" class="sb-radio__input">
+//     <label class="sb-radio__label" for="radio-1">
+//       <span class="sb-radio__faux">
+//         <div class="sb-radio__circle"></div>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic radio.</span>
+//     </label>
+//   </div>
+//   <div class="sb-radio">
+//     <input type="radio" id="radio-2" class="sb-radio__input" disabled>
+//     <label class="sb-radio__label" for="radio-2">
+//       <span class="sb-radio__faux">
+//         <div class="sb-radio__circle"></div>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic disabled radio.</span>
+//     </label>
+//   </div>
+//   <div class="sb-radio">
+//     <input type="radio" id="radio-3" class="sb-radio__input" disabled checked>
+//     <label class="sb-radio__label" for="radio-3">
+//       <span class="sb-radio__faux">
+//         <div class="sb-radio__circle"></div>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic disabled and checked radio.</span>
+//     </label>
+//   </div>
+// </div>
+//
+// Styleguide Components.radio
+
+.#{$ns}radio {
+  &__label {
+    @extend %sb-label-inline;
+  }
+
+  &__faux {
+    @extend %sb-faux;
+  }
+
+  &__faux,
+  &__circle {
+    border-radius: 50%;
+  }
+
+  &__circle {
+    background-color: $sb-color-white;
+    box-shadow: $sb-box-shadow;
+    width: sb-px2rems(6px);
+    height: sb-px2rems(6px);
+    opacity: 0;
+    position: absolute;
+    top: sb-px2rems(4px);
+    left: sb-px2rems(4px);
+    transform: scale(0.1);
+    transition: transform $sb-timing-m $sb-easing-function;
+  }
+
+  &:hover .#{$ns}radio__faux {
+    @extend %sb-faux-hover;
+  }
+
+  &__input {
+    @extend %sb-faux-input;
+  }
+
+  &__input:focus + .#{$ns}radio__label .#{$ns}radio__faux {
+    @extend %sb-faux-focus;
+  }
+
+  &__input:checked + .#{$ns}radio__label .#{$ns}radio__faux {
+    @extend %sb-faux-checked;
+  }
+
+  &__input:checked + .#{$ns}radio__label .#{$ns}radio__circle {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__input:disabled + .#{$ns}radio__label .#{$ns}radio__faux {
+    @extend %sb-faux-disabled;
+  }
+
+  &__input:disabled:checked + .#{$ns}radio__label .#{$ns}radio__faux {
+    @extend %sb-faux-disabled-checked;
+  }
+}
+
+// Group
+//
+// A basic radio group. Apply a `.sb-radio-group` class to the radio wrapper.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-radio-group {{modifier_class}}" role="radiogroup">
+//   <div class="sb-radio">
+//     <input type="radio" name="radio-1-{{modifier_class}}" id="radio-4-{{modifier_class}}" class="sb-radio__input">
+//     <label class="sb-radio__label" for="radio-4-{{modifier_class}}">
+//       <span class="sb-radio__faux">
+//         <div class="sb-radio__circle"></div>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic radio</span>
+//     </label>
+//   </div>
+//   <div class="sb-radio">
+//     <input type="radio" name="radio-1-{{modifier_class}}" id="radio-5-{{modifier_class}}" class="sb-radio__input">
+//     <label class="sb-radio__label" for="radio-5-{{modifier_class}}">
+//       <span class="sb-radio__faux">
+//         <div class="sb-radio__circle"></div>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic radio</span>
+//     </label>
+//   </div>
+//   <div class="sb-radio">
+//     <input type="radio" name="radio-1-{{modifier_class}}" id="radio-6-{{modifier_class}}" class="sb-radio__input">
+//     <label class="sb-radio__label" for="radio-6-{{modifier_class}}">
+//       <span class="sb-radio__faux">
+//         <div class="sb-radio__circle"></div>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic radio</span>
+//     </label>
+//   </div>
+// </div>
+//
+// .sb-radio-group--inline - radio group aligned horizontally
+//
+// Styleguide Components.radio.group
+
+.#{$ns}radio-group {
+  .#{$ns}radio + .#{$ns}radio {
+    @extend %sb-group-input;
+  }
+}
+
+.#{$ns}radio-group--inline {
+  .#{$ns}radio {
+    @extend %sb-group-input-inline;
+  }
+
+  .#{$ns}radio:last-child {
+    @extend %sb-group-input-inline-last;
+  }
+}
+
+// Validation
+//
+// A basic radio group with label and validation.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-form-control {{modifier_class}}">
+//   <label class="sb-label" for="radio-group-id-{{modifier_class}}">Button Group label</label>
+//   <div class="sb-radio-group--inline" id="radio-group-id-{{modifier_class}}" role="radiogroup">
+//     <div class="sb-radio">
+//       <input type="radio" name="radio-2-{{modifier_class}}" id="radio-7-{{modifier_class}}" class="sb-radio__input">
+//       <label class="sb-radio__label" for="radio-7-{{modifier_class}}">
+//         <span class="sb-radio__faux">
+//           <div class="sb-radio__circle"></div>
+//         </span>
+//         <span class="sb-margin-left-xs">Basic radio</span>
+//       </label>
+//     </div>
+//     <div class="sb-radio">
+//       <input type="radio" name="radio-2-{{modifier_class}}" id="radio-8-{{modifier_class}}" class="sb-radio__input">
+//       <label class="sb-radio__label" for="radio-8-{{modifier_class}}">
+//         <span class="sb-radio__faux">
+//           <div class="sb-radio__circle"></div>
+//         </span>
+//         <span class="sb-margin-left-xs">Basic radio</span>
+//       </label>
+//     </div>
+//     <div class="sb-radio">
+//       <input type="radio" name="radio-2-{{modifier_class}}" id="radio-9-{{modifier_class}}" class="sb-radio__input">
+//       <label class="sb-radio__label" for="radio-9-{{modifier_class}}">
+//         <span class="sb-radio__faux">
+//           <div class="sb-radio__circle"></div>
+//         </span>
+//         <span class="sb-margin-left-xs">Basic radio</span>
+//       </label>
+//     </div>
+//   </div>
+//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
+// </div>
+//
+// .sb-form-control--invalid - invalid group
+//
+// Styleguide Components.radio.validation

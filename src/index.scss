@@ -33,6 +33,7 @@ $ns: 'sb-' !default;
 
 // Tools
 @import 'tools/functions';
+@import 'tools/radios-and-checkboxes';
 
 // Generic
 @import '~sanitize.css';
@@ -52,6 +53,7 @@ $ns: 'sb-' !default;
 // Components
 @import 'components/tile';
 @import 'components/checkbox';
+@import 'components/radio';
 @import 'components/input';
 @import 'components/upload';
 @import 'components/button';

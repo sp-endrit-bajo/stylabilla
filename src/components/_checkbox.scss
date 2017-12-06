@@ -4,39 +4,54 @@
 //
 // Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
 //
+// Obs: please do not reuse `extends` on this file for other components (apart from radio)
+//
 // Markup:
-// <div class="sb-checkbox">
-//   <input type="checkbox" id="checkbox-1" class="sb-checkbox__input">
-//   <label class="sb-checkbox__label" for="checkbox-1">
-//     <span class="sb-checkbox__faux">
-//       <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//         <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//       </svg>
-//     </span>
-//     <span class="sb-margin-left-xs">Basic checkbox. If these lines aren't straight, your water's going to run right out of your painting and get your floor wet. We don't make mistakes we just have happy little accidents. We'll paint one happy little tree right here. You have to make those little noises or it won't work. If I paint something, I don't want to have to explain what it is. See there how easy that is.</span>
-//   </label>
+// <div>
+//   <div class="sb-checkbox">
+//     <input type="checkbox" id="checkbox-1" class="sb-checkbox__input">
+//     <label class="sb-checkbox__label" for="checkbox-1">
+//       <span class="sb-checkbox__faux">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//         </svg>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic checkbox.</span>
+//     </label>
+//   </div>
+//   <div class="sb-checkbox">
+//     <input type="checkbox" id="checkbox-2" class="sb-checkbox__input" disabled>
+//     <label class="sb-checkbox__label" for="checkbox-2">
+//       <span class="sb-checkbox__faux">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//         </svg>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic disabled checkbox.</span>
+//     </label>
+//   </div>
+//   <div class="sb-checkbox">
+//     <input type="checkbox" id="checkbox-3" class="sb-checkbox__input" disabled checked>
+//     <label class="sb-checkbox__label" for="checkbox-3">
+//       <span class="sb-checkbox__faux">
+//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//         </svg>
+//       </span>
+//       <span class="sb-margin-left-xs">Basic disabled and checked checkbox. </span>
+//     </label>
+//   </div>
 // </div>
 //
 // Styleguide Components.checkbox
 
 .#{$ns}checkbox {
   &__label {
-    display: inline-flex;
-    align-items: flex-start;
+    @extend %sb-label-inline;
   }
 
   &__faux {
-    display: inline-block;
-    flex-shrink: 0;
-    position: relative;
-    vertical-align: middle;
-    width: sb-px2rems(16px);
-    height: sb-px2rems(16px);
-    margin-top: sb-px2rems(2px);
-    border-radius: sb-px2rems($sb-radius);
-    border: 1px solid $sb-color-light-3;
-    background-color: $sb-color-white;
-    overflow: hidden;
+    @extend %sb-faux;
   }
 
   &__checkmark {
@@ -51,22 +66,19 @@
   }
 
   &:hover .#{$ns}checkbox__faux {
-    box-shadow: $sb-box-shadow;
+    @extend %sb-faux-hover;
   }
 
   &__input {
-    position: absolute;
-    left: -999em;
+    @extend %sb-faux-input;
   }
 
   &__input:focus + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    @include sb-focus-no-border();
+    @extend %sb-faux-focus;
   }
 
   &__input:checked + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    background-color: $sb-color-blue-2;
-    border-color: $sb-color-blue-2;
-    border-bottom: 1px solid $sb-color-blue-1;
+    @extend %sb-faux-checked;
   }
 
   &__input:checked + .#{$ns}checkbox__label .#{$ns}checkbox__checkmark {
@@ -74,14 +86,11 @@
   }
 
   &__input:disabled + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    border-color: $sb-color-light-4;
-    box-shadow: none;
+    @extend %sb-faux-disabled;
   }
 
   &__input:disabled:checked + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    background-color: $sb-color-light-3;
-    border-color: $sb-color-light-3;
-    border-bottom: 1px solid $sb-color-light-1;
+    @extend %sb-faux-disabled-checked;
   }
 }
 
@@ -92,10 +101,10 @@
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-checkbox-group">
+// <div class="sb-checkbox-group {{modifier_class}}" role="group">
 //   <div class="sb-checkbox">
-//     <input type="checkbox" id="checkbox-2" class="sb-checkbox__input">
-//     <label class="sb-checkbox__label" for="checkbox-2">
+//     <input type="checkbox" id="checkbox-4-{{modifier_class}}" class="sb-checkbox__input">
+//     <label class="sb-checkbox__label" for="checkbox-4-{{modifier_class}}">
 //       <span class="sb-checkbox__faux">
 //         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
@@ -105,8 +114,8 @@
 //     </label>
 //   </div>
 //   <div class="sb-checkbox">
-//     <input type="checkbox" id="checkbox-3" class="sb-checkbox__input">
-//     <label class="sb-checkbox__label" for="checkbox-3">
+//     <input type="checkbox" id="checkbox-5-{{modifier_class}}" class="sb-checkbox__input">
+//     <label class="sb-checkbox__label" for="checkbox-5-{{modifier_class}}">
 //       <span class="sb-checkbox__faux">
 //         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
@@ -116,8 +125,8 @@
 //     </label>
 //   </div>
 //   <div class="sb-checkbox">
-//     <input type="checkbox" id="checkbox-4" class="sb-checkbox__input">
-//     <label class="sb-checkbox__label" for="checkbox-4">
+//     <input type="checkbox" id="checkbox-6-{{modifier_class}}" class="sb-checkbox__input">
+//     <label class="sb-checkbox__label" for="checkbox-6-{{modifier_class}}">
 //       <span class="sb-checkbox__faux">
 //         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
 //           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
@@ -127,67 +136,74 @@
 //     </label>
 //   </div>
 // </div>
+//
+// .sb-checkbox-group--inline - checkbox group aligned horizontally
 //
 // Styleguide Components.checkbox.group
 
 .#{$ns}checkbox-group {
   .#{$ns}checkbox + .#{$ns}checkbox {
-    margin-top: sb-px2rems(11px);
+    @extend %sb-group-input;
   }
 }
 
-// Group Inline
+.#{$ns}checkbox-group--inline {
+  .#{$ns}checkbox {
+    @extend %sb-group-input-inline;
+  }
+
+  .#{$ns}checkbox:last-child {
+    @extend %sb-group-input-inline-last;
+  }
+}
+
+// Validation
 //
-// A basic checkbox group aligned horizontally. Apply a `.sb-checkbox-group--inline` class to the checkbox wrapper.
+// A basic checkbox group with label and validation.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-checkbox-group--inline">
-//   <div class="sb-checkbox">
-//     <input type="checkbox" id="checkbox-5" class="sb-checkbox__input">
-//     <label class="sb-checkbox__label" for="checkbox-5">
-//       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//         </svg>
-//       </span>
-//       <span class="sb-margin-left-xs">Basic checkbox</span>
-//     </label>
+// <div class="sb-form-control {{modifier_class}}">
+//   <label class="sb-label" for="checkbox-group-id-{{modifier_class}}">Button Group label</label>
+//   <div class="sb-checkbox-group--inline" id="checkbox-group-id-{{modifier_class}}" role="group">
+//     <div class="sb-checkbox">
+//       <input type="checkbox" id="checkbox-7-{{modifier_class}}" class="sb-checkbox__input">
+//       <label class="sb-checkbox__label" for="checkbox-7-{{modifier_class}}">
+//         <span class="sb-checkbox__faux">
+//           <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//             <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//           </svg>
+//         </span>
+//         <span class="sb-margin-left-xs">Basic checkbox</span>
+//       </label>
+//     </div>
+//     <div class="sb-checkbox">
+//       <input type="checkbox" id="checkbox-8-{{modifier_class}}" class="sb-checkbox__input">
+//       <label class="sb-checkbox__label" for="checkbox-8-{{modifier_class}}">
+//         <span class="sb-checkbox__faux">
+//           <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//             <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//           </svg>
+//         </span>
+//         <span class="sb-margin-left-xs">Basic checkbox</span>
+//       </label>
+//     </div>
+//     <div class="sb-checkbox">
+//       <input type="checkbox" id="checkbox-9-{{modifier_class}}" class="sb-checkbox__input">
+//       <label class="sb-checkbox__label" for="checkbox-9-{{modifier_class}}">
+//         <span class="sb-checkbox__faux">
+//           <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
+//             <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
+//           </svg>
+//         </span>
+//         <span class="sb-margin-left-xs">Basic checkbox</span>
+//       </label>
+//     </div>
 //   </div>
-//   <div class="sb-checkbox">
-//     <input type="checkbox" id="checkbox-6" class="sb-checkbox__input">
-//     <label class="sb-checkbox__label" for="checkbox-6">
-//       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//         </svg>
-//       </span>
-//       <span class="sb-margin-left-xs">Basic checkbox</span>
-//     </label>
-//   </div>
-//   <div class="sb-checkbox">
-//     <input type="checkbox" id="checkbox-7" class="sb-checkbox__input">
-//     <label class="sb-checkbox__label" for="checkbox-7">
-//       <span class="sb-checkbox__faux">
-//         <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//           <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//         </svg>
-//       </span>
-//       <span class="sb-margin-left-xs">Basic checkbox</span>
-//     </label>
-//   </div>
+//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
 // </div>
 //
-// Styleguide Components.checkbox.group-inline
-
-.#{$ns}checkbox-group--inline {
-  .#{$ns}checkbox {
-    display: inline-block;
-    margin-right: sb-px2rems(11px);
-  }
-
-  .#{$ns}checkbox:last-child {
-    margin-right: 0;
-  }
-}
+// .sb-form-control--invalid - invalid group
+//
+// Styleguide Components.checkbox.validation
