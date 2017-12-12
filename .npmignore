@@ -9,7 +9,6 @@ yarn-error.log
 
 /docs-builder/
 /docs/
-/src/
 .githooks/
 .nvmrc
 webpack.*
