@@ -138,8 +138,12 @@
 // Styleguide Components.radio.group
 
 .#{$ns}radio-group {
-  .#{$ns}radio + .#{$ns}radio {
+  .#{$ns}radio {
     @extend %sb-group-input;
+  }
+
+  .#{$ns}radio:first-child {
+    @extend %sb-group-input-inline-first;
   }
 }
 

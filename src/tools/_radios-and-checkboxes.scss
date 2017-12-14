@@ -1,7 +1,7 @@
 /* stylelint-disable plugin/docs-required */
 
 // Shared styles between radio and checkbox components
-// Obs: please do not reuse classes declared on this file for other components than radio or checkbox.
+// Obs: please do not reuse extends declared on this file for components other than radio or checkbox.
 %sb-label-inline {
   display: inline-flex;
   align-items: flex-start;
@@ -62,6 +62,11 @@
 %sb-group-input-inline {
   display: inline-block;
   margin-right: sb-px2rems(11px);
+  margin-top: 0;
+}
+
+%sb-group-input-inline-first {
+  margin-top: 0;
 }
 
 %sb-group-input-inline-last {

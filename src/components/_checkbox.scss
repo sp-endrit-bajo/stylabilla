@@ -142,8 +142,12 @@
 // Styleguide Components.checkbox.group
 
 .#{$ns}checkbox-group {
-  .#{$ns}checkbox + .#{$ns}checkbox {
+  .#{$ns}checkbox {
     @extend %sb-group-input;
+  }
+
+  .#{$ns}checkbox:first-child {
+    @extend %sb-group-input-inline-first;
   }
 }
 
