@@ -1,0 +1,67 @@
+// Tags
+//
+// Tags component
+//
+// Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-tags sb-tags--positive">
+//   <input class="sb-tags__input" type="checkbox" id="tag-positive-1">
+//   <label class="sb-tags__label" for="tag-positive-1">attractive</label>
+//   <input class="sb-tags__input" type="checkbox" id="tag-positive-2">
+//   <label class="sb-tags__label" for="tag-positive-2">usable</label>
+//   <input class="sb-tags__input" type="checkbox" id="tag-positive-3">
+//   <label class="sb-tags__label" for="tag-positive-3">interesting</label>
+// </div>
+// <div class="sb-tags sb-tags--negative">
+//   <input class="sb-tags__input" type="checkbox" id="tag-negative-1">
+//   <label class="sb-tags__label" for="tag-negative-1">unattractive</label>
+//   <input class="sb-tags__input" type="checkbox" id="tag-negative-2">
+//   <label class="sb-tags__label" for="tag-negative-2">complex</label>
+//   <input class="sb-tags__input" type="checkbox" id="tag-negative-3">
+//   <label class="sb-tags__label" for="tag-negative-3">boring</label>
+// </div>
+//
+// Styleguide Components.tags
+
+@mixin tag-state($name, $state-color) {
+  &--#{$name} &__label:hover,
+  &--#{$name} &__input:focus + &__label {
+    border-color: $state-color;
+    color: $state-color;
+  }
+
+  &--#{$name} &__input:checked + &__label {
+    background-color: $state-color;
+    border-color: $state-color;
+    color: $sb-color-white;
+  }
+}
+
+.#{$ns}tags {
+  &__input {
+    @extend %sb-faux-input;
+  }
+
+  &__label {
+    @extend .#{$ns}animation--hover-lift;
+
+    background-color: $sb-color-white;
+    border: 1px solid $sb-color-light-3;
+    border-radius: $sb-radius-infinite;
+    color: $sb-color-dark-3;
+    cursor: pointer;
+    display: inline-block;
+    font-size: sb-px2rems(13px);
+    margin: sb-px2rems(3px);
+    margin-left: 0;
+    padding: sb-px2rems(map-get($sb-spacing-map, '-xs')) sb-px2rems(map-get($sb-spacing-map, ''));
+  }
+
+  &__input:focus + &__label {
+    @extend %sb-faux-focus;
+  }
+
+  @include tag-state('positive', $sb-color-green-2);
+  @include tag-state('negative', $sb-color-red-2);
+}
