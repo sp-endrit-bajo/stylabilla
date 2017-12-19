@@ -23,13 +23,14 @@
   &__validation {
     display: none;
     margin-top: sb-px2rems(7px);
+    font-family: $sb-base-font-family;
     font-size: sb-px2rems(13px);
-    color: $sb-color-red-1;
+    color: $sb-color-red-2;
   }
 
   &--invalid {
     .#{$ns}input {
-      border: 1px solid $sb-color-red-1;
+      border: 1px solid $sb-color-red-2;
     }
   }
 
