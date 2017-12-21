@@ -132,13 +132,13 @@ Add documentation to help developers follow the same standards for making change
 ## Semantic Versioning and Releases
 
 Stylabilla follows [semantic versioning](http://semver.org). Applications using Stylabilla should be able to update patch and minor versions without requiring any changes to their code.
-We also use [semantic-release](https://github.com/semantic-release/semantic-release), meaning that when a pull request is merged, the following will occur:
+We also use [semantic-release](https://github.com/semantic-release/semantic-release) and its [default commit message format](https://github.com/semantic-release/semantic-release#default-commit-message-format), meaning that when a pull request is merged, the following will occur:
 
 Commit Type | NPM Release
 --- | ---
 `fix` | patch
 `feat` | minor/feature
-`BREAKING CHANGE` (in commit body) | major/breaking
+`BREAKING CHANGE:` (in commit body) | major/breaking
 
 Avoid making breaking changes if possible. The general rule is: **if it requires consumers to make changes to their code, then it's a breaking change**.
 
