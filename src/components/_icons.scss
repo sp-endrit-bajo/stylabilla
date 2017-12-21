@@ -89,6 +89,10 @@
   &:hover {
     cursor: pointer;
   }
+
+  &:focus {
+    @include sb-focus();
+  }
 }
 
 .#{$ns}icon--link {

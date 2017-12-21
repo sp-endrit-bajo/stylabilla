@@ -24,3 +24,6 @@ $sb-box-shadow-heavy: 0 1px 0 0 $sb-color-light-3, 0 2px 4px transparentize($sb-
 
 // Usabilla application page header - 40px button height plus 11px top and bottom margin
 $sb-header-height: 62px;
+
+// spacing options used for margins and paddings
+$sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);

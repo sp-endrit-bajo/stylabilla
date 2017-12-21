@@ -1,0 +1,52 @@
+// Animation
+//
+// Styleguide Behaviours.animation
+
+// Animations
+//
+// A small collection of predefined and reusable animations, useful for loading spinners, validations states etc.<br />
+// Animations with * use transition.
+//
+// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-padding {{modifier_class}} sb-justify-content-center sb-align-items-center sb-flex" style="width: 80px; border-radius:50%; background-color: #008aab; width: 75px; height: 75px; color: #fff;">
+//   Weeee
+// </div>
+//
+// sb-animation--hover-lift - move up
+// sb-animation--hover-detach - move up and adds drop shadow
+// sb-animation--spin - continuous rotation
+//
+// Styleguide Behaviours.animation.animations
+
+@keyframes sb-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.#{$ns}animation--hover-lift {
+  transition: transform $sb-timing-s ease-in-out;
+
+  &:hover {
+    transform: translateY(-10%);
+  }
+}
+
+.#{$ns}animation--hover-detach {
+  transition: transform $sb-timing-xs ease-in-out, box-shadow $sb-timing-s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5%);
+    box-shadow: $sb-box-shadow-light;
+  }
+}
+
+.#{$ns}animation--spin {
+  animation: sb-spin $sb-timing-l infinite linear;
+}

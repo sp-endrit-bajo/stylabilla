@@ -6,15 +6,21 @@
 // rems is the preferred option for sizing elements, and in particular typography.
 // This is because it is more accessible, supporting the browser font sizing options.
 // For more information: http://engageinteractive.co.uk/blog/em-vs-rem-vs-px
-
 @function sb-px2rems($px) {
   $base-font-size: 16px;
 
   @return ($px / $base-font-size) * 1rem;
 }
 
-// This mixin creates color classes out of the given color map
+// This function returns a rems value based on the given size keyword (eg: '-xs', '-s')
+@function sb-rem-spacing($size) {
+  $base-font-size: 16px;
+  $px: map-get($sb-spacing-map, '-#{$size}');
 
+  @return ($px / $base-font-size) * 1rem;
+}
+
+// This mixin creates color classes out of the given color map
 @mixin sb-colors-from-color-map($color-array) {
   @each $color, $color-value in $color-array {
     .#{$ns}color-#{$color} {

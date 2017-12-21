@@ -32,8 +32,6 @@
 //
 // Styleguide Layout.spacing.margins
 
-$sb-spacing-map: ('-xs': 7px, '-s': 11px, '': 16px, '-l': 23px, '-xl': 40px);
-
 @each $suffix, $spacing in $sb-spacing-map {
   .#{$ns}margin-top#{$suffix} {
     margin-top: sb-px2rems($spacing);

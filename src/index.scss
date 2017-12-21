@@ -21,9 +21,11 @@
  **/
 
 // Settings
+// Do not include any css output (eg classes) in these files
 @import 'settings/index';
 
 // Tools
+// Do not include any css output (eg classes) in these files
 @import 'tools/index';
 
 // Generic
@@ -42,6 +44,7 @@
 @import 'components/checkbox';
 @import 'components/radio';
 @import 'components/input';
+@import 'components/animation';
 @import 'components/upload';
 @import 'components/button';
 @import 'components/button-group';
@@ -60,5 +63,6 @@
 @import 'trumps/text';
 @import 'trumps/text-colors';
 @import 'trumps/text-align';
+@import 'trumps/rtl';
 @import 'trumps/hovers';
 @import 'trumps/cursor';
