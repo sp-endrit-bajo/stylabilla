@@ -55,7 +55,7 @@
     font-size: sb-px2rems(13px);
     margin: sb-px2rems(3px);
     margin-left: 0;
-    padding: sb-px2rems(map-get($sb-spacing-map, '-xs')) sb-px2rems(map-get($sb-spacing-map, ''));
+    padding: sb-rem-spacing('-xs') sb-rem-spacing('');
   }
 
   &__input:focus + &__label {

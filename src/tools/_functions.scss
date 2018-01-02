@@ -12,9 +12,9 @@
   @return ($px / $base-font-size) * 1rem;
 }
 
-// This function returns a rems value based on the given size keyword (eg: 'xs', 's')
+// This function returns a rems value based on the given size keyword (eg: '-xs', '-s')
 @function sb-rem-spacing($size) {
-  $px: map-get($sb-spacing-map, '-#{$size}');
+  $px: map-get($sb-spacing-map, #{$size});
 
   @return sb-px2rems($px);
 }
