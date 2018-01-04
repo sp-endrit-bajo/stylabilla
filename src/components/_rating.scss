@@ -1,0 +1,222 @@
+// Rating
+//
+// A basic rating component
+//
+// Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div>
+//   <div class="sb-rating">
+//     <input type="radio" name="rating-1" id="rating-1" class="sb-rating__input">
+//     <label class="sb-rating__label" for="rating-1">1</label>
+//   </div>
+//   <div class="sb-rating">
+//     <input type="radio" name="rating-1" id="rating-1b" class="sb-rating__input" checked>
+//     <label class="sb-rating__label" for="rating-1b">1</label>
+//   </div>
+// </div>
+//
+// Styleguide Components.rating
+
+.#{$ns}rating {
+  float: left;
+  display: block;
+  margin-right: sb-px2rems(2px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include breakpoint-s {
+    margin-right: sb-px2rems(4px);
+  }
+
+  &__input {
+    @extend %sb-faux-input;
+  }
+
+  &__label {
+    background-color: $sb-color-white;
+    border: 1px solid $sb-color-light-3;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-family: $sb-base-font-family;
+    font-size: sb-px2rems(13px);
+    line-height: 1.8;
+    text-align: center;
+    width: sb-px2rems(24px);
+    height: sb-px2rems(24px);
+
+    @include breakpoint-s {
+      width: sb-px2rems(33px);
+      height: sb-px2rems(33px);
+      line-height: 2.4;
+    }
+  }
+
+  &:hover .#{$ns}rating__label,
+  &__input:focus + .#{$ns}rating__label {
+    @extend .#{$ns}animation--hover-lift;
+
+    border-color: $sb-color-blue-2;
+    color: $sb-color-blue-2;
+  }
+
+  &__input:focus + .#{$ns}rating__label {
+    @include sb-focus-no-border();
+  }
+
+  &__input:checked + .#{$ns}rating__label {
+    background-color: $sb-color-blue-2;
+    border-color: $sb-color-blue-2;
+    color: $sb-color-white;
+  }
+}
+
+// Group
+//
+// A basic rating group. Apply a `.sb-rating-group` class to the rating wrapper.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-rating-group {{modifier_class}}" role="ratinggroup">
+//   <div class="sb-rating-group__text sb-rating-group__text--low">< low</div>
+//   <ul class="sb-rating-group__numbers">
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-0-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-0-{{modifier_class}}">0</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-1-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-1-{{modifier_class}}">1</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-2-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-2-{{modifier_class}}">2</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-3-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-3-{{modifier_class}}">3</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-4-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-4-{{modifier_class}}">4</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-5-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-5-{{modifier_class}}">5</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-6-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-6-{{modifier_class}}">6</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-7-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-7-{{modifier_class}}">7</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-8-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-8-{{modifier_class}}">8</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-9-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-9-{{modifier_class}}">9</label>
+//     </li>
+//     <li class="sb-rating">
+//       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-10-{{modifier_class}}" class="sb-rating__input">
+//       <label class="sb-rating__label" for="rating-10-{{modifier_class}}">10</label>
+//     </li>
+//   </ul>
+//   <div class="sb-rating-group__text sb-rating-group__text--high">high ></div>
+// </div>
+//
+// .sb-rating-group--above - Show text above
+// .sb-rating-group--after - Show text before and after
+//
+// Styleguide Components.rating.group
+
+$sb-rating-text-space: sb-px2rems(19px);
+$sb-rating-before-space: sb-px2rems(7px);
+
+.#{$ns}rating-group {
+  display: table;
+  position: relative;
+  padding-bottom: $sb-rating-text-space;
+
+  &__numbers {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__text {
+    color: $sb-color-light-1;
+    font-size: sb-px2rems(13px);
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &--above {
+    padding-bottom: 0;
+    padding-top: $sb-rating-text-space;
+  }
+
+  &--above &__text {
+    bottom: auto;
+    top: 0;
+  }
+
+  &__text--high {
+    right: 0;
+  }
+
+  @include breakpoint-m {
+    &--after &__text,
+    &--after &__numbers {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+    }
+
+    &--after &__numbers {
+      padding-left: $sb-rating-before-space;
+      padding-right: $sb-rating-before-space;
+    }
+  }
+}
+
+// Validation
+//
+// A basic rating group with label and validation.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-form-control {{modifier_class}}">
+//   <label class="sb-label" for="rating-group-id-{{modifier_class}}">Button Group label</label>
+//   <div class="sb-rating-group sb-rating-group--below" id="rating-group-id-{{modifier_class}}" role="ratinggroup">
+//     <div class="sb-rating-group__text sb-rating-group__text--low">< low</div>
+//     <ul class="sb-rating-group__numbers">
+//       <li class="sb-rating">
+//         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-1-{{modifier_class}}" class="sb-rating__input">
+//         <label class="sb-rating__label" for="rating-1-{{modifier_class}}">1</label>
+//       </li>
+//       <li class="sb-rating">
+//         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-2-{{modifier_class}}" class="sb-rating__input">
+//         <label class="sb-rating__label" for="rating-2-{{modifier_class}}">2</label>
+//       </li>
+//       <li class="sb-rating">
+//         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-3-{{modifier_class}}" class="sb-rating__input">
+//         <label class="sb-rating__label" for="rating-3-{{modifier_class}}">3</label>
+//       </li>
+//     </ul>
+//     <div class="sb-rating-group__text sb-rating-group__text--high">high ></div>
+//   </div>
+//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
+// </div>
+//
+// .sb-form-control--invalid - invalid group
+//
+// Styleguide Components.rating.validation
