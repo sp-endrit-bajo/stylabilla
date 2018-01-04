@@ -5,4 +5,5 @@ $sb-timing-s: 0.2s;
 $sb-timing-m: 0.4s;
 $sb-timing-l: 0.8s;
 $sb-easing-function: cubic-bezier(0.38, 1.59, 0.82, 0.96);
+$sb-easeup-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $sb-transition: $sb-timing-s $sb-easing-function;
