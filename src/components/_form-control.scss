@@ -21,10 +21,10 @@
 
 .#{$ns}form-control {
   &__validation {
+    @include base-font();
+
     display: none;
     margin-top: sb-px2rems(7px);
-    font-family: $sb-base-font-family;
-    font-size: sb-px2rems(13px);
     color: $sb-color-red-2;
   }
 

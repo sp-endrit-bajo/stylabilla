@@ -36,13 +36,13 @@
   }
 
   &__label {
+    @include base-font();
+
     background-color: $sb-color-white;
     border: 1px solid $sb-color-light-3;
     border-radius: 50%;
     cursor: pointer;
     display: block;
-    font-family: $sb-base-font-family;
-    font-size: sb-px2rems(13px);
     line-height: 1.8;
     text-align: center;
     width: sb-px2rems(24px);
@@ -82,7 +82,7 @@
 //
 // Markup:
 // <div class="sb-rating-group {{modifier_class}}" role="ratinggroup">
-//   <div class="sb-rating-group__text sb-rating-group__text--low">< low</div>
+//   <div class="sb-rating-group__text sb-rating-group__text--low">Not at all</div>
 //   <ul class="sb-rating-group__numbers">
 //     <li class="sb-rating">
 //       <input type="radio" name="rating-group-{{modifier_class}}" id="rating-0-{{modifier_class}}" class="sb-rating__input">
@@ -129,7 +129,7 @@
 //       <label class="sb-rating__label" for="rating-10-{{modifier_class}}">10</label>
 //     </li>
 //   </ul>
-//   <div class="sb-rating-group__text sb-rating-group__text--high">high ></div>
+//   <div class="sb-rating-group__text sb-rating-group__text--high">Very likely</div>
 // </div>
 //
 // .sb-rating-group--above - Show text above
@@ -151,9 +151,8 @@ $sb-rating-before-space: sb-px2rems(7px);
   }
 
   &__text {
-    color: $sb-color-light-1;
-    font-size: sb-px2rems(13px);
-    display: block;
+    @include base-font();
+
     position: absolute;
     bottom: 0;
   }
@@ -173,6 +172,10 @@ $sb-rating-before-space: sb-px2rems(7px);
   }
 
   @include breakpoint-m {
+    &--after {
+      padding-bottom: 0;
+    }
+
     &--after &__text,
     &--after &__numbers {
       display: inline-block;
@@ -197,7 +200,7 @@ $sb-rating-before-space: sb-px2rems(7px);
 // <div class="sb-form-control {{modifier_class}}">
 //   <label class="sb-label" for="rating-group-id-{{modifier_class}}">Button Group label</label>
 //   <div class="sb-rating-group sb-rating-group--below" id="rating-group-id-{{modifier_class}}" role="ratinggroup">
-//     <div class="sb-rating-group__text sb-rating-group__text--low">< low</div>
+//     <div class="sb-rating-group__text sb-rating-group__text--low"><< Low</div>
 //     <ul class="sb-rating-group__numbers">
 //       <li class="sb-rating">
 //         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-1-{{modifier_class}}" class="sb-rating__input">
@@ -212,7 +215,7 @@ $sb-rating-before-space: sb-px2rems(7px);
 //         <label class="sb-rating__label" for="rating-3-{{modifier_class}}">3</label>
 //       </li>
 //     </ul>
-//     <div class="sb-rating-group__text sb-rating-group__text--high">high ></div>
+//     <div class="sb-rating-group__text sb-rating-group__text--high">High >></div>
 //   </div>
 //   <p role="alert" class="sb-form-control__validation">Error message here.</p>
 // </div>

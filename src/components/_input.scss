@@ -13,14 +13,14 @@
 // Styleguide Components.input
 
 .#{$ns}input {
+  @include base-font();
+
   width: 100%;
   border-radius: sb-px2rems($sb-radius);
   border: 1px solid $sb-color-light-3;
   background-color: $sb-color-white;
   padding: sb-px2rems(11px);
-  font-family: $sb-base-font-family;
   font-weight: 400;
-  font-size: sb-px2rems(13px);
   color: $sb-color-dark-3;
 
   &::placeholder {
