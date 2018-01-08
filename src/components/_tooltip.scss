@@ -7,17 +7,23 @@
 //
 // Markup:
 // <div class="sb-tooltip__container">
-// <div class="sb-text--center">hover me</div>
-// <div class="sb-tooltip">
+// <div class="hover-area sb-text--center">hover me</div>
+// <div class="sb-tooltip {{modifier_class}}">
 //   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum turpis enim, eget tempor tellus placerat at.</p>
 //   <p>Alea iacta est!</p>
 //   <div class="sb-tooltip__arrow"></div>
 // </div>
 // </div>
 //
+// .sb-tooltip--bottom - Position it on the bottom
+//
 // Styleguide Components.tooltip
+
+$tp: #{$ns}tooltip;
+
 .#{$ns}tooltip {
   position: absolute;
+  display: table;
   top: 0;
   left: 50%;
   transform: translate(-50%, -100%);
@@ -35,12 +41,41 @@
   opacity: 0;
   pointer-events: none;
 
+  &--bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--left {
+    left: 0;
+    transform: translate(0, -100%);
+  }
+
+  &--right {
+    left: auto;
+    right: 0;
+    transform: translate(0, -100%);
+  }
+
   &__container {
     position: relative;
 
     &:hover .#{$ns}tooltip {
       opacity: 1;
       transform: translate(-50%, calc(-100% - 7px));
+    }
+
+    &:hover .#{$tp}--bottom {
+      transform: translate(-50%, 7px);
+    }
+
+    &:hover .#{$tp}--left {
+      transform: translate(0, calc(-100% - 7px));
+    }
+
+    &:hover .#{$tp}--right {
+      transform: translate(0, calc(-100% - 7px));
     }
   }
 
@@ -49,6 +84,7 @@
   }
 
   &--s {
+    white-space: nowrap;
     line-height: sb-px2rems(13px);
     padding: sb-px2rems(7px);
   }
@@ -73,18 +109,83 @@
       width: $sb-tooltip-arrow-size;
       height: $sb-tooltip-arrow-size;
       background: $sb-color-white;
-      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg);
       top: 0;
       left: 50%;
       border: 1px solid $sb-color-light-3;
       box-shadow: $sb-box-shadow-light;
     }
+
+    .#{$tp}--left & {
+      left: 5%;
+      transform: translateX(0);
+    }
+
+    .#{$tp}--right & {
+      left: auto;
+      right: 5%;
+    }
+
+    .#{$tp}--bottom & {
+      top: 0;
+      transform: translate(-50%, -100%);
+    }
+
+    .#{$tp}--bottom &::after {
+      transform: translate(-50%, 7px) rotate(45deg);
+    }
   }
 }
 
+.#{$tp}__arrow {
+  @include sb-firefox-only {
+    top: calc(100% - 1px);
+
+    .#{$tp}--bottom & {
+      top: 1px;
+    }
+  }
+}
+
+// Tooltip left
+//
+// Tooltip element small. Always displayed on one line!
+// Used for small descriptions or names. eg: emotions in mood rating.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-tooltip__container">
+// <div>hover me</div>
+// <div class="sb-tooltip sb-tooltip--left">
+//   <p>Fancy tooltip content.</p>
+//   <div class="sb-tooltip__arrow"></div>
+// </div>
+// </div>
+//
+// Styleguide Components.tooltip.left
+
+// Tooltip right
+//
+// Tooltip element small. Always displayed on one line!
+// Used for small descriptions or names. eg: emotions in mood rating.
+//
+// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
+//
+// Markup:
+// <div class="sb-tooltip__container">
+// <div style="text-align: right">hover me</div>
+// <div class="sb-tooltip sb-tooltip--right">
+//   <p>Fancy tooltip content.</p>
+//   <div class="sb-tooltip__arrow"></div>
+// </div>
+// </div>
+//
+// Styleguide Components.tooltip.right
+
 // Tooltip small
 //
-// Tooltip element small.
+// Tooltip element small. Always displayed on one line!
 // Used for small descriptions or names. eg: emotions in mood rating.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
