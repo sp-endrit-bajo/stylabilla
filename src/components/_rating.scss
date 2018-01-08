@@ -79,6 +79,7 @@
 // Group
 //
 // A basic rating group. Apply a `.sb-rating-group` class to the rating wrapper.
+// If text is included a `{modifier class}` is required.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
@@ -134,8 +135,9 @@
 //   <div class="sb-rating-group__text sb-rating-group__text--high">Very likely</div>
 // </div>
 //
+// .sb-rating-group--below - Show text below
 // .sb-rating-group--above - Show text above
-// .sb-rating-group--after - Show text before and after
+// .sb-rating-group--inline - Show text before and after
 //
 // Styleguide Components.rating.group
 
@@ -145,7 +147,6 @@ $sb-rating-before-space: sb-px2rems(7px);
 .#{$ns}rating-group {
   display: table;
   position: relative;
-  padding-bottom: $sb-rating-text-space;
 
   &__numbers {
     margin: 0;
@@ -159,13 +160,21 @@ $sb-rating-before-space: sb-px2rems(7px);
     bottom: 0;
   }
 
+  &--inline,
+  &--below {
+    padding-bottom: $sb-rating-text-space;
+  }
+
+  &--inline &__text,
+  &--below &__text {
+    bottom: 0;
+  }
+
   &--above {
-    padding-bottom: 0;
     padding-top: $sb-rating-text-space;
   }
 
   &--above &__text {
-    bottom: auto;
     top: 0;
   }
 
@@ -174,18 +183,18 @@ $sb-rating-before-space: sb-px2rems(7px);
   }
 
   @include breakpoint-m {
-    &--after {
+    &--inline {
       padding-bottom: 0;
     }
 
-    &--after &__text,
-    &--after &__numbers {
+    &--inline &__text,
+    &--inline &__numbers {
       display: inline-block;
       position: relative;
       vertical-align: middle;
     }
 
-    &--after &__numbers {
+    &--inline &__numbers {
       padding-left: $sb-rating-before-space;
       padding-right: $sb-rating-before-space;
     }
