@@ -61,7 +61,7 @@
 }
 
 .#{$ns}text--s {
-  @include base-font();
+  @include sb-text-s();
 
   line-height: sb-px2rems(19px);
 }

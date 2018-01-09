@@ -28,14 +28,6 @@
   }
 }
 
-@mixin sb-clearfix() {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
 @mixin sb-offset-size($grid-columns, $default-gutter, $size) {
   @for $i from 1 through $grid-columns {
     .#{$ns}offset-#{$size}-#{$i} {

@@ -41,11 +41,11 @@
 
 .#{$ns}radio {
   &__label {
-    @extend %sb-label-inline;
+    @include sb-label-inline();
   }
 
   &__faux {
-    @extend %sb-faux;
+    @include sb-faux();
   }
 
   &__faux,
@@ -67,19 +67,19 @@
   }
 
   &:hover .#{$ns}radio__faux {
-    @extend %sb-faux-hover;
+    @include sb-faux-hover();
   }
 
   &__input {
-    @extend %sb-faux-input;
+    @include sb-faux-input();
   }
 
   &__input:focus + .#{$ns}radio__label .#{$ns}radio__faux {
-    @extend %sb-faux-focus;
+    @include sb-focus-no-border();
   }
 
   &__input:checked + .#{$ns}radio__label .#{$ns}radio__faux {
-    @extend %sb-faux-checked;
+    @include sb-faux-checked();
   }
 
   &__input:checked + .#{$ns}radio__label .#{$ns}radio__circle {
@@ -88,11 +88,11 @@
   }
 
   &__input:disabled + .#{$ns}radio__label .#{$ns}radio__faux {
-    @extend %sb-faux-disabled;
+    @include sb-faux-disabled();
   }
 
   &__input:disabled:checked + .#{$ns}radio__label .#{$ns}radio__faux {
-    @extend %sb-faux-disabled-checked;
+    @include sb-faux-disabled-checked();
   }
 }
 
@@ -139,21 +139,21 @@
 
 .#{$ns}radio-group {
   .#{$ns}radio {
-    @extend %sb-group-input;
+    @include sb-group-input();
   }
 
   .#{$ns}radio:first-child {
-    @extend %sb-group-input-inline-first;
+    @include sb-group-input-inline-first();
   }
 }
 
 .#{$ns}radio-group--inline {
   .#{$ns}radio {
-    @extend %sb-group-input-inline;
+    @include sb-group-input-inline();
   }
 
   .#{$ns}radio:last-child {
-    @extend %sb-group-input-inline-last;
+    @include sb-group-input-inline-last();
   }
 }
 

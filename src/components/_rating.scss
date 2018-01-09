@@ -1,3 +1,5 @@
+/* stylelint-disable at-rule-blacklist */
+
 // Rating
 //
 // A basic rating component
@@ -32,11 +34,11 @@
   }
 
   &__input {
-    @extend %sb-faux-input;
+    @include sb-faux-input();
   }
 
   &__label {
-    @include base-font();
+    @include sb-text-s();
 
     background-color: $sb-color-white;
     border: 1px solid $sb-color-light-3;
@@ -151,7 +153,7 @@ $sb-rating-before-space: sb-px2rems(7px);
   }
 
   &__text {
-    @include base-font();
+    @include sb-text-s();
 
     position: absolute;
     bottom: 0;

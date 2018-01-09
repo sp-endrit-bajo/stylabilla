@@ -33,6 +33,7 @@ module.exports = {
     //Misc
     "string-quotes": "single",
     "at-rule-no-unknown": null,
+    "at-rule-blacklist": ["extend"],
     "declaration-block-no-redundant-longhand-properties": null
   }
 };

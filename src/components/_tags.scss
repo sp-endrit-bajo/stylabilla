@@ -1,3 +1,5 @@
+/* stylelint-disable at-rule-blacklist */
+
 // Tags
 //
 // Tags component
@@ -40,7 +42,7 @@
 
 .#{$ns}tags {
   &__input {
-    @extend %sb-faux-input;
+    @include sb-faux-input();
   }
 
   &__label {
@@ -59,7 +61,7 @@
   }
 
   &__input:focus + &__label {
-    @extend %sb-faux-focus;
+    @include sb-focus-no-border();
   }
 
   @include tag-state('positive', $sb-color-green-2);

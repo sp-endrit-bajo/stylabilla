@@ -1,13 +1,47 @@
 /* stylelint-disable plugin/docs-required */
 
-// Shared styles between radio and checkbox components
-// Obs: please do not reuse extends declared on this file for components other than radio or checkbox.
-%sb-label-inline {
+@mixin sb-clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// focus styles
+@mixin sb-focus() {
+  border: 1px solid $sb-color-blue-2;
+  box-shadow: $sb-box-shadow;
+  outline: none;
+}
+
+@mixin sb-focus-no-border() {
+  box-shadow: 0 0 4px 2px transparentize($sb-color-blue-2, 0.75);
+  outline: none;
+}
+
+@mixin sb-text-s() {
+  font-family: $sb-base-font-family;
+  font-size: sb-px2rems(13px);
+}
+
+// hide input
+@mixin sb-faux-input() {
+  appearance: none;
+  vertical-align: middle;
+  position: absolute;
+  border: 0;
+  width: 0;
+  height: 0;
+}
+
+// checkbox / radio styles
+@mixin sb-label-inline() {
   display: inline-flex;
   align-items: flex-start;
 }
 
-%sb-faux {
+@mixin sb-faux() {
   display: inline-block;
   flex-shrink: 0;
   position: relative;
@@ -21,54 +55,41 @@
   overflow: hidden;
 }
 
-%sb-faux-hover {
+@mixin sb-faux-hover() {
   box-shadow: $sb-box-shadow;
 }
 
-%sb-faux-focus {
-  @include sb-focus-no-border();
-}
-
-%sb-faux-input {
-  appearance: none;
-  vertical-align: middle;
-  position: absolute;
-  border: 0;
-  width: 0;
-  height: 0;
-}
-
-%sb-faux-checked {
+@mixin sb-faux-checked() {
   background-color: $sb-color-blue-2;
   border-color: $sb-color-blue-2;
   border-bottom: 1px solid $sb-color-blue-1;
 }
 
-%sb-faux-disabled {
+@mixin sb-faux-disabled() {
   border-color: $sb-color-light-4;
   box-shadow: none;
 }
 
-%sb-faux-disabled-checked {
+@mixin sb-faux-disabled-checked() {
   background-color: $sb-color-light-3;
   border-color: $sb-color-light-3;
   border-bottom: 1px solid $sb-color-light-1;
 }
 
-%sb-group-input {
+@mixin sb-group-input() {
   margin-top: sb-px2rems(11px);
 }
 
-%sb-group-input-inline {
+@mixin sb-group-input-inline() {
   display: inline-block;
   margin-right: sb-px2rems(11px);
   margin-top: 0;
 }
 
-%sb-group-input-inline-first {
+@mixin sb-group-input-inline-first() {
   margin-top: 0;
 }
 
-%sb-group-input-inline-last {
+@mixin sb-group-input-inline-last() {
   margin-right: 0;
 }

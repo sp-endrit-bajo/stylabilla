@@ -21,7 +21,7 @@
 
 .#{$ns}form-control {
   &__validation {
-    @include base-font();
+    @include sb-text-s();
 
     display: none;
     margin-top: sb-px2rems(7px);

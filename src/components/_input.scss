@@ -13,7 +13,7 @@
 // Styleguide Components.input
 
 .#{$ns}input {
-  @include base-font();
+  @include sb-text-s();
 
   width: 100%;
   border-radius: sb-px2rems($sb-radius);

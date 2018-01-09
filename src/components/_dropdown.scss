@@ -27,7 +27,7 @@
 // Styleguide Components.dropdown
 
 .#{$ns}dropdown {
-  @include base-font();
+  @include sb-text-s();
 
   position: relative;
   color: $sb-color-dark-3;

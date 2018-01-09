@@ -47,11 +47,11 @@
 
 .#{$ns}checkbox {
   &__label {
-    @extend %sb-label-inline;
+    @include sb-label-inline();
   }
 
   &__faux {
-    @extend %sb-faux;
+    @include sb-faux();
   }
 
   &__checkmark {
@@ -66,19 +66,19 @@
   }
 
   &:hover .#{$ns}checkbox__faux {
-    @extend %sb-faux-hover;
+    @include sb-faux-hover();
   }
 
   &__input {
-    @extend %sb-faux-input;
+    @include sb-faux-input();
   }
 
   &__input:focus + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    @extend %sb-faux-focus;
+    @include sb-focus-no-border();
   }
 
   &__input:checked + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    @extend %sb-faux-checked;
+    @include sb-faux-checked();
   }
 
   &__input:checked + .#{$ns}checkbox__label .#{$ns}checkbox__checkmark {
@@ -86,11 +86,11 @@
   }
 
   &__input:disabled + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    @extend %sb-faux-disabled;
+    @include sb-faux-disabled();
   }
 
   &__input:disabled:checked + .#{$ns}checkbox__label .#{$ns}checkbox__faux {
-    @extend %sb-faux-disabled-checked;
+    @include sb-faux-disabled-checked();
   }
 }
 
@@ -143,21 +143,21 @@
 
 .#{$ns}checkbox-group {
   .#{$ns}checkbox {
-    @extend %sb-group-input;
+    @include sb-group-input();
   }
 
   .#{$ns}checkbox:first-child {
-    @extend %sb-group-input-inline-first;
+    @include sb-group-input-inline-first();
   }
 }
 
 .#{$ns}checkbox-group--inline {
   .#{$ns}checkbox {
-    @extend %sb-group-input-inline;
+    @include sb-group-input-inline();
   }
 
   .#{$ns}checkbox:last-child {
-    @extend %sb-group-input-inline-last;
+    @include sb-group-input-inline-last();
   }
 }
 
