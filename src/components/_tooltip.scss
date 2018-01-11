@@ -1,45 +1,48 @@
+/* stylelint-disable no-duplicate-selectors */
+
 // Tooltip
 //
 // Tooltip element default (medium).
 // Used for descriptions or explanation of an action on the interface.
+// Slides up to the top of its container.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-tooltip__container">
-// <div class="hover-area sb-text--center">hover me</div>
-// <div class="sb-tooltip {{modifier_class}}">
-//   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum turpis enim, eget tempor tellus placerat at.</p>
-//   <p>Alea iacta est!</p>
-//   <div class="sb-tooltip__arrow"></div>
-// </div>
+// <div class="sb-tile sb-tooltip__container sb-text--center">
+//   hover me
+//   <div class="sb-tooltip {{modifier_class}}">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum turpis enim, eget tempor tellus placerat at.</p>
+//     <p>Alea iacta est!</p>
+//     <div class="sb-tooltip__arrow"></div>
+//   </div>
 // </div>
 //
-// .sb-tooltip--bottom - Position it on the bottom
+// .sb-tooltip--bottom - Slides down to the bottom of its container.
 //
 // Styleguide Components.tooltip
 
 $tp: #{$ns}tooltip;
 
-.#{$ns}tooltip {
+.#{$tp} {
   position: absolute;
   display: table;
   top: 0;
   left: 50%;
+  max-width: sb-px2rems(350px);
   transform: translate(-50%, -100%);
-  padding: sb-px2rems(11px);
+  opacity: 0;
+  pointer-events: none;
+  padding: sb-rem-spacing('-s');
   background: $sb-color-white;
   border: 1px solid $sb-color-light-3;
-  border-radius: 2px;
+  border-radius: $sb-radius;
   box-shadow: $sb-box-shadow-light;
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(19px);
   color: $sb-color-dark-3;
-  max-width: sb-px2rems(350px);
   transition: opacity $sb-timing-s ease-out, transform $sb-timing-m $sb-easeup-function;
-  opacity: 0;
-  pointer-events: none;
 
   &--bottom {
     top: 100%;
@@ -58,10 +61,20 @@ $tp: #{$ns}tooltip;
     transform: translate(0, -100%);
   }
 
+  &--s {
+    white-space: nowrap;
+    line-height: sb-px2rems(13px);
+    padding: sb-rem-spacing('-xs');
+  }
+
+  &--l {
+    padding: sb-rem-spacing('-l');
+  }
+
   &__container {
     position: relative;
 
-    &:hover .#{$ns}tooltip {
+    &:hover .#{$tp} {
       opacity: 1;
       transform: translate(-50%, calc(-100% - 7px));
     }
@@ -81,16 +94,6 @@ $tp: #{$ns}tooltip;
 
   & > * {
     font-size: sb-px2rems(13px);
-  }
-
-  &--s {
-    white-space: nowrap;
-    line-height: sb-px2rems(13px);
-    padding: sb-px2rems(7px);
-  }
-
-  &--l {
-    padding: sb-px2rems(16px);
   }
 
   &__arrow {
@@ -149,36 +152,38 @@ $tp: #{$ns}tooltip;
 
 // Tooltip left
 //
-// Tooltip element small. Always displayed on one line!
-// Used for small descriptions or names. eg: emotions in mood rating.
+// Tooltip element positioned to the left of its parent.
+// Used when there's not enough space on the left
+// for the tooltip to overflow when centered.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-tooltip__container">
-// <div>hover me</div>
-// <div class="sb-tooltip sb-tooltip--left">
-//   <p>Fancy tooltip content.</p>
-//   <div class="sb-tooltip__arrow"></div>
-// </div>
+// <div class="sb-tile sb-tooltip__container">
+//   hover me
+//   <div class="sb-tooltip sb-tooltip--left">
+//     <p>Fancy tooltip content.</p>
+//     <div class="sb-tooltip__arrow"></div>
+//   </div>
 // </div>
 //
 // Styleguide Components.tooltip.left
 
 // Tooltip right
 //
-// Tooltip element small. Always displayed on one line!
-// Used for small descriptions or names. eg: emotions in mood rating.
+// Tooltip element positioned to the right of its parent.
+// Used when there's not enough space on the right
+// for the tooltip to overflow when centered.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-tooltip__container">
-// <div style="text-align: right">hover me</div>
-// <div class="sb-tooltip sb-tooltip--right">
-//   <p>Fancy tooltip content.</p>
-//   <div class="sb-tooltip__arrow"></div>
-// </div>
+// <div class="sb-tile sb-tooltip__container sb-text--right">
+//   hover me
+//   <div class="sb-tooltip sb-tooltip--right">
+//     <p>Fancy tooltip content.</p>
+//     <div class="sb-tooltip__arrow"></div>
+//   </div>
 // </div>
 //
 // Styleguide Components.tooltip.right
@@ -191,12 +196,12 @@ $tp: #{$ns}tooltip;
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-tooltip__container">
-// <div class="sb-text--center">hover me</div>
-// <div class="sb-tooltip sb-tooltip--s">
-//   <p>Fancy tooltip content.</p>
-//   <div class="sb-tooltip__arrow"></div>
-// </div>
+// <div class="sb-tile sb-tooltip__container sb-text--center">
+//   hover me
+//   <div class="sb-tooltip sb-tooltip--s">
+//     <p>Fancy tooltip content.</p>
+//     <div class="sb-tooltip__arrow"></div>
+//   </div>
 // </div>
 //
 // Styleguide Components.tooltip.small
@@ -210,12 +215,12 @@ $tp: #{$ns}tooltip;
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
-// <div class="sb-tooltip__container">
-// <div class="sb-text--center">hover me</div>
-// <div class="sb-tooltip sb-tooltip--l">
-//   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum turpis enim, eget tempor tellus placerat at. Mauris quis tincidunt eros. Sed eu felis nulla. Aliquam ullamcorper magna risus, id placerat leo pulvinar at. Nunc tortor nunc, porttitor a finibus vel, tristique quis enim. Mauris eget mauris laoreet, vulputate libero finibus, dignissim nisi. In nec lectus vel est vehicula efficitur consequat vel ligula. Curabitur accumsan quam at mauris finibus, et egestas nulla ultricies. Pellentesque vel venenatis tellus, sed tempus ex. Nunc condimentum ligula eros, id scelerisque odio blandit quis. Morbi sit amet felis non ex dictum vulputate.</p>
-//   <div class="sb-tooltip__arrow"></div>
-// </div>
+// <div class="sb-tile sb-tooltip__container sb-text--center">
+//   hover me
+//   <div class="sb-tooltip sb-tooltip--l">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum turpis enim, eget tempor tellus placerat at. Mauris quis tincidunt eros. Sed eu felis nulla. Aliquam ullamcorper magna risus, id placerat leo pulvinar at. Nunc tortor nunc, porttitor a finibus vel, tristique quis enim. Mauris eget mauris laoreet, vulputate libero finibus, dignissim nisi. In nec lectus vel est vehicula efficitur consequat vel ligula. Curabitur accumsan quam at mauris finibus, et egestas nulla ultricies. Pellentesque vel venenatis tellus, sed tempus ex. Nunc condimentum ligula eros, id scelerisque odio blandit quis. Morbi sit amet felis non ex dictum vulputate.</p>
+//     <div class="sb-tooltip__arrow"></div>
+//   </div>
 // </div>
 //
 // Styleguide Components.tooltip.large
