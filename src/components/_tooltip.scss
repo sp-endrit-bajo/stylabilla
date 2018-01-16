@@ -33,11 +33,11 @@ $tp: #{$ns}tooltip;
   transform: translate(-50%, -100%);
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
   padding: sb-rem-spacing('-s');
   background: $sb-color-white;
-  border: 1px solid $sb-color-light-3;
   border-radius: $sb-radius;
-  box-shadow: $sb-box-shadow-light;
+  box-shadow: 0 0 0 1px $sb-color-light-3, $sb-box-shadow-light;
   font-family: $sb-base-font-family;
   font-size: sb-px2rems(13px);
   line-height: sb-px2rems(19px);
@@ -76,6 +76,7 @@ $tp: #{$ns}tooltip;
 
     &:hover .#{$tp} {
       opacity: 1;
+      visibility: visible;
       transform: translate(-50%, calc(-100% - 7px));
     }
 
@@ -136,16 +137,6 @@ $tp: #{$ns}tooltip;
 
     .#{$tp}--bottom &::after {
       transform: translate(-50%, 7px) rotate(45deg);
-    }
-  }
-}
-
-.#{$tp}__arrow {
-  @include sb-firefox-only {
-    top: calc(100% - 1px);
-
-    .#{$tp}--bottom & {
-      top: 1px;
     }
   }
 }
