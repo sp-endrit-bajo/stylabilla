@@ -1,0 +1,230 @@
+/* stylelint-disable at-rule-blacklist */
+/* stylelint-disable max-nesting-depth */
+
+// Mood Rating
+//
+// JavaScript is required for:
+// - Adding `sb-mood-rating--selected` class after value is selected, so it is possible to set previous siblings opacity.
+// - When using `sb-mood-rating--custom` or `sb-mood-rating--progressive`, SVG is hidden.
+//
+// Note that the reverse order of the mood rating element markup enables css-only styling of progressive hover without having to use javascript to change previous siblings.
+// We do not use flexbox because it doesn't meet our browser support requirements.
+//
+// Browser support: IE9+, Safari6.2+, Firefox30+, Chrome32+
+//
+// Markup:
+// <div class="sb-mood-rating {{modifier_class}}" role="radiogroup">
+//   <input type="radio" value="5" name="mood-rating-{{modifier_class}}" id="mood-rating-love-{{modifier_class}}" class="sb-mood-rating__input">
+//   <label class="sb-mood-rating__label sb-mood-rating__label--5" for="mood-rating-love-{{modifier_class}}">
+//     <div class="sb-tooltip__container">
+//       <span class="sb-visually-hidden">Love</span>
+//       <svg class="sb-mood-rating__icon sb-icon sb-icon--m" viewBox="0 0 30 30">
+//         <path class="sb-icon--mood__background" d="M0 15a15 15 0 1 0 30 0 15 15 0 0 0-30 0z"/>
+//         <path class="sb-icon--mood__lines" d="M15 25c4.3 0 6-2.8 6-4.6 0-1.9-12-1.9-12 0 0 1.8 1.7 4.6 6 4.6z"/>
+//         <path class="sb-icon--mood__eyes" d="M19.3 16.9c1.9-.6 5.2-1.9 5.8-4 0 .1.8-2.5-2-3.3-.6-.2-1.2 0-2 .4-.4-.6-.7-1.1-1.4-1.3-2.8-.7-3.3 2-3.3 1.9-.6 2.1 1.7 4.9 3 6.3zm-8.9 0c1.3-1.4 3.6-4.2 3-6.3 0 0-.5-2.6-3.3-1.9-.7.2-1 .7-1.5 1.3-.7-.3-1.3-.6-2-.4-2.8.8-1.9 3.4-2 3.3.7 2.1 4 3.4 5.8 4z"/>
+//       </svg>
+//       <div class="sb-mood-rating__tooltip sb-tooltip sb-tooltip--s">
+//         <p>Love</p>
+//         <div class="sb-tooltip__arrow"></div>
+//       </div>
+//     </div>
+//   </label>
+//   <input type="radio" value="4" name="mood-rating-{{modifier_class}}" id="mood-rating-like-{{modifier_class}}" class="sb-mood-rating__input">
+//   <label class="sb-mood-rating__label sb-mood-rating__label--4" for="mood-rating-like-{{modifier_class}}">
+//     <div class="sb-tooltip__container">
+//       <span class="sb-visually-hidden">Like</span>
+//       <svg class="sb-mood-rating__icon sb-icon sb-icon--m" viewBox="0 0 30 30">
+//         <path class="sb-icon--mood__background" d="M0 15a15 15 0 1 0 30 0 15 15 0 0 0-30 0z"/>
+//         <path class="sb-icon--mood__lines" d="M9 12c1.66 0 3 1.64 3 3.2 0 1.71-1.5.07-3 0-1.5.07-3 1.71-3 0C6 13.64 7.34 12 9 12zm12 0c1.66 0 3 1.64 3 3.2 0 1.71-1.5.07-3 0-1.5.07-3 1.71-3 0 0-1.56 1.34-3.2 3-3.2z"/>
+//         <path class="sb-icon--mood__lines" d="M9.25 21.65A7.41 7.41 0 0 0 15 24c2.39 0 4.33-.79 5.75-2.35a.96.96 0 0 0-.12-1.41 1.1 1.1 0 0 0-1.5.11A5.26 5.26 0 0 1 15 22a5.26 5.26 0 0 1-4.14-1.65 1.1 1.1 0 0 0-1.49-.11.96.96 0 0 0-.12 1.41z"/>
+//       </svg>
+//       <div class="sb-mood-rating__tooltip sb-tooltip sb-tooltip--s">
+//         <p>Like</p>
+//         <div class="sb-tooltip__arrow"></div>
+//       </div>
+//     </div>
+//   </label>
+//   <input type="radio" value="3" name="mood-rating-{{modifier_class}}" id="mood-rating-neutral-{{modifier_class}}" class="sb-mood-rating__input">
+//   <label class="sb-mood-rating__label sb-mood-rating__label--3" for="mood-rating-neutral-{{modifier_class}}">
+//     <div class="sb-tooltip__container">
+//       <span class="sb-visually-hidden">Neutral</span>
+//       <svg class="sb-mood-rating__icon sb-icon sb-icon--m" viewBox="0 0 30 30">
+//         <path class="sb-icon--mood__background" d="M0 15a15 15 0 1 0 30 0 15 15 0 0 0-30 0z"/>
+//         <path class="sb-icon--mood__lines" d="M11.67 22h6.66c1.22 0 1.67-.45 1.67-1s-.45-1-1.67-1h-6.66c-1.22 0-1.67.45-1.67 1s.45 1 1.67 1z"/>
+//         <circle class="sb-icon--mood__lines" cx="9" cy="14" r="2"/>
+//         <circle class="sb-icon--mood__lines" cx="21" cy="14" r="2" transform="matrix(-1 0 0 1 42 0)"/>
+//       </svg>
+//       <div class="sb-mood-rating__tooltip sb-tooltip sb-tooltip--s">
+//         <p>Neutral</p>
+//         <div class="sb-tooltip__arrow"></div>
+//       </div>
+//     </div>
+//   </label>
+//   <input type="radio" value="2" name="mood-rating-{{modifier_class}}" id="mood-rating-dislike-{{modifier_class}}" class="sb-mood-rating__input">
+//   <label class="sb-mood-rating__label sb-mood-rating__label--2" for="mood-rating-dislike-{{modifier_class}}">
+//     <div class="sb-tooltip__container">
+//       <span class="sb-visually-hidden">Dislike</span>
+//       <svg class="sb-mood-rating__icon sb-icon sb-icon--m" viewBox="0 0 30 30">
+//         <path class="sb-icon--mood__background" d="M0 15a15 15 0 1 0 30 0 15 15 0 0 0-30 0z"/>
+//         <path class="sb-icon--mood__lines" d="M10.15 20.9c1.05-1.65 2.8-2.25 4.89-1.7 1.71.44 3.23 1.12 4.53 2.02.5.34.58.97.18 1.4-.4.44-1.13.5-1.62.16a11.67 11.67 0 0 0-3.76-1.67c-1.06-.27-1.68-.06-2.2.76-.32.48-1.02.66-1.58.39-.55-.27-.75-.88-.44-1.36z"/>
+//         <circle class="sb-icon--mood__lines" cx="9" cy="14" r="2"/>
+//         <circle class="sb-icon--mood__lines" cx="21" cy="14" r="2" transform="matrix(-1 0 0 1 42 0)"/>
+//         <path class="sb-icon--mood__lines" d="M9.53 9.78a2.56 2.56 0 0 0 1.26-3.24c-.55-1.16-1.16.48-2.27 1.06-1.16.48-2.8-.1-2.27 1.06a2.56 2.56 0 0 0 3.28 1.12zm12.88 1.76a2.56 2.56 0 0 0 3.04-1.67c.33-1.24-1.2-.37-2.41-.64-1.2-.38-2.09-1.89-2.42-.65-.3 1.13.46 2.6 1.8 2.96z"/>
+//       </svg>
+//       <div class="sb-mood-rating__tooltip sb-tooltip sb-tooltip--s">
+//         <p>Dislike</p>
+//         <div class="sb-tooltip__arrow"></div>
+//       </div>
+//     </div>
+//   </label>
+//   <input type="radio" value="1" name="mood-rating-{{modifier_class}}" id="mood-rating-hate-{{modifier_class}}" class="sb-mood-rating__input">
+//   <label class="sb-mood-rating__label sb-mood-rating__label--1" for="mood-rating-hate-{{modifier_class}}">
+//     <div class="sb-tooltip__container">
+//       <span class="sb-visually-hidden">Hate</span>
+//       <svg class="sb-mood-rating__icon sb-icon sb-icon--m" viewBox="0 0 30 30">
+//         <path class="sb-icon--mood__background" d="M0 15a15 15 0 1 0 30 0 15 15 0 0 0-30 0z"/>
+//         <g class="sb-icon--mood__lines" transform="translate(15 8.57)">
+//           <circle cx="6" cy="5.43" r="2"/>
+//           <path d="M.49 4.4a3.08 3.08 0 0 0 4.4.92A100.05 100.05 0 0 1 8.92 3l.56-.32c.52-.29.7-.95.42-1.48A1.07 1.07 0 0 0 8.44.76a288.24 288.24 0 0 0-4.68 2.69c-.64.4-1.11.3-1.52-.3a1.06 1.06 0 0 0-1.5-.27A1.1 1.1 0 0 0 .5 4.4z"/>
+//         </g>
+//         <g class="sb-icon--mood__lines" transform="matrix(-1 0 0 1 15 8.57)">
+//           <circle cx="6" cy="5.43" r="2"/>
+//           <path d="M.88 4.4a3.08 3.08 0 0 0 4.4.92A100.05 100.05 0 0 1 9.3 3l.56-.32c.52-.29.7-.95.41-1.48A1.07 1.07 0 0 0 8.83.76a288.24 288.24 0 0 0-4.68 2.69c-.65.4-1.11.3-1.52-.3a1.06 1.06 0 0 0-1.5-.27A1.1 1.1 0 0 0 .88 4.4z"/>
+//         </g>
+//         <path class="sb-icon--mood__lines" d="M20.75 21.35A7.41 7.41 0 0 0 15 19c-2.39 0-4.33.79-5.75 2.35a.96.96 0 0 0 .12 1.41 1.1 1.1 0 0 0 1.5-.11c1-1.1 2.34-1.65 4.13-1.65s3.14.55 4.14 1.65a1.1 1.1 0 0 0 1.49.11c.44-.36.5-.99.12-1.41z"/>
+//       </svg>
+//       <div class="sb-mood-rating__tooltip sb-tooltip sb-tooltip--s">
+//         <p>Hate</p>
+//         <div class="sb-tooltip__arrow"></div>
+//       </div>
+//     </div>
+//   </label>
+// </div>
+//
+// .sb-mood-rating--default - Default SVG showing rating
+// .sb-mood-rating--custom - Shows background image instead of SVG
+// .sb-mood-rating--progressive - Progressive mood rating, does not show tooltips or SVG
+// .sb-mood-rating--default.sb-mood-rating--selected - Changes opacity of default element
+// .sb-mood-rating--custom.sb-mood-rating--selected - Changes opacity of default element
+//
+// Styleguide Components.mood-rating
+
+$sb-mood-opacity-selected: 1;
+$sb-mood-opacity-unselected: 0.5;
+
+$mr: #{$ns}mood-rating;
+
+.#{$ns}mood-rating {
+  display: table;
+
+  &__input {
+    @include sb-faux-input();
+
+    float: right;
+  }
+
+  &__label {
+    cursor: pointer;
+    float: right;
+    width: $sb-mood-size;
+    height: $sb-mood-size;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+
+  &--selected {
+    .#{$mr}__label {
+      opacity: $sb-mood-opacity-unselected;
+    }
+  }
+
+  &--default,
+  &--custom {
+    .#{$mr}__label {
+      border-radius: 50%;
+      margin-right: sb-rem-spacing('-l');
+    }
+
+    .#{$mr}__input:focus + .#{$mr}__label {
+      @include sb-focus-no-border();
+    }
+
+    .#{$mr}__input:checked ~ .#{$mr}__label {
+      opacity: $sb-mood-opacity-unselected;
+    }
+
+    .#{$mr}__label:hover,
+    .#{$mr}__input:focus + .#{$mr}__label,
+    .#{$mr}__input:checked + .#{$mr}__label,
+    .#{$mr}__input:checked ~ .#{$mr}__label:hover {
+      @extend .#{$ns}animation--hover-lift;
+
+      opacity: $sb-mood-opacity-selected;
+    }
+  }
+
+  &--custom,
+  &--progressive {
+    .#{$mr}__icon {
+      visibility: hidden;
+    }
+  }
+
+  &--custom {
+    $sb-mood-full-size: $sb-mood-size * 5;
+
+    .#{$mr}__label {
+      background-image: url('assets/media/mood-smilies.png');
+      background-size: $sb-mood-full-size;
+
+      @for $i from 1 through 5 {
+        &--#{$i} {
+          background-position: -(($i * $sb-mood-size) - $sb-mood-size) 0;
+        }
+      }
+    }
+  }
+
+  &--progressive {
+    .#{$mr}__tooltip {
+      display: none;
+    }
+
+    .#{$mr}__label {
+      background-image: url('assets/media/mood-stars.png');
+      background-size: $sb-mood-size * 2;
+      background-position: -$sb-mood-size 0;
+      background-clip: content-box;
+      box-sizing: content-box;
+      padding-right: sb-rem-spacing('');
+    }
+
+    .#{$mr}__input:focus + .#{$mr}__label {
+      border: 0;
+      outline: 0;
+
+      &::before {
+        @include sb-focus-no-border();
+
+        content: '';
+        border-radius: 50%;
+        position: absolute;
+        width: $sb-mood-size;
+        height: $sb-mood-size;
+        margin-top: 1px;
+      }
+    }
+
+    &:not(:checked) > .#{$mr}__label:hover,
+    &:not(:checked) > .#{$mr}__label:hover ~ .#{$mr}__label,
+    .#{$mr}__input:checked ~ .#{$mr}__label,
+    .#{$mr}__input:checked + .#{$mr}__label:hover,
+    .#{$mr}__input:checked ~ .#{$mr}__label:hover,
+    .#{$mr}__label:hover ~ .#{$mr}__input:checked ~ .#{$mr}__label,
+    .#{$mr}__input:checked ~ .#{$mr}__label:hover ~ .#{$mr}__label {
+      background-position: 0 0;
+    }
+  }
+}

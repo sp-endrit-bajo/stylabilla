@@ -63,7 +63,12 @@ const stylabillaConfig = {
       },
       {
         test: /\.(gif|png|jpg|svg)$/,
-        use: [loaders.file]
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'assets/media/[name].[ext]'
+          }
+        }]
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,
@@ -119,7 +124,7 @@ const docsConfig = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]'
+            name: 'media/[name].[ext]'
           }
         }
       },

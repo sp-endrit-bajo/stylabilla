@@ -25,14 +25,20 @@
   font-size: sb-px2rems(13px);
 }
 
+@mixin sb-visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 // hide input
 @mixin sb-faux-input() {
-  appearance: none;
-  vertical-align: middle;
-  position: absolute;
-  border: 0;
-  width: 0;
-  height: 0;
+  @include sb-visually-hidden();
 }
 
 // checkbox / radio styles
