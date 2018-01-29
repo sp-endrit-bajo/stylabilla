@@ -2,7 +2,7 @@
 
 // Rating
 //
-// A basic rating component
+// A basic rating component.
 //
 // Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
 //
@@ -80,6 +80,7 @@
 //
 // A basic rating group. Apply a `.sb-rating-group` class to the rating wrapper.
 // If text is included a `{modifier class}` is required.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
@@ -200,37 +201,3 @@ $sb-rating-before-space: sb-px2rems(7px);
     }
   }
 }
-
-// Validation
-//
-// A basic rating group with label and validation.
-//
-// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
-//
-// Markup:
-// <div class="sb-form-control {{modifier_class}}">
-//   <label class="sb-label" for="rating-group-id-{{modifier_class}}">Button Group label</label>
-//   <div class="sb-rating-group sb-rating-group--below" id="rating-group-id-{{modifier_class}}" role="ratinggroup">
-//     <div class="sb-rating-group__text sb-rating-group__text--low"><< Low</div>
-//     <ul class="sb-rating-group__numbers">
-//       <li class="sb-rating">
-//         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-1-{{modifier_class}}" class="sb-rating__input">
-//         <label class="sb-rating__label" for="rating-1-{{modifier_class}}">1</label>
-//       </li>
-//       <li class="sb-rating">
-//         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-2-{{modifier_class}}" class="sb-rating__input">
-//         <label class="sb-rating__label" for="rating-2-{{modifier_class}}">2</label>
-//       </li>
-//       <li class="sb-rating">
-//         <input type="radio" name="rating-group-validation-{{modifier_class}}" id="rating-group-3-{{modifier_class}}" class="sb-rating__input">
-//         <label class="sb-rating__label" for="rating-3-{{modifier_class}}">3</label>
-//       </li>
-//     </ul>
-//     <div class="sb-rating-group__text sb-rating-group__text--high">High >></div>
-//   </div>
-//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
-// </div>
-//
-// .sb-form-control--invalid - invalid group
-//
-// Styleguide Components.rating.validation

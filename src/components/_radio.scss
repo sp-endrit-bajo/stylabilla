@@ -1,6 +1,6 @@
 // Radio
 //
-// A basic radio component
+// A basic radio component.
 //
 // Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
 //
@@ -99,6 +99,7 @@
 // Group
 //
 // A basic radio group. Apply a `.sb-radio-group` class to the radio wrapper.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
@@ -156,48 +157,3 @@
     @include sb-group-input-inline-last();
   }
 }
-
-// Validation
-//
-// A basic radio group with label and validation.
-//
-// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
-//
-// Markup:
-// <div class="sb-form-control {{modifier_class}}">
-//   <label class="sb-label" for="radio-group-id-{{modifier_class}}">Button Group label</label>
-//   <div class="sb-radio-group--inline" id="radio-group-id-{{modifier_class}}" role="radiogroup">
-//     <div class="sb-radio">
-//       <input type="radio" name="radio-2-{{modifier_class}}" id="radio-7-{{modifier_class}}" class="sb-radio__input">
-//       <label class="sb-radio__label" for="radio-7-{{modifier_class}}">
-//         <span class="sb-radio__faux">
-//           <div class="sb-radio__circle"></div>
-//         </span>
-//         <span class="sb-margin-left-xs">Basic radio</span>
-//       </label>
-//     </div>
-//     <div class="sb-radio">
-//       <input type="radio" name="radio-2-{{modifier_class}}" id="radio-8-{{modifier_class}}" class="sb-radio__input">
-//       <label class="sb-radio__label" for="radio-8-{{modifier_class}}">
-//         <span class="sb-radio__faux">
-//           <div class="sb-radio__circle"></div>
-//         </span>
-//         <span class="sb-margin-left-xs">Basic radio</span>
-//       </label>
-//     </div>
-//     <div class="sb-radio">
-//       <input type="radio" name="radio-2-{{modifier_class}}" id="radio-9-{{modifier_class}}" class="sb-radio__input">
-//       <label class="sb-radio__label" for="radio-9-{{modifier_class}}">
-//         <span class="sb-radio__faux">
-//           <div class="sb-radio__circle"></div>
-//         </span>
-//         <span class="sb-margin-left-xs">Basic radio</span>
-//       </label>
-//     </div>
-//   </div>
-//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
-// </div>
-//
-// .sb-form-control--invalid - invalid group
-//
-// Styleguide Components.radio.validation

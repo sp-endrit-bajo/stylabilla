@@ -1,14 +1,16 @@
 // Input
 //
 // Basic input component that should be used for email, number, password, tel, text and url inputs.
-// It is also used to apply standard form styling to other components such as upload and dropdown.
-// If you would like to apply validation styles and messages, check out the form control component.
+// It is also used to apply standard form styling to other components such as textarea, upload and dropdown.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
 // Markup:
 // <label class="sb-label" for="input-id-1">Input Label</label>
 // <input class="sb-input" id="input-id-1" placeholder="Placeholder Text">
+// <label class="sb-label" for="textarea-id-1">Textarea Label</label>
+// <textarea class="sb-input" id="textarea-id-1" placeholder="Placeholder Text"></textarea>
 //
 // Styleguide Components.input
 
@@ -22,10 +24,6 @@
   padding: sb-px2rems(11px);
   font-weight: 400;
   color: $sb-color-dark-3;
-
-  &::placeholder {
-    color: $sb-color-light-1;
-  }
 
   &:hover {
     box-shadow: $sb-box-shadow;

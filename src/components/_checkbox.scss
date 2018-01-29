@@ -1,6 +1,6 @@
 // Checkbox
 //
-// A basic checkbox component
+// A basic checkbox component.
 //
 // Browser support: IE9+ (no transition), Safari6+, Firefox30+, Chrome30+
 //
@@ -97,6 +97,7 @@
 // Group
 //
 // A basic checkbox group. Apply a `.sb-checkbox-group` class to the checkbox wrapper.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
@@ -160,54 +161,3 @@
     @include sb-group-input-inline-last();
   }
 }
-
-// Validation
-//
-// A basic checkbox group with label and validation.
-//
-// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
-//
-// Markup:
-// <div class="sb-form-control {{modifier_class}}">
-//   <label class="sb-label" for="checkbox-group-id-{{modifier_class}}">Button Group label</label>
-//   <div class="sb-checkbox-group--inline" id="checkbox-group-id-{{modifier_class}}" role="group">
-//     <div class="sb-checkbox">
-//       <input type="checkbox" id="checkbox-7-{{modifier_class}}" class="sb-checkbox__input">
-//       <label class="sb-checkbox__label" for="checkbox-7-{{modifier_class}}">
-//         <span class="sb-checkbox__faux">
-//           <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//             <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//           </svg>
-//         </span>
-//         <span class="sb-margin-left-xs">Basic checkbox</span>
-//       </label>
-//     </div>
-//     <div class="sb-checkbox">
-//       <input type="checkbox" id="checkbox-8-{{modifier_class}}" class="sb-checkbox__input">
-//       <label class="sb-checkbox__label" for="checkbox-8-{{modifier_class}}">
-//         <span class="sb-checkbox__faux">
-//           <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//             <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//           </svg>
-//         </span>
-//         <span class="sb-margin-left-xs">Basic checkbox</span>
-//       </label>
-//     </div>
-//     <div class="sb-checkbox">
-//       <input type="checkbox" id="checkbox-9-{{modifier_class}}" class="sb-checkbox__input">
-//       <label class="sb-checkbox__label" for="checkbox-9-{{modifier_class}}">
-//         <span class="sb-checkbox__faux">
-//           <svg class="sb-checkbox__checkmark" viewBox="0 0 8 7">
-//             <path d="M7.68025,0 C5.067,1.97775 2.56075,4.6235 2.56075,4.6235 L0.7545,3 L0,3.7685 C0.74225,4.46625 2.46225,6.30925 3.044,7 C4.6815,4.26425 6.38375,2.224 8,0.3585 L7.68025,0 Z"></path>
-//           </svg>
-//         </span>
-//         <span class="sb-margin-left-xs">Basic checkbox</span>
-//       </label>
-//     </div>
-//   </div>
-//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
-// </div>
-//
-// .sb-form-control--invalid - invalid group
-//
-// Styleguide Components.checkbox.validation

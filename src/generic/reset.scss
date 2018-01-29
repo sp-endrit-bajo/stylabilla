@@ -12,3 +12,8 @@ p {
   margin: 0;
   padding: 0;
 }
+
+// Placeholder color
+::placeholder {
+  color: $sb-color-light-1;
+}

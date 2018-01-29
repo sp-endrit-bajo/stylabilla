@@ -1,14 +1,15 @@
 // Select
 //
-// Select element
+// Select element.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE9+, Safari6+, Firefox35+, Chrome30+
 //
 // Markup:
 //  <div class="sb-form-control">
-//    <label class="sb-label" for="select-id-1">Choose an option</label>
-//    <div class="sb-select sb-form-control__input">
-//      <select class="sb-input" id="select-id-1">
+//    <label class="sb-label" for="select-id-1-{{modifier_class}}">Choose an option</label>
+//    <div class="sb-select sb-form-control__input {{modifier_class}}">
+//      <select class="sb-input" id="select-id-1-{{modifier_class}}">
 //        <option selected>Select</option>
 //        <option>Choice 1</option>
 //        <option>Choice 2</option>
@@ -17,6 +18,8 @@
 //      <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
 //    </div>
 //  </div>
+//
+// .sb-select--placeholder - when select has a placeholder value
 //
 // Styleguide Components.select
 
@@ -29,29 +32,10 @@
   .#{$ns}icon {
     display: inline;
   }
-}
 
-// Select with validation
-//
-// Select error validation
-//
-// Browser support: IE9+, Safari6+, Firefox35+, Chrome30+
-//
-// Markup:
-//  <div class="sb-form-control {{modifier_class}}">
-//    <label class="sb-label" for="select-id-{{modifier_class}}">Choose an option</label>
-//    <div class="sb-select sb-form-control__input">
-//      <select class="sb-input" id="select-id-{{modifier_class}}">
-//        <option selected>Select</option>
-//        <option>Choice 1</option>
-//        <option>Choice 2</option>
-//        <option>Choice 3</option>
-//      </select>
-//      <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
-//    </div>
-//    <p role="alert" class="sb-form-control__validation">Error message here.</p>
-//  </div>
-//
-// .sb-form-control--invalid - invalid select
-//
-// Styleguide Components.select.validation
+  &--placeholder {
+    .#{$ns}input {
+      color: $sb-color-light-1;
+    }
+  }
+}

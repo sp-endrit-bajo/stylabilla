@@ -1,6 +1,7 @@
 // Dropdown
 //
-// Basic dropdown
+// Basic dropdown.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
 //
@@ -290,32 +291,3 @@
 //  </div>
 //
 // Styleguide Components.dropdown.disabled
-
-// Validation
-//
-// Dropdown error validation
-//
-// Browser support: IE9+, Safari6+, Firefox30+, Chrome30+
-//
-// Markup:
-// <div class="sb-form-control {{modifier_class}}">
-//    <label class="sb-label" for="dropdown-id-{{modifier_class}}">Choose an option</label>
-//    <div class="sb-dropdown" id="dropdown-id-{{modifier_class}}">
-//      <div class="sb-dropdown__button sb-form-control__input">
-//        <button class="sb-input" aria-label="Choose an option" aria-expanded="false">
-//          Choice 1
-//        </button>
-//        <svg class="sb-icon" viewBox="-5 -5 16 16"><path d="M0 0l3.5 4L7 0H0"></svg>
-//      </div>
-//      <ul class="sb-dropdown__menu" role="listbox">
-//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 1</li>
-//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 2</li>
-//        <li class="sb-dropdown__menu-item" tabindex="0" role="option">Choice 3</li>
-//      </ul>
-//    </div>
-//    <p role="alert" class="sb-form-control__validation">Error message here.</p>
-//  </div>
-//
-// .sb-form-control--invalid - invalid dropdown
-//
-// Styleguide Components.dropdown.validation

@@ -1,6 +1,7 @@
 // Button Group
 //
 // Group a series of buttons together on a single line.
+// If you would like to apply validation styles and messages, check out the <a href="section-components.html#kssref-components-button-loader">Form Control</a> component.
 //
 // Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
 //
@@ -72,26 +73,3 @@
     }
   }
 }
-
-// Validation
-//
-// How to use a button group as a form element.
-// Obs: The button group can have toggle/multiple options, behaving like checkboxes instead of radio buttons.
-//
-// Browser support: IE10+, Safari6+, Firefox30+, Chrome30+
-//
-// Markup:
-// <div class="sb-form-control {{modifier_class}}">
-//   <label class="sb-label" for="btn-group-id-{{modifier_class}}">Button Group label</label>
-//   <div class="sb-btn-group" role="group" id="btn-group-id-{{modifier_class}}">
-//     <button class="sb-btn" role="checkbox" aria-checked="false">Button one</button>
-//     <button class="sb-btn" role="checkbox" aria-checked="false">Button two</button>
-//     <button class="sb-btn sb-btn--active" role="checkbox" aria-checked="true">Active</button>
-//     <button class="sb-btn" disabled role="checkbox" aria-checked="false">Disabled</button>
-//   </div>
-//   <p role="alert" class="sb-form-control__validation">Error message here.</p>
-// </div>
-//
-// .sb-form-control--invalid - invalid input
-//
-// Styleguide Components.button-group.validation
